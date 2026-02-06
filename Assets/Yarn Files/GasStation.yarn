@@ -1,0 +1,141 @@
+
+title: KidsOutside
+tags:
+---
+<<cameraIndex 1>>
+
+
+<<if visited("KidNoPost")>>
+Kids: WAIIIIIII!!!!@!!1
+Kids: If you're gonna take something,
+Kids: Get a lollipop for us wouldja?
+<<else>>
+Kids: WAIIIIIIIIITTTT!!!
+Kids: Hey kid,
+Kids: Ya gonna go in?
+Kids: Good luck,
+Kids: Billy and I here tried snagging some candy
+Kids: Cuz that old fart's blind as a bat
+Kids: Which is funny,
+Kids: considering he's a dog 
+Kids: teehehe!
+Kids: Billy got too loud tho..
+Kids: kicked us out..
+
+<<endif>>
+
+<<cameraIndex 0>>
+
+===
+
+
+title: KidTalk
+tags:
+---
+<<cameraIndex 3>>
+<<if $hasPostcard == true>>
+Kids: HOLY
+Kids: Nice job, thanks
+Kids: You're the besttt!!
+Kids: Here! Have a sticker!
+Kids: (sorry havent added that feature yet :3)
+
+<<else>>
+    <<jump KidNoPost>>
+<<endif>>
+<<cameraIndex0>>
+===
+
+
+title: KidNoPost
+tags:
+---
+<<cameraIndex 3>>
+
+<<if visited("KidsOutside")>>
+Kids: Whattya waiting for?
+Kids: Go get something inside!
+Kids: Get us a lollipop too wouldja?
+<<else>>
+Kids: Hey kiddo
+Kids: Ya gonna go in?
+Kids: Good luck,
+Kids: Billy and I here tried snagging some candy
+Kids: Cuz that old fart's blind as a bat
+Kids: Which is funny,
+Kids: considering he's a dog 
+Kids: teehehe!
+Kids: Billy got too loud tho..
+<<endif>>
+
+<<cameraIndex 0>>
+
+===
+
+
+
+title: BrotherStart
+tags:
+---
+<<cameraIndex 2>>
+Brother: Ok listen.
+Brother: I'm gonna go fill up.
+Brother: Can you get the blue chips for me.
+Brother: Come back here when you're done.
+
+<<cameraIndex 0>>
+===
+
+
+
+
+
+title: BrotherLeave
+tags:
+---
+<<cameraIndex 2>>
+
+<<if $hasSnacks == true>>
+Brother: Hey, you got the snacks.
+Brother: Nice
+Brother: Alright, let's go
+<<changeScene Car>>
+<<else>>
+    <<jump BrotherAgain>>
+<<endif>>
+
+<<cameraIndex 0>>
+===
+
+
+
+
+
+
+title: BrotherAgain
+tags:
+---
+<<cameraIndex 2>>
+
+Brother: Dude, what're you doing
+Brother: Go get the snacks already.
+
+
+<<cameraIndex 0>>
+===
+
+
+
+title: BrotherBorder
+tags:
+---
+<<cameraIndex 2>>
+
+Brother: Do you want to get run over?
+
+
+<<cameraIndex 0>>
+===
+
+
+

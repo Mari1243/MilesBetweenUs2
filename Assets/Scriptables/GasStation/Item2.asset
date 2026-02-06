@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ca27fd2861bf640ad653064e610ac7, type: 3}
+  m_Name: Item2
+  m_EditorClassIdentifier: 
+  img: {fileID: 27252592, guid: 83cf4260fb292415e86a50c19f02486b, type: 3}
+  itemName: A Stamp
+  loreItem: 1
+  node: Stamp1
+  diagPos: {x: -0.126, y: 7.327, z: -5.666}

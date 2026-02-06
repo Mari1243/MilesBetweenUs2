@@ -1,0 +1,7 @@
+﻿title: GameData_Variables
+tags:
+---
+<<declare $hasSnacks = false>>
+<<declare $hasPostcard=false>>
+<<declare $giveReward = false>>
+===

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3d32eafa7ec564843867b1c45e7f35fb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 174576
+  packageName: Customizable skybox
+  packageVersion: 1.0
+  assetPath: Assets/Customizable Skybox/Stylized Sky/Materials/Day6.mat
+  uploadId: 378796

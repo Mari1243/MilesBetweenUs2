@@ -1,0 +1,197 @@
+# Exported from Nomad Sculpt
+
+newmtl Shirt_1
+ map_Kd Shirt_1_color.png
+ map_roughness Shirt_1_roughness.png
+ map_Pr Shirt_1_roughness.png
+ map_metallic Shirt_1_metalness.png
+ map_Pm Shirt_1_metalness.png
+ map_tangentSpaceNormal Shirt_1_normal.png
+ map_bump Shirt_1_normal.png
+ norm Shirt_1_normal.png
+ bump Shirt_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Pants_1
+ map_Kd Pants_1_color.png
+ map_roughness Pants_1_roughness.png
+ map_Pr Pants_1_roughness.png
+ map_metallic Pants_1_metalness.png
+ map_Pm Pants_1_metalness.png
+ map_tangentSpaceNormal Pants_1_normal.png
+ map_bump Pants_1_normal.png
+ norm Pants_1_normal.png
+ bump Pants_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Feet_1
+ map_Kd Feet_1_color.png
+ map_roughness Feet_1_roughness.png
+ map_Pr Feet_1_roughness.png
+ map_metallic Feet_1_metalness.png
+ map_Pm Feet_1_metalness.png
+ map_tangentSpaceNormal Feet_1_normal.png
+ map_bump Feet_1_normal.png
+ norm Feet_1_normal.png
+ bump Feet_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Arms_1
+ map_Kd Arms_1_color.png
+ map_roughness Arms_1_roughness.png
+ map_Pr Arms_1_roughness.png
+ map_metallic Arms_1_metalness.png
+ map_Pm Arms_1_metalness.png
+ map_tangentSpaceNormal Arms_1_normal.png
+ map_bump Arms_1_normal.png
+ norm Arms_1_normal.png
+ bump Arms_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Ears_1
+ map_Kd Ears_1_color.png
+ map_roughness Ears_1_roughness.png
+ map_Pr Ears_1_roughness.png
+ map_metallic Ears_1_metalness.png
+ map_Pm Ears_1_metalness.png
+ map_tangentSpaceNormal Ears_1_normal.png
+ map_bump Ears_1_normal.png
+ norm Ears_1_normal.png
+ bump Ears_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Nose_1
+ map_Kd Nose_1_color.png
+ map_roughness Nose_1_roughness.png
+ map_Pr Nose_1_roughness.png
+ map_metallic Nose_1_metalness.png
+ map_Pm Nose_1_metalness.png
+ map_tangentSpaceNormal Nose_1_normal.png
+ map_bump Nose_1_normal.png
+ norm Nose_1_normal.png
+ bump Nose_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Eyes_1
+ map_Kd Eyes_1_color.png
+ map_roughness Eyes_1_roughness.png
+ map_Pr Eyes_1_roughness.png
+ map_metallic Eyes_1_metalness.png
+ map_Pm Eyes_1_metalness.png
+ map_tangentSpaceNormal Eyes_1_normal.png
+ map_bump Eyes_1_normal.png
+ norm Eyes_1_normal.png
+ bump Eyes_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Brows_1
+ map_Kd Brows_1_color.png
+ map_roughness Brows_1_roughness.png
+ map_Pr Brows_1_roughness.png
+ map_metallic Brows_1_metalness.png
+ map_Pm Brows_1_metalness.png
+ map_tangentSpaceNormal Brows_1_normal.png
+ map_bump Brows_1_normal.png
+ norm Brows_1_normal.png
+ bump Brows_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Straps_1
+ map_Kd Straps_1_color.png
+ map_roughness Straps_1_roughness.png
+ map_Pr Straps_1_roughness.png
+ map_metallic Straps_1_metalness.png
+ map_Pm Straps_1_metalness.png
+ map_tangentSpaceNormal Straps_1_normal.png
+ map_bump Straps_1_normal.png
+ norm Straps_1_normal.png
+ bump Straps_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Lid_1
+ map_Kd Lid_1_color.png
+ map_roughness Lid_1_roughness.png
+ map_Pr Lid_1_roughness.png
+ map_metallic Lid_1_metalness.png
+ map_Pm Lid_1_metalness.png
+ map_tangentSpaceNormal Lid_1_normal.png
+ map_bump Lid_1_normal.png
+ norm Lid_1_normal.png
+ bump Lid_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Pack_1
+ map_Kd Pack_1_color.png
+ map_roughness Pack_1_roughness.png
+ map_Pr Pack_1_roughness.png
+ map_metallic Pack_1_metalness.png
+ map_Pm Pack_1_metalness.png
+ map_tangentSpaceNormal Pack_1_normal.png
+ map_bump Pack_1_normal.png
+ norm Pack_1_normal.png
+ bump Pack_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Zipper_1
+ map_Kd Zipper_1_color.png
+ map_roughness Zipper_1_roughness.png
+ map_Pr Zipper_1_roughness.png
+ map_metallic Zipper_1_metalness.png
+ map_Pm Zipper_1_metalness.png
+ map_tangentSpaceNormal Zipper_1_normal.png
+ map_bump Zipper_1_normal.png
+ norm Zipper_1_normal.png
+ bump Zipper_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Tail_1
+ map_Kd Tail_1_color.png
+ map_roughness Tail_1_roughness.png
+ map_Pr Tail_1_roughness.png
+ map_metallic Tail_1_metalness.png
+ map_Pm Tail_1_metalness.png
+ map_tangentSpaceNormal Tail_1_normal.png
+ map_bump Tail_1_normal.png
+ norm Tail_1_normal.png
+ bump Tail_1_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl LilHead_1
+ map_Kd LilHead_1_color_1.png
+ map_roughness LilHead_1_roughness_1.png
+ map_Pr LilHead_1_roughness_1.png
+ map_metallic LilHead_1_metalness_1.png
+ map_Pm LilHead_1_metalness_1.png
+ map_tangentSpaceNormal LilHead_1_normal_1.png
+ map_bump LilHead_1_normal_1.png
+ norm LilHead_1_normal_1.png
+ bump LilHead_1_normal_1.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000

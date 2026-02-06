@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3e6c2d4be7aa1c44eb381c20ab841f77
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 174576
+  packageName: Customizable skybox
+  packageVersion: 1.0
+  assetPath: Assets/Customizable Skybox/Stylized Sky/Materials/Night1.mat
+  uploadId: 378796

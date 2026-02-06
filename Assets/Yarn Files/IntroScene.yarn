@@ -1,0 +1,32 @@
+﻿title: IntroScene
+---
+<<cameraIndex 1>>
+Brother: Ok we're about to leave
+Brother: Go get the map, Mom's GPS is broken.
+<<cameraIndex 0>>
+===
+
+title: MapRecieved
+---
+
+<<cameraIndex 1>>
+Brother: You got it, nice.
+Brother: Hold onto it for me,
+Brother: You're in charge of navigating.
+Brother: lol
+Brother: Get in the car.
+<<cameraIndex 0>>
+
+
+
+===
+
+
+title: noJournal
+---
+<<cameraIndex 1>>
+Brother: Uhhhm,
+Brother: Where's the map?
+<<cameraIndex 0>>
+
+===

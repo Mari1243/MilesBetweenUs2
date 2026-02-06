@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 978004aab862ebc46a28fb3b1c84d6cf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 174576
+  packageName: Customizable skybox
+  packageVersion: 1.0
+  assetPath: Assets/Customizable Skybox/Stylized Sky/Materials/Morning1.mat
+  uploadId: 378796

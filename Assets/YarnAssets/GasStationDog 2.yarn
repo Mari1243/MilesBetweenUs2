@@ -1,0 +1,16 @@
+﻿title: GasStationDog
+---
+<<declare $hasStolen = false>>
+Dog: Welcome to the gasMart. grr.
+<<set $hasStolen = true>>
+===
+
+title: DangVarmit
+position: -319,-174
+---
+<<if $hasStolen ==true>>
+    Dog: You dang varmit!!! GRRRRRR...
+<<else>>
+    <<jump GasStationDog>>
+<<endif>>
+===

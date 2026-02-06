@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 67d095a9ff68e4137bc21f09371f70f4
+  - enabled: 1
+    path: Assets/Scenes/CutsceneIntro.unity
+    guid: 35f91799ed9ba4a45908c4946a267b13
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: 2fc93d4c40a4d8a4bbed56e06239f30b
+  - enabled: 0
+    path: Assets/Scenes/GS_CursorV0.unity
+    guid: 78eb1d4d07c884ce191a7628fa05788a
+  - enabled: 0
+    path: Assets/Scenes/OLD SCENES/StateMachineWork.unity
+    guid: 16a2cba65da9bae4580547408f0e57d9
+  - enabled: 1
+    path: Assets/Scenes/GasStation.unity
+    guid: 5d8e8123fe36334409cddce14a774654
+  - enabled: 1
+    path: Assets/Scenes/Car.unity
+    guid: e815dbf87782b5943a7675e4b118f4b8
+  - enabled: 1
+    path: Assets/Scenes/EndDemoScene.unity
+    guid: b188488694806426fb45b0f6efc5794b
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: e55da78f71798da4081d875114c4ceea, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_UseUCBPForAssetBundles: 0

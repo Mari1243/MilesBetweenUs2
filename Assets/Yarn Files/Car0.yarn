@@ -1,0 +1,121 @@
+﻿title: Car0
+---
+<<declare $asked=false>>
+
+<<if $asked==true>>
+	<<jump Ask2>>
+<<else>>
+	<<jump Ask1>>
+<<endif>>
+
+===
+
+title: Car1
+---
+Brother: Oh hey,
+Brother: It's Dino Land.
+Brother: You wanna go?
+-> Ya!
+	Brother: Awesome,
+	Brother: Well. Next Stop's Dino Land.
+	<<changeScene EndDemoScene>>
+-> Nah, not yet.
+	Ok, make up your mind soon.
+===
+
+title: Stamp1
+---
+Brother: Uh,
+Brother: Cool stamp?
+Brother: Where did u even get that
+===
+
+title: Hungry
+---
+<<set $asked=true>>
+Brother: Alright
+Brother: Nearest one's a mile
+<<changeScene GasStation>>
+===
+
+title: NotHungry
+---
+<<set $asked=true>>
+Brother: Ok.
+Brother: Let me know.
+===
+
+
+title: Ask1
+---
+Brother: Yo,
+Brother: Let me know if you're hungry.
+Brother: We can hit the gas station
+->I'm hungry
+	<<jump Hungry>>
+->I'm good
+	<<jump NotHungry>>
+===
+
+
+title: Ask2
+---
+Brother: What,
+Brother: You hungry now?
+->I'm hungry
+	<<jump Hungry>>
+->I'm good
+	Brother: Dude, make up your mind.
+	<<set $asked=true>>
+===
+
+
+title: knife
+---
+Brother: Huh.. how’d you afford this? 
+Brother: Nevermind, it’s pretty cool. 
+Brother: Reminds me of going on hunting trips with dad.
+
+===
+
+title: cigarettes
+---
+Brother: ... 
+Brother: Did you find these off the floor or something? 
+Brother: Yeah, I’ll take those.
+===
+
+title: CD
+---
+Brother: WOAH its Blood Pawz??? 
+Brother: And their newest album?! 
+Brother: That’s so sick, thanks dude.
+
+===
+
+title: junk
+---
+Brother: ...
+Brother: What is that.
+Brother: Did you forget to throw that out or something?
+Brother: You better not eat it.
+===
+
+
+title: leaf
+---
+Brother: Oh, cool.
+Brother: You can see the Chlorophyll starting to break down.
+Brother: Fall's coming soon.
+===
+title: Map
+---
+Brother: The map?
+Brother: Yup, that's the route we're taking to my college.
+Brother: It's gonna be fun,
+Brother: we'll be crossing the whole country
+Brother: So get comfy.
+
+
+
+===
