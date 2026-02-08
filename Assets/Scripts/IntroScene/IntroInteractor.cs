@@ -192,8 +192,13 @@ public class IntroInteractor : MonoBehaviour
                 if (canInteract)
                 {
                     pickedUpObj = highlight.gameObject;
-
-                    if (holdProgressRoutine == null)
+                    Interactable.Interact(); 
+                    Destroy(instantiatedUI);
+                }
+            }
+            else if(pickedUpObj.tag == "canSteal")
+            {
+                if (holdProgressRoutine == null)
                     {
                         holdDirection = +1;
                         holdProgressRoutine = StartCoroutine(HoldProgressLoop());
@@ -202,12 +207,7 @@ public class IntroInteractor : MonoBehaviour
                     {
                         holdDirection = +1;
                     }
-                }
-            }
-            else if (canInteract)
-            {
-                Interactable.Interact();
-
+                    
             }
         }
 

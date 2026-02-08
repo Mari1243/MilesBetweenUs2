@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using System.Collections;
 using DG.Tweening;
+using System.Runtime.InteropServices;
 
 public class Interactor : MonoBehaviour
 {
@@ -225,17 +226,11 @@ public class Interactor : MonoBehaviour
             }    
             else if (pickedUpObj.tag == "canPickUp" || pickedUpObj.tag == "coin")
             {
-                if (canInteract)
+               if (canInteract)
                 {
-                    if (holdProgressRoutine == null)
-                    {
-                        holdDirection = +1;
-                        holdProgressRoutine = StartCoroutine(HoldProgressLoop(fillSpeedPickup));
-                    }
-                    else
-                    {
-                        holdDirection = +1;
-                    }
+                    pickedUpObj = highlight.gameObject;
+                    Interactable.Interact(); 
+                    Destroy(instantiatedUI);
                 }
             }
             else if (canInteract)
@@ -330,6 +325,7 @@ public class Interactor : MonoBehaviour
 
             if (holdProgress <= 0f && holdDirection == -1)
             {
+                
                 StopHoldRoutine();
                 OnHoldCanceled?.Invoke();
 
@@ -337,6 +333,7 @@ public class Interactor : MonoBehaviour
                 {
                     if (StealingManager.Instance != null)
                     {
+                        print("hold progress is less than 0, activating Stop stealing function");
                         StealingManager.Instance.StopStealin();
                     }
                     hasStartedStealing = false;
@@ -352,8 +349,10 @@ public class Interactor : MonoBehaviour
 
     private void StopHoldRoutine()
     {
+        print("StopHoldRoutine called");
         if (holdProgressRoutine != null)
         {
+            print("stopping hold progress routine");
             StopCoroutine(holdProgressRoutine);
             holdProgressRoutine = null;
         }
@@ -361,7 +360,7 @@ public class Interactor : MonoBehaviour
         isInWarningPeriod = false;
         OnHoldCompleted?.Invoke();
         
-        if (pickedUpObj != null && pickedUpObj.tag == "canSteal")
+        if (pickedUpObj != null)
         {  
             if (StealingManager.Instance != null)
             {

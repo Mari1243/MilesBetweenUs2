@@ -3,6 +3,7 @@ using System;
 using Unity.Cinemachine;
 using System.Collections;
 using DG.Tweening;
+using System.Runtime.InteropServices;
 
 
 public class StealingManager : MonoBehaviour
@@ -56,7 +57,6 @@ public class StealingManager : MonoBehaviour
     }
 
     
-
     public void StartStealin()
     {
         if (stealingActive) return;
@@ -73,6 +73,7 @@ public class StealingManager : MonoBehaviour
 
     public void StopStealin() //THIS IS WHAT HAPPENS WHEN STEALING IS OVER
     {
+        print("calling stop stealing void");
         stealingActive = false;
         // Stop immediately when disabled.
         if (cycleRoutine != null)
@@ -84,7 +85,7 @@ public class StealingManager : MonoBehaviour
 
     public IEnumerator CamChange()
     {
-        //not called
+        //not called anymore
         yield return new WaitForSeconds(.5f);
         regularCamera();
     }
