@@ -77,13 +77,11 @@ public class Interactor : MonoBehaviour
     private void OnEnable()
     {
         StealingManager.OnStateChanged += CheckState;
-        InputManager.openInventory += OpenInventory;
     }
 
     void OnDisable()
     {
         StealingManager.OnStateChanged -= CheckState;
-        InputManager.openInventory -= OpenInventory;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -402,19 +400,5 @@ public class Interactor : MonoBehaviour
         }
     }
 
-    public void OpenInventory()
-    {
-        if (inventoryActive == false)
-        {
-            inventoryHUD.transform.DOScale(new Vector3(1, 1, 1), .5f).SetEase(Ease.OutBounce);
-            inventoryHUD.transform.DOLocalMoveY(-195.6f, .5f).SetEase(Ease.OutBounce);
-            inventoryActive = true;
-        }
-        else if (inventoryActive == true)
-        {
-            inventoryHUD.transform.DOLocalMoveY(-307.1f, .4f).SetEase(Ease.InOutQuart);
-            inventoryHUD.transform.DOScale(new Vector3(0, 0, 0), .5f).SetEase(Ease.InOutQuart);
-            inventoryActive = false;
-        }
-    }
+
 }
