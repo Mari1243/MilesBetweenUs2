@@ -59,14 +59,14 @@ public class interactable : MonoBehaviour, IInteractable
                 {
                     GameObject SM = GameObject.Find("CarSceneManager");
                     CarSceneManager sceneManager = SM.GetComponent<CarSceneManager>();
-                    if (sceneManager.isHoldingItem)
-                    {
-                        onTalkCar?.Invoke(); //called in CarSceneManager
-                    }
-                    else
-                    {
+                    //if (sceneManager.isHoldingItem)
+                    //{
+                    //    onTalkCar?.Invoke(); //called in CarSceneManager
+                    //}
+                    //else
+                    //{
                         onTalk?.Invoke(item); //called in DialogueManager
-                    }
+                    
                 }
 
                 break;

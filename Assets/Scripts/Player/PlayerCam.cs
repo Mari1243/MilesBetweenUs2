@@ -48,14 +48,12 @@ public class PlayerCam : MonoBehaviour
     {
         DialogueManager.DialogStart += TalkingCamera;
         DialogueManager.DialogOver += DefaultCamera;
-        CarSceneManager.HoldingTalkItem += stuff; //this may change, this is how you basically "hold" an item in your hand
     }
 
     private void OnDisable()
     {
         DialogueManager.DialogStart -= TalkingCamera;
         DialogueManager.DialogOver -= DefaultCamera;
-        CarSceneManager.HoldingTalkItem -= stuff;
     }
 
     void Start()
@@ -134,11 +132,6 @@ public class PlayerCam : MonoBehaviour
         }
     }
 
-
-    private void stuff(bool bol)
-    {
-        hasdialogueItem = bol;
-    }
 
     public void FPInteract(InputAction.CallbackContext context)
     {
