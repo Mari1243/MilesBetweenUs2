@@ -18,14 +18,7 @@ public class CarSceneManager : MonoBehaviour
     [Header("Inventory")]
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
     public static event System.Action<Sprite> assignsprite;
-     public static event Action<bool> HoldingTalkItem;
-
-    public GameObject tryTalkUI;
-
-    public GameObject currentHoldItem;
-    public Item holdItemData;
-    public bool isHoldingItem;
-    public Image holdingImage;
+    public static event Action<bool> HoldingTalkItem;
 
     public GameObject tabholder;
 
@@ -39,12 +32,10 @@ public class CarSceneManager : MonoBehaviour
     public GameObject DraggableItemPrefab;
     public GameObject spawningRange;
 
-    public GameObject CarItemPrefab;
 
 
     [Header("Player Input")]
     public PlayerInput playerInp;
-    private InputActionAsset inputActions;
 
     [Header("Camera")]
     public GameObject playercam;
@@ -55,34 +46,26 @@ public class CarSceneManager : MonoBehaviour
     private void Awake()
     {
 
-        inputActions = playerInp.actions;
-        inputActions["Drop"].performed += DroppingItem;
         
     }
     private void OnEnable()
     {
         interactable.showJournal += JournalScene;
-        interactable.onHold += HoldingItem;
-        interactable.onTalkCar += ActivateBroDiag;
+        //interactable.onTalkCar += ActivateBroDiag;
         ToggleJournal.hideJournal += ExitJournal;
-        PlayerCam.changeInteractPopup += test;
     }
     private void OnDisable()
     {
         interactable.showJournal -= JournalScene;
-        interactable.onHold -= HoldingItem;
-        interactable.onTalkCar-= ActivateBroDiag;  
+        //interactable.onTalkCar-= ActivateBroDiag;  
         ToggleJournal.hideJournal -= ExitJournal;
-        PlayerCam.changeInteractPopup -= test;
     }
 
     private void Start()
     {
         brother.Play("Armature_BigBro_Drive");
-        holdingImage.enabled = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        //InventoryManager.instance.inventory.Remove(InventoryManager.instance.inventory[1]);
         currentInventory = InventoryManager.instance.inventory;
         
         if (currentInventory.Count == 0)
@@ -125,51 +108,14 @@ public class CarSceneManager : MonoBehaviour
         }
 
         Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);  
-        MakePhysicalItems();
     }
 
-    private void MakePhysicalItems()
-    {
-        foreach (InventoryItem items in currentInventory)
-        {
-            print("blegh inventorything");
-            GameObject spawnedObject = Instantiate(CarItemPrefab, GetRandomSpawnPosition(), Quaternion.identity);
-            //making it fall
-            spawnedObject.GetComponent<Rigidbody>().useGravity=true;
-            
-            //adding collidersw
-            BoxCollider triggerCollider = spawnedObject.AddComponent<BoxCollider>();
-            triggerCollider.isTrigger = true;
-            BoxCollider solidCollider = spawnedObject.AddComponent<BoxCollider>();
-            solidCollider.isTrigger = false;
-            //adding scripts
-            spawnedObject.tag = "InventoryItem";
-            //should be assigning the itemdata
-            interactable Interactable = spawnedObject.GetComponent<interactable>();
-            if (Interactable == null)
-            {
-                Interactable = spawnedObject.AddComponent<interactable>();
-            }
-            Interactable.item = items.itemData;
-        }
-    }
 
-    private Vector3 GetRandomSpawnPosition()
-    {
-        Bounds parentBounds = spawningRange.GetComponent<Renderer>().bounds;
-        return new Vector3
-        (
-        UnityEngine.Random.Range(parentBounds.min.x, parentBounds.max.x),
-        UnityEngine.Random.Range(parentBounds.min.y, parentBounds.max.y),
-        UnityEngine.Random.Range(parentBounds.min.z, parentBounds.max.z)
-        );
-    }
 
     public void JournalScene() //SHOWS JOURNAL 
     {
         print("journal scene in carscene manager activated");
         crosshair.enabled = false;
-        DropItem(currentHoldItem);
         //Turns on the journal
         Debug.Log("Showing Journal");
         journalItem.SetActive(false);
@@ -205,57 +151,13 @@ public class CarSceneManager : MonoBehaviour
         }
 
     }
-    public void HoldingItem(GameObject holdItem, Item itemData)
-    {
-        //unity event that talks to interactor, interactor checks if youre hovering over "can talk" - trigger UIManager
-        HoldingTalkItem?.Invoke(true);
-        DropItem(currentHoldItem);
-        isHoldingItem = true;
 
-        holdingImage.enabled = true;
+    //public void ActivateBroDiag()
+    //{
+    //    holdItemData.diagPos = new Vector3(-0.126f, 7.327f, -5.666f);
+    //    DialogueManager.instance.TalkInteraction(holdItemData);
 
-        currentHoldItem = holdItem;
-        holdItemData = itemData;
+    //}
 
-        holdItem.SetActive(false);
-        holdingImage.sprite = itemData.img;
-    }
-
-    public void DroppingItem(InputAction.CallbackContext context)
-    {
-        DropItem(currentHoldItem);
-    }
-    public void DropItem(GameObject holdItem)
-    {
-        if (isHoldingItem)
-        {
-            HoldingTalkItem?.Invoke(false);
-            currentHoldItem = null;
-            isHoldingItem = false;
-            holdingImage.enabled = false;
-
-            holdItem.SetActive(true);
-            
-        }
-    }
-    public void ActivateBroDiag()
-    {
-        holdItemData.diagPos = new Vector3(-0.126f, 7.327f, -5.666f);
-        DialogueManager.instance.TalkInteraction(holdItemData);
-
-    }
-
-    public void test(bool bol)
-    {
-        if(bol == true)
-        {
-            tryTalkUI.SetActive(true);
-        }
-        else
-        {
-             tryTalkUI.SetActive(false);
-        }
-       
-    }
 
 }
