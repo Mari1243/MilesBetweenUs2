@@ -12100,7 +12100,7 @@ MonoBehaviour:
   - {fileID: 809544949, guid: 09d49d2da07964cf6a80f06df844cfe3, type: 3}
   LoreitemPopup: {fileID: 689660166}
   hintUI: {fileID: 1502452648}
-  InventoryHUD: {fileID: 0}
+  InventoryHUD: {fileID: 204448845}
   ItemHUD: {fileID: 592362764}
   itemText: {fileID: 466877629}
   RewardText: {fileID: 554758293}
