@@ -95,6 +95,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "checkJournal",
+                    "type": "Button",
+                    "id": "6ce6b3c6-8ff5-4d69-b066-b2507541c96a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -480,6 +489,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72737c04-dc78-44bd-9fda-c44fe4ec8704",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "checkJournal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
