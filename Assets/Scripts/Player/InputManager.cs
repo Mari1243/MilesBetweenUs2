@@ -25,6 +25,7 @@ public class InputManager : MonoBehaviour
     public static event Action Pause;
     public static event System.Action<bool> onRotateChanged;
     public static event System.Action<bool> onScaleChanged;
+    public static event System.Action OpenJournal;
 
     public static event Action drop;
     public static event Action openInventory;
@@ -57,6 +58,7 @@ public class InputManager : MonoBehaviour
         {
             inputActions.Enable();
             inputActions["Exit"].performed += PauseGame;
+            inputActions["checkJournal"].performed += checkJournal;
             inputActions["Rotate"].started += OnRotateStarted;
             inputActions["Rotate"].canceled += OnRotateCanceled;
             inputActions["ToggleInstructions"].performed += ToggleMenu;
@@ -94,6 +96,7 @@ public class InputManager : MonoBehaviour
         {
             inputActions["Exit"].performed -= PauseGame;
             inputActions["Rotate"].started -= OnRotateStarted;
+            inputActions["checkJournal"].performed -= checkJournal;
             inputActions["Rotate"].canceled -= OnRotateCanceled;
             inputActions["DeleteSave"].performed -= onClearSave;
             inputActions["Scale"].started -= OnScaleStarted;
@@ -119,6 +122,10 @@ public class InputManager : MonoBehaviour
         openInventory?.Invoke();
     }
 
+    private void checkJournal(InputAction.CallbackContext context)
+    {
+        OpenJournal?.Invoke();
+    }
 
     //for tutorial!!
     private void ToggleMenu(InputAction.CallbackContext context)

@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [Tooltip("contains the dog background and dog image as children in that order")]
     private GameObject stealingUI;
     public GameObject StealingCanvas;
+    public Canvas journalCanvas;
     public TextMeshProUGUI statelabel;
     [Tooltip("Different dog sprites in order of safe to danger")]
     public List<Sprite> textures;
@@ -25,19 +26,20 @@ public class UIManager : MonoBehaviour
 
 
     private Image Hintimage;
-    public GameObject loreitemhint;
+    public GameObject LoreitemPopup;
 
     public GameObject hintUI;
     public static Sprite[] hintsprites;
 
 
     private bool hintneeded = false;
-
+    private bool journalopen = false;
 
     [Header("Public References")]
     public GameObject InventoryHUD, ItemHUD;
-    public TextMeshProUGUI itemText, RewardText, moneyText;
+    public TextMeshProUGUI itemText, RewardText, moneyText, loreText;
     public Image itemImg;
+    public Image loreImg;
     public AudioClip pickupsound;
 
     //for pause
@@ -47,11 +49,13 @@ public class UIManager : MonoBehaviour
     //private refs to dog sprites
     private Texture2D CurrentDog;
 
+   
     private void OnEnable()
     {
         Interactor.OnHoldProgress += UpdateHoldUI;
         Interactor.OnHoldCompleted += HideHoldUI;
         Interactor.OnHoldCanceled += HideHoldUI;
+        InputManager.OpenJournal += inventory;
 
         StealingManager.OnStateChanged += UpdateDangerUI;
         StealingManager.OnStealingActionChanged += UpdateStealingUI;
@@ -61,7 +65,6 @@ public class UIManager : MonoBehaviour
         interactable.coinPickedUp += collectCoin;
         interactable.coinPickedUp += ShowItemHUD;
         Interactor.StealWarning += dangerState;
-
 
         //IntroSceneManager.OnHintNeeded += hint;
         //Interactor.HintNeeded += hint;
@@ -74,6 +77,7 @@ public class UIManager : MonoBehaviour
         Interactor.OnHoldCompleted -= HideHoldUI;
         Interactor.OnHoldCanceled -= HideHoldUI;
         Interactor.StealWarning -= dangerState;
+        InputManager.OpenJournal -= inventory;
 
         StealingManager.OnStateChanged -= UpdateDangerUI;
         StealingManager.OnStealingActionChanged -= UpdateStealingUI;
@@ -83,10 +87,33 @@ public class UIManager : MonoBehaviour
         interactable.coinPickedUp -= collectCoin;
         interactable.coinPickedUp -= ShowItemHUD;
         
-
         //IntroSceneManager.OnHintNeeded -= hint;
         //Interactor.HintNeeded -= hint;
         InputManager.Pause -= pausegame;
+    }
+
+    private void inventory()
+    {
+        if(journalCanvas != null)
+        {
+            if(!journalopen)
+            {
+                journalopen = true;
+                Time.timeScale = 0f;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                print("open inventory");
+                journalCanvas.enabled = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                Time.timeScale = 1f;
+                journalCanvas.enabled = false;
+                journalopen = false;
+            }
+        }
     }
 
     private void dangerState(bool status)
@@ -123,6 +150,12 @@ public class UIManager : MonoBehaviour
         SetSprites();
        
         hintUI.SetActive(false);
+
+        if (journalCanvas != null){
+            journalCanvas.enabled = false;
+        }
+
+        LoreitemPopup.SetActive(false);
     }
 
     private void SetSprites()
@@ -146,15 +179,23 @@ public class UIManager : MonoBehaviour
         Debug.Log("Showing Item HUD");
         //make noise
         SoundManager.Instance.PlayAudio(pickupsound);
-        
-        StartCoroutine(AnimateItemHUD());
-        itemImg.sprite = itemData.img;
-        itemImg.preserveAspect = true;
-        itemText.text = itemData.itemName + "!";
+        //setting the image and name
+       
         if(itemData.loreItem == true)
         {
+            loreImg.sprite = itemData.img;
+            loreImg.preserveAspect = true;
+            loreText.text = itemData.itemName + "!";
             StartCoroutine(animatejournalHud());
         }
+        else
+        {
+            itemImg.sprite = itemData.img;
+            itemImg.preserveAspect = true;
+            itemText.text = itemData.itemName + "!";
+            StartCoroutine(AnimateItemHUD());
+        }
+       
     }
 
     private IEnumerator AnimateItemHUD()
@@ -166,16 +207,18 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator animatejournalHud()
     {
+        LoreitemPopup.SetActive(true);
         print("animating journal lore pickip indicator");
         yield return new WaitForSeconds(2.6f);
-        loreitemhint.transform.DOLocalMoveX(198.3f, 1f);
-        yield return new WaitForSeconds(2f);
-        loreitemhint.transform.DOLocalMoveX(542f, 1f);
+        LoreitemPopup.SetActive(false);
+        //LoreitemPopup.transform.DOLocalMoveX(198.3f, 1f);
+        //yield return new WaitForSeconds(2f);
+        //LoreitemPopup.transform.DOLocalMoveX(542f, 1f);
+
     }
 
     public void rewardText(Item itemdata)
     {
-        
         if (itemdata.loreItem)
         {
             InventoryManager.instance.loreItemAmt++;
@@ -184,7 +227,6 @@ public class UIManager : MonoBehaviour
         }
         
     }
-
 
     private void UpdateStealingUI(bool stealcheck)
     {
