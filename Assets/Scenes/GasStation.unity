@@ -2386,8 +2386,10 @@ GameObject:
   - component: {fileID: 204448846}
   - component: {fileID: 204448848}
   - component: {fileID: 204448847}
+  - component: {fileID: 204448850}
+  - component: {fileID: 204448849}
   m_Layer: 5
-  m_Name: page
+  m_Name: collection page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2450,6 +2452,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204448845}
   m_CullTransparentMesh: 1
+--- !u!114 &204448849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204448845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007895e1c9a081543b31dcdc38b0a86d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotPrefab: {fileID: 50580384134124938, guid: 812c53189d1133b409e9c6b7b4bcd406, type: 3}
+  numberofSlots: 25
+  inventorySlots: []
+--- !u!114 &204448850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204448845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &206728429 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2664669195635501840, guid: 64722b5766cf5f547ab9376719a6d502, type: 3}
@@ -24936,7 +24977,7 @@ GameObject:
   - component: {fileID: 1563416700}
   - component: {fileID: 1563416699}
   m_Layer: 5
-  m_Name: page (1)
+  m_Name: brothers stuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26844,7 +26885,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759981637}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
