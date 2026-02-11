@@ -12,7 +12,7 @@ using Unity.VisualScripting;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
-    private DialogueRunner dialogueRunner;
+    public DialogueRunner dialogueRunner;
     public static UnityAction DialogStart, DialogOver;
 
     public bool dialogReady, dialogStarted;
@@ -42,13 +42,10 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-        dialogueRunner = GetComponent<DialogueRunner>();
 
-    }
     public void LoadDialog(string node)
     {
+        Debug.Log("starting node is "+ node);
         dialogueRunner.startNode = node;
         dialogReady = true;
     }
