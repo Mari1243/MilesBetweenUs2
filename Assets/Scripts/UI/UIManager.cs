@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     private GameObject stealingUI;
     public GameObject StealingCanvas;
     public Canvas journalCanvas;
+    public GameObject journal;
     public TextMeshProUGUI statelabel;
     [Tooltip("Different dog sprites in order of safe to danger")]
     public List<Sprite> textures;
@@ -104,16 +105,29 @@ public class UIManager : MonoBehaviour
                 Cursor.visible = true;
                 print("open inventory");
                 journalCanvas.enabled = true;
+                StartCoroutine(journalIN());
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 Time.timeScale = 1f;
-                journalCanvas.enabled = false;
+                StartCoroutine(journalOUT());
                 journalopen = false;
             }
         }
+    }
+
+    private IEnumerator journalIN()
+    {
+        yield return new WaitForSecondsRealtime(.3f);
+        journal.transform.DOLocalMoveY(-77, 1f).SetUpdate(true).SetEase(Ease.OutCirc);
+
+    }
+    private IEnumerator journalOUT()
+    {
+        yield return new WaitForSecondsRealtime(.3f);
+        journal.transform.DOLocalMoveY(-2000, .7f).SetUpdate(true).SetEase(Ease.InCirc);
     }
 
     private void dangerState(bool status)
