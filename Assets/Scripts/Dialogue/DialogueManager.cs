@@ -12,7 +12,7 @@ using Unity.VisualScripting;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
-    public DialogueRunner dialogueRunner;
+    private DialogueRunner dialogueRunner;
     public static UnityAction DialogStart, DialogOver;
 
     public bool dialogReady, dialogStarted;
@@ -24,7 +24,10 @@ public class DialogueManager : MonoBehaviour
             instance = this;
 
     }
-
+    private void Start()
+    {
+        dialogueRunner=GetComponent<DialogueRunner>();
+    }
     private void OnEnable()
     {
         interactable.onTalk += TalkInteraction;
