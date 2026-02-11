@@ -1,0 +1,81 @@
+# Exported from Nomad Sculpt
+
+newmtl Glasses
+ map_Kd Glasses_color.png
+ map_roughness Glasses_roughness.png
+ map_Pr Glasses_roughness.png
+ map_metallic Glasses_metalness.png
+ map_Pm Glasses_metalness.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Scarf
+ map_Kd Scarf_color.png
+ map_roughness Scarf_roughness.png
+ map_Pr Scarf_roughness.png
+ map_metallic Scarf_metalness.png
+ map_Pm Scarf_metalness.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Earrings
+ map_Kd Earrings_color.png
+ map_roughness Earrings_roughness.png
+ map_Pr Earrings_roughness.png
+ map_metallic Earrings_metalness.png
+ map_Pm Earrings_metalness.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Head
+ map_Kd Head_color.png
+ map_roughness Head_roughness.png
+ map_Pr Head_roughness.png
+ map_metallic Head_metalness.png
+ map_Pm Head_metalness.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Eyes
+ map_Kd Eyes_color.png
+ map_roughness Eyes_roughness.png
+ map_Pr Eyes_roughness.png
+ map_metallic Eyes_metalness.png
+ map_Pm Eyes_metalness.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Tail
+ map_Kd Tail_color.png
+ map_roughness Tail_roughness.png
+ map_Pr Tail_roughness.png
+ map_metallic Tail_metalness.png
+ map_Pm Tail_metalness.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Bod
+ map_Kd Bod_color.png
+ map_roughness Bod_roughness.png
+ map_Pr Bod_roughness.png
+ map_metallic Bod_metalness.png
+ map_Pm Bod_metalness.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Bod_ext
+ map_Kd Bod_ext_color.png
+ map_roughness Bod_ext_roughness.png
+ map_Pr Bod_ext_roughness.png
+ map_metallic Bod_ext_metalness.png
+ map_Pm Bod_ext_metalness.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
