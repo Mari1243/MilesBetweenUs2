@@ -27,14 +27,12 @@ public class UIManager : MonoBehaviour
 
 
 
-
-    private Image Hintimage;
+    public GameObject NotifPopup;
     public GameObject LoreitemPopup;
     private GameObject journalnotification;
     public static Sprite[] hintsprites;
 
 
-    private bool hintneeded = false;
     private bool journalopen = false;
 
     [Header("Public References")]
@@ -96,7 +94,9 @@ public class UIManager : MonoBehaviour
 
     private void inventory()
     {
-        if(journalCanvas != null)
+
+        NotifPopup.SetActive(false);
+       if(journalCanvas != null)
         {
             if(!journalopen)
             {
@@ -134,7 +134,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
 
     }
-
+ 
     private void dangerState(bool status)
     {
         DOTweenAnimation test = stealingUI.gameObject.GetComponent<DOTweenAnimation>();

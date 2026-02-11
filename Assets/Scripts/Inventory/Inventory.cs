@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
            inventorySlots = new List<ItemSlot>(numberofSlots);
 
 }
-void ResetInventory()
+    void ResetInventory()
     {
         foreach (Transform childTransform in transform)
         {
