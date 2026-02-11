@@ -8359,6 +8359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoreItemReward
       objectReference: {fileID: 0}
+    - target: {fileID: 1046680391553635996, guid: 1447b161bef7a42fc9e9d904f6dd627c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5354028635121408156, guid: 1447b161bef7a42fc9e9d904f6dd627c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
