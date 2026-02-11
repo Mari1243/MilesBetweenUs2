@@ -29,7 +29,6 @@ public class UIManager : MonoBehaviour
 
     private Image Hintimage;
     public GameObject LoreitemPopup;
-    private GameObject loreitemPopupVisual;
     private GameObject journalnotification;
     public static Sprite[] hintsprites;
 
@@ -106,8 +105,6 @@ public class UIManager : MonoBehaviour
                 Cursor.visible = true;
                 print("open inventory");
                 journalCanvas.enabled = true;
-
-                journalnotification.SetActive(false);
             }
             else
             {
@@ -147,9 +144,7 @@ public class UIManager : MonoBehaviour
         if(LoreitemPopup != null)
         {
             journalnotification = LoreitemPopup.transform.GetChild(0).gameObject;
-            loreitemPopupVisual = LoreitemPopup.transform.GetChild(1).gameObject;
             journalnotification.SetActive(false);
-            loreitemPopupVisual.SetActive(false);
         }
         stealingUI = StealingCanvas.transform.GetChild(1).gameObject;
         if(progressbar != null)
@@ -163,6 +158,8 @@ public class UIManager : MonoBehaviour
         if (journalCanvas != null){
             journalCanvas.enabled = false;
         }
+
+        LoreitemPopup.SetActive(false);
     }
 
     private void SetSprites()
@@ -216,11 +213,11 @@ public class UIManager : MonoBehaviour
     private IEnumerator animatejournalHud()
     {
         print("lore item is popping up");
-        loreitemPopupVisual.SetActive(true);
+        LoreitemPopup.SetActive(true);
         
         print("animating journal lore pickip indicator");
         yield return new WaitForSeconds(2.6f);
-        loreitemPopupVisual.SetActive(false);
+        LoreitemPopup.SetActive(false);
         
         //if journal is not active
         yield return new WaitForSeconds(1f);
