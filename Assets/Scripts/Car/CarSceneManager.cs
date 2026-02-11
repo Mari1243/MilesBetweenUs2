@@ -19,7 +19,6 @@ public class CarSceneManager : MonoBehaviour
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
     public static event System.Action<Sprite> assignsprite;
     public static event Action<bool> HoldingTalkItem;
-
     public GameObject tabholder;
 
     [Header("Cursor")]
@@ -67,7 +66,6 @@ public class CarSceneManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         currentInventory = InventoryManager.instance.inventory;
-        
         if (currentInventory.Count == 0)
         {
             print("Empty");

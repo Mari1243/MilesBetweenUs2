@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 0}
   itemName: 
+  loreItem: 0
   node: Car0
   diagPos: {x: -0.126, y: 7.327, z: -5.666}
