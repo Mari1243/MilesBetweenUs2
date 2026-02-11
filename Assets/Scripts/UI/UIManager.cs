@@ -6,6 +6,7 @@ using TMPro;
 using System.Collections;
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 public class UIManager : MonoBehaviour
 {
@@ -25,10 +26,10 @@ public class UIManager : MonoBehaviour
 
 
 
+
     private Image Hintimage;
     public GameObject LoreitemPopup;
-
-    public GameObject hintUI;
+    private GameObject journalnotification;
     public static Sprite[] hintsprites;
 
 
@@ -140,6 +141,11 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        if(LoreitemPopup != null)
+        {
+            journalnotification = LoreitemPopup.transform.GetChild(0).gameObject;
+            journalnotification.SetActive(false);
+        }
         stealingUI = StealingCanvas.transform.GetChild(1).gameObject;
         if(progressbar != null)
         {
@@ -148,8 +154,6 @@ public class UIManager : MonoBehaviour
         }
        
         SetSprites();
-       
-        hintUI.SetActive(false);
 
         if (journalCanvas != null){
             journalCanvas.enabled = false;
@@ -190,6 +194,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
+            print("trying to animate reg item");
             itemImg.sprite = itemData.img;
             itemImg.preserveAspect = true;
             itemText.text = itemData.itemName + "!";
@@ -207,14 +212,22 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator animatejournalHud()
     {
+        print("lore item is popping up");
         LoreitemPopup.SetActive(true);
+        
         print("animating journal lore pickip indicator");
         yield return new WaitForSeconds(2.6f);
         LoreitemPopup.SetActive(false);
-        //LoreitemPopup.transform.DOLocalMoveX(198.3f, 1f);
-        //yield return new WaitForSeconds(2f);
-        //LoreitemPopup.transform.DOLocalMoveX(542f, 1f);
+        
+        //if journal is not active
+        yield return new WaitForSeconds(1f);
+        journalNotification();
+    }
 
+    private void journalNotification()
+    {
+
+        journalnotification.SetActive(true);
     }
 
     public void rewardText(Item itemdata)
@@ -300,38 +313,7 @@ private void DangerUI()
     statelabel.text = "STOP!";
 }
 
-    // private void hint(string str)
-    // {
-    //     //print("hint calleed");
-    //     print(str);
-    //     Hintimage = hintUI.transform.GetChild(0).GetComponent<Image>(); 
-    //     hintneeded = true;
-    //     if (str == "nojournal")
-    //     {
-    //         Hintimage.sprite = hintsprites[0];
-    //         print(hintsprites[0].name);
-
-    //     }
-    //     if(str == "willsteal")
-    //     {
-    //         Hintimage.sprite = hintsprites[1];
-    //         print(hintsprites[0].name);
-    //     }
-    //     StartCoroutine(Hintroutine());
-    // }
-
-    // private IEnumerator Hintroutine()
-    // {
-    //     //print("starting hint routine with " + Hintimage.sprite.name);
-    //     hintUI.SetActive(true);
-    //     hintUI.transform.DOLocalMoveY(300, 1.5f);
-    //     yield return new WaitForSeconds(1f);
-    //     hintUI.transform.DOLocalMoveY(0, 3f);
-    //     //hintUI.GetComponentInChildren<TextMeshProUGUI>().text = prompt;
-    //     yield return new WaitForSeconds(.4f);
-    //     hintUI.SetActive(false);
-    // }
-
+    
     //listening for pause
     private void pausegame()
     {
