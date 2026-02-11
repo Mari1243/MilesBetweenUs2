@@ -101,18 +101,17 @@ public class UIManager : MonoBehaviour
             if(!journalopen)
             {
                 journalopen = true;
-                Time.timeScale = 0f;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 print("open inventory");
                 journalCanvas.enabled = true;
                 StartCoroutine(journalIN());
+
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                Time.timeScale = 1f;
                 StartCoroutine(journalOUT());
                 journalopen = false;
             }
@@ -121,14 +120,19 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator journalIN()
     {
-        yield return new WaitForSecondsRealtime(.3f);
+        journal.transform.DOKill();
         journal.transform.DOLocalMoveY(-77, 1f).SetUpdate(true).SetEase(Ease.OutCirc);
+        yield return new WaitForSecondsRealtime(.3f);
+        Time.timeScale = 0f;
 
     }
     private IEnumerator journalOUT()
     {
-        yield return new WaitForSecondsRealtime(.3f);
+        journal.transform.DOKill();
         journal.transform.DOLocalMoveY(-2000, .7f).SetUpdate(true).SetEase(Ease.InCirc);
+        yield return new WaitForSecondsRealtime(.3f);
+        Time.timeScale = 1f;
+
     }
 
     private void dangerState(bool status)
