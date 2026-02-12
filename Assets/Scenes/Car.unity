@@ -3240,6 +3240,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+--- !u!114 &1347850792 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2080794050152235293, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+  m_PrefabInstance: {fileID: 1536021133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1396173504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
@@ -3799,9 +3810,17 @@ PrefabInstance:
       propertyPath: dialoguePos
       value: 
       objectReference: {fileID: 675426723}
+    - target: {fileID: 414091783524130327, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1347850792}
     - target: {fileID: 827195159269362016, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: m_Name
       value: Dialogue System
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080794050152235293, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: autoStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2080794050152235293, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: startNode
@@ -4065,7 +4084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5700763591743352596, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7.327
+      value: 6.61
       objectReference: {fileID: 0}
     - target: {fileID: 6502598300751455526, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: nextLineKeyCode
