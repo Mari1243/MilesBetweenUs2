@@ -3,6 +3,8 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections;
 using System;
+using UnityEngine.EventSystems;
+
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -59,7 +61,7 @@ namespace BookCurlPro
                 }
             }
         }
-       // [HideInInspector]
+        // [HideInInspector]
         public int StartFlippingPaper = 0;
         //[HideInInspector]
         public int EndFlippingPaper = 1;
@@ -323,7 +325,7 @@ namespace BookCurlPro
         }
         public void OnMouseDragLeftPage()
         {
-            Debug.Log("LEFT PAGE DRAG DETECTED!"); // Add this line
+            //Debug.Log("LEFT PAGE DRAG DETECTED!"); // Add this line
             if (interactable && !tweening)
             {
                 DragLeftPageToPoint(transformPointMousePosition(GetMousePosition()));
@@ -390,9 +392,9 @@ namespace BookCurlPro
 
         private Vector2 GetMousePosition()
         {
-            #if ENABLE_INPUT_SYSTEM
+#if ENABLE_INPUT_SYSTEM
             return Mouse.current.position.ReadValue();
-            #endif
+#endif
             return Input.mousePosition;
 
         }
@@ -467,8 +469,8 @@ namespace BookCurlPro
                     currentPaper -= 1;
                     Right.transform.SetParent(BookPanel.transform);
                     Left.transform.SetParent(BookPanel.transform);
-                //pageDragging = false;
-                tweening = false;
+                    //pageDragging = false;
+                    tweening = false;
                     Shadow.gameObject.SetActive(false);
                     ShadowLTR.gameObject.SetActive(false);
                     UpdatePages();
@@ -481,8 +483,8 @@ namespace BookCurlPro
                 {
                     Left.transform.SetParent(BookPanel.transform);
                     Right.transform.SetParent(BookPanel.transform);
-                //pageDragging = false;
-                tweening = false;
+                    //pageDragging = false;
+                    tweening = false;
                     Shadow.gameObject.SetActive(false);
                     ShadowLTR.gameObject.SetActive(false);
                     UpdatePages();
@@ -535,7 +537,6 @@ namespace BookCurlPro
             }
             //clipping
             Right.transform.SetParent(ClippingPlane.transform, true);
-            print("setting right page to clipping plane");
 
             Left.transform.SetParent(BookPanel.transform, true);
             c = Calc_C_Position(followLocation);
@@ -581,8 +582,7 @@ namespace BookCurlPro
             //clipping
             Left.transform.SetParent(ClippingPlane.transform, true);
             Right.transform.SetParent(BookPanel.transform, true);
-            print("setting left page to clipping plane");
-            print("setting right page to clipping plane");
+
 
             c = Calc_C_Position(followLocation);
             Vector3 t1;
@@ -700,5 +700,10 @@ namespace BookCurlPro
             to.localScale = from.localScale;
 
         }
+
+      
     }
 }
+
+
+    

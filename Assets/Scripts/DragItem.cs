@@ -19,9 +19,9 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private GameObject rotationIcon;
     private GameObject scaleIcon;
     private Camera mainCamera;
-    
+
     // Static reference to currently selected item
-    private static DragItem currentlySelected;
+    public static DragItem currentlySelected;
 
     private void Start()
     {
@@ -47,11 +47,15 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         dragStartPos = Input.mousePosition;
     }
 
+    public void DeselectCurrent()
+    {
+        SetSelected(false);
+    }
+
     // OnPointerClick - only fires for actual clicks (not drags)
     public void OnPointerClick(PointerEventData eventData)
     {
         // This event only fires if the pointer hasn't moved beyond threshold
-        // So it's a reliable "true click" event
         if (!isDragging)
         {
             Debug.Log($"Click detected on {name}");

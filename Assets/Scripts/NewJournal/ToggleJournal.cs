@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class ToggleJournal : MonoBehaviour
 {
@@ -37,4 +38,5 @@ public class ToggleJournal : MonoBehaviour
         print("showing journal");
         this.GetComponent<Canvas>().enabled = true;
     }
+
 }
