@@ -533,7 +533,9 @@ namespace BookCurlPro
                 ShadowLTR.transform.localEulerAngles = Vector3.zero;
                 ShadowLTR.gameObject.SetActive(true);
             }
+            //clipping
             Right.transform.SetParent(ClippingPlane.transform, true);
+            print("setting right page to clipping plane");
 
             Left.transform.SetParent(BookPanel.transform, true);
             c = Calc_C_Position(followLocation);
@@ -576,8 +578,11 @@ namespace BookCurlPro
                 Shadow.transform.localEulerAngles = Vector3.zero;
                 Shadow.gameObject.SetActive(true);
             }
+            //clipping
             Left.transform.SetParent(ClippingPlane.transform, true);
             Right.transform.SetParent(BookPanel.transform, true);
+            print("setting left page to clipping plane");
+            print("setting right page to clipping plane");
 
             c = Calc_C_Position(followLocation);
             Vector3 t1;

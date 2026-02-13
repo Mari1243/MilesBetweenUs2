@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 
 public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-      [Header("Drag Settings")]
+    [Header("Drag Settings")]
     [SerializeField] private float dragThreshold = 5f; // Pixels before it counts as drag
     
     private bool isSelected;
@@ -78,6 +78,12 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         {
             Debug.LogWarning($"Enabling raycastTarget on {name}");
             graphic.raycastTarget = true;
+
+        }
+        Image img = GetComponent<Image>();
+        if(img != null)
+        {
+            img.maskable = true;
         }
         
         if (FindObjectOfType<EventSystem>() == null)
