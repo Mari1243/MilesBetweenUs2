@@ -44,6 +44,8 @@ namespace BookCurlPro
         /// <summary>
         /// The Current Shown paper (the paper its front shown in right part)
         /// </summary>
+        /// 
+
         public int CurrentPaper
         {
             get { return currentPaper; }

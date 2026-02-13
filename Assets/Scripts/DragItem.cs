@@ -41,20 +41,24 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (dropShadow != null)
             dropShadow.enabled = false;
     }
- // OnPointerDown - just record the starting position
+    // OnPointerDown - just record the starting position
     public void OnPointerDown(PointerEventData eventData)
     {
+        print("pointer down");
         dragStartPos = Input.mousePosition;
     }
 
     public void DeselectCurrent()
     {
+        //the line that will call this is gonna be:
+        
         SetSelected(false);
     }
 
     // OnPointerClick - only fires for actual clicks (not drags)
     public void OnPointerClick(PointerEventData eventData)
     {
+        print("im clicking");
         // This event only fires if the pointer hasn't moved beyond threshold
         if (!isDragging)
         {

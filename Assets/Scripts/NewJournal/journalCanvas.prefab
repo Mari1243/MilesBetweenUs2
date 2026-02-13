@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.111206904, g: 0, b: 0.9485294, a: 0.42745098}
+  m_Color: {r: 0.9490196, g: 0.04460645, b: 0, a: 0.42745098}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
+  m_ShowMaskGraphic: 1
 --- !u!1 &1076601958407109652
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
+  m_ShowMaskGraphic: 1
 --- !u!1 &1416675941354602759
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +460,7 @@ GameObject:
   - component: {fileID: 5911379649103573811}
   - component: {fileID: 7894420447535296057}
   - component: {fileID: 862675364137877451}
+  - component: {fileID: 5811101338260063033}
   m_Layer: 5
   m_Name: Page7
   m_TagString: Page
@@ -551,6 +552,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &5811101338260063033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631173213611535306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25874926b2a0911488e1fd2b126d6f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1651581283630093470
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +698,7 @@ GameObject:
   - component: {fileID: 6146765385080500702}
   - component: {fileID: 7456376920131619996}
   - component: {fileID: 1962676331215924225}
+  - component: {fileID: 8889743297710095398}
   m_Layer: 5
   m_Name: Page13
   m_TagString: Page
@@ -774,6 +788,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &8889743297710095398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2434407481786592078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25874926b2a0911488e1fd2b126d6f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3308495387699024379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1131,7 @@ GameObject:
   - component: {fileID: 3400083597485269773}
   - component: {fileID: 4845600622950607563}
   - component: {fileID: 4444294880690005910}
+  - component: {fileID: 1131608877105258459}
   m_Layer: 5
   m_Name: Page14
   m_TagString: Page
@@ -1196,6 +1223,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1131608877105258459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550266189914287373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25874926b2a0911488e1fd2b126d6f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4099314393430453357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1248,7 @@ GameObject:
   - component: {fileID: 4350483730845497048}
   - component: {fileID: 112799562961698622}
   - component: {fileID: 7301978494945452804}
+  - component: {fileID: 4636550065055031161}
   m_Layer: 5
   m_Name: Page9
   m_TagString: Page
@@ -1298,6 +1338,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &4636550065055031161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099314393430453357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25874926b2a0911488e1fd2b126d6f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4636108664353726704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,7 +1622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1770,6 +1822,7 @@ GameObject:
   - component: {fileID: 9138720368405300122}
   - component: {fileID: 7406758098823771132}
   - component: {fileID: 7897895653550889082}
+  - component: {fileID: 3875818177734081486}
   m_Layer: 5
   m_Name: Page12
   m_TagString: Page
@@ -1859,6 +1912,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &3875818177734081486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657809884216821885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25874926b2a0911488e1fd2b126d6f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5799715001232147755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,6 +1937,7 @@ GameObject:
   - component: {fileID: 2186252491796292062}
   - component: {fileID: 7488157022305135941}
   - component: {fileID: 8043475118535847034}
+  - component: {fileID: 3260121714580497777}
   m_Layer: 5
   m_Name: Page16
   m_TagString: Page
@@ -1920,7 +1986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1961,6 +2027,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &3260121714580497777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799715001232147755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25874926b2a0911488e1fd2b126d6f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5949353140909764452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,6 +2527,7 @@ GameObject:
   - component: {fileID: 4749466980139536140}
   - component: {fileID: 1101770883762719152}
   - component: {fileID: 905381286295450506}
+  - component: {fileID: 6282739267826609257}
   m_Layer: 5
   m_Name: Page8
   m_TagString: Page
@@ -2538,6 +2617,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &6282739267826609257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7504110133858822429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25874926b2a0911488e1fd2b126d6f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8198610128869201615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,6 +3022,7 @@ GameObject:
   - component: {fileID: 8035165283334850322}
   - component: {fileID: 4183191625734993214}
   - component: {fileID: 4974408514619127956}
+  - component: {fileID: 2397287559525065619}
   m_Layer: 5
   m_Name: Page15
   m_TagString: Page
@@ -3020,6 +3112,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &2397287559525065619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100751447021100361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25874926b2a0911488e1fd2b126d6f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &808558923512145635
 PrefabInstance:
   m_ObjectHideFlags: 0
