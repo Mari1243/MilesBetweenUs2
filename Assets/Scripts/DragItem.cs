@@ -148,6 +148,9 @@ public void SetSelected(bool selected)
         
         if (distance > dragThreshold)
         {
+            //currentlySelected.GetComponent<Image>().maskable = false;
+            transform.SetParent(canvas.transform);
+
             isDragging = true;
             dragOffset = transform.position - Input.mousePosition;
             
