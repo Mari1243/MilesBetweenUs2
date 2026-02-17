@@ -9,26 +9,31 @@ using System.Runtime.InteropServices;
 
 public class Interactor : MonoBehaviour
 {
-    private Coroutine holdProgressRoutine;
-    private float holdProgress = 0f;
-    private bool isHeld = false;
-    private bool isDanger;
-    private bool hasStartedStealing = false;
-    private bool isInStealingConfirmMode;
-    private bool isInWarningPeriod;
-    private float warningStartTime;
-    [SerializeField] private float warningDuration = 1f;
-    
-    public GameObject pickupUI;
-    [SerializeField] private PickupUIVariants pickupUIVariants;
-    private GameObject instantiatedUI;
-    private GameObject pickedUpObj;
 
-    // Speed controls
-    [SerializeField] private float fillSpeedPickup = 0.7f;
-      [SerializeField] private float fillSpeedSteal = .2f;
-    [SerializeField] private float drainSpeed = 0.2f;
-    private int holdDirection = 0;
+    [Header("stealing")]
+        private Coroutine holdProgressRoutine;
+        private float holdProgress = 0f;
+        private bool isHeld = false;
+        private bool isDanger;
+        private bool hasStartedStealing = false;
+        private bool isInStealingConfirmMode;
+        private bool isInWarningPeriod;
+        private float warningStartTime;
+        [SerializeField] private float warningDuration = 1f;
+
+
+    [Header("Pickup References")]
+        public GameObject pickupUI;
+        [SerializeField] private PickupUIVariants pickupUIVariants;
+        private GameObject instantiatedUI;
+        private GameObject pickedUpObj;
+
+
+    [Header("Speed Controls")]
+        [SerializeField] private float fillSpeedPickup = 0.7f;
+        [SerializeField] private float fillSpeedSteal = .2f;
+        [SerializeField] private float drainSpeed = 0.2f;
+        private int holdDirection = 0;
 
     // Events
     public static event Action<float> OnHoldProgress;
@@ -181,6 +186,12 @@ public class Interactor : MonoBehaviour
             {
                 Destroy(instantiatedUI);
                 instantiatedUI = null;
+            }
+
+            //check if im stealing and if i am get me tf out!
+            if (isInStealingConfirmMode)
+            {
+                StartCoroutine(FailedStealing());
             }
             
             canInteract = false;
