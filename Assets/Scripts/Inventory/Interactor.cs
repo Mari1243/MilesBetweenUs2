@@ -20,6 +20,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private float warningDuration = 1f;
     
     public GameObject pickupUI;
+    [SerializeField] private PickupUIVariants pickupUIVariants;
     private GameObject instantiatedUI;
     private GameObject pickedUpObj;
 
@@ -110,7 +111,15 @@ public class Interactor : MonoBehaviour
             if (highlight.gameObject.GetComponent<Outline>() != null)
             {
                 highlight.gameObject.GetComponent<Outline>().enabled = true;
-                SpawnPickupUI();
+                
+                if(other.gameObject.tag == "canSteal")
+                {
+                    SpawnPickupUI(true);
+                }
+                else
+                {
+                    SpawnPickupUI(false);
+                }
             }
             else
             {
@@ -118,18 +127,30 @@ public class Interactor : MonoBehaviour
                 outline.enabled = true;
                 outline.OutlineColor = Color.white;
                 outline.OutlineWidth = 7.0f;
-                SpawnPickupUI();
+                if (other.gameObject.tag == "canSteal")
+                {
+                    SpawnPickupUI(true);
+                }
+                else
+                {
+                    SpawnPickupUI(false);
+                }
             }
         }
     }
 
-    private void SpawnPickupUI()
+    private void SpawnPickupUI(bool stealable)
     {
         DestroyPickupUI();
-        
         Vector3 spawnPosition = new Vector3(0, 1.5f, .5f);
         instantiatedUI = Instantiate(pickupUI, this.transform);
         instantiatedUI.transform.localPosition = spawnPosition;
+
+        if (stealable)
+        {
+            PickupUIVariants pickupUI = instantiatedUI.GetComponent<PickupUIVariants>();
+            pickupUI.ChangeUI(stealable);
+        }
     }
     public void DestroyPickupUI()
     {
