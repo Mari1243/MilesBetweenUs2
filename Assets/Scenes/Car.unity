@@ -2311,11 +2311,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2098778494}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TalkingCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2098778494}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DefaultCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerCam, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerCam, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7559722874699538978, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4807,6 +4851,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0a592d60-5ac6-47a2-a1fc-8e7a4fb71296
     m_ActionName: 'UI/OpenInventory[/Keyboard/tab]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6ce6b3c6-8ff5-4d69-b066-b2507541c96a
+    m_ActionName: 'Player/checkJournal[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5213,6 +5261,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableData: {fileID: 5760182317933821744}
   newItem: {fileID: 11400000, guid: ed0e9d171c5a31f44b3b80ca3ca41432, type: 2}
+  barks:
+  - CarBark1
+  - CarBark2
+  - CarBark3
+  barkCount: 3
 --- !u!1001 &7745599316662536353
 PrefabInstance:
   m_ObjectHideFlags: 0
