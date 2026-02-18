@@ -11,7 +11,7 @@ public class BrotherInteractable : MonoBehaviour
     public interactable interactableData;
     public Item newItem;
     public List<string> barks = new List<string>();
-    private int barkCount;
+    private int barkCount, barkIndex;
     public Image img;
     public int minWait, maxWait;
     private void OnEnable()
@@ -21,8 +21,9 @@ public class BrotherInteractable : MonoBehaviour
     }
     private void OnDisable()
     {
-        DialogueManager.DialogOver -= CloseBubble;
-    }
+        DialogueManager.DialogStart -= CloseBubble;
+        DialogueManager.DialogOver -= StartTimer;
+  }
 
     private void Start()
     {
@@ -65,25 +66,29 @@ public class BrotherInteractable : MonoBehaviour
 
 
         //also make it so he "barks" only like twice but each time between then is randomized 
-        //ask group how we think we should approach it 
 
         barkCount = barks.Count;
         int rand = Random.Range(minWait, maxWait); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
         yield return new WaitForSeconds(rand);
 
-        if (!DialogueManager.instance.dialogStarted)
+
+        if (barkCount == 0)
+        {
+            yield break;
+        }
+        else if (!DialogueManager.instance.dialogStarted )
         {
             AnimateBubble();
-            int randBark = Random.Range(0, barks.Count);
-            interactableData.item.node = barks[randBark]; //change the node in the scriptable obj 
+            barkIndex = Random.Range(0, barks.Count);
+            interactableData.item.node = barks[barkIndex]; //change the node in the scriptable obj 
+            barks.Remove(barks[barkIndex]);
+
 
         }
-        else
-        {
-            Debug.Log("cant do that now ! Dialogue is playing");
-        }
-
+        
     }
+
+
 
     private void AnimateBubble()
     {
