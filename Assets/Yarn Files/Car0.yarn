@@ -1,4 +1,14 @@
-﻿title: Car0
+﻿
+title: CarStart
+---
+Brother: Let me know if you're comfy back there, 
+Brother: it's gonna be a long trip.
+
+===
+
+
+
+title: Car0
 ---
 <<declare $asked=false>>
 
