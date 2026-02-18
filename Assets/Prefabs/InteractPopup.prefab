@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5031121216832954280}
   - component: {fileID: 8510446265465700406}
   - component: {fileID: 3573039661596992338}
+  - component: {fileID: 5712445550143527709}
   m_Layer: 0
   m_Name: InteractPopup
   m_TagString: Untagged
@@ -100,3 +101,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954a7512651f3f94181e09352e63dcd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5712445550143527709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286637174487126277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169c7ae5b7a31e8458b03eed44ce3d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactSprite: {fileID: 21300000, guid: 8f40c4be877924e9b88e8b7f9880edb5, type: 3}
+  stealSprite: {fileID: 21300000, guid: 465221827f2be7646b34ae9214246d14, type: 3}

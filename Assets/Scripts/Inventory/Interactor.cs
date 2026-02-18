@@ -9,25 +9,31 @@ using System.Runtime.InteropServices;
 
 public class Interactor : MonoBehaviour
 {
-    private Coroutine holdProgressRoutine;
-    private float holdProgress = 0f;
-    private bool isHeld = false;
-    private bool isDanger;
-    private bool hasStartedStealing = false;
-    private bool isInStealingConfirmMode;
-    private bool isInWarningPeriod;
-    private float warningStartTime;
-    [SerializeField] private float warningDuration = 1f;
-    
-    public GameObject pickupUI;
-    private GameObject instantiatedUI;
-    private GameObject pickedUpObj;
 
-    // Speed controls
-    [SerializeField] private float fillSpeedPickup = 0.7f;
-      [SerializeField] private float fillSpeedSteal = .2f;
-    [SerializeField] private float drainSpeed = 0.2f;
-    private int holdDirection = 0;
+    [Header("stealing")]
+        private Coroutine holdProgressRoutine;
+        private float holdProgress = 0f;
+        private bool isHeld = false;
+        private bool isDanger;
+        private bool hasStartedStealing = false;
+        private bool isInStealingConfirmMode;
+        private bool isInWarningPeriod;
+        private float warningStartTime;
+        [SerializeField] private float warningDuration = 1f;
+
+
+    [Header("Pickup References")]
+        public GameObject pickupUI;
+        [SerializeField] private PickupUIVariants pickupUIVariants;
+        private GameObject instantiatedUI;
+        private GameObject pickedUpObj;
+
+
+    [Header("Speed Controls")]
+        [SerializeField] private float fillSpeedPickup = 0.7f;
+        [SerializeField] private float fillSpeedSteal = .2f;
+        [SerializeField] private float drainSpeed = 0.2f;
+        private int holdDirection = 0;
 
     // Events
     public static event Action<float> OnHoldProgress;
@@ -110,7 +116,15 @@ public class Interactor : MonoBehaviour
             if (highlight.gameObject.GetComponent<Outline>() != null)
             {
                 highlight.gameObject.GetComponent<Outline>().enabled = true;
-                SpawnPickupUI();
+                
+                if(other.gameObject.tag == "canSteal")
+                {
+                    SpawnPickupUI(true);
+                }
+                else
+                {
+                    SpawnPickupUI(false);
+                }
             }
             else
             {
@@ -118,18 +132,30 @@ public class Interactor : MonoBehaviour
                 outline.enabled = true;
                 outline.OutlineColor = Color.white;
                 outline.OutlineWidth = 7.0f;
-                SpawnPickupUI();
+                if (other.gameObject.tag == "canSteal")
+                {
+                    SpawnPickupUI(true);
+                }
+                else
+                {
+                    SpawnPickupUI(false);
+                }
             }
         }
     }
 
-    private void SpawnPickupUI()
+    private void SpawnPickupUI(bool stealable)
     {
         DestroyPickupUI();
-        
         Vector3 spawnPosition = new Vector3(0, 1.5f, .5f);
         instantiatedUI = Instantiate(pickupUI, this.transform);
         instantiatedUI.transform.localPosition = spawnPosition;
+
+        if (stealable)
+        {
+            PickupUIVariants pickupUI = instantiatedUI.GetComponent<PickupUIVariants>();
+            pickupUI.ChangeUI(stealable);
+        }
     }
     public void DestroyPickupUI()
     {
@@ -160,6 +186,12 @@ public class Interactor : MonoBehaviour
             {
                 Destroy(instantiatedUI);
                 instantiatedUI = null;
+            }
+
+            //check if im stealing and if i am get me tf out!
+            if (isInStealingConfirmMode)
+            {
+                StartCoroutine(FailedStealing());
             }
             
             canInteract = false;

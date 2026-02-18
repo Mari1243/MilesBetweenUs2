@@ -1,4 +1,14 @@
-﻿title: Car0
+﻿
+title: CarStart
+---
+Brother: Let me know if you're comfy back there, 
+Brother: it's gonna be a long trip.
+
+===
+
+
+
+title: Car0
 ---
 <<declare $asked=false>>
 
@@ -22,6 +32,29 @@ Brother: You wanna go?
 -> Nah, not yet.
 	Ok, make up your mind soon.
 ===
+
+
+title: CarBark1
+---
+Brother: don't make too much mess back there with all your scraps or whatever.
+
+===
+
+
+title: CarBark2
+---
+Brother: We'll make a few stops, don't worry.
+
+
+===
+
+
+title: CarBark3
+---
+Brother: Did you just fart, gross.
+
+===
+
 
 title: Stamp1
 ---
