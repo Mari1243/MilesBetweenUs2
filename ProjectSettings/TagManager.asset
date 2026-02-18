@@ -15,6 +15,7 @@ TagManager:
   - Border
   - coin
   - Page
+  - LoreItem
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.VFX;
+using UnityEngine.Events;
 
 public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -19,6 +20,8 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private GameObject rotationIcon;
     private GameObject scaleIcon;
     private Camera mainCamera;
+
+    public static UnityAction PlacedDown;
 
     // Static reference to currently selected item
     public static DragItem currentlySelected;
@@ -220,6 +223,7 @@ void EndDrag()
                 // This is the image underneath
                 transform.SetParent(result.gameObject.transform);
                 foundCollageItem = true;
+                PlacedDown();
                 break;
             }
             else
