@@ -3491,6 +3491,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: journalCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070963378800502545, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359117660989336068, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7844469610418610715, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3506,6 +3518,10 @@ PrefabInstance:
     - target: {fileID: 7844469610418610715, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198610128869201615, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.VFX;
 using UnityEngine.Events;
 
-public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     [Header("Drag Settings")]
     [SerializeField] private float dragThreshold = 5f; // Pixels before it counts as drag
@@ -20,6 +20,9 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private GameObject rotationIcon;
     private GameObject scaleIcon;
     private Camera mainCamera;
+
+    private bool lorePlaced=false;
+    public static UnityAction loreDrop;
 
 
     // Static reference to currently selected item
@@ -67,6 +70,11 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             Debug.Log($"Click detected on {name}");
             SetSelected(true);
         }
+        if (lorePlaced && this.gameObject.tag == "LoreItem")
+        {
+            loreDrop();
+        }
+        
     }
 
     private void ValidateSetup()
@@ -242,12 +250,15 @@ void EndDrag()
 
     public void checkLoreItem(GameObject item)
     {
+        lorePlaced = true;
         if (item.gameObject.tag == "LoreItem")
         {
-            if (item.gameObject.GetComponent<OutlineUI>()!=null)
+            if (item.gameObject.GetComponent<OutlineUI>() != null)
             {
-
+                
                 item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
+
+
 
             }
             else

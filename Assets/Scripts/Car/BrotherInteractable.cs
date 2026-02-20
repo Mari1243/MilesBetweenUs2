@@ -18,6 +18,7 @@ public class BrotherInteractable : MonoBehaviour
     {
         DialogueManager.DialogOver += StartTimer;
         DialogueManager.DialogStart += CloseBubble;
+        DragItem.loreDrop += loreDropping;
     }
     private void OnDisable()
     {
@@ -88,7 +89,11 @@ public class BrotherInteractable : MonoBehaviour
         
     }
 
-
+    public void loreDropping()
+    {
+        newItem.node = "CDLOREDROP"; //change the node in the scriptable obj 
+        DialogueManager.instance.TalkInteraction(newItem);
+    }
 
     private void AnimateBubble()
     {
