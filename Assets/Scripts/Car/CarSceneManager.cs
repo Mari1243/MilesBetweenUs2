@@ -54,14 +54,12 @@ public class CarSceneManager : MonoBehaviour
         interactable.showJournal += JournalScene;
         //interactable.onTalkCar += ActivateBroDiag;
         ToggleJournal.hideJournal += ExitJournal;
-        DragItem.PlacedDown += CheckItem;
     }
     private void OnDisable()
     {
         interactable.showJournal -= JournalScene;
         //interactable.onTalkCar-= ActivateBroDiag;  
         ToggleJournal.hideJournal -= ExitJournal;
-        DragItem.PlacedDown += CheckItem;
     }
 
     private void Start()
@@ -116,10 +114,7 @@ public class CarSceneManager : MonoBehaviour
         Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);  
     }
 
-    public void CheckItem()
-    {
-
-    }
+    
 
     public void JournalScene() //SHOWS JOURNAL 
     {

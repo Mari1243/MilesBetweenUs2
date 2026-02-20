@@ -5467,8 +5467,8 @@ MonoBehaviour:
   - CarBark2
   - CarBark3
   img: {fileID: 10838888}
-  minWait: 15
-  maxWait: 25
+  minWait: 0
+  maxWait: 0
 --- !u!1001 &7745599316662536353
 PrefabInstance:
   m_ObjectHideFlags: 0

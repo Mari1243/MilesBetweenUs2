@@ -21,7 +21,6 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private GameObject scaleIcon;
     private Camera mainCamera;
 
-    public static UnityAction PlacedDown;
 
     // Static reference to currently selected item
     public static DragItem currentlySelected;
@@ -223,7 +222,9 @@ void EndDrag()
                 // This is the image underneath
                 transform.SetParent(result.gameObject.transform);
                 foundCollageItem = true;
-                PlacedDown();
+
+                checkLoreItem(this.gameObject); //Detects if lore item is on the page, if so, call function 
+                
                 break;
             }
             else
@@ -238,6 +239,25 @@ void EndDrag()
             notinjournal();
         }
     }
+
+    public void checkLoreItem(GameObject item)
+    {
+        if (item.gameObject.tag == "LoreItem")
+        {
+            if (item.gameObject.GetComponent<OutlineUI>()!=null)
+            {
+
+                item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
+
+            }
+            else
+            {
+                item.gameObject.AddComponent<OutlineUI>();
+                item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
+            }
+        }
+    }
+
 
     private void notinjournal()
     {
