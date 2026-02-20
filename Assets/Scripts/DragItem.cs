@@ -22,7 +22,8 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private Camera mainCamera;
 
     private bool lorePlaced=false;
-    public static UnityAction loreDrop;
+    public static UnityAction<string> loreDrop;
+    public string itemNode;
 
 
     // Static reference to currently selected item
@@ -72,7 +73,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         }
         if (lorePlaced && this.gameObject.tag == "LoreItem")
         {
-            loreDrop();
+            loreDrop(itemNode);
         }
         
     }

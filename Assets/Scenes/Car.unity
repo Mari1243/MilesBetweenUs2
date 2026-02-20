@@ -3701,6 +3701,8 @@ MonoBehaviour:
     stackSize: 0
   - itemData: {fileID: 11400000, guid: a631da5154ee88e45a80977cdfcfb22d, type: 2}
     stackSize: 0
+  - itemData: {fileID: 11400000, guid: 46603623567ed83459d157a7205b4a71, type: 2}
+    stackSize: 0
   - itemData: {fileID: 11400000, guid: 004886a318593c84e908e24b8540d223, type: 2}
     stackSize: 0
   loreItemAmt: 0
@@ -5570,6 +5572,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: DG
+      value: 
+      objectReference: {fileID: 4792769920164054658, guid: c83a883728b8747799f88e95b0341676, type: 3}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: brother
       value: 
       objectReference: {fileID: 2024126370}
@@ -5577,6 +5583,10 @@ PrefabInstance:
       propertyPath: journal
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: dragitem
+      value: 
+      objectReference: {fileID: 4792769920164054658, guid: c83a883728b8747799f88e95b0341676, type: 3}
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: crosshair
       value: 

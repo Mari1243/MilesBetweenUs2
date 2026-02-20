@@ -30,7 +30,7 @@ public class CarSceneManager : MonoBehaviour
     public static bool journalActive;
     public GameObject DraggableItemPrefab;
     public GameObject spawningRange;
-
+    public DragItem DG;
 
 
     [Header("Player Input")]
@@ -95,6 +95,7 @@ public class CarSceneManager : MonoBehaviour
                 if (items.itemData.loreItem)
                 {
                     journalItem.gameObject.tag = "LoreItem";
+                    DG.itemNode = items.itemData.node;
                 }
                 //scaling is required so that the proportions of the image stay the same
                 float desiredWidth = 100; // Your target size

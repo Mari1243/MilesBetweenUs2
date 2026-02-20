@@ -24,7 +24,7 @@ public class ToggleJournal : MonoBehaviour
         DragItem.loreDrop -= closeJournal;
     }
 
-    public void closeJournal()
+    public void closeJournal(string node)
     {
         //unfreeze input
         //set mouse inactive

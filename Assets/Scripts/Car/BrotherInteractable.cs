@@ -89,9 +89,9 @@ public class BrotherInteractable : MonoBehaviour
         
     }
 
-    public void loreDropping()
+    public void loreDropping(string node)
     {
-        newItem.node = "CDLOREDROP"; //change the node in the scriptable obj 
+        newItem.node = node; //change the node in the scriptable obj 
         DialogueManager.instance.TalkInteraction(newItem);
     }
 
