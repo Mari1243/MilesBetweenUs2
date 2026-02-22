@@ -35,6 +35,15 @@ public class ToggleJournal : MonoBehaviour
         hideJournal?.Invoke();
     }
 
+    public void endjournalscene()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        print("disabling journal");
+        this.GetComponent<Canvas>().enabled = false;
+        hideJournal?.Invoke();
+    }
+
     public void JournalScene() //SHOWS JOURNAL 
     {
         print("showing journal");
