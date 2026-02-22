@@ -254,18 +254,18 @@ void EndDrag()
         lorePlaced = true;
         if (item.gameObject.tag == "LoreItem")
         {
-            if (item.gameObject.GetComponent<OutlineUI>() != null)
+            if (item.gameObject.GetComponent<Outline>() != null)
             {
                 
-                item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
+                //item.gameObject.GetComponent<Outline>().effectColor = Color.yellow;
 
 
 
             }
             else
             {
-                item.gameObject.AddComponent<OutlineUI>();
-                item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
+                item.gameObject.AddComponent<Outline>();
+                //item.gameObject.GetComponent<Outline>().effectColor = Color.yellow;
             }
         }
     }

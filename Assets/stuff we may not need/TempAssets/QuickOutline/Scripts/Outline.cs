@@ -61,7 +61,6 @@ public class Outline : MonoBehaviour {
 
   [SerializeField, Range(0f, 10f)]
   private float outlineWidth = 2f;
-  public bool useChildren = false;
 
   [Header("Optional")]
 
@@ -84,8 +83,7 @@ public class Outline : MonoBehaviour {
   void Awake() {
 
     // Cache renderers
-    if (useChildren) renderers = GetComponentsInChildren<Renderer>();
-    else renderers = GetComponents<Renderer>();
+    renderers = GetComponentsInChildren<Renderer>();
 
     // Instantiate outline materials
     outlineMaskMaterial = Instantiate(Resources.Load<Material>(@"Materials/OutlineMask"));
