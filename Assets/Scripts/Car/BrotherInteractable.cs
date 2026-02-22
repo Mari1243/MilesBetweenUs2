@@ -11,17 +11,20 @@ public class BrotherInteractable : MonoBehaviour
     public interactable interactableData;
     public Item newItem;
     public List<string> barks = new List<string>();
-    public int barkCount;
+    private int barkCount, barkIndex;
     public Image img;
+    public int minWait, maxWait;
     private void OnEnable()
     {
         DialogueManager.DialogOver += StartTimer;
         DialogueManager.DialogStart += CloseBubble;
+        DragItem.loreDrop += loreDropping;
     }
     private void OnDisable()
     {
-        DialogueManager.DialogOver -= CloseBubble;
-    }
+        DialogueManager.DialogStart -= CloseBubble;
+        DialogueManager.DialogOver -= StartTimer;
+  }
 
     private void Start()
     {
@@ -49,7 +52,14 @@ public class BrotherInteractable : MonoBehaviour
 
     private void StartTimer()
     {
-        StartCoroutine(BreakTimer());
+
+     
+            StartCoroutine(BreakTimer());
+
+        
+
+
+
     }
     private IEnumerator BreakTimer()
     {
@@ -57,15 +67,32 @@ public class BrotherInteractable : MonoBehaviour
 
 
         //also make it so he "barks" only like twice but each time between then is randomized 
-        //ask group how we think we should approach it 
 
-        int rand =Random.Range(5, 10); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
+        barkCount = barks.Count;
+        int rand = Random.Range(minWait, maxWait); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
         yield return new WaitForSeconds(rand);
 
-        AnimateBubble();
-        int randBark = Random.Range(0,barks.Count);
-        interactableData.item.node=barks[randBark]; //change the node in the scriptable obj 
-           
+
+        if (barkCount == 0)
+        {
+            yield break;
+        }
+        else if (!DialogueManager.instance.dialogStarted )
+        {
+            AnimateBubble();
+            barkIndex = Random.Range(0, barks.Count);
+            interactableData.item.node = barks[barkIndex]; //change the node in the scriptable obj 
+            barks.Remove(barks[barkIndex]);
+
+
+        }
+        
+    }
+
+    public void loreDropping(string node)
+    {
+        newItem.node = node; //change the node in the scriptable obj 
+        DialogueManager.instance.TalkInteraction(newItem);
     }
 
     private void AnimateBubble()

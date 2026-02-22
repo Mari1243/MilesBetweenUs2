@@ -30,7 +30,7 @@ public class CarSceneManager : MonoBehaviour
     public static bool journalActive;
     public GameObject DraggableItemPrefab;
     public GameObject spawningRange;
-
+    public DragItem DG;
 
 
     [Header("Player Input")]
@@ -41,6 +41,8 @@ public class CarSceneManager : MonoBehaviour
 
     [Header("Brother")]
     public Animator brother;
+
+    
 
     private void Awake()
     {
@@ -75,13 +77,13 @@ public class CarSceneManager : MonoBehaviour
             print("Theres sum in this hoe");
             foreach (InventoryItem items in currentInventory)
             {
-                if (items.itemData.itemName == "Journal")
+                if (items.itemData.itemName == "Journal") 
                 {
                     currentInventory.Clear();
                 }
 
-                Debug.Log("this is the first item in ur " + currentInventory[0].itemData.name);
-                var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity);
+                var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity); //the connecting data
+
                 //getting tab 1
                 GameObject Tab1 = tabholder.transform.GetChild(0).gameObject;
                 journalItem.transform.SetParent(Tab1.transform);
@@ -90,6 +92,11 @@ public class CarSceneManager : MonoBehaviour
                 //this is all stuff that assigns image
                 var imgComponent = journalItem.gameObject.GetComponent<Image>();
                 imgComponent.sprite = items.itemData.img;
+                if (items.itemData.loreItem)
+                {
+                    journalItem.gameObject.tag = "LoreItem";
+                    DG.itemNode = items.itemData.node;
+                }
                 //scaling is required so that the proportions of the image stay the same
                 float desiredWidth = 100; // Your target size
                 float aspectRatio = items.itemData.img.rect.height / items.itemData.img.rect.width;
@@ -108,7 +115,7 @@ public class CarSceneManager : MonoBehaviour
         Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);  
     }
 
-
+    
 
     public void JournalScene() //SHOWS JOURNAL 
     {

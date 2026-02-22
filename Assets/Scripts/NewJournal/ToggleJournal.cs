@@ -16,13 +16,15 @@ public class ToggleJournal : MonoBehaviour
     private void OnEnable()
     {
         interactable.showJournal += JournalScene;
+        DragItem.loreDrop += closeJournal;
     }
     private void OnDisable()
     {
         interactable.showJournal -= JournalScene;
+        DragItem.loreDrop -= closeJournal;
     }
 
-    public void closeJournal()
+    public void closeJournal(string node)
     {
         //unfreeze input
         //set mouse inactive

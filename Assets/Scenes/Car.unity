@@ -179,7 +179,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -6.325}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1207070193}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 796149312299198894, guid: 27afd0dd76925421588701165b13258a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3324339174733080485, guid: 27afd0dd76925421588701165b13258a, type: 3}
       propertyPath: m_Pivot.x
@@ -3383,6 +3383,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 119659925301157486, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_ShowMaskGraphic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1616451728402434421, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3479,9 +3483,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2919042207318928662, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_ShowMaskGraphic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Name
       value: journalCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070963378800502545, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359117660989336068, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7844469610418610715, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3498,6 +3518,10 @@ PrefabInstance:
     - target: {fileID: 7844469610418610715, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198610128869201615, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3676,6 +3700,8 @@ MonoBehaviour:
   - itemData: {fileID: 11400000, guid: d2dcb10b6d232e44e87f9ab23ae1e1af, type: 2}
     stackSize: 0
   - itemData: {fileID: 11400000, guid: a631da5154ee88e45a80977cdfcfb22d, type: 2}
+    stackSize: 0
+  - itemData: {fileID: 11400000, guid: 46603623567ed83459d157a7205b4a71, type: 2}
     stackSize: 0
   - itemData: {fileID: 11400000, guid: 004886a318593c84e908e24b8540d223, type: 2}
     stackSize: 0
@@ -5458,8 +5484,9 @@ MonoBehaviour:
   - CarBark1
   - CarBark2
   - CarBark3
-  barkCount: 3
   img: {fileID: 10838888}
+  minWait: 0
+  maxWait: 0
 --- !u!1001 &7745599316662536353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5545,6 +5572,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: DG
+      value: 
+      objectReference: {fileID: 4792769920164054658, guid: c83a883728b8747799f88e95b0341676, type: 3}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: brother
       value: 
       objectReference: {fileID: 2024126370}
@@ -5552,6 +5583,10 @@ PrefabInstance:
       propertyPath: journal
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: dragitem
+      value: 
+      objectReference: {fileID: 4792769920164054658, guid: c83a883728b8747799f88e95b0341676, type: 3}
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: crosshair
       value: 
