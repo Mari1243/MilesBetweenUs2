@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ToDoManager : MonoBehaviour
@@ -6,6 +7,7 @@ public class ToDoManager : MonoBehaviour
     public static ToDoManager instance;
     public GameObject[] toDoItems;
     private Dictionary<string, ToDoItemBehavior> Tasks;
+    public GameObject[] Collectables;
 
     private void Awake()
     {
@@ -20,6 +22,17 @@ public class ToDoManager : MonoBehaviour
                 Tasks.Add(item.name, behavior);
         }
     }
+    private void OnEnable()
+    {
+        InventoryManager.AddedItem += CollectedLoreItem;
+
+    }
+    private void OnDisable()
+    {
+        InventoryManager.AddedItem -= CollectedLoreItem;
+
+    }
+
     public void CompleteItem(string itemName)
     {
         if (Tasks.TryGetValue(itemName, out ToDoItemBehavior item))
@@ -34,6 +47,21 @@ public class ToDoManager : MonoBehaviour
             item.SetState(ToDoItemState.Incomplete);
         else
             Debug.LogWarning($"ToDoItem '{itemName}' not found.");
+    }
+
+    public void CollectedLoreItem(Item item)
+    {
+        foreach (var col in Collectables)
+        {
+            print(col.name);
+            print(item.itemName);
+            if (col.name == item.itemName)
+            {
+                TextMeshProUGUI txt = col.GetComponentInChildren<TextMeshProUGUI>();
+                txt.text = item.itemName;
+                col.transform.GetChild(0).gameObject.SetActive(false);
+            }
+        }
     }
 
 }

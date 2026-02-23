@@ -62,7 +62,6 @@ public class StealingManager : MonoBehaviour
         if (stealingActive) return;
         //if (!stealingActive) { stealingCamera(); }
         stealingActive = true;
-        print("enabling stealing manager");
         // Reset and begin the cycle when enabled.
         cycleIndex = 0;
         SetState(stateCycle[cycleIndex]);
@@ -73,12 +72,10 @@ public class StealingManager : MonoBehaviour
 
     public void StopStealin() //THIS IS WHAT HAPPENS WHEN STEALING IS OVER
     {
-        print("calling stop stealing void");
         stealingActive = false;
         // Stop immediately when disabled.
         if (cycleRoutine != null)
             StopCoroutine(cycleRoutine);
-        print("disabling stealing manager");
         OnStealingActionChanged?.Invoke(false);
         //StartCoroutine(CamChange());
     }
@@ -162,7 +159,6 @@ public class StealingManager : MonoBehaviour
     IEnumerator ChangeFOV(CinemachineCamera cam, float endFOV, float duration)
     {
         //never called
-        print("changing FOV");
         float startFOV = cam.Lens.FieldOfView;
         float time = 0;
         while(time < duration)

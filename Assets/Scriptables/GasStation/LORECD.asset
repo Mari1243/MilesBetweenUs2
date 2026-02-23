@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LORECD
   m_EditorClassIdentifier: 
   img: {fileID: -1385721717, guid: a95d6bd50c4391e4aa0926efc1713ca5, type: 3}
-  itemName: A CD!
+  itemName: BloodPawz CD
   loreItem: 1
   node: CD
   diagPos: {x: -0.126, y: 7.327, z: -5.666}

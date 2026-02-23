@@ -12,6 +12,7 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public static event Action<List<InventoryItem>> OnInventoryChange;
+    public static event Action<Item> AddedItem;
     public static InventoryManager instance;
     //Inventory Lists
 
@@ -64,6 +65,7 @@ public class InventoryManager : MonoBehaviour
 
             OnInventoryChange?.Invoke(inventory);
         }
+        AddedItem?.Invoke(itemData);
     }
 
     public void RemoveItem(Item itemData)

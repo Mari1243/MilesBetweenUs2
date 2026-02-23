@@ -45,11 +45,11 @@ public class ToDoItemBehavior : MonoBehaviour
             case ToDoItemState.Incomplete:
             animator.enabled = false;
             strikethrough.fillAmount = 0;
-            print("enabling to do item " + gameObject.name + " is in state " + _currentState);
+            //print("enabling to do item " + gameObject.name + " is in state " + _currentState);
             break;
             case ToDoItemState.Completed:
             animator.enabled = true;
-            print("enabling to do item " + gameObject.name + " is in state " + _currentState);
+            //print("enabling to do item " + gameObject.name + " is in state " + _currentState);
             break;
         }
     }

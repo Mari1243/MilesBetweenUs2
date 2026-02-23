@@ -241,7 +241,7 @@ public class Interactor : MonoBehaviour
                 }
                 else
                 {
-                    print("Second press: Starting steal timer");
+                   
                     if (holdProgressRoutine == null)
                     {
                         holdDirection = +1;
@@ -283,13 +283,11 @@ public class Interactor : MonoBehaviour
     
     private IEnumerator HoldProgressLoop(float fillspeed)
     {
-        print("activating hold progress loop");
         while (true)
         {
             // CRITICAL: Check if object still exists
             if (pickedUpObj == null || Interactable == null)
             {
-                print("Object destroyed during hold - cleaning up");
                 StopHoldRoutine();
                 yield break;
             }
@@ -301,16 +299,13 @@ public class Interactor : MonoBehaviour
                 
                 if (isDanger)
                 {
-                    print("is danger");
                     if (warningStartTime <= 0)
                     {
                         warningStartTime = Time.time;
-                        print("WARNING! Release E now or you'll get caught!");
                     }
                     
                     if (Time.time - warningStartTime >= warningDuration)
                     {
-                        print("NOOO u were CAUGHTTTT");
                         inputActions["Interacted"].Disable();
                         StartCoroutine(FailedStealing());
                         StopHoldRoutine();
@@ -331,7 +326,6 @@ public class Interactor : MonoBehaviour
             if (holdProgress >= 1f)
             {
                 movement.moveSpeed = 6f;
-                print("DESTROYING PICKEDUP OBJECT");
                 
                 // Call interact BEFORE cleanup
                 if (Interactable != null)
@@ -363,7 +357,6 @@ public class Interactor : MonoBehaviour
                 {
                     if (StealingManager.Instance != null)
                     {
-                        print("hold progress is less than 0, activating Stop stealing function");
                         StealingManager.Instance.StopStealin();
                     }
                     hasStartedStealing = false;
@@ -379,10 +372,8 @@ public class Interactor : MonoBehaviour
 
     private void StopHoldRoutine()
     {
-        print("StopHoldRoutine called");
         if (holdProgressRoutine != null)
         {
-            print("stopping hold progress routine");
             StopCoroutine(holdProgressRoutine);
             holdProgressRoutine = null;
         }
@@ -417,16 +408,13 @@ public class Interactor : MonoBehaviour
 
     private void CheckState(StealingManager.DangerState newState)
     {
-        print("check state activated");
         if (newState == StealingManager.DangerState.Caught)
         {
             isDanger = true;
-            print("state is danger");
         }
         else
         {
             isDanger = false;
-            print("resetting state");
             warningStartTime = 0;
         }
     }

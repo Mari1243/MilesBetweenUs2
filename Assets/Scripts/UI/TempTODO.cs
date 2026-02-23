@@ -27,7 +27,6 @@ public class TempTODO : MonoBehaviour
         notif.transform.localScale=new Vector3(0, 0, 0);
     }
     public void checkObjective(List<InventoryItem> inventory)
-
     {
 
         if (inventory.Count >= 1)

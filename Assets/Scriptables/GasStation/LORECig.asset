@@ -15,5 +15,5 @@ MonoBehaviour:
   img: {fileID: 214108204, guid: b5b231be313753a49abe1188198c0ae4, type: 3}
   itemName: Cigarettes!
   loreItem: 1
-  node: cigarettes
+  node: Cigarettes
   diagPos: {x: -0.126, y: 7.327, z: -5.666}
