@@ -221,19 +221,22 @@ void EndDrag()
         EventSystem.current.RaycastAll(pointerData, results);
         
         bool foundCollageItem = false;
-        
+
         foreach (RaycastResult result in results)
         {
             //print("layered on a thing");
-            if (result.gameObject != gameObject && result.gameObject.CompareTag("Page")) 
+            if (result.gameObject != gameObject && result.gameObject.CompareTag("Page") || result.gameObject.CompareTag("TabHolder")) 
             {
                 print("parenting bc its tagged "+ result.gameObject.tag);
                 // This is the image underneath
                 transform.SetParent(result.gameObject.transform);
                 foundCollageItem = true;
+                if (result.gameObject.CompareTag("Page"))
+                {
 
-                checkLoreItem(this.gameObject); //Detects if lore item is on the page, if so, call function 
-                
+                    checkLoreItem(this.gameObject); //Detects if lore item is on the page, if so, call function 
+
+                }
                 break;
             }
             else

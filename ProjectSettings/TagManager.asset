@@ -16,6 +16,7 @@ TagManager:
   - coin
   - Page
   - LoreItem
+  - TabHolder
   layers:
   - Default
   - TransparentFX
