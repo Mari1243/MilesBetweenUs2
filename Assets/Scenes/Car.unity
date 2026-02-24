@@ -3575,6 +3575,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 2387029086476802654, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
     - {fileID: 9074128061178317755, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+    - {fileID: 5392374745561246474, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+    - {fileID: 2179469732605586439, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+    - {fileID: 702324176537293531, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+    - {fileID: 3830006337193687133, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
@@ -3745,11 +3749,11 @@ MonoBehaviour:
   inventory:
   - itemData: {fileID: 11400000, guid: 428669f288279234aacbf0e8c15c1f17, type: 2}
     stackSize: 0
+  - itemData: {fileID: 11400000, guid: 46603623567ed83459d157a7205b4a71, type: 2}
+    stackSize: 0
   - itemData: {fileID: 11400000, guid: d2dcb10b6d232e44e87f9ab23ae1e1af, type: 2}
     stackSize: 0
   - itemData: {fileID: 11400000, guid: a631da5154ee88e45a80977cdfcfb22d, type: 2}
-    stackSize: 0
-  - itemData: {fileID: 11400000, guid: 46603623567ed83459d157a7205b4a71, type: 2}
     stackSize: 0
   - itemData: {fileID: 11400000, guid: 004886a318593c84e908e24b8540d223, type: 2}
     stackSize: 0

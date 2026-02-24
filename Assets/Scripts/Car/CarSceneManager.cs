@@ -62,6 +62,8 @@ public class CarSceneManager : MonoBehaviour
         ToggleJournal.hideJournal -= ExitJournal;
     }
 
+    
+
     private void Start()
     {
         brother.Play("Armature_BigBro_Drive");
@@ -88,27 +90,21 @@ public class CarSceneManager : MonoBehaviour
                 GameObject Tab1 = tabholder.transform.GetChild(0).gameObject;
                 journalItem.transform.SetParent(Tab1.transform);
                 journalItem.transform.localPosition = Vector2.zero;
- 
+
                 //this is all stuff that assigns image
-                var imgComponent = journalItem.gameObject.GetComponent<Image>();
-                imgComponent.sprite = items.itemData.img;
+                DG.itemImg = items.itemData.img;
                 if (items.itemData.loreItem)
                 {
-                    journalItem.gameObject.tag = "LoreItem";
+                    DG.gameObject.tag = "LoreItem";
                     DG.itemNode = items.itemData.node;
+                    Debug.Log("LORE ITEM DETECTED");
                 }
-                //scaling is required so that the proportions of the image stay the same
-                float desiredWidth = 100; // Your target size
-                float aspectRatio = items.itemData.img.rect.height / items.itemData.img.rect.width;
-                journalItem.GetComponent<RectTransform>().sizeDelta = new Vector2(desiredWidth, desiredWidth * aspectRatio);
-
-                // *** ADD THIS: Normalize the scale after sizing ***
-                journalItem.transform.localScale = Vector3.one;
-                //then you have to resize the rotation icon which got scaled with the parent
-                var rotationIcon = journalItem.transform.GetChild(0);
-                rotationIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25,25);
-                var scaleIcon = journalItem.transform.GetChild(1);
-                scaleIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25,25);
+                else
+                {
+                    DG.gameObject.tag = "Untagged";
+                    DG.itemNode = " ";
+                }
+              
             }
         }
 

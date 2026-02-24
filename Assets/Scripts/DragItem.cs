@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.VFX;
 using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
@@ -24,13 +25,17 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private bool lorePlaced=false;
     public static UnityAction<string> loreDrop;
     public string itemNode;
-
+    public Sprite itemImg;
 
     // Static reference to currently selected item
     public static DragItem currentlySelected;
 
     private void Start()
     {
+        Debug.Log("This is my current name: " + this.GetComponent<Image>().sprite.name + "and my node is: " + itemNode);
+
+
+
         mainCamera = Camera.main;
         if (mainCamera == null)
             mainCamera = FindObjectOfType<Camera>();
@@ -46,6 +51,8 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         dropShadow = GetComponent<Shadow>();
         if (dropShadow != null)
             dropShadow.enabled = false;
+        this.GetComponent<Image>().sprite = itemImg;
+        fixSizing();
     }
     // OnPointerDown - just record the starting position
     public void OnPointerDown(PointerEventData eventData)
@@ -71,12 +78,30 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             Debug.Log($"Click detected on {name}");
             SetSelected(true);
         }
-        if (lorePlaced && this.gameObject.tag == "LoreItem")
+        if (lorePlaced)
         {
             loreDrop(itemNode);
         }
         
     }
+
+    private void fixSizing()
+    {
+        //scaling is required so that the proportions of the image stay the same
+
+        float desiredWidth = 100; // Your target size
+        float aspectRatio = itemImg.rect.height / itemImg.rect.width;
+        this.GetComponent<RectTransform>().sizeDelta = new Vector2(desiredWidth, desiredWidth * aspectRatio);
+
+        // *** ADD THIS: Normalize the scale after sizing ***
+        this.transform.localScale = Vector3.one;
+        //then you have to resize the rotation icon which got scaled with the parent
+        var rotationIcon = this.transform.GetChild(0);
+        rotationIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+        var scaleIcon = this.transform.GetChild(1);
+        scaleIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+    }
+
 
     private void ValidateSetup()
     {
@@ -231,13 +256,17 @@ void EndDrag()
                 // This is the image underneath
                 transform.SetParent(result.gameObject.transform);
                 foundCollageItem = true;
+
                 if (result.gameObject.CompareTag("Page"))
                 {
 
                     checkLoreItem(this.gameObject); //Detects if lore item is on the page, if so, call function 
 
                 }
-                break;
+                else
+                {
+                    break;
+                }
             }
             else
             {
@@ -254,21 +283,22 @@ void EndDrag()
 
     public void checkLoreItem(GameObject item)
     {
-        lorePlaced = true;
         if (item.gameObject.tag == "LoreItem")
         {
+            lorePlaced = true;
+
             if (item.gameObject.GetComponent<Outline>() != null)
             {
-                
-                //item.gameObject.GetComponent<Outline>().effectColor = Color.yellow;
+
+                item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
 
 
 
             }
             else
             {
-                item.gameObject.AddComponent<Outline>();
-                //item.gameObject.GetComponent<Outline>().effectColor = Color.yellow;
+                item.gameObject.AddComponent<OutlineUI>();
+                item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
             }
         }
     }
