@@ -102,7 +102,7 @@ public class BrotherInteractable : MonoBehaviour
     }
     private void CloseBubble()
     {
-        img.transform.DOScale(new Vector3(0, 0, 0), .5f).SetEase(Ease.InBounce);
+        img.transform.DOScale(new Vector3(0, 0, 0), .2f).SetEase(Ease.InBounce);
 
     }
 }

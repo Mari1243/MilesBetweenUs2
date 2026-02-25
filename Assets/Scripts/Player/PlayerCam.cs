@@ -4,7 +4,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using DG.Tweening;
 using UnityEngine.UI;
-using System; // Required for Action and delegate
+using System;
+using System.Collections.Generic;
+using System.Collections; // Required for Action and delegate
 
 
 /*
@@ -132,7 +134,6 @@ public class PlayerCam : MonoBehaviour
         }
     }
 
-
     public void FPInteract(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -152,15 +153,19 @@ public class PlayerCam : MonoBehaviour
     public void TalkingCamera() 
     {
         isInDialogue = true; 
-        gameObject.transform.DOLocalRotate(new Vector3(0f, 16f, 0f), 1f);
-        gameObject.transform.DOLocalMoveZ(.67f, 2f);
+        gameObject.transform.DOLocalRotate(new Vector3(1.00179132f, 16.0000038f, 0), 2f);
+        gameObject.transform.DOLocalMove(new Vector3(-0.104000002f, 1.24899995f, 0.669999957f), 2f);
  
     }
-
+    
     public void DefaultCamera()
     {
-        gameObject.transform.DOLocalMoveZ(-0.661f, 1f);
+
+        gameObject.transform.DOLocalRotate(new Vector3(359.278015f, 8.36011982f, 0.120773472f), 2f);
+        gameObject.transform.DOLocalMove(new Vector3(-0.104000002f, 1.24899995f, -0.675999999f), 2f);
         isInDialogue = false;
 
     }
+
+
 }
