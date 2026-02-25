@@ -36,7 +36,8 @@ Brother: You wanna go?
 
 title: CarBark1
 ---
-Brother: don't make too much mess back there with all your scraps or whatever.
+Brother: don't make too much mess back there 
+Brother: with all your scraps or whatever.
 
 ===
 
@@ -117,9 +118,14 @@ Brother: You hungry now?
 
 title: knife
 ---
-Brother: Huh.. how’d you afford this? 
-Brother: Nevermind, it’s pretty cool. 
-Brother: Reminds me of going on hunting trips with dad.
+Brother: I haven't seen this brand in ages.
+->When did you last see them?
+	Brother: When me and dad used to go camping together.
+	Brother: He kept this kind of knife on him.
+->Yeah, cuz ur so old.
+	Brother: Shut up... 
+	Brother: Dad used to have one of these
+	Brother: when we used to go camping together.
 
 ===
 
@@ -127,14 +133,22 @@ title: cigarettes
 ---
 Brother: ... 
 Brother: Did you find these off the floor or something? 
-Brother: Yeah, I’ll take those.
+->I snatched 'em from a counter top.
+	BROTHER: Badass, lil dude.. give me them though.
+->I found them. 
+	BROTHER: Cool, I'll take those.
 ===
 
 title: CD
 ---
-Brother: WOAH its Blood Pawz??? 
-Brother: And their newest album?! 
-Brother: That’s so sick, thanks dude.
+Brother: Dude this is SICK! 
+Brother: How'd you know I like this?
+->Don't ya like this weird dark bloody looking stuff?
+	Brother: Um yeah, it's cool. 
+	Brother: I love post emo punk rock. 
+	Brother: I was in a band back in high school.
+->I saw photos of you in a band back at home! You were all dressed so weird! 
+	Brother: It's not weird, it's cool.
 
 ===
 

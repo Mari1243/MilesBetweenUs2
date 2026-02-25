@@ -85,6 +85,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             lorePlaced = false;
             loreDone = true;
             this.GetComponent<OutlineUI>().enabled= false;
+            this.DOKill();
         }
         
     }
@@ -304,7 +305,7 @@ void EndDrag()
                 item.gameObject.AddComponent<OutlineUI>();
                 item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
                 item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
-                item.gameObject.GetComponent<Image>().DOColor(Color.yellow, .5f).SetLoops(-1, LoopType.Yoyo);
+                item.gameObject.GetComponent<Image>().DOColor(Color.yellow, 1f).SetLoops(-1, LoopType.Yoyo);
 
             }
         }
