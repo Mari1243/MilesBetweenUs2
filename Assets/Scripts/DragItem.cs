@@ -23,6 +23,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private Camera mainCamera;
 
     private bool lorePlaced=false;
+    private bool loreDone = false;
     public static UnityAction<string> loreDrop;
     public Item itemdata;
 
@@ -80,6 +81,9 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (lorePlaced)
         {
             loreDrop(itemdata.node);
+            lorePlaced = false;
+            loreDone = true;
+            this.GetComponent<OutlineUI>().enabled= false;
         }
         
     }
@@ -282,7 +286,7 @@ void EndDrag()
 
     public void checkLoreItem(GameObject item)
     {
-        if (itemdata.loreItem)
+        if (itemdata.loreItem &&!loreDone)
         {
             lorePlaced = true;
 
@@ -290,7 +294,7 @@ void EndDrag()
             {
 
                 item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
-
+                item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
 
 
             }
@@ -298,8 +302,11 @@ void EndDrag()
             {
                 item.gameObject.AddComponent<OutlineUI>();
                 item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
+                item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
+
             }
         }
+       
     }
 
 
