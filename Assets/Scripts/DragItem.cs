@@ -1,10 +1,13 @@
+using DG.Tweening;
+using NUnit.Framework;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using UnityEngine.VFX;
-using UnityEngine.Events;
-using Unity.VisualScripting;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
@@ -57,10 +60,9 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     // OnPointerDown - just record the starting position
     public void OnPointerDown(PointerEventData eventData)
     {
-        print("pointer down");
         dragStartPos = Input.mousePosition;
     }
-
+   
     public void DeselectCurrent()
     {
         //the line that will call this is gonna be:
@@ -71,7 +73,6 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     // OnPointerClick - only fires for actual clicks (not drags)
     public void OnPointerClick(PointerEventData eventData)
     {
-        print("im clicking");
         // This event only fires if the pointer hasn't moved beyond threshold
         if (!isDragging)
         {
@@ -303,6 +304,7 @@ void EndDrag()
                 item.gameObject.AddComponent<OutlineUI>();
                 item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
                 item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
+                item.gameObject.GetComponent<Image>().DOColor(Color.yellow, .5f).SetLoops(-1, LoopType.Yoyo);
 
             }
         }
@@ -315,6 +317,8 @@ void EndDrag()
         print("calling not in journal, deparenting");
         transform.parent = canvas.transform;
     }
+
+
 }
 
 
