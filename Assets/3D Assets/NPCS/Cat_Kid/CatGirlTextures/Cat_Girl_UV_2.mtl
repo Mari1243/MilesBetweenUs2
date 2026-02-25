@@ -1,0 +1,114 @@
+# Apple ModelI/O MTL File: Cat_Girl_UV_2.mtl
+
+newmtl standardSurface7SG
+	map_Kd standardSurface7SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic standardSurface7SG-metallic.png
+	specularTint 0
+	map_roughness standardSurface7SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl standardSurface3SG
+	map_Kd standardSurface3SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic standardSurface3SG-metallic.png
+	specularTint 0
+	map_roughness standardSurface3SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl standardSurface4SG
+	map_Kd standardSurface4SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic standardSurface4SG-metallic.png
+	specularTint 0
+	map_roughness standardSurface4SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl openPBRSurface1SG
+	map_Kd openPBRSurface1SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic openPBRSurface1SG-metallic.png
+	specularTint 0
+	map_roughness openPBRSurface1SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl standardSurface2SG
+	map_Kd standardSurface2SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic standardSurface2SG-metallic.png
+	specularTint 0
+	map_roughness standardSurface2SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl standardSurface5SG
+	map_Kd standardSurface5SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic standardSurface5SG-metallic.png
+	specularTint 0
+	map_roughness standardSurface5SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl standardSurface6SG
+	map_Kd standardSurface6SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic standardSurface6SG-metallic.png
+	specularTint 0
+	map_roughness standardSurface6SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+

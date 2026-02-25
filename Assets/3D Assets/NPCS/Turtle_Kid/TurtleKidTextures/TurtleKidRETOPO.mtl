@@ -1,0 +1,118 @@
+# Exported from Nomad Sculpt
+
+newmtl Head
+ map_Kd Head_color_2.png
+ map_roughness Head_roughness_2.png
+ map_Pr Head_roughness_2.png
+ map_metallic Head_metalness_2.png
+ map_Pm Head_metalness_2.png
+ map_tangentSpaceNormal Head_normal_2.png
+ map_bump Head_normal_2.png
+ norm Head_normal_2.png
+ bump Head_normal_2.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Eyes
+ map_Kd Eyes_color.png
+ map_roughness Eyes_roughness.png
+ map_Pr Eyes_roughness.png
+ map_metallic Eyes_metalness.png
+ map_Pm Eyes_metalness.png
+ map_tangentSpaceNormal Eyes_normal.png
+ map_bump Eyes_normal.png
+ norm Eyes_normal.png
+ bump Eyes_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Cap
+ map_Kd Cap_color.png
+ map_roughness Cap_roughness.png
+ map_Pr Cap_roughness.png
+ map_metallic Cap_metalness.png
+ map_Pm Cap_metalness.png
+ map_tangentSpaceNormal Cap_normal.png
+ map_bump Cap_normal.png
+ norm Cap_normal.png
+ bump Cap_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Backpck
+ map_Kd Backpck_color.png
+ map_roughness Backpck_roughness.png
+ map_Pr Backpck_roughness.png
+ map_metallic Backpck_metalness.png
+ map_Pm Backpck_metalness.png
+ map_tangentSpaceNormal Backpck_normal.png
+ map_bump Backpck_normal.png
+ norm Backpck_normal.png
+ bump Backpck_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl PackpackRim
+ map_Kd PackpackRim_color.png
+ map_roughness PackpackRim_roughness.png
+ map_Pr PackpackRim_roughness.png
+ map_metallic PackpackRim_metalness.png
+ map_Pm PackpackRim_metalness.png
+ map_tangentSpaceNormal PackpackRim_normal.png
+ map_bump PackpackRim_normal.png
+ norm PackpackRim_normal.png
+ bump PackpackRim_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl PackStraps
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Body
+ map_Kd Body_color.png
+ map_roughness Body_roughness.png
+ map_Pr Body_roughness.png
+ map_metallic Body_metalness.png
+ map_Pm Body_metalness.png
+ map_tangentSpaceNormal Body_normal.png
+ map_bump Body_normal.png
+ norm Body_normal.png
+ bump Body_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Feet
+ map_Kd Feet_color.png
+ map_roughness Feet_roughness.png
+ map_Pr Feet_roughness.png
+ map_metallic Feet_metalness.png
+ map_Pm Feet_metalness.png
+ map_tangentSpaceNormal Feet_normal.png
+ map_bump Feet_normal.png
+ norm Feet_normal.png
+ bump Feet_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Tee
+ map_Kd Tee_color.png
+ map_roughness Tee_roughness.png
+ map_Pr Tee_roughness.png
+ map_metallic Tee_metalness.png
+ map_Pm Tee_metalness.png
+ map_tangentSpaceNormal Tee_normal.png
+ map_bump Tee_normal.png
+ norm Tee_normal.png
+ bump Tee_normal.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
