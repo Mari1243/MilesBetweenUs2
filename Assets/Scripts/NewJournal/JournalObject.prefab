@@ -232,6 +232,7 @@ MonoBehaviour:
   dragThreshold: 5
   itemNode: ' '
   itemImg: {fileID: 344102897, guid: 4281030277799a849a2dda9f04621972, type: 3}
+  loreItem: 1
 --- !u!114 &4999891360551661480
 MonoBehaviour:
   m_ObjectHideFlags: 0

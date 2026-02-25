@@ -24,15 +24,14 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     private bool lorePlaced=false;
     public static UnityAction<string> loreDrop;
-    public string itemNode;
-    public Sprite itemImg;
+    public Item itemdata;
 
     // Static reference to currently selected item
     public static DragItem currentlySelected;
 
     private void Start()
     {
-        Debug.Log("This is my current name: " + this.GetComponent<Image>().sprite.name + "and my node is: " + itemNode);
+        Debug.Log("This is my current name: " + this.GetComponent<Image>().sprite.name + "and my node is: " + itemdata.node);
 
 
 
@@ -51,7 +50,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         dropShadow = GetComponent<Shadow>();
         if (dropShadow != null)
             dropShadow.enabled = false;
-        this.GetComponent<Image>().sprite = itemImg;
+        this.GetComponent<Image>().sprite = itemdata.img;
         fixSizing();
     }
     // OnPointerDown - just record the starting position
@@ -80,7 +79,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         }
         if (lorePlaced)
         {
-            loreDrop(itemNode);
+            loreDrop(itemdata.node);
         }
         
     }
@@ -90,7 +89,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         //scaling is required so that the proportions of the image stay the same
 
         float desiredWidth = 100; // Your target size
-        float aspectRatio = itemImg.rect.height / itemImg.rect.width;
+        float aspectRatio = itemdata.img.rect.height / itemdata.img.rect.width;
         this.GetComponent<RectTransform>().sizeDelta = new Vector2(desiredWidth, desiredWidth * aspectRatio);
 
         // *** ADD THIS: Normalize the scale after sizing ***
@@ -283,7 +282,7 @@ void EndDrag()
 
     public void checkLoreItem(GameObject item)
     {
-        if (item.gameObject.tag == "LoreItem")
+        if (itemdata.loreItem)
         {
             lorePlaced = true;
 

@@ -91,19 +91,8 @@ public class CarSceneManager : MonoBehaviour
                 journalItem.transform.SetParent(Tab1.transform);
                 journalItem.transform.localPosition = Vector2.zero;
 
-                //this is all stuff that assigns image
-                DG.itemImg = items.itemData.img;
-                if (items.itemData.loreItem)
-                {
-                    DG.gameObject.tag = "LoreItem";
-                    DG.itemNode = items.itemData.node;
-                    Debug.Log("LORE ITEM DETECTED");
-                }
-                else
-                {
-                    DG.gameObject.tag = "Untagged";
-                    DG.itemNode = " ";
-                }
+                //this  assigns data
+                DG.itemdata=items.itemData;
               
             }
         }
