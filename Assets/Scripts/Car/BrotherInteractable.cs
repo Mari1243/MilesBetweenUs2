@@ -67,11 +67,11 @@ public class BrotherInteractable : MonoBehaviour
 
 
         //also make it so he "barks" only like twice but each time between then is randomized 
+        interactableData.item.node = "Car0";
 
         barkCount = barks.Count;
         int rand = Random.Range(minWait, maxWait); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
         yield return new WaitForSeconds(rand);
-        interactableData.item.node = "Car0";
 
         if (barkCount == 0)
         {
@@ -86,7 +86,7 @@ public class BrotherInteractable : MonoBehaviour
 
 
         }
-        
+
     }
 
     public void loreDropping(string node)
