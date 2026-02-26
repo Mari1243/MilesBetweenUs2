@@ -15,19 +15,14 @@ using UnityEngine.SceneManagement;
  */
 public class interactable : MonoBehaviour, IInteractable
 {
-
-
+    public Item item;
+    public delegate void HandleItem(Item itemData);
     public static event HandleItem onTalk;
     public static event HandleItem onPickedUp;
-    public delegate void HandleItem(Item itemData);
-    public static event HandleItem coinPickedUp;
-
-    public static event HandleHold onHold;
-    public delegate void HandleHold(GameObject item, Item itemData);
 
     public static event Action showJournal;
     public static event Action onTalkCar;
-    public Item item;
+    public static event Action onInteract;
 
 
     public void Interact()
@@ -59,13 +54,7 @@ public class interactable : MonoBehaviour, IInteractable
                 {
                     GameObject SM = GameObject.Find("CarSceneManager");
                     CarSceneManager sceneManager = SM.GetComponent<CarSceneManager>();
-                    //if (sceneManager.isHoldingItem)
-                    //{
-                    //    onTalkCar?.Invoke(); //called in CarSceneManager
-                    //}
-                    //else
-                    //{
-                        onTalk?.Invoke(item); //called in DialogueManager
+                    onTalk?.Invoke(item); //called in DialogueManager
                     
                 }
 
@@ -76,22 +65,17 @@ public class interactable : MonoBehaviour, IInteractable
                 showJournal?.Invoke(); //called in SceneManager
                 break;
 
-            case "InventoryItem":
-                onHold?.Invoke(gameObject,item);
-                break;
-
+   
             case "canSteal":
 
                 Destroy(gameObject);
                 onPickedUp?.Invoke(item); //called in InventoryManager
                 break;
 
-            case "coin":
-                Debug.Log("coin picked up!");
-                Destroy(gameObject);
-                coinPickedUp?.Invoke(item);
+            case "caninteract":
+                onInteract?.Invoke();
                 break;
-
+                
         }
     }
   
