@@ -257,16 +257,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Move with WASD
-
-    Backspace to restart
-
-    Hold ''E'' to pick up
-
-    Q
-    to Drop
-
-'
+  m_text: "E or Click to interact\nArrows + E  to choose dialogue \nspace to open
+    journal\nesc to pause\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
   m_sharedMaterial: {fileID: -6955914548417487326, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}

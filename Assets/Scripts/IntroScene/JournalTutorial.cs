@@ -62,7 +62,7 @@ public class JournalTutorial : MonoBehaviour
 
     public void JournalScene() //SHOWS JOURNAL 
     {
-
+        Cursor.visible = false;
         print("showing journal");
         this.GetComponent<Canvas>().enabled = true;
         this.gameObject.SetActive(true);

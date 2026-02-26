@@ -115,7 +115,7 @@ public class CarSceneManager : MonoBehaviour
 
         //Locks the screen and enables you to interact with the journal
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        Cursor.visible = false;
         journalActive = true;
 
     }
