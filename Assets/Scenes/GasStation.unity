@@ -27074,7 +27074,7 @@ GameObject:
   - component: {fileID: 8899690100723500400}
   m_Layer: 0
   m_Name: SnackBag
-  m_TagString: canSteal
+  m_TagString: canPickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
