@@ -11,12 +11,11 @@ TagManager:
   - journal
   - CollageItem
   - canSteal
-  - InventoryItem
   - Border
-  - coin
   - Page
   - LoreItem
   - TabHolder
+  - canInteract
   layers:
   - Default
   - TransparentFX
