@@ -4,7 +4,6 @@ public class JournalSnappingScript : MonoBehaviour, IBeginDragHandler, IDragHand
 {
     [Header("Grid Settings")]
     [SerializeField] private float gridSize = 1f;
-    [SerializeField] private bool showGridGizmos = true;
     [SerializeField] private Color gizmoColor = Color.white;
     
     [Header("Drag Settings")]

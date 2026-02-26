@@ -21,7 +21,6 @@ public class interactable : MonoBehaviour, IInteractable
     public static event HandleItem onPickedUp;
 
     public static event Action showJournal;
-    public static event Action onTalkCar;
     public static event Action onInteract;
 
 

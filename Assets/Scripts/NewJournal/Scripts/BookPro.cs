@@ -397,7 +397,6 @@ namespace BookCurlPro
 #if ENABLE_INPUT_SYSTEM
             return Mouse.current.position.ReadValue();
 #endif
-            return Input.mousePosition;
 
         }
         public void UpdateBook()

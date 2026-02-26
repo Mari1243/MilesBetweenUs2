@@ -24,10 +24,6 @@ public class IntroUIManager : MonoBehaviour
     public GameObject hintUI;
     public static Sprite[] hintsprites;
 
-
-    private bool hintneeded = false;
-
-
     [Header("Public References")]
     public GameObject InventoryHUD, ItemHUD;
     public GameObject loreitemhint;
@@ -39,8 +35,6 @@ public class IntroUIManager : MonoBehaviour
     private bool isPaused = false;
     public static event System.Action<bool> onPause;
 
-    //private refs to dog sprites
-    private Texture2D CurrentDog;
 
     private void OnEnable()
     {
@@ -56,7 +50,6 @@ public class IntroUIManager : MonoBehaviour
 
 
         IntroSceneManager.OnHintNeeded += hint;
-        IntroInteractor.HintNeeded += hint;
         InputManager.Pause += pausegame;
     }
 
@@ -73,7 +66,6 @@ public class IntroUIManager : MonoBehaviour
         Mapinteractable.onPickedUp -= rewardText;
 
         IntroSceneManager.OnHintNeeded -= hint;
-        IntroInteractor.HintNeeded -= hint;
         InputManager.Pause -= pausegame;
     }
 
@@ -216,7 +208,6 @@ public class IntroUIManager : MonoBehaviour
         //print("hint calleed");
         print(str);
         Hintimage = hintUI.transform.GetChild(0).GetComponent<Image>(); 
-        hintneeded = true;
         if (str == "nojournal")
         {
             Hintimage.sprite = hintsprites[0];

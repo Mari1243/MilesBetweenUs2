@@ -10,7 +10,6 @@ public class IntroInteractor : MonoBehaviour
     private Coroutine holdProgressRoutine;
     private float holdProgress = 0f;
     private bool isHeld = false;
-     private bool isDanger;
     private bool hasStartedStealing = false;
     
     public GameObject pickupUI;
@@ -27,12 +26,10 @@ public class IntroInteractor : MonoBehaviour
     public static event Action<float> OnHoldProgress;   // Sends progress 0–1
     public static event Action OnHoldCompleted;
     public static event Action OnHoldCanceled;
-    public static event Action<string> HintNeeded;
 
     //END changes
 
     private Transform highlight;
-    private Transform selection;
     
     private Mapinteractable Interactable;
     private PlayerInput playerInput;
@@ -40,7 +37,6 @@ public class IntroInteractor : MonoBehaviour
     private GameObject interactableItem;
     [SerializeField]bool canInteract;
 
-    private bool inventoryActive = false;
     public GameObject inventoryHUD;
     public ThirdPersonMovement movement; 
     private void Awake()
@@ -76,18 +72,12 @@ public class IntroInteractor : MonoBehaviour
 
     private void OnEnable()
     {
-        StealingManager.OnStateChanged += CheckState;
-        InputManager.drop += DropItem;
-        InputManager.openInventory += OpenInventory;
         Mapinteractable.showJournal += disableinput;
         JournalTutorial.hideJournal += enableinput;
     }
 
     void OnDisable()
     {
-       StealingManager.OnStateChanged -= CheckState;
-        InputManager.drop -= DropItem;
-        InputManager.openInventory -= OpenInventory;
         Mapinteractable.showJournal -= disableinput;
         JournalTutorial.hideJournal -= enableinput;
     }
@@ -314,33 +304,6 @@ public class IntroInteractor : MonoBehaviour
         }
     }
 
-    private void CheckState(StealingManager.DangerState newState)
-    {
-        print("check state activated");
-        if (newState == StealingManager.DangerState.Caught)
-        {
-            isDanger = true;
-            print("state is danger");
-        }
-        else
-        {
-            isDanger = false;
-        }
-    }
 
-    public void OpenInventory()
-    {
-        if (inventoryActive == false)
-        {
-            inventoryHUD.transform.DOScale(new Vector3(1, 1, 1), .5f).SetEase(Ease.OutBounce);
-            inventoryHUD.transform.DOLocalMoveY(-195.6f, .5f).SetEase(Ease.OutBounce);
-            inventoryActive = true;
-        }
-        else if (inventoryActive == true)
-        {
-            inventoryHUD.transform.DOLocalMoveY(-307.1f, .4f).SetEase(Ease.InOutQuart);
-            inventoryHUD.transform.DOScale(new Vector3(0, 0, 0), .5f).SetEase(Ease.InOutQuart);
-            inventoryActive = false;
-        }
-    }
+
 }

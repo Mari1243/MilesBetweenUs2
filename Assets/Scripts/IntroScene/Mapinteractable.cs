@@ -20,7 +20,6 @@ public class Mapinteractable : MonoBehaviour, IInteractable
     public delegate void HandleHold(GameObject item, Item itemData);
 
     public static event Action showJournal;
-    public static event Action onTalkCar;
     public Item item;
 
     public void Interact()

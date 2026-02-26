@@ -17,8 +17,6 @@ public class CarSceneManager : MonoBehaviour
 {
     [Header("Inventory")]
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
-    public static event System.Action<Sprite> assignsprite;
-    public static event Action<bool> HoldingTalkItem;
     public GameObject tabholder;
 
     [Header("Cursor")]
@@ -77,12 +75,12 @@ public class CarSceneManager : MonoBehaviour
         }
         else
         {
-            print("Theres sum in this hoe");
             foreach (InventoryItem items in currentInventory)
             {
-                if (items.itemData.itemName == "Journal") 
+                if (items.itemData.itemName == "Map") 
                 {
-                    currentInventory.Clear();
+                    Debug.Log("Found item");
+                    currentInventory.Remove(items);
                 }
 
                 var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity); //the connecting data
