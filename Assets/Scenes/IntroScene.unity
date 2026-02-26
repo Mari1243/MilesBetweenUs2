@@ -8489,6 +8489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragThreshold: 5
+  itemdata: {fileID: 0}
 --- !u!222 &1219271191376547371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11154,6 +11155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragThreshold: 5
+  itemdata: {fileID: 0}
 --- !u!1 &6903157775765112128
 GameObject:
   m_ObjectHideFlags: 0
@@ -11487,6 +11489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragThreshold: 5
+  itemdata: {fileID: 11400000, guid: 7ef025da6f9c742af95e435982182225, type: 2}
 --- !u!61 &7383248496340148669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12202,6 +12205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragThreshold: 5
+  itemdata: {fileID: 0}
 --- !u!222 &8047772846420301469
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 21300000, guid: ad98ec3820c804eb089ff5e13d396c64, type: 3}
   itemName: Map
-  loreItem: 1
+  loreItem: 0
   node: Map
   diagPos: {x: -0.126, y: 7.327, z: -5.666}
