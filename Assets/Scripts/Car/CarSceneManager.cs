@@ -52,13 +52,14 @@ public class CarSceneManager : MonoBehaviour
     private void OnEnable()
     {
         interactable.showJournal += JournalScene;
-        //interactable.onTalkCar += ActivateBroDiag;
+        interactable.onInteract += playRadio;
         ToggleJournal.hideJournal += ExitJournal;
+
     }
     private void OnDisable()
     {
         interactable.showJournal -= JournalScene;
-        //interactable.onTalkCar-= ActivateBroDiag;  
+        interactable.onInteract -= playRadio;
         ToggleJournal.hideJournal -= ExitJournal;
     }
 
@@ -142,12 +143,8 @@ public class CarSceneManager : MonoBehaviour
 
     }
 
-    //public void ActivateBroDiag()
-    //{
-    //    holdItemData.diagPos = new Vector3(-0.126f, 7.327f, -5.666f);
-    //    DialogueManager.instance.TalkInteraction(holdItemData);
+    public void playRadio()
+    {
 
-    //}
-
-
+    }
 }

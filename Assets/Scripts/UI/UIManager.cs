@@ -62,8 +62,6 @@ public class UIManager : MonoBehaviour
 
         interactable.onPickedUp += ShowItemHUD;
         interactable.onPickedUp += rewardText;
-        interactable.coinPickedUp += collectCoin;
-        interactable.coinPickedUp += ShowItemHUD;
         Interactor.StealWarning += dangerState;
 
         //IntroSceneManager.OnHintNeeded += hint;
@@ -84,8 +82,6 @@ public class UIManager : MonoBehaviour
 
         interactable.onPickedUp -= ShowItemHUD;
         interactable.onPickedUp -= rewardText;
-        interactable.coinPickedUp -= collectCoin;
-        interactable.coinPickedUp -= ShowItemHUD;
         
         //IntroSceneManager.OnHintNeeded -= hint;
         //Interactor.HintNeeded -= hint;

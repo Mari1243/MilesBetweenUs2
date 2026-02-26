@@ -72,8 +72,8 @@ public class interactable : MonoBehaviour, IInteractable
                 onPickedUp?.Invoke(item); //called in InventoryManager
                 break;
 
-            case "caninteract":
-                onInteract?.Invoke();
+            case "canInteract":
+                onInteract?.Invoke(); //called in SceneManager
                 break;
                 
         }
