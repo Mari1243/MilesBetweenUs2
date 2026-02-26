@@ -24,7 +24,7 @@ public class BrotherInteractable : MonoBehaviour
     {
         DialogueManager.DialogStart -= CloseBubble;
         DialogueManager.DialogOver -= StartTimer;
-  }
+    }
 
     private void Start()
     {
