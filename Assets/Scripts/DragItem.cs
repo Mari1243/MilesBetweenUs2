@@ -54,7 +54,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (dropShadow != null)
             dropShadow.enabled = false;
         this.GetComponent<Image>().sprite = itemdata.img;
-        //fixSizing();
+        fixSizing();
     }
     // OnPointerDown - just record the starting position
     public void OnPointerDown(PointerEventData eventData)
@@ -90,22 +90,25 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         
     }
 
-    //private void fixSizing()
-    //{
-    //    //scaling is required so that the proportions of the image stay the same
+    private void fixSizing()
+    {
+        //scaling is required so that the proportions of the image stay the same
+        if (itemdata.name != "Map")
+        {
+            float desiredWidth = 100; // Your target size
+            float aspectRatio = itemdata.img.rect.height / itemdata.img.rect.width;
+            this.GetComponent<RectTransform>().sizeDelta = new Vector2(desiredWidth, desiredWidth * aspectRatio);
 
-    //    float desiredWidth = 100; // Your target size
-    //    float aspectRatio = itemdata.img.rect.height / itemdata.img.rect.width;
-    //    this.GetComponent<RectTransform>().sizeDelta = new Vector2(desiredWidth, desiredWidth * aspectRatio);
+            // *** ADD THIS: Normalize the scale after sizing ***
+            this.transform.localScale = Vector3.one;
+            //then you have to resize the rotation icon which got scaled with the parent
+            var rotationIcon = this.transform.GetChild(0);
+            rotationIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+            var scaleIcon = this.transform.GetChild(1);
+            scaleIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+        }
 
-    //    // *** ADD THIS: Normalize the scale after sizing ***
-    //    this.transform.localScale = Vector3.one;
-    //    //then you have to resize the rotation icon which got scaled with the parent
-    //    var rotationIcon = this.transform.GetChild(0);
-    //    rotationIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
-    //    var scaleIcon = this.transform.GetChild(1);
-    //    scaleIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
-    //}
+    }
 
 
     private void ValidateSetup()
