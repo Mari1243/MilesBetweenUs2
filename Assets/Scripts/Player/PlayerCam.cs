@@ -138,7 +138,6 @@ public class PlayerCam : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("INTERACT");
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
             if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
             {

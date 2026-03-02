@@ -63,6 +63,34 @@ namespace BookCurlPro
                 }
             }
         }
+
+        //this is my attempt at a structure for automatic page flipping *****
+        //this function should probably take in the end page number, then if the new page num is more than the current page num itll trigger all the turning page scripts 
+        // (but it cant work with drag itll have to switch to the next page automatically)
+
+
+
+        public void TurnToPage(int targetPaperIndex, float flipDuration = 0.2f)
+        {
+            // Clamp target to valid range
+            targetPaperIndex = Mathf.Clamp(targetPaperIndex, StartFlippingPaper, EndFlippingPaper + 1);
+            
+            if (currentPaper == targetPaperIndex || tweening) return;
+            
+            //if current paper is less than where its going set mode
+            FlipMode mode = currentPaper < targetPaperIndex ? FlipMode.RightToLeft : FlipMode.LeftToRight;
+            print("flip mode is " + mode);
+
+            PageFlipper.FlipPage(this, flipDuration, mode, () =>
+            {
+                // After each flip completes, check if we've reached the target, else repeat this
+                if (currentPaper != targetPaperIndex)
+                    print(CurrentPaper + " current paper is not at goal page of " + targetPaperIndex + "yet.");
+                    TurnToPage(targetPaperIndex, flipDuration);
+            });
+        }
+        //end my changes *****
+
         // [HideInInspector]
         public int StartFlippingPaper = 0;
         //[HideInInspector]
