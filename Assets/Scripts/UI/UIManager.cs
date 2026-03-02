@@ -345,14 +345,6 @@ private void DangerUI()
         }
     }
 
-    private void collectCoin(Item itemdata)
-    {
-        Debug.Log("coin picked up!");
-        InventoryManager.instance.moneyAmount += .50f;
-        moneyText.text = "$" + InventoryManager.instance.moneyAmount.ToString("f2");
-    }
-
-
 
 
 }
