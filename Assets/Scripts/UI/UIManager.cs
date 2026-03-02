@@ -88,7 +88,7 @@ public class UIManager : MonoBehaviour
         InputManager.Pause -= pausegame;
     }
 
-    private void inventory()
+    public void inventory()
     {
 
         NotifPopup.SetActive(false);
@@ -122,7 +122,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
 
     }
-    private IEnumerator journalOUT()
+    public IEnumerator journalOUT()
     {
         journal.transform.DOKill();
         journal.transform.DOLocalMoveY(-2000, .7f).SetUpdate(true).SetEase(Ease.InCirc);
