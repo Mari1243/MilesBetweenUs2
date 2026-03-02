@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b421333dec1cd74081a6b62123c2c23
+guid: bb7f66c02e2f50046992a813a141a211
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,73 +7,48 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface10SG
-    second: {fileID: 2100000, guid: 79cab91865ccdf941b88f0e7f3ab7c8f, type: 2}
+      name: Backpck
+    second: {fileID: 2100000, guid: 8ba027f9be050e340ad07247535968aa, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface11SG
-    second: {fileID: 2100000, guid: 5c0af456fc1df574c83c1863d715767f, type: 2}
+      name: Body
+    second: {fileID: 2100000, guid: c88c7eb9159470b469e4fa2d4bd0b8b1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface12SG
-    second: {fileID: 2100000, guid: 5c701590fae46294ab6f36779eab6263, type: 2}
+      name: Cap
+    second: {fileID: 2100000, guid: 110ba3db81df49b4c9fcfe7abb4d7e8a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface13SG
-    second: {fileID: 2100000, guid: db4631b381826344db80839fdf8aa990, type: 2}
+      name: Eyes
+    second: {fileID: 2100000, guid: fa9f46d91c70ea94dbd8e12f8b0bbba6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface14SG
-    second: {fileID: 2100000, guid: f85ddcb8e2665234fb4c67c6132cc173, type: 2}
+      name: Feet
+    second: {fileID: 2100000, guid: e775b4810f6b07747a221a912f72070d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface15SG
-    second: {fileID: 2100000, guid: faca0555e8ca68c4fac56bf2d6242dae, type: 2}
+      name: Head
+    second: {fileID: 2100000, guid: 7aa547ae9cac408449383ea0f3929778, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface2SG
-    second: {fileID: 2100000, guid: 14b81f521d48d694682fc05ddf9712c6, type: 2}
+      name: PackStraps
+    second: {fileID: 2100000, guid: 5aeeaa3d45f03a7499b9b35b5f3f810c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface3SG
-    second: {fileID: 2100000, guid: 24e72c0fdacca164ba1c02ca42dbc1f8, type: 2}
+      name: PackpackRim
+    second: {fileID: 2100000, guid: b6fc55e2ee063f94ebbb15168412ecb9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface4SG
-    second: {fileID: 2100000, guid: 71b8ce99f20068f4eae0f68ad8005221, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: standardSurface5SG
-    second: {fileID: 2100000, guid: 85e62304f16ae0146a6ed2bc95d9ce6c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: standardSurface6SG
-    second: {fileID: 2100000, guid: 04b1038a794ac4c4f92ed650cdbf3d8e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: standardSurface7SG
-    second: {fileID: 2100000, guid: 8fd020c2b8d59184fad165faed651539, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: standardSurface8SG
-    second: {fileID: 2100000, guid: 8053d537ce7498e45926aa8b2560d3c5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: standardSurface9SG
-    second: {fileID: 2100000, guid: 66d9a22a90bf42242b9d8983adb6597c, type: 2}
+      name: Tee
+    second: {fileID: 2100000, guid: 07cc311c36005b54abce35ea5b6db626, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -100,7 +75,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -159,7 +134,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Root
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -167,7 +142,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

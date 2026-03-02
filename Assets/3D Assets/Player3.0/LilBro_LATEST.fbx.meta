@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b421333dec1cd74081a6b62123c2c23
+guid: a90c5f3053cc4e545ba43a6490635149
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,72 +8,72 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface10SG
-    second: {fileID: 2100000, guid: 79cab91865ccdf941b88f0e7f3ab7c8f, type: 2}
+    second: {fileID: 5914741175786456932, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface11SG
-    second: {fileID: 2100000, guid: 5c0af456fc1df574c83c1863d715767f, type: 2}
+    second: {fileID: 7834345631421392124, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface12SG
-    second: {fileID: 2100000, guid: 5c701590fae46294ab6f36779eab6263, type: 2}
+    second: {fileID: 5041304939846175477, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface13SG
-    second: {fileID: 2100000, guid: db4631b381826344db80839fdf8aa990, type: 2}
+    second: {fileID: -3055751759963150894, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface14SG
-    second: {fileID: 2100000, guid: f85ddcb8e2665234fb4c67c6132cc173, type: 2}
+    second: {fileID: -1826093864770211805, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface15SG
-    second: {fileID: 2100000, guid: faca0555e8ca68c4fac56bf2d6242dae, type: 2}
+    second: {fileID: -9030747858329306879, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface2SG
-    second: {fileID: 2100000, guid: 14b81f521d48d694682fc05ddf9712c6, type: 2}
+    second: {fileID: -724196999467969353, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface3SG
-    second: {fileID: 2100000, guid: 24e72c0fdacca164ba1c02ca42dbc1f8, type: 2}
+    second: {fileID: 2407045457624072184, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface4SG
-    second: {fileID: 2100000, guid: 71b8ce99f20068f4eae0f68ad8005221, type: 2}
+    second: {fileID: -9030747858329306879, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface5SG
-    second: {fileID: 2100000, guid: 85e62304f16ae0146a6ed2bc95d9ce6c, type: 2}
+    second: {fileID: -3055751759963150894, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface6SG
-    second: {fileID: 2100000, guid: 04b1038a794ac4c4f92ed650cdbf3d8e, type: 2}
+    second: {fileID: -8152426753913618454, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface7SG
-    second: {fileID: 2100000, guid: 8fd020c2b8d59184fad165faed651539, type: 2}
+    second: {fileID: -8152426753913618454, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface8SG
-    second: {fileID: 2100000, guid: 8053d537ce7498e45926aa8b2560d3c5, type: 2}
+    second: {fileID: -724196999467969353, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface9SG
-    second: {fileID: 2100000, guid: 66d9a22a90bf42242b9d8983adb6597c, type: 2}
+    second: {fileID: -9083314977240177223, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -100,7 +100,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -159,7 +159,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Root
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -167,7 +167,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
