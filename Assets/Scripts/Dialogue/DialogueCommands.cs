@@ -11,7 +11,7 @@ public class DialogueCommands : MonoBehaviour
     public static UnityAction<int> currentCam; //change camera position 
     public static UnityAction<string> scenename;
 
-    public static UnityAction<bool> startAction;
+    public static UnityAction startAction;
 
     [Header("Inventory")]
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
@@ -28,15 +28,7 @@ public class DialogueCommands : MonoBehaviour
 
     }
 
-    private void OnEnable()
-    {
-        startAction += checkAction;
-    }
-    private void OnDisable()
-    {
-        startAction -= checkAction;
-    }
-
+   
     void OnCamChange(int cam)
     {
         if (currentCam != null)
@@ -52,7 +44,7 @@ public class DialogueCommands : MonoBehaviour
     void OnStartAction(bool started)
     {
         if (started)
-            startAction(started);
+            startAction();
             
     }
 
@@ -88,17 +80,6 @@ public class DialogueCommands : MonoBehaviour
     }
 
 
-    public void checkAction(bool yesAction)
-    {
-        if (yesAction)
-        {
-            Debug.Log("OK IMMA DO THIS NOW");
-        }
-        else
-        {
-            Debug.Log("OK CHECKED IF I NEED TO DO SOMETHING, BUT I DONT GOTTA");
-        }
-    }
 
 
 }

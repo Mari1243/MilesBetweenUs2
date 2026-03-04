@@ -30,10 +30,12 @@ public class GasStationManager : MonoBehaviour
     private void OnEnable()
     {
         InventoryManager.OnInventoryChange += checkconditions;
+        DialogueCommands.startAction += brotherWalk;
     }
     private void OnDisable()
     {
         InventoryManager.OnInventoryChange -= checkconditions;
+        DialogueCommands.startAction -= brotherWalk;
     }
 
     //conditions for tasks specifically in this level, this will involve checking each time you interact with something whether the conditions were met
@@ -67,7 +69,10 @@ public class GasStationManager : MonoBehaviour
             }
         }
     }
-
+    public void brotherWalk()
+    {
+        Debug.Log("IM STARTING THIS SHIT NOW");
+    }
 
 
 }

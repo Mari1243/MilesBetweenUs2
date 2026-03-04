@@ -233,6 +233,7 @@ public class Interactor : MonoBehaviour
                 {
                     print("First press: Entering stealing confirmation mode");
                     isInStealingConfirmMode = true;
+                    ChangeCamera.instance.changeCamera(3);  //experimental shit 
                     if (StealingManager.Instance != null)
                     {
                         StealingManager.Instance.StartStealin();
