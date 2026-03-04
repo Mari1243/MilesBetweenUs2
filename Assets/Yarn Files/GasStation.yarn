@@ -75,7 +75,7 @@ tags:
 <<cameraIndex 2>>
 Brother: Get some snacks for the road will ya?
 Brother: Don't take too long though we still have a long way to go.
-
+<<startAction true>>
 <<cameraIndex 0>>
 ===
 
