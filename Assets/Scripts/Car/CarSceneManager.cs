@@ -40,6 +40,7 @@ public class CarSceneManager : MonoBehaviour
 
     [Header("Brother")]
     public Animator brother;
+    public Animator lilBro;
 
     [Header("Radio")]
     public List<AudioClip> radioClips = new List<AudioClip>();
@@ -64,9 +65,16 @@ public class CarSceneManager : MonoBehaviour
 
     private void Start()
     {
+
+        //Animations play
         brother.Play("Armature_BigBro_Drive");
+        lilBro.Play("Armature|LilGuy_CarRide");
+
+        //Cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
+        //Inventory
         currentInventory = InventoryManager.instance.inventory;
         if (currentInventory.Count == 0)
         {
