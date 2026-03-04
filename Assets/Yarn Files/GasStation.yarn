@@ -27,7 +27,7 @@ Kids: Cuz that old fart's blind as a bat
 title: KidTalk
 tags:
 ---
-<<cameraIndex 3>>
+<<cameraIndex 1>>
 <<if $hasPostcard == true>>
 Kids: HOLY
 Kids: Nice job, thanks
@@ -45,7 +45,7 @@ Kids: (sorry havent added that feature yet :3)
 title: KidNoPost
 tags:
 ---
-<<cameraIndex 3>>
+<<cameraIndex 1>>
 
 <<if visited("KidsOutside")>>
 Kids: Whattya waiting for?
