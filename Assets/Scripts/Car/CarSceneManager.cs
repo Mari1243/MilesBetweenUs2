@@ -12,6 +12,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 using Image = UnityEngine.UI.Image;
+using Random = UnityEngine.Random;
 
 public class CarSceneManager : MonoBehaviour
 {
@@ -40,13 +41,11 @@ public class CarSceneManager : MonoBehaviour
     [Header("Brother")]
     public Animator brother;
 
-    
+    [Header("Radio")]
+    public List<AudioClip> radioClips = new List<AudioClip>();
+    private bool isPlaying = false;
 
-    private void Awake()
-    {
 
-        
-    }
     private void OnEnable()
     {
         interactable.showJournal += JournalScene;
@@ -143,6 +142,11 @@ public class CarSceneManager : MonoBehaviour
 
     public void playRadio()
     {
-
+        if (!isPlaying)
+        {
+            int randClip = Random.Range(0, radioClips.Count);
+            SoundManager.Instance.PlayAudio(radioClips[randClip]);
+        }
+        
     }
 }
