@@ -289,6 +289,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 51fbd8bd8b87a534483b712864f960f6, type: 3}
   m_PrefabInstance: {fileID: 18982740}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &30255859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30255861}
+  - component: {fileID: 30255860}
+  m_Layer: 0
+  m_Name: StealingCamera3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &30255860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30255859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 1
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 43.6
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 32
+--- !u!4 &30255861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30255859}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.020149184, y: 0.70413727, z: -0.019996995, w: 0.7094962}
+  m_LocalPosition: {x: -38.35, y: 3.72, z: -19.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 3.253, y: 89.566, z: 0}
 --- !u!1001 &32386441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5573,6 +5648,81 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2956278357784231602, guid: 64722b5766cf5f547ab9376719a6d502, type: 3}
+--- !u!1 &477968235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477968237}
+  - component: {fileID: 477968236}
+  m_Layer: 0
+  m_Name: StealingCamera2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &477968236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477968235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 1
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 43.6
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 32
+--- !u!4 &477968237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477968235}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.020149184, y: 0.70413727, z: -0.019996995, w: 0.7094962}
+  m_LocalPosition: {x: -38.14, y: 3.92, z: -11.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 3.253, y: 89.566, z: 0}
 --- !u!1 &484370859
 GameObject:
   m_ObjectHideFlags: 0
@@ -24046,6 +24196,8 @@ MonoBehaviour:
   - {fileID: 1185077580}
   - {fileID: 1786789363}
   - {fileID: 2023624360}
+  - {fileID: 477968236}
+  - {fileID: 30255860}
   currentCamera: {fileID: 0}
 --- !u!114 &2098778499
 MonoBehaviour:
@@ -25198,6 +25350,7 @@ GameObject:
   - component: {fileID: 1711813856237487029}
   - component: {fileID: 1892662983}
   - component: {fileID: 1892662984}
+  - component: {fileID: 3469287837012096896}
   m_Layer: 0
   m_Name: Knife
   m_TagString: canSteal
@@ -25218,6 +25371,7 @@ GameObject:
   - component: {fileID: 1711813856042749663}
   - component: {fileID: 1323177858}
   - component: {fileID: 1323177859}
+  - component: {fileID: 3469287836548987414}
   m_Layer: 0
   m_Name: 'Postcard1 '
   m_TagString: canSteal
@@ -26153,6 +26307,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149048323850}
   m_Mesh: {fileID: -1550514412580984892, guid: 4efe8b6247a2521459048d5278675d24, type: 3}
+--- !u!114 &3469287836548987414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149048323850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de53d204bf95db45b0ece8a8ef74510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camIndex: 4
 --- !u!33 &3469287837012096895
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26161,6 +26328,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148551590496}
   m_Mesh: {fileID: 7233159054065966114, guid: a30edd06a763c6845ab860ee2ddfd0a2, type: 3}
+--- !u!114 &3469287837012096896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148551590496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de53d204bf95db45b0ece8a8ef74510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camIndex: 4
 --- !u!33 &3469287837789139343
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28491,6 +28671,8 @@ SceneRoots:
   - {fileID: 1185077581}
   - {fileID: 1786789364}
   - {fileID: 2023624361}
+  - {fileID: 477968237}
+  - {fileID: 30255861}
   - {fileID: 4481309399001592892}
   - {fileID: 3061839}
   - {fileID: 1301466136}
