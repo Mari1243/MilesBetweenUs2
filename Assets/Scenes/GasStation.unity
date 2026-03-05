@@ -7501,7 +7501,7 @@ GameObject:
   - component: {fileID: 751911297}
   - component: {fileID: 751911296}
   m_Layer: 0
-  m_Name: CutsceneCamera3
+  m_Name: StealingCamera1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10671,7 +10671,7 @@ GameObject:
   - component: {fileID: 1185077581}
   - component: {fileID: 1185077580}
   m_Layer: 0
-  m_Name: CutsceneCamera
+  m_Name: CutsceneCamera1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25221,13 +25221,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8164078558690531349}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0038195108, y: 0.83584154, z: 0.008568225, w: 0.54889065}
-  m_LocalPosition: {x: -50.484, y: 3.416, z: -21.567}
+  m_LocalRotation: {x: -0.0018215857, y: 0.693094, z: 0.009202443, w: 0.72078615}
+  m_LocalPosition: {x: -50.14, y: 3.42, z: -21.73}
   m_LocalScale: {x: 0.42998213, y: 0.42998213, z: 0.5979762}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -1.061, y: 113.413, z: 0.173}
+  m_LocalEulerAnglesHint: {x: -0.881, y: 87.751, z: 0.615}
 --- !u!33 &1303409157811757649
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26594,6 +26594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2837377333169503494}
   strikethrough: {fileID: 7242561543060881917}
+  objectiveText: {fileID: 0}
 --- !u!222 &4545785539860947965
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27993,6 +27994,7 @@ GameObject:
   - component: {fileID: 1587545473848104688}
   - component: {fileID: 770396166}
   - component: {fileID: 770396165}
+  - component: {fileID: 8164078558690531350}
   m_Layer: 0
   m_Name: Lollipop
   m_TagString: canSteal
@@ -28000,6 +28002,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8164078558690531350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164078558690531349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de53d204bf95db45b0ece8a8ef74510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camIndex: 3
 --- !u!224 &8166031911835147686
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28100,6 +28115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1784460410286218002}
   strikethrough: {fileID: 2779840880801560853}
+  objectiveText: {fileID: 0}
 --- !u!222 &8746093818491924605
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -41,6 +41,7 @@ public class Interactor : MonoBehaviour
     public static event Action OnHoldCanceled;
     public static event Action<bool> StealWarning;
     public static event Action<string> HintNeeded;
+    public static event Action OnStealStart;
 
     private Transform highlight;
     private Transform selection;

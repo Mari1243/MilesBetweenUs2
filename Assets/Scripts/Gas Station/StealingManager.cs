@@ -18,18 +18,12 @@ public class StealingManager : MonoBehaviour
 
     public static event Action<DangerState> OnStateChanged;
     public static event Action<bool> OnStealingActionChanged;
+    public static event Action OnStartedStealing;
 
     public DangerState CurrentState { get; private set; }
 
     public Vector2 stateDurationRange = new Vector2(1f, 4f);
 
-
-    private CinemachineBrain brain;
-    private ICinemachineCamera activeVCam;
-    private float regFOV;
-
-    private Vector3 originalPosition;
-    private Quaternion originalRotation;
 
     private bool stealingActive = false;
 
@@ -43,11 +37,7 @@ public class StealingManager : MonoBehaviour
         DangerState.Suspicious
     };
 
-    private void Start()
-    {
-        brain = Camera.main.GetComponent<CinemachineBrain>();
-    }
-
+  
     private int cycleIndex;
     private Coroutine cycleRoutine;
 
@@ -80,12 +70,7 @@ public class StealingManager : MonoBehaviour
         //StartCoroutine(CamChange());
     }
 
-    public IEnumerator CamChange()
-    {
-        //not called anymore
-        yield return new WaitForSeconds(.5f);
-        regularCamera();
-    }
+
 
     private System.Collections.IEnumerator StateCycleRoutine()
     {
@@ -111,61 +96,4 @@ public class StealingManager : MonoBehaviour
         OnStateChanged?.Invoke(CurrentState);
     }
 
-    public void stealingCamera()
-    {
-        //never called
-        activeVCam = brain.ActiveVirtualCamera;
-        CinemachineCamera cam = activeVCam as CinemachineCamera;
-        
-        if (cam != null)
-        {
-            // Store original transform
-            originalPosition = cam.transform.position;
-            originalRotation = cam.transform.rotation;
-            regFOV = cam.Lens.FieldOfView;
-            
-            // Set LookAt to aim camera AT the player (centered)
-            cam.LookAt = player.transform;
-
-            // Optionally also set Follow to track player position
-            // cam.Follow = player.transform;
-
-            // Wait for Cinemachine to reposition, then zoom
-            StartCoroutine(ChangeFOV(cam, regFOV-20, .5f));
-        }
-    }
-
-    private void regularCamera()
-    {
-        //never called
-        CinemachineCamera cam = activeVCam as CinemachineCamera;
-
-        if (cam != null)
-        {
-            // Set LookAt back to null
-            Transform playerPos = player.transform;
-            
-
-            cam.LookAt = playerPos;
-            cam.Follow = playerPos; // if you're using Follow too
-
-            // Reset transform and FOV
-            StartCoroutine(ChangeFOV(cam, regFOV, .5f));
-            //cam.Lens.FieldOfView = regFOV;
-            cam.transform.position = originalPosition;
-            cam.transform.rotation = originalRotation;
-        }
-    }
-    IEnumerator ChangeFOV(CinemachineCamera cam, float endFOV, float duration)
-    {
-        //never called
-        float startFOV = cam.Lens.FieldOfView;
-        float time = 0;
-        while(time < duration)
-        {
-            cam.Lens.FieldOfView = Mathf.Lerp(startFOV, endFOV, time / duration);
-            yield return null;
-            time += Time.deltaTime;
-        }
-    }
 }

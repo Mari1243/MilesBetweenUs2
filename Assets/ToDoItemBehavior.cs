@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+using TMPro;
 public enum ToDoItemState { Incomplete, Completed}
 
 public class ToDoItemBehavior : MonoBehaviour
@@ -10,6 +10,7 @@ public class ToDoItemBehavior : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private Image strikethrough;
+    [SerializeField] private TextMeshProUGUI objectiveText;
 
     private ToDoItemState _currentState = ToDoItemState.Incomplete;
 
@@ -17,6 +18,9 @@ public class ToDoItemBehavior : MonoBehaviour
     {
         strikethrough = gameObject.transform.GetChild(0).GetComponent<Image>();
         animator = strikethrough.gameObject.GetComponent<Animator>();
+
+        objectiveText = gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>(); 
+
         SetState(ToDoItemState.Incomplete);
     }
 
