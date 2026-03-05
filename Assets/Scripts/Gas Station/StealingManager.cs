@@ -18,7 +18,6 @@ public class StealingManager : MonoBehaviour
 
     public static event Action<DangerState> OnStateChanged;
     public static event Action<bool> OnStealingActionChanged;
-    public static event Action OnStartedStealing;
 
     public DangerState CurrentState { get; private set; }
 

@@ -5,24 +5,40 @@ using UnityEngine;
 public class StealableItemBehavior : MonoBehaviour
 {
     public int camIndex;
+    public static StealableItemBehavior instance;
 
     private void OnEnable()
     {
-        StealingManager.OnStartedStealing += setCamera;
+        Interactor.OnHoldCompleted += defaultCamera;
         Interactor.OnHoldProgress += floatObj;
         Interactor.OnHoldCanceled += droppingObj;
+        Interactor.OnStartedStealing += setCamera;
+
     }
     private void OnDisable()
     {
-        StealingManager.OnStartedStealing -= setCamera;
+        Interactor.OnStartedStealing -= setCamera;
+        Interactor.OnHoldCompleted -= defaultCamera;
         Interactor.OnHoldProgress -= floatObj;
         Interactor.OnHoldCanceled -= droppingObj;
     }
 
-
-    void setCamera()
+    void Awake()
     {
+
+        if (instance == null)
+            instance = this;
+
+    }
+    public void setCamera(int cam)
+    {
+        cam = camIndex;
         ChangeCamera.instance.changeCamera(camIndex);
+        Debug.Log("This is current camera: "+ ChangeCamera.instance.currentCamera.name);
+    }
+    void defaultCamera()
+    {
+        ChangeCamera.instance.changeCamera(0);
     }
     void floatObj(float progress)
     {
@@ -33,4 +49,5 @@ public class StealableItemBehavior : MonoBehaviour
     {
         gameObject.transform.DOLocalMoveY(-2, 1f);
     }
+   
 }

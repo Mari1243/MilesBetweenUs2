@@ -41,7 +41,8 @@ public class Interactor : MonoBehaviour
     public static event Action OnHoldCanceled;
     public static event Action<bool> StealWarning;
     public static event Action<string> HintNeeded;
-    public static event Action OnStealStart;
+    public static event Action<int> OnStartedStealing;
+
 
     private Transform highlight;
     private Transform selection;
@@ -234,7 +235,8 @@ public class Interactor : MonoBehaviour
                 {
                     print("First press: Entering stealing confirmation mode");
                     isInStealingConfirmMode = true;
-                    ChangeCamera.instance.changeCamera(3);  //experimental shit 
+                    OnStartedStealing?.Invoke(StealableItemBehavior.instance.camIndex);
+
                     if (StealingManager.Instance != null)
                     {
                         StealingManager.Instance.StartStealin();
