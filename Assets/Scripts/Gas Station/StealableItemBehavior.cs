@@ -26,7 +26,7 @@ public class StealableItemBehavior : MonoBehaviour
     }
     void floatObj(float progress)
     {
-        gameObject.transform.DOMoveY(3, 1f);
+        //gameObject.transform.DOLocalMove(, 1f);
 
     }
     void droppingObj()
