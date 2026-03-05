@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class SceneTrackerSingleton : MonoBehaviour
 {
@@ -7,6 +8,51 @@ public class SceneTrackerSingleton : MonoBehaviour
 
     public string CurrentSceneName { get; private set; }
     public string PreviousSceneName { get; private set; }
+
+    public List<SceneScriptables> scenes = new List<SceneScriptables>();
+
+    private string currentscenename;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    public void Start()
+    {
+        settingstate();
+    }
+
+    private void settingstate()
+    {
+        currentscenename = SceneManager.GetActiveScene().name.ToString();
+        foreach(SceneScriptables scene in scenes)
+        {
+            string scenename = scene.SceneName;
+
+            if(scenename == currentscenename)
+            {
+                print("found current scene in list");
+                bool iscar = scene.iscar;
+                changestate(iscar);
+            }
+            else
+            {
+                print("current scene isnt registed in scene tracker script");
+            }
+        }
+    }
+
+    public void changestate(bool iscar)
+    {
+        print("tring to change state bc is car is "+ iscar);
+        if(iscar == true)
+        {
+            NewJournalSave.instance.SetState(NewJournalSave.States.Car);
+        }
+        else
+        {
+             NewJournalSave.instance.SetState(NewJournalSave.States.Gasstation);
+        }
+       
+    }
 
     void Awake()
     {
@@ -36,6 +82,7 @@ public class SceneTrackerSingleton : MonoBehaviour
         CurrentSceneName = scene.name;
 
         Debug.Log($"Scene changed: {PreviousSceneName} -> {CurrentSceneName}");
+        settingstate();
     }
 
     void OnDestroy()
@@ -46,4 +93,6 @@ public class SceneTrackerSingleton : MonoBehaviour
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
     }
+
+    
 }

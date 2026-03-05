@@ -91,7 +91,7 @@ public class NewJournalSave : MonoBehaviour
     }
     private void CarJournal()
     {
-       print("setting journal state to GAS STATION");
+       print("setting journal state to CAR");
         
         if (currentList != null)
         {

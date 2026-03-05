@@ -35,7 +35,7 @@ public class SceneTracker : MonoBehaviour
 
     public void changestate(bool iscar)
     {
-        print("tring to change state");
+        print("tring to change state bc is car is "+ iscar);
         if(iscar == true)
         {
             NewJournalSave.instance.SetState(NewJournalSave.States.Car);

@@ -46,7 +46,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4743d9fb60d174aa76e9bcc090cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectAudioSource: {fileID: 8885334401796016390}
+  musicAudioSource: {fileID: 4937784618673470813}
   GeneralVolume: 0.5
   playBackgroundMusic: 1
   backgroundMusic: {fileID: 8300000, guid: c933f45727a5346ddbd4b1cebe30c350, type: 3}
@@ -161,7 +163,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
