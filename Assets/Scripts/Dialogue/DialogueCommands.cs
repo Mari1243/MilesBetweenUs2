@@ -10,7 +10,8 @@ public class DialogueCommands : MonoBehaviour
 
     public static UnityAction<int> currentCam; //change camera position 
     public static UnityAction<string> scenename;
-    
+
+    public static UnityAction startAction;
 
     [Header("Inventory")]
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
@@ -23,12 +24,11 @@ public class DialogueCommands : MonoBehaviour
 
         dialogueRunner.AddCommandHandler<int>("cameraIndex", OnCamChange);
         dialogueRunner.AddCommandHandler<string>("changeScene", OnChangeScene);
-
+        dialogueRunner.AddCommandHandler<bool>("startAction", OnStartAction);
 
     }
- 
 
-
+   
     void OnCamChange(int cam)
     {
         if (currentCam != null)
@@ -41,7 +41,12 @@ public class DialogueCommands : MonoBehaviour
             scenename(scene);
     }
 
-
+    void OnStartAction(bool started)
+    {
+        if (started)
+            startAction();
+            
+    }
 
     public void checkInventory()
     //find a place to better implement 
@@ -55,12 +60,12 @@ public class DialogueCommands : MonoBehaviour
             foreach (InventoryItem item in currentInventory)
             {
                 Debug.Log("Inventory has this item: " + item.itemData.itemName);
-                if (item.itemData.itemName == "Snacks")
+                if (item.itemData.itemName == "Snacks") //name specific 
                 {
                     Debug.Log("Found!");
                     yarnVariables.SetValue("$hasSnacks", true);
                 }
-                else if (item.itemData.itemName == "A Postcard")
+                else if (item.itemData.itemName == "A Postcard") //name specific 
                 {
                     yarnVariables.SetValue("$hasPostcard", true);
 
@@ -73,7 +78,6 @@ public class DialogueCommands : MonoBehaviour
         }
 
     }
-
 
 
 
