@@ -93,5 +93,9 @@ public class NewJournalSave : MonoBehaviour
         
         if (inventoryObject != null)
             inventoryObject.SetActive(true);
+        if(currentList != null)
+        {
+            Destroy(currentList);
+        }
     }
 }
