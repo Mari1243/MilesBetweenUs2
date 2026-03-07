@@ -3,25 +3,37 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 
 public class ToggleJournal : MonoBehaviour
 {
     public Image crosshair;
     public static event Action hideJournal;
+    private bool journalopen = false;
+    private Canvas canvas;
+
     private void Start()
     {
-        this.GetComponent<Canvas>().enabled = false;
+
+        canvas = this.GetComponent<Canvas>();
+        canvas.enabled = false;
     }
 
     private void OnEnable()
     {
-        interactable.showJournal += JournalScene;
+        // interactable.showJournal += JournalScene;
         DragItem.loreDrop += closeJournal;
+        InputManager.OpenJournal += inventory;
+        //ToggleJournal.hideJournal += inventory;
+        interactable.showJournal += inventory;
     }
     private void OnDisable()
     {
-        interactable.showJournal -= JournalScene;
+        // interactable.showJournal -= JournalScene;
         DragItem.loreDrop -= closeJournal;
+        InputManager.OpenJournal -= inventory;
+        //ToggleJournal.hideJournal -= inventory;
+        interactable.showJournal -= inventory;
     }
 
     public void closeJournal(string node)
@@ -35,20 +47,48 @@ public class ToggleJournal : MonoBehaviour
         hideJournal?.Invoke();
     }
 
-    public void endjournalscene()
+    public void inventory()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        print("disabling journal");
-        this.GetComponent<Canvas>().enabled = false;
-        hideJournal?.Invoke();
+        print("calling animations and journal stuff from UI manager");
+        print("asdffff");
+       if(this.GetComponent<Canvas>() != null)
+        {
+            if(!journalopen)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                canvas.enabled = true;
+                DOTween.Restart("animateIn"); 
+                DOTween.Play ("animateIn");
+                journalopen = true;
+
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                DOTween.Restart("animateOut"); 
+                DOTween.Play ("animateOut");
+                journalopen = false;
+                hideJournal?.Invoke();
+                
+            }
+        }
+    }
+   
+
+    public void onAnimCompleted()
+    {
+        if( journalopen == true)
+        {
+            
+        }
+        else
+        {
+            canvas.enabled = false;
+        }
     }
 
-    public void JournalScene() //SHOWS JOURNAL 
-    {
-        Cursor.visible = false;
-        print("showing journal");
-        this.GetComponent<Canvas>().enabled = true;
-    }
+   
 
 }

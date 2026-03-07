@@ -60,12 +60,12 @@ public class DialogueCommands : MonoBehaviour
             foreach (InventoryItem item in currentInventory)
             {
                 Debug.Log("Inventory has this item: " + item.itemData.itemName);
-                if (item.itemData.itemName == "Snacks")
+                if (item.itemData.itemName == "Snacks") //name specific 
                 {
                     Debug.Log("Found!");
                     yarnVariables.SetValue("$hasSnacks", true);
                 }
-                else if (item.itemData.itemName == "A Postcard")
+                else if (item.itemData.itemName == "A Postcard") //name specific 
                 {
                     yarnVariables.SetValue("$hasPostcard", true);
 

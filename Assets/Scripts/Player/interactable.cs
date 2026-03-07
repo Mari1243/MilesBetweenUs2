@@ -60,7 +60,7 @@ public class interactable : MonoBehaviour, IInteractable
                 break;
 
             case "journal":
-                Debug.Log("showingjournal");
+                Debug.Log("showJournal being invoked from interactable");
                 showJournal?.Invoke(); //called in SceneManager
                 break;
 
