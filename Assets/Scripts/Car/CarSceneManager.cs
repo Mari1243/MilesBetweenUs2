@@ -103,10 +103,8 @@ public class CarSceneManager : MonoBehaviour
 
     public void JournalScene() //SHOWS JOURNAL 
     {
-        print("journal scene in carscene manager activated");
+        print("journal scene in carscene manager activated (changes camera stuff)");
         crosshair.enabled = false;
-        //Turns on the journal
-        Debug.Log("Showing Journal");
         journalItem.SetActive(false);
 
         //changes camera angle

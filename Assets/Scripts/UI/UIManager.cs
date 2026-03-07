@@ -7,6 +7,7 @@ using System.Collections;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class UIManager : MonoBehaviour
     [Tooltip("contains the dog background and dog image as children in that order")]
     private GameObject stealingUI;
     public GameObject StealingCanvas;
-    public Canvas journalCanvas;
-    public GameObject journal;
+    private Canvas journalCanvas;
+    private GameObject journal;
     public TextMeshProUGUI statelabel;
     [Tooltip("Different dog sprites in order of safe to danger")]
     public List<Sprite> textures;
@@ -24,7 +25,6 @@ public class UIManager : MonoBehaviour
 
     private Image DogspriteRen;
     private Image BackgroundRen;
-
 
 
     public GameObject NotifPopup;
@@ -55,13 +55,15 @@ public class UIManager : MonoBehaviour
         Interactor.OnHoldProgress += UpdateHoldUI;
         Interactor.OnHoldCompleted += HideHoldUI;
         Interactor.OnHoldCanceled += HideHoldUI;
-        InputManager.OpenJournal += inventory;
+        // InputManager.OpenJournal += inventory;
+        // ToggleJournal.hideJournal += inventory;
 
         StealingManager.OnStateChanged += UpdateDangerUI;
         StealingManager.OnStealingActionChanged += UpdateStealingUI;
 
         interactable.onPickedUp += ShowItemHUD;
         interactable.onPickedUp += rewardText;
+        // interactable.showJournal += inventory;
         Interactor.StealWarning += dangerState;
 
         //IntroSceneManager.OnHintNeeded += hint;
@@ -75,13 +77,15 @@ public class UIManager : MonoBehaviour
         Interactor.OnHoldCompleted -= HideHoldUI;
         Interactor.OnHoldCanceled -= HideHoldUI;
         Interactor.StealWarning -= dangerState;
-        InputManager.OpenJournal -= inventory;
+        // InputManager.OpenJournal -= inventory;
+        // ToggleJournal.hideJournal -= inventory;
 
         StealingManager.OnStateChanged -= UpdateDangerUI;
         StealingManager.OnStealingActionChanged -= UpdateStealingUI;
 
         interactable.onPickedUp -= ShowItemHUD;
         interactable.onPickedUp -= rewardText;
+        // interactable.showJournal -= inventory;
         
         //IntroSceneManager.OnHintNeeded -= hint;
         //Interactor.HintNeeded -= hint;
@@ -90,67 +94,7 @@ public class UIManager : MonoBehaviour
 
     private void inventory()
     {
-
-        NotifPopup.SetActive(false);
-       if(journalCanvas != null)
-        {
-            if(!journalopen)
-            {
-                journalopen = true;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                print("open inventory");
-                journalCanvas.enabled = true;
-                StartCoroutine(journalIN());
-
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                StartCoroutine(journalOUT());
-                journalopen = false;
-            }
-        }
-    }
-
-    private IEnumerator journalIN()
-    {
-        journal.transform.DOKill();
-        journal.transform.DOLocalMoveY(-77, 1f).SetUpdate(true).SetEase(Ease.OutCirc);
-        yield return new WaitForSecondsRealtime(.3f);
-        Time.timeScale = 0f;
-
-    }
-    private IEnumerator journalOUT()
-    {
-        journal.transform.DOKill();
-        journal.transform.DOLocalMoveY(-2000, .7f).SetUpdate(true).SetEase(Ease.InCirc);
-        yield return new WaitForSecondsRealtime(.3f);
-        Time.timeScale = 1f;
-
-    }
- 
-    private void dangerState(bool status)
-    {
-        DOTweenAnimation test = stealingUI.gameObject.GetComponent<DOTweenAnimation>();
-        
-        if (status)
-        {
-            if(test != null)
-            {
-                print("Found DOTweenAnimation, playing...");
-                test.DORestart();
-                test.DOPlay();
-            }
-        }
-        else
-        {
-            if(test != null)
-            {
-                test.DOPause();
-            }
-        }
+        throw new NotImplementedException();
     }
 
     private void Start()
@@ -174,7 +118,77 @@ public class UIManager : MonoBehaviour
         }
 
         LoreitemPopup.SetActive(false);
+        journalCanvas = GameObject.Find("journalCanvas").GetComponent<Canvas>();
+        journal = journalCanvas.transform.GetChild(0).gameObject;
     }
+
+    // public void inventory()
+    // {
+    //     print("calling animations and journal stuff from UI manager");
+    //     print("asdffff");
+    //     NotifPopup.SetActive(false);
+    //    if(journalCanvas != null)
+    //     {
+    //         if(!journalopen)
+    //         {
+    //             journalopen = true;
+    //             Cursor.lockState = CursorLockMode.None;
+    //             Cursor.visible = true;
+    //             journalCanvas.enabled = true;
+    //             StartCoroutine(journalIN());
+
+    //         }
+    //         else
+    //         {
+    //             Cursor.lockState = CursorLockMode.Locked;
+    //             Cursor.visible = false;
+    //             StartCoroutine(journalOUT());
+    //             journalopen = false;
+    //         }
+    //     }
+    // }
+
+    // private IEnumerator journalIN()
+    // {
+    //     DOTween.Restart("animateIn");
+    //     DOTween.Play ("animateIn");
+    //     yield return new WaitForSecondsRealtime(.3f);
+    //     Time.timeScale = 0f;
+
+    // }
+    // private IEnumerator journalOUT()
+    // {
+    //     print("animating out");
+    //     DOTween.Restart("animateOut"); 
+    //     DOTween.Play ("animateOut");
+    //     Time.timeScale = 1f;
+    //     yield return new WaitForSecondsRealtime(2f);
+    //     journalCanvas.enabled = false;
+    // }
+ 
+    private void dangerState(bool status)
+    {
+        DOTweenAnimation test = stealingUI.gameObject.GetComponent<DOTweenAnimation>();
+        
+        if (status)
+        {
+            if(test != null)
+            {
+                print("Found DOTweenAnimation, playing...");
+                test.DORestart();
+                test.DOPlay();
+            }
+        }
+        else
+        {
+            if(test != null)
+            {
+                test.DOPause();
+            }
+        }
+    }
+
+    
 
     private void SetSprites()
     {

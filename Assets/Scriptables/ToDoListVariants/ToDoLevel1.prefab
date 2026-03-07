@@ -10,7 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 520062060349448589, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
       propertyPath: m_Name
-      value: To Do List Variant
+      value: ToDoLevel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152785987646214551, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152785987646214551, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152785987646214551, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152785987646214551, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7508510340805676756, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
       propertyPath: m_Pivot.x
@@ -92,8 +108,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8844167593885736585, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844167593885736585, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844167593885736585, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844167593885736585, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 520062060349448589, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4143725075650757940}
   m_SourcePrefab: {fileID: 100100000, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+--- !u!1 &3858602058654858274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 520062060349448589, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+  m_PrefabInstance: {fileID: 3655554626809224623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &-4143725075650757940
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858602058654858274}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

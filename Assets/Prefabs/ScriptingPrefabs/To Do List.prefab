@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 7508510340805676756}
   - component: {fileID: 423335256070104652}
   - component: {fileID: 3320339381820907874}
+  - component: {fileID: -1896055368892181394}
   m_Layer: 0
   m_Name: To Do List
   m_TagString: Untagged
@@ -118,7 +119,7 @@ RectTransform:
   m_GameObject: {fileID: 520062060349448589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5596398306286335636}
@@ -168,6 +169,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9786e26945243ff944c5b7674d36e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &-1896055368892181394
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520062060349448589}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &962779902094944816
 GameObject:
   m_ObjectHideFlags: 0

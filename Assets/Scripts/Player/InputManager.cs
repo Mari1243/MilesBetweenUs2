@@ -59,8 +59,7 @@ public class InputManager : MonoBehaviour
             inputActions.Enable();
             inputActions["Exit"].performed += PauseGame;
             inputActions["checkJournal"].performed += checkJournal;
-            inputActions["Rotate"].started += OnRotateStarted;
-            inputActions["Rotate"].canceled += OnRotateCanceled;
+
             inputActions["ToggleInstructions"].performed += ToggleMenu;
             inputActions["Restart"].performed += RestartScene;
 
@@ -95,12 +94,11 @@ public class InputManager : MonoBehaviour
         if (inputActions != null)
         {
             inputActions["Exit"].performed -= PauseGame;
-            inputActions["Rotate"].started -= OnRotateStarted;
+
             inputActions["checkJournal"].performed -= checkJournal;
             inputActions["Rotate"].canceled -= OnRotateCanceled;
             inputActions["DeleteSave"].performed -= onClearSave;
-            inputActions["Scale"].started -= OnScaleStarted;
-            inputActions["Scale"].canceled -= OnScaleCanceled;
+
             inputActions["ToggleInstructions"].performed -= ToggleMenu;
 
             inputActions["Restart"].performed -= RestartScene;

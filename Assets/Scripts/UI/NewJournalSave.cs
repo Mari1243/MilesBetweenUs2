@@ -12,6 +12,7 @@ public class NewJournalSave : MonoBehaviour
     //to do list is going to be a different object depending on the scene, should prob assign by searching by name for it in the scene 
     public GameObject[] ToDoListPrefabs;
     [SerializeField] private GameObject currentList;
+    private GameObject journal;
     private int sceneList = 0;
 
     public GameObject inventoryObject;
@@ -34,7 +35,7 @@ public class NewJournalSave : MonoBehaviour
     // }
 
 
-    
+
     void Awake()
     {
         if (instance == null)
@@ -46,19 +47,16 @@ public class NewJournalSave : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        journal = this.transform.GetChild(0).gameObject;
+        print("journal object name is "+journal.name);
     }
 
     private void SpawnList()
     {
-        if (currentList != null)
-            Destroy(currentList);
-            print("destroying currentList");
-
         if (sceneList < ToDoListPrefabs.Length && ToDoListPrefabs[sceneList] != null)
         {
-            currentList = Instantiate(ToDoListPrefabs[sceneList], this.transform);
+            currentList = Instantiate(ToDoListPrefabs[sceneList], journal.transform);
             currentList.transform.localPosition = new Vector3(-214,65, 0);
-            currentList.transform.localScale = new Vector3(.2f,.2f, 1);
             print("Spawned: " + currentList.name + " | Parent: " + currentList.transform.parent.name + " | Active: " + currentList.activeSelf);
         }
     }
@@ -93,11 +91,6 @@ public class NewJournalSave : MonoBehaviour
     {
        print("setting journal state to CAR");
         
-        if (currentList != null)
-        {
-            Destroy(currentList);
-            currentList = null;
-        }
         if (inventoryObject != null)
             inventoryObject.SetActive(true);
     }
