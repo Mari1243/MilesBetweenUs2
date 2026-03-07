@@ -5,7 +5,8 @@ using UnityEngine;
 public class ChangeCamera : MonoBehaviour
 {
     [SerializeField] CinemachineCamera[] cameras;
-    private CinemachineCamera currentCamera;
+    public CinemachineCamera currentCamera;
+    public static ChangeCamera instance;
 
     private void OnEnable()
     {
@@ -15,9 +16,20 @@ public class ChangeCamera : MonoBehaviour
     {
         DialogueCommands.currentCam -= changeCamera;
     }
-  
- 
-    
+
+    private void Start()
+    {
+        currentCamera = GetComponent<CinemachineBrain>().GetComponent<CinemachineCamera>();
+    }
+
+    void Awake()
+    {
+
+        if (instance == null)
+            instance = this;
+
+    }
+
     public void changeCamera(int camIndex)
     {
         currentCamera= cameras[camIndex];
@@ -30,7 +42,6 @@ public class ChangeCamera : MonoBehaviour
         }
 
     }
-
 
 
 

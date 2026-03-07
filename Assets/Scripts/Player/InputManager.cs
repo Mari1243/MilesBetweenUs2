@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour
 
     public static InputManager Instance;
     private PlayerInput playerInput;
-    private InputActionAsset inputActions;
+    public InputActionAsset inputActions;
     
     // Events
     public static event Action Pause;

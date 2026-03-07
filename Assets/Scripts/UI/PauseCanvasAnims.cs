@@ -10,8 +10,8 @@ public class PauseCanvasAnims : MonoBehaviour
     private RectTransform paper;
     private RectTransform doodle;
     private Canvas canvas;
-    private Coroutine currentRoutine; 
-
+    private Coroutine currentRoutine;
+    public InputManager inputManager;
     private void Start()
     {
         canvas = GetComponent<Canvas>();
@@ -56,6 +56,7 @@ public class PauseCanvasAnims : MonoBehaviour
     private IEnumerator PauseGame()
     {
         canvas.enabled = true;
+        inputManager.inputActions["checkJournal"].Disable();
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -69,6 +70,7 @@ public class PauseCanvasAnims : MonoBehaviour
 
     private IEnumerator StartGame()
     {
+        inputManager.inputActions["checkJournal"].Enable();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;
