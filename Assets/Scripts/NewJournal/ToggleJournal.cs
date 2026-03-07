@@ -24,7 +24,7 @@ public class ToggleJournal : MonoBehaviour
         // interactable.showJournal += JournalScene;
         DragItem.loreDrop += closeJournal;
         InputManager.OpenJournal += inventory;
-        ToggleJournal.hideJournal += inventory;
+        //ToggleJournal.hideJournal += inventory;
         interactable.showJournal += inventory;
     }
     private void OnDisable()
@@ -32,7 +32,7 @@ public class ToggleJournal : MonoBehaviour
         // interactable.showJournal -= JournalScene;
         DragItem.loreDrop -= closeJournal;
         InputManager.OpenJournal -= inventory;
-        ToggleJournal.hideJournal -= inventory;
+        //ToggleJournal.hideJournal -= inventory;
         interactable.showJournal -= inventory;
     }
 
@@ -55,38 +55,40 @@ public class ToggleJournal : MonoBehaviour
         {
             if(!journalopen)
             {
-                journalopen = true;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 canvas.enabled = true;
-                StartCoroutine(journalIN());
+                DOTween.Restart("animateIn"); 
+                DOTween.Play ("animateIn");
+                journalopen = true;
 
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                StartCoroutine(journalOUT());
+                DOTween.Restart("animateOut"); 
+                DOTween.Play ("animateOut");
                 journalopen = false;
+                hideJournal?.Invoke();
+                
             }
         }
     }
-     private IEnumerator journalIN()
-    {
-        DOTween.Restart("animateIn");
-        DOTween.Play ("animateIn");
-        yield return new WaitForSecondsRealtime(.3f);
-        Time.timeScale = 0f;
+   
 
-    }
-    private IEnumerator journalOUT()
+    public void onAnimCompleted()
     {
-        print("animating out");
-        DOTween.Restart("animateOut"); 
-        DOTween.Play ("animateOut");
-        Time.timeScale = 1f;
-        yield return new WaitForSecondsRealtime(2f);
-        canvas.enabled = false;
+        if( journalopen == true)
+        {
+            
+        }
+        else
+        {
+            canvas.enabled = false;
+        }
     }
+
+   
 
 }
