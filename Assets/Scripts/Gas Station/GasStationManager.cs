@@ -27,6 +27,7 @@ public class GasStationManager : MonoBehaviour
 
     private GameObject kidObjective;
 
+
     private void Start()
     {
         DialogueManager.instance.TalkInteraction(item);
@@ -35,9 +36,6 @@ public class GasStationManager : MonoBehaviour
 
 
 
-        GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
-        kidObjective = mainPage.transform.GetChild(2).gameObject;
-        kidObjective.SetActive(false);
 
     }
 
@@ -76,7 +74,14 @@ public class GasStationManager : MonoBehaviour
                     ToDoManager.instance.CompleteItem("SpecialBroItem");
                     completedobjectives++;
                 }
+                else if (item.itemData.itemName == "Lollipop")
+                {
+                    ToDoManager.instance.CompleteItem("SnacksForKids");
+                    print("FINISHED KID OBJK");
 
+                    completedobjectives++;
+
+                }
                 if (completedobjectives >= allobjectives)
                 {
                     completedAllObjectives = true;
@@ -103,7 +108,12 @@ public class GasStationManager : MonoBehaviour
             
             case "StartkidQuest":
 
+
+                GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
+                kidObjective = mainPage.transform.GetChild(2).gameObject;
+  
                 kidObjective.SetActive(true);
+
                 journalNotif?.Invoke();
 
                 break;
