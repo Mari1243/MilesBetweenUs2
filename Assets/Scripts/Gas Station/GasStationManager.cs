@@ -1,9 +1,11 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Yarn.Unity;
 
@@ -20,14 +22,22 @@ public class GasStationManager : MonoBehaviour
     private static bool completedAllObjectives;
     private static int allobjectives = 2;
     private static int completedobjectives = 0;
+    public GameObject toDoList1;
+    public static event Action journalNotif;
 
-
+    private GameObject kidObjective;
 
     private void Start()
     {
         DialogueManager.instance.TalkInteraction(item);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+
+
+        GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
+        kidObjective = mainPage.transform.GetChild(2).gameObject;
+        kidObjective.SetActive(false);
 
     }
 
@@ -80,10 +90,30 @@ public class GasStationManager : MonoBehaviour
 
     public void StartAction(string action)
     {
-        if(action=="kidQuest")
-            InventoryManager.instance.Add(knife);
+       
+        switch (action)
+        {
+            case "kidQuest":
+
+                InventoryManager.instance.Add(knife);
+                journalNotif?.Invoke();
+
+                break;
+                 
+            
+            case "StartkidQuest":
+
+                kidObjective.SetActive(true);
+                journalNotif?.Invoke();
+
+                break;
+
+            case "StartbroQuest":
+                journalNotif?.Invoke();
+
+                break;
+
+
+        }
     }
-
-
-
 }

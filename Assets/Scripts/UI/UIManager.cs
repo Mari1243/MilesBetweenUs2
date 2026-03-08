@@ -66,6 +66,11 @@ public class UIManager : MonoBehaviour
         Interactor.StealWarning += dangerState;
 
         InputManager.Pause += pausegame;
+
+        GasStationManager.journalNotif += INjournalNotif;
+        InputManager.OpenJournal += OUTjournalNotif;
+
+
     }
 
     private void OnDisable()
@@ -82,12 +87,11 @@ public class UIManager : MonoBehaviour
         interactable.onPickedUp -= rewardText;
         InventoryManager.AddedItem -= ShowItemHUD;
         InputManager.Pause -= pausegame;
+
+        GasStationManager.journalNotif -= INjournalNotif;
+        InputManager.OpenJournal -= OUTjournalNotif;
     }
 
-    private void inventory()
-    {
-        throw new NotImplementedException();
-    }
 
     private void Start()
     {
@@ -112,6 +116,9 @@ public class UIManager : MonoBehaviour
         LoreitemPopup.SetActive(false);
         journalCanvas = GameObject.Find("journalCanvas").GetComponent<Canvas>();
         journal = journalCanvas.transform.GetChild(0).gameObject;
+
+        NotifPopup.transform.localScale = new Vector3(0, 0, 0);
+
     }
 
 
@@ -137,7 +144,15 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    
+    void INjournalNotif()
+    {
+        NotifPopup.transform.DOScale(new Vector3(.4f, .4f, .4f), .5f).SetEase(Ease.InBounce) ;
+    }
+    void OUTjournalNotif()
+    {
+        NotifPopup.transform.DOScale(new Vector3(0,0,0), 1f);
+
+    }
 
     private void SetSprites()
     {
@@ -308,12 +323,7 @@ private void DangerUI()
         }
     }
 
-    private void collectCoin(Item itemdata)
-    {
-        Debug.Log("coin picked up!");
-        InventoryManager.instance.moneyAmount += .50f;
-        moneyText.text = "$" + InventoryManager.instance.moneyAmount.ToString("f2");
-    }
+
 
 
 

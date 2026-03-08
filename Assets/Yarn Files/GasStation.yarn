@@ -9,6 +9,8 @@ tags:
 Kids: WAIIIIIII!!!!@!!1
 Kids: If you're gonna take something,
 Kids: Get a lollipop for us wouldja?
+<<startAction StartkidQuest>>
+
 <<else>>
 Kids: WAIIIIIIIIITTTT!!!
 Kids: Hey kid,
@@ -16,6 +18,9 @@ Kids: Ya gonna go in?
 Kids: Good luck,
 Kids: Billy and I here tried snagging some candy
 Kids: Cuz that old fart's blind as a bat
+Kids: Get us a lollipop too wouldja?
+
+<<startAction StartkidQuest>>
 
 <<endif>>
 
@@ -52,7 +57,6 @@ tags:
 <<if visited("KidsOutside")>>
 Kids: Whattya waiting for?
 Kids: Go get something inside!
-Kids: Get us a lollipop too wouldja?
 <<else>>
 Kids: Hey kiddo
 Kids: Ya gonna go in?
@@ -63,6 +67,8 @@ Kids: Which is funny,
 Kids: considering he's a dog 
 Kids: teehehe!
 Kids: Billy got too loud tho..
+<<startAction StartkidQuest>>
+
 <<endif>>
 
 <<cameraIndex 0>>
@@ -77,7 +83,7 @@ tags:
 <<cameraIndex 2>>
 Brother: Get some snacks for the road will ya?
 Brother: Don't take too long though we still have a long way to go.
-<<startAction true>>
+<<startAction StartbroQuest>>
 <<cameraIndex 0>>
 ===
 

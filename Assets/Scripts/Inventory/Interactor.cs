@@ -149,7 +149,7 @@ public class Interactor : MonoBehaviour
     private void SpawnPickupUI(bool stealable)
     {
         DestroyPickupUI();
-        Vector3 spawnPosition = new Vector3(0, 1.5f, .5f);
+        Vector3 spawnPosition = new Vector3(0, 1f, .5f);
         instantiatedUI = Instantiate(pickupUI, this.transform);
         instantiatedUI.transform.localPosition = spawnPosition;
 
@@ -229,6 +229,7 @@ public class Interactor : MonoBehaviour
 
         if (context.started)
         {
+            DestroyPickupUI();
             if (pickedUpObj.tag == "canSteal")
             {
                 if (!isInStealingConfirmMode)
