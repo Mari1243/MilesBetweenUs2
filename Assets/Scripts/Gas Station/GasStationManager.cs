@@ -15,10 +15,14 @@ using Yarn.Unity;
 public class GasStationManager : MonoBehaviour
 {
     public Item item;
+    public Item knife;
     //this exists so once ive completed all objectives it wont keep checking everytime i interact
     private static bool completedAllObjectives;
     private static int allobjectives = 2;
     private static int completedobjectives = 0;
+
+
+
     private void Start()
     {
         DialogueManager.instance.TalkInteraction(item);
@@ -30,12 +34,12 @@ public class GasStationManager : MonoBehaviour
     private void OnEnable()
     {
         InventoryManager.OnInventoryChange += checkconditions;
-        DialogueCommands.startAction += brotherWalk;
+        DialogueCommands.startAction += StartAction;
     }
     private void OnDisable()
     {
         InventoryManager.OnInventoryChange -= checkconditions;
-        DialogueCommands.startAction -= brotherWalk;
+        DialogueCommands.startAction -= StartAction;
     }
 
     //conditions for tasks specifically in this level, this will involve checking each time you interact with something whether the conditions were met
@@ -53,6 +57,8 @@ public class GasStationManager : MonoBehaviour
                 {
                     ToDoManager.instance.CompleteItem("SnacksforRoad");
                     completedobjectives++;
+                    
+
                 }
                 else if (item.itemData.itemName == "Cigarettes" || item.itemData.itemName == "PocketKnife" || item.itemData.itemName == "BloodPawz CD")
                 {
@@ -69,9 +75,13 @@ public class GasStationManager : MonoBehaviour
             }
         }
     }
-    public void brotherWalk()
+
+
+
+    public void StartAction(string action)
     {
-        Debug.Log("IM STARTING THIS SHIT NOW");
+        if(action=="kidQuest")
+            InventoryManager.instance.Add(knife);
     }
 
 

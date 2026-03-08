@@ -2268,6 +2268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 35e6bc31dea2d5742bc3f1a48c9a9e53, type: 2}
+  knife: {fileID: 0}
 --- !u!1 &265535408
 GameObject:
   m_ObjectHideFlags: 0
@@ -10976,6 +10977,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1616451728402434421, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
@@ -23247,7 +23264,7 @@ Transform:
   m_GameObject: {fileID: 2098778491}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16076493, y: -6.1825415e-12, z: 1.0070346e-12, w: 0.9869927}
-  m_LocalPosition: {x: -76.2, y: 3.2740002, z: -4.74}
+  m_LocalPosition: {x: -35.92, y: 3.39, z: -5.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23397,6 +23414,7 @@ MonoBehaviour:
   - {fileID: 1185077580}
   - {fileID: 1786789363}
   - {fileID: 265535409}
+  currentCamera: {fileID: 0}
 --- !u!114 &2098778499
 MonoBehaviour:
   m_ObjectHideFlags: 0

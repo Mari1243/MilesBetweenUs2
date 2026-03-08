@@ -6,6 +6,7 @@ public class StealableItemBehavior : MonoBehaviour
 {
     public int camIndex;
     public static StealableItemBehavior instance;
+    private bool thisItem;
 
     private void OnEnable()
     {
@@ -22,7 +23,14 @@ public class StealableItemBehavior : MonoBehaviour
         Interactor.OnHoldProgress -= floatObj;
         Interactor.OnHoldCanceled -= droppingObj;
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        thisItem = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        thisItem = false;
+    }
     void Awake()
     {
 
@@ -32,9 +40,13 @@ public class StealableItemBehavior : MonoBehaviour
     }
     public void setCamera(int cam)
     {
-        cam = camIndex;
-        ChangeCamera.instance.changeCamera(camIndex);
-        Debug.Log("This is current camera: "+ ChangeCamera.instance.currentCamera.name);
+        if (thisItem)
+        {
+
+            cam = camIndex;
+            ChangeCamera.instance.changeCamera(camIndex);
+            Debug.Log("This is current camera: " + ChangeCamera.instance.currentCamera.name);
+        }
     }
     void defaultCamera()
     {
