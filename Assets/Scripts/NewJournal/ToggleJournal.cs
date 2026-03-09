@@ -61,7 +61,6 @@ public class ToggleJournal : MonoBehaviour
                 DOTween.Restart("animateIn"); 
                 DOTween.Play ("animateIn");
                 journalopen = true;
-                Time.timeScale = 0;
             }
             else
             {
