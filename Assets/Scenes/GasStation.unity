@@ -18468,6 +18468,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: journalCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8502000836159243437, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: currentList
+      value: 
+      objectReference: {fileID: 3858602058654858274, guid: e768d9c545bfa43babbf9a2671f8cb91, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21259,7 +21263,7 @@ Transform:
   m_GameObject: {fileID: 1896960882}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1607649, y: -1.6627928e-11, z: -1.226868e-12, w: 0.9869928}
-  m_LocalPosition: {x: -70.26, y: 3.39, z: -9.78}
+  m_LocalPosition: {x: -77.21, y: 3.39, z: -8.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23753,7 +23757,7 @@ Transform:
   m_GameObject: {fileID: 2098778491}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1607649, y: -1.7286393e-11, z: 2.8156694e-12, w: 0.9869927}
-  m_LocalPosition: {x: -70.26, y: 3.39, z: -9.78}
+  m_LocalPosition: {x: -77.21, y: 3.39, z: -8.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25438,7 +25442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -70.26
+      value: -77.21
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25446,7 +25450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.7
+      value: -3.79
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalRotation.w
