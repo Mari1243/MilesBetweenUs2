@@ -26,6 +26,7 @@ public class ToggleJournal : MonoBehaviour
         InputManager.OpenJournal += inventory;
         //ToggleJournal.hideJournal += inventory;
         interactable.showJournal += inventory;
+        
     }
     private void OnDisable()
     {

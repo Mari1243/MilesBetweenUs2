@@ -55,20 +55,22 @@ public class UIManager : MonoBehaviour
         Interactor.OnHoldProgress += UpdateHoldUI;
         Interactor.OnHoldCompleted += HideHoldUI;
         Interactor.OnHoldCanceled += HideHoldUI;
-        // InputManager.OpenJournal += inventory;
-        // ToggleJournal.hideJournal += inventory;
+
 
         StealingManager.OnStateChanged += UpdateDangerUI;
         StealingManager.OnStealingActionChanged += UpdateStealingUI;
 
         interactable.onPickedUp += ShowItemHUD;
+        InventoryManager.AddedItem += ShowItemHUD;
         interactable.onPickedUp += rewardText;
-        // interactable.showJournal += inventory;
         Interactor.StealWarning += dangerState;
 
-        //IntroSceneManager.OnHintNeeded += hint;
-        //Interactor.HintNeeded += hint;
         InputManager.Pause += pausegame;
+
+        GasStationManager.journalNotif += INjournalNotif;
+        InputManager.OpenJournal += OUTjournalNotif;
+
+
     }
 
     private void OnDisable()
@@ -77,25 +79,19 @@ public class UIManager : MonoBehaviour
         Interactor.OnHoldCompleted -= HideHoldUI;
         Interactor.OnHoldCanceled -= HideHoldUI;
         Interactor.StealWarning -= dangerState;
-        // InputManager.OpenJournal -= inventory;
-        // ToggleJournal.hideJournal -= inventory;
 
         StealingManager.OnStateChanged -= UpdateDangerUI;
         StealingManager.OnStealingActionChanged -= UpdateStealingUI;
 
         interactable.onPickedUp -= ShowItemHUD;
         interactable.onPickedUp -= rewardText;
-        // interactable.showJournal -= inventory;
-        
-        //IntroSceneManager.OnHintNeeded -= hint;
-        //Interactor.HintNeeded -= hint;
+        InventoryManager.AddedItem -= ShowItemHUD;
         InputManager.Pause -= pausegame;
+
+        GasStationManager.journalNotif -= INjournalNotif;
+        InputManager.OpenJournal -= OUTjournalNotif;
     }
 
-    private void inventory()
-    {
-        throw new NotImplementedException();
-    }
 
     private void Start()
     {
@@ -120,52 +116,12 @@ public class UIManager : MonoBehaviour
         LoreitemPopup.SetActive(false);
         journalCanvas = GameObject.Find("journalCanvas").GetComponent<Canvas>();
         journal = journalCanvas.transform.GetChild(0).gameObject;
+
+        NotifPopup.transform.localScale = new Vector3(0, 0, 0);
+
     }
 
-    // public void inventory()
-    // {
-    //     print("calling animations and journal stuff from UI manager");
-    //     print("asdffff");
-    //     NotifPopup.SetActive(false);
-    //    if(journalCanvas != null)
-    //     {
-    //         if(!journalopen)
-    //         {
-    //             journalopen = true;
-    //             Cursor.lockState = CursorLockMode.None;
-    //             Cursor.visible = true;
-    //             journalCanvas.enabled = true;
-    //             StartCoroutine(journalIN());
 
-    //         }
-    //         else
-    //         {
-    //             Cursor.lockState = CursorLockMode.Locked;
-    //             Cursor.visible = false;
-    //             StartCoroutine(journalOUT());
-    //             journalopen = false;
-    //         }
-    //     }
-    // }
-
-    // private IEnumerator journalIN()
-    // {
-    //     DOTween.Restart("animateIn");
-    //     DOTween.Play ("animateIn");
-    //     yield return new WaitForSecondsRealtime(.3f);
-    //     Time.timeScale = 0f;
-
-    // }
-    // private IEnumerator journalOUT()
-    // {
-    //     print("animating out");
-    //     DOTween.Restart("animateOut"); 
-    //     DOTween.Play ("animateOut");
-    //     Time.timeScale = 1f;
-    //     yield return new WaitForSecondsRealtime(2f);
-    //     journalCanvas.enabled = false;
-    // }
- 
     private void dangerState(bool status)
     {
         DOTweenAnimation test = stealingUI.gameObject.GetComponent<DOTweenAnimation>();
@@ -188,7 +144,15 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    
+    void INjournalNotif()
+    {
+        NotifPopup.transform.DOScale(new Vector3(.4f, .4f, .4f), .5f).SetEase(Ease.InBounce) ;
+    }
+    void OUTjournalNotif()
+    {
+        NotifPopup.transform.DOScale(new Vector3(0,0,0), 1f);
+
+    }
 
     private void SetSprites()
     {
@@ -359,12 +323,7 @@ private void DangerUI()
         }
     }
 
-    private void collectCoin(Item itemdata)
-    {
-        Debug.Log("coin picked up!");
-        InventoryManager.instance.moneyAmount += .50f;
-        moneyText.text = "$" + InventoryManager.instance.moneyAmount.ToString("f2");
-    }
+
 
 
 

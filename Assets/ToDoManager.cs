@@ -5,6 +5,7 @@ using UnityEngine;
 public class ToDoManager : MonoBehaviour
 {
     public static ToDoManager instance;
+
     public GameObject[] toDoItems;
     private Dictionary<string, ToDoItemBehavior> Tasks;
     public GameObject[] Collectables;
