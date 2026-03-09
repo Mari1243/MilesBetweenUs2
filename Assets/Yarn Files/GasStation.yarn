@@ -127,12 +127,12 @@ Brother: I'm not done filling up yet.
 
 
 
-title: BrotherBorder
+title: ClerkTalk
 tags:
 ---
-<<cameraIndex 2>>
-
-Brother: Do you want to get run over?
+<<cameraIndex 6>>
+Clerk: Hey whippasnappa
+Clerk: Don't be stealing har har
 
 
 <<cameraIndex 0>>
