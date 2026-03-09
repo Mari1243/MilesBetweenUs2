@@ -7,6 +7,7 @@ public class ChangeCamera : MonoBehaviour
     [SerializeField] CinemachineCamera[] cameras;
     public CinemachineCamera currentCamera;
     public static ChangeCamera instance;
+    public bool hasCutscene;
 
     private void OnEnable()
     {
@@ -20,6 +21,20 @@ public class ChangeCamera : MonoBehaviour
     private void Start()
     {
         currentCamera = GetComponent<CinemachineBrain>().GetComponent<CinemachineCamera>();
+        if (hasCutscene)
+        {
+            currentCamera= cameras[0];
+            currentCamera = cameras[cameras.Length - 1];
+            print(currentCamera.name);
+
+            foreach (CinemachineCamera camera in cameras)
+            {
+
+            camera.enabled = camera == currentCamera;
+
+            }
+
+        }
     }
 
     void Awake()

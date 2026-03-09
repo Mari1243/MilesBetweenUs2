@@ -19,12 +19,13 @@ public class GasStationManager : MonoBehaviour
     private static bool completedAllObjectives;
     private static int allobjectives = 2;
     private static int completedobjectives = 0;
-    private void Start()
+
+    //CALL THIS SHIT PLZZZ WHEN THE CAR IS DONE PULLING UP!!!!
+    public void triggerIntroCutscene()
     {
         DialogueManager.instance.TalkInteraction(item);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
     }
 
     private void OnEnable()
