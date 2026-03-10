@@ -1,13 +1,12 @@
 using DG.Tweening;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using Yarn.Unity;
+using System;
 
 
 /*
@@ -17,26 +16,21 @@ using Yarn.Unity;
 public class GasStationManager : MonoBehaviour
 {
     public Item item;
-    public Item knife;
-    //this exists so once ive completed all objectives it wont keep checking everytime i interact
-    private static bool completedAllObjectives;
-    private static int allobjectives = 2;
-    private static int completedobjectives = 0;
-    public GameObject toDoList1;
-    public static event Action journalNotif;
+ public Item knife;
+ //this exists so once ive completed all objectives it wont keep checking everytime i interact
+ private static bool completedAllObjectives;
+ private static int allobjectives = 2;
+ private static int completedobjectives = 0;
+ public GameObject toDoList1;
+ public static event Action journalNotif;
 
-    private GameObject kidObjective;
-
-
-    private void Start()
+ private GameObject kidObjective;
+    //CALL THIS SHIT PLZZZ WHEN THE CAR IS DONE PULLING UP!!!!
+    public void triggerIntroCutscene()
     {
         DialogueManager.instance.TalkInteraction(item);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
-
-
-
     }
 
     private void OnEnable()
@@ -65,8 +59,6 @@ public class GasStationManager : MonoBehaviour
                 {
                     ToDoManager.instance.CompleteItem("SnacksforRoad");
                     completedobjectives++;
-                    
-
                 }
                 else if (item.itemData.itemName == "Cigarettes" || item.itemData.itemName == "PocketKnife" || item.itemData.itemName == "BloodPawz CD")
                 {
@@ -74,14 +66,7 @@ public class GasStationManager : MonoBehaviour
                     ToDoManager.instance.CompleteItem("SpecialBroItem");
                     completedobjectives++;
                 }
-                else if (item.itemData.itemName == "Lollipop")
-                {
-                    ToDoManager.instance.CompleteItem("SnacksForKids");
-                    print("FINISHED KID OBJK");
 
-                    completedobjectives++;
-
-                }
                 if (completedobjectives >= allobjectives)
                 {
                     completedAllObjectives = true;
@@ -91,11 +76,9 @@ public class GasStationManager : MonoBehaviour
         }
     }
 
-
-
     public void StartAction(string action)
     {
-       
+
         switch (action)
         {
             case "kidQuest":
@@ -104,14 +87,14 @@ public class GasStationManager : MonoBehaviour
                 journalNotif?.Invoke();
 
                 break;
-                 
-            
+
+
             case "StartkidQuest":
 
 
                 GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
                 kidObjective = mainPage.transform.GetChild(2).gameObject;
-  
+
                 kidObjective.SetActive(true);
 
                 journalNotif?.Invoke();
