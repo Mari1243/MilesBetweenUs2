@@ -23,6 +23,8 @@ public class interactable : MonoBehaviour, IInteractable
     public static event Action showJournal;
     public static event Action onInteract;
 
+    public static event Action onMap;
+
 
     public void Interact()
     {
@@ -73,6 +75,11 @@ public class interactable : MonoBehaviour, IInteractable
 
             case "canInteract":
                 onInteract?.Invoke(); //called in SceneManager
+                break;
+
+            case "Map":
+                onMap?.Invoke(); //called in Introscenemanager
+                Destroy(gameObject);
                 break;
                 
         }

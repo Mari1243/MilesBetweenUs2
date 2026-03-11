@@ -276,9 +276,12 @@ void EndDrag()
                     break;
                 }
             }
-            else
+            else if(result.gameObject.name == "snapper")
             {
                 print("whats underneath is " + result.gameObject.name);
+                this.transform.position = result.gameObject.transform.position;
+                this.enabled = false;
+                fakeJournalBehavior.instance.mapsnapped();
             }
         }
         
@@ -320,6 +323,7 @@ void EndDrag()
     {
         print("calling not in journal, deparenting");
         transform.parent = canvas.transform;
+       
     }
 
 

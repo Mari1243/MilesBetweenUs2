@@ -456,9 +456,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 423335256070104652, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: 'Collectables.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7291822587195480766}
+    - target: {fileID: 423335256070104652, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: 'Collectables.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4015841140201083748}
+    - target: {fileID: 423335256070104652, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: 'Collectables.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2672553797993516653}
     - target: {fileID: 520062060349448589, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
       propertyPath: m_Name
       value: ToDoLevel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2430535325811624049, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1385721717, guid: a95d6bd50c4391e4aa0926efc1713ca5, type: 3}
+    - target: {fileID: 5937120765614538348, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 138
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340345841276195691, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: m_Name
+      value: BloodPawz CD
       objectReference: {fileID: 0}
     - target: {fileID: 7152785987646214551, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
       propertyPath: m_AnchorMax.y
@@ -573,7 +597,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6340345841276195691, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+    - {fileID: 8374681685068991841, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+    - {fileID: 5573632777873296894, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8213793091768073092, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
       insertIndex: -1
@@ -583,6 +610,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -4143725075650757940}
   m_SourcePrefab: {fileID: 100100000, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+--- !u!1 &2672553797993516653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1706286003024139202, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+  m_PrefabInstance: {fileID: 3655554626809224623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3858602058654858274 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 520062060349448589, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
@@ -600,8 +632,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &4015841140201083748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 360289816353050315, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+  m_PrefabInstance: {fileID: 3655554626809224623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4847670749409535531 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8213793091768073092, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+  m_PrefabInstance: {fileID: 3655554626809224623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7291822587195480766 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6308102248640218897, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
   m_PrefabInstance: {fileID: 3655554626809224623}
   m_PrefabAsset: {fileID: 0}

@@ -16,6 +16,9 @@ TagManager:
   - LoreItem
   - TabHolder
   - canInteract
+  - InventoryItem
+  - coin
+  - Map
   layers:
   - Default
   - TransparentFX

@@ -38,9 +38,9 @@ public class IntroUIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        IntroInteractor.OnHoldProgress += UpdateHoldUI;
-        IntroInteractor.OnHoldCompleted += HideHoldUI;
-        IntroInteractor.OnHoldCanceled += HideHoldUI;
+        Interactor.OnHoldProgress += UpdateHoldUI;
+        Interactor.OnHoldCompleted += HideHoldUI;
+        Interactor.OnHoldCanceled += HideHoldUI;
 
         StealingManager.OnStateChanged += UpdateDangerUI;
         StealingManager.OnStealingActionChanged += UpdateStealingUI;
@@ -55,9 +55,9 @@ public class IntroUIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        IntroInteractor.OnHoldProgress -= UpdateHoldUI;
-        IntroInteractor.OnHoldCompleted -= HideHoldUI;
-        IntroInteractor.OnHoldCanceled -= HideHoldUI;
+        Interactor.OnHoldProgress -= UpdateHoldUI;
+        Interactor.OnHoldCompleted -= HideHoldUI;
+        Interactor.OnHoldCanceled -= HideHoldUI;
 
         StealingManager.OnStateChanged -= UpdateDangerUI;
         StealingManager.OnStealingActionChanged -= UpdateStealingUI;
