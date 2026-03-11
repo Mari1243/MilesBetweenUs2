@@ -34,15 +34,11 @@ public class IntroSceneManager : MonoBehaviour
 
     private void OnEnable()
     {
-        // Mapinteractable.showJournal += OpenJournalHint;
-        // Mapinteractable.showJournal += FreezeCam;
         Mapinteractable.nextscene += nextScene;
         interactable.onMap += stuff;
     }
     private void OnDisable()
     {
-        // Mapinteractable.showJournal -= OpenJournalHint;
-        // Mapinteractable.showJournal -= FreezeCam;
         Mapinteractable.nextscene -= nextScene;
         interactable.onMap -= stuff;
 
@@ -68,9 +64,10 @@ public class IntroSceneManager : MonoBehaviour
             }
             else
             {
-                TPCam.SetActive(false);
+                TPCam.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                journalcanvas.enabled = false;
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
@@ -80,7 +77,6 @@ public class IntroSceneManager : MonoBehaviour
 
     private void instructions()
     {
-        print("trying to start dialogue");
         DialogueManager.instance.LoadDialog("StoreMap");
         DialogueManager.instance.StartDialog();
         DialogueManager.instance.OnDialogOver();
@@ -177,17 +173,6 @@ public class IntroSceneManager : MonoBehaviour
         //TransitionManager.Instance.PlayTransition(2f, 2f);
         SceneSwitch.Instance.SwitchScene("Car");
     }
-
-    private void FreezeCam()
-    {
-        TPCam.SetActive(false);
-    }
-    public void UnFreezeCam()
-    {
-        TPCam.SetActive(true);
-       
-    }
-
 
 }
 
