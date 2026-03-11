@@ -4,14 +4,18 @@ using System;
 using System.Collections;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using Unity.Cinemachine;
 
 public class ToggleJournal : MonoBehaviour
 {
-    public Image crosshair;
     public static event Action hideJournal;
     private bool journalopen = false;
     private Canvas canvas;
-
+   
+    [Header("Public References")]
+    public CinemachineInputAxisController playerCam;
+    public ThirdPersonMovement playerMovement;
+     
     private void Start()
     {
 
@@ -21,20 +25,23 @@ public class ToggleJournal : MonoBehaviour
 
     private void OnEnable()
     {
-        // interactable.showJournal += JournalScene;
         DragItem.loreDrop += closeJournal;
+
         InputManager.OpenJournal += inventory;
-        //ToggleJournal.hideJournal += inventory;
+        InputManager.OpenJournal += disablePlayer;
+        hideJournal += enablePlayer;
         interactable.showJournal += inventory;
         
     }
     private void OnDisable()
     {
-        // interactable.showJournal -= JournalScene;
         DragItem.loreDrop -= closeJournal;
+
         InputManager.OpenJournal -= inventory;
-        //ToggleJournal.hideJournal -= inventory;
+        InputManager.OpenJournal -= disablePlayer;
+        hideJournal -= enablePlayer;
         interactable.showJournal -= inventory;
+        
     }
 
     public void closeJournal(string node)
@@ -90,6 +97,15 @@ public class ToggleJournal : MonoBehaviour
         }
     }
 
-   
+   public void disablePlayer()
+    {
+        playerCam.enabled = false;
+        playerMovement.enabled = false;
+    }
 
+    public void enablePlayer()
+    {
+        playerCam.enabled = true;
+        playerMovement.enabled = true;
+    }
 }

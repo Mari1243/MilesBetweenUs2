@@ -3564,6 +3564,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6503872b441c072409677ff45014b383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &420828827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3489567006032489661, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
+  m_PrefabInstance: {fileID: 4481309399001592892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420828809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773df067dd408b745851d1817b00759f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &422848161
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3828,8 +3839,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '[press space]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
-  m_sharedMaterial: {fileID: -6955914548417487326, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16892,10 +16903,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3934565142877967674, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: playerCam
+      value: 
+      objectReference: {fileID: 1896960896}
+    - target: {fileID: 3934565142877967674, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 420828827}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Name
       value: journalCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6131492177270486264, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6131492177270486264, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8502000836159243437, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: currentList
       value: 
