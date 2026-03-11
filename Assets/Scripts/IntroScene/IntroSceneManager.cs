@@ -6,11 +6,13 @@ using UnityEngine.UI;
 using DG.Tweening;
 using DG.Tweening.Core.Easing;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class IntroSceneManager : MonoBehaviour
 {
     public Canvas journalcanvas;
     private bool journalActive;
+    public DialogueRunner diaRun;
 
     public GameObject book;
     public GameObject Map;
@@ -23,6 +25,12 @@ public class IntroSceneManager : MonoBehaviour
 
     public GameObject instructionss;
 
+    public static IntroSceneManager instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     private void OnEnable()
     {
@@ -75,6 +83,22 @@ public class IntroSceneManager : MonoBehaviour
         print("trying to start dialogue");
         DialogueManager.instance.LoadDialog("StoreMap");
         DialogueManager.instance.StartDialog();
+        DialogueManager.instance.OnDialogOver();
+    }
+
+    public void mapsnapped()
+    {
+        StartCoroutine(waittt());
+    }
+
+    private IEnumerator waittt()
+    {
+        print("ok doing journal stuff now");
+        DialogueManager.instance.LoadDialog("WhatisJournal");
+        yield return new WaitForSeconds (.5f);
+        DialogueManager.instance.StartDialog();
+        
+        yield return new WaitForSeconds (.5f);
         DialogueManager.instance.OnDialogOver();
     }
 
