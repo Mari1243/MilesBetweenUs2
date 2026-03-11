@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class ChangeCamera : MonoBehaviour
@@ -18,29 +19,27 @@ public class ChangeCamera : MonoBehaviour
         DialogueCommands.currentCam -= changeCamera;
     }
 
-    private void Start()
-    {
-        currentCamera = GetComponent<CinemachineBrain>().GetComponent<CinemachineCamera>();
-        if (hasCutscene)
-        {
-            currentCamera= cameras[0];
-            currentCamera = cameras[cameras.Length - 1];
-            print(currentCamera.name);
-
-            foreach (CinemachineCamera camera in cameras)
-            {
-
-            camera.enabled = camera == currentCamera;
-
-            }
-
-        }
-    }
 
     void Awake()
     {
 
-        if (instance == null)
+    currentCamera = GetComponent<CinemachineBrain>().GetComponent<CinemachineCamera>();
+    if (hasCutscene)
+    {
+        currentCamera = cameras[0];
+        currentCamera = cameras[cameras.Length - 1];
+        print(currentCamera.name);
+
+        foreach (CinemachineCamera camera in cameras)
+        {
+
+            camera.enabled = camera == currentCamera;
+
+        }
+
+    }
+
+    if (instance == null)
             instance = this;
 
     }
@@ -57,7 +56,6 @@ public class ChangeCamera : MonoBehaviour
         }
 
     }
-
 
 
 }

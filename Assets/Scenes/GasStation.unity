@@ -4571,7 +4571,7 @@ Transform:
   m_GameObject: {fileID: 531243925}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.20287795, z: -0, w: 0.97920406}
-  m_LocalPosition: {x: -116.2, y: 0.8, z: -104.2}
+  m_LocalPosition: {x: -113.7, y: 0.8, z: -100.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17182,6 +17182,7 @@ GameObject:
   - component: {fileID: 1612915135}
   - component: {fileID: 1612915134}
   - component: {fileID: 1612915140}
+  - component: {fileID: 1612915141}
   m_Layer: 0
   m_Name: Car
   m_TagString: canTalk
@@ -17319,7 +17320,7 @@ Transform:
   m_GameObject: {fileID: 1612915133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -103.5, y: 1.36, z: -113.3}
+  m_LocalPosition: {x: -79.92, y: 1.36, z: 4.47}
   m_LocalScale: {x: 30.622059, y: 30.622059, z: 30.622059}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17347,6 +17348,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1612915141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612915133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a26b67a3100f640867605ac2d9060f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GS: {fileID: 253008668}
 --- !u!1 &1646291639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7778994343786907572, guid: ecd284d35e9364f26badf3a0ad658cc5, type: 3}
@@ -22276,7 +22290,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  CustomBlends: {fileID: 0}
+  CustomBlends: {fileID: 11400000, guid: 1ecbf1dc7e6b44b479ed1d2460980fd8, type: 2}
 --- !u!114 &2098778498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22297,7 +22311,7 @@ MonoBehaviour:
   - {fileID: 477968236}
   - {fileID: 30255860}
   - {fileID: 2089356132}
-  - {fileID: 2089356132}
+  - {fileID: 531243926}
   currentCamera: {fileID: 0}
   hasCutscene: 1
 --- !u!114 &2098778499

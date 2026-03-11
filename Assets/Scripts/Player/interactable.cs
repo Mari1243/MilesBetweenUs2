@@ -43,7 +43,7 @@ public class interactable : MonoBehaviour, IInteractable
                     gameObject.transform.GetComponent<Outline>().enabled = false;
                 }
 
-                if (SceneManager.GetActiveScene().name == "GasStation" || SceneManager.GetActiveScene().name == "GS_CursorV0"|| SceneManager.GetActiveScene().name == "GS_CursorV1") //CHANGE IN FUTURE TO DETECT GAME STATES SO NOT SCENE NAME DEPENDENT
+                if (SceneManager.GetActiveScene().name == "GasStation" ) //CHANGE IN FUTURE TO DETECT GAME STATES SO NOT SCENE NAME DEPENDENT
                 {
                     onTalk?.Invoke(item); //called in DialogueManager
                 
