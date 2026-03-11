@@ -5,12 +5,10 @@ using UnityEngine.UI;
 public class fakeJournalBehavior : MonoBehaviour
 {
     public static fakeJournalBehavior instance;
-    public UnityEngine.UI.Button exittButton;
 
     void Awake()
     {
         instance = this;
-        exittButton.enabled = false;
     }
 
     public void mapsnapped()
@@ -32,6 +30,5 @@ public class fakeJournalBehavior : MonoBehaviour
     private void enablebutton()
     {
         print("enabling button");
-        exittButton.enabled = true;
     }
 }

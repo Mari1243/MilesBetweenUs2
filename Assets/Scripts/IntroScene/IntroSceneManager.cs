@@ -45,8 +45,10 @@ public class IntroSceneManager : MonoBehaviour
     //journal behavior
     public void stuff()
     {
+        print("calling stuff");
             if(!journalopen)
             {
+                TPCam.SetActive(false);
                 instructionss.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -58,6 +60,7 @@ public class IntroSceneManager : MonoBehaviour
             }
             else
             {
+                TPCam.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 DOTween.Restart("animateOut"); 
