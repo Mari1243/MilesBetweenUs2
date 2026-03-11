@@ -40,7 +40,6 @@ public class StealableItemBehavior : MonoBehaviour
     }
     private void Update()
     {
-        
     }
 
     public void setCamera(int cam)
