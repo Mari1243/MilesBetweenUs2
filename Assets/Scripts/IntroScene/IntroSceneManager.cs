@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class IntroSceneManager : MonoBehaviour
 {
     public Canvas journalcanvas;
-    public static bool journalActive;
+    private bool journalActive;
 
     public GameObject book;
     public GameObject Map;
@@ -19,7 +19,9 @@ public class IntroSceneManager : MonoBehaviour
     public GameObject TPCam;
     public static event Action<string> OnHintNeeded;
     public Item NOJournal;
-    private bool journalopen = false;
+    public static bool journalopen = false;
+
+    public GameObject instructionss;
 
 
     private void OnEnable()
@@ -38,11 +40,14 @@ public class IntroSceneManager : MonoBehaviour
 
         
     }
+
+
     //journal behavior
     public void stuff()
     {
             if(!journalopen)
             {
+                instructionss.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 journalcanvas.enabled = true;
@@ -58,7 +63,7 @@ public class IntroSceneManager : MonoBehaviour
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
-                
+                instructionss.SetActive(true);
             }
     }
 

@@ -1,13 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class fakeJournalBehavior : MonoBehaviour
 {
     public static fakeJournalBehavior instance;
+    public UnityEngine.UI.Button exittButton;
 
     void Awake()
     {
         instance = this;
+        exittButton.enabled = false;
     }
 
     public void mapsnapped()
@@ -22,5 +25,13 @@ public class fakeJournalBehavior : MonoBehaviour
         yield return new WaitForSeconds (.5f);
         DialogueManager.instance.StartDialog();
         DialogueManager.instance.OnDialogOver();
+        yield return new WaitForSeconds (2f);
+        enablebutton();
+    }
+
+    private void enablebutton()
+    {
+        print("enabling button");
+        exittButton.enabled = true;
     }
 }
