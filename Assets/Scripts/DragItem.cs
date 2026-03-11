@@ -298,17 +298,17 @@ void EndDrag()
             if (item.gameObject.GetComponent<Outline>() != null)
             {
 
-                item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
-                item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
+                //item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
+                //item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
 
 
             }
             else
             {
-                item.gameObject.AddComponent<OutlineUI>();
-                item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
-                item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
-                item.gameObject.GetComponent<Image>().DOColor(Color.yellow, .7f).SetLoops(-1, LoopType.Yoyo);
+                //item.gameObject.AddComponent<OutlineUI>();
+                //item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
+                //item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
+                //item.gameObject.GetComponent<Image>().DOColor(Color.yellow, .7f).SetLoops(-1, LoopType.Yoyo);
 
             }
         }
