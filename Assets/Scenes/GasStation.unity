@@ -20824,6 +20824,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5097828215901238604, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097828215901238604, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097828215901238604, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097828215901238604, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5700763591743352596, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.007
