@@ -10,35 +10,64 @@ using UnityEngine.SceneManagement;
 public class IntroSceneManager : MonoBehaviour
 {
     public Canvas journalcanvas;
-     public static bool journalActive;
-    //public GameObject Hint1;
+    public static bool journalActive;
+
     public GameObject book;
     public GameObject Map;
-    private Vector3 centeredBookPos = new Vector3(2,-3,0);
-    public Vector2 centeredMapPos = new Vector3(302,-16);
     private RectTransform rect;
     private float wait = 3.5f;
     public GameObject TPCam;
     public static event Action<string> OnHintNeeded;
     public Item NOJournal;
+    private bool journalopen = false;
 
-    private void Start()
-    {
-        journalcanvas.enabled = false;
-        //Hint1.SetActive(false);
-    }
 
     private void OnEnable()
     {
-        Mapinteractable.showJournal += OpenJournalHint;
-        Mapinteractable.showJournal += FreezeCam;
+        // Mapinteractable.showJournal += OpenJournalHint;
+        // Mapinteractable.showJournal += FreezeCam;
         Mapinteractable.nextscene += nextScene;
+        interactable.onMap += stuff;
     }
     private void OnDisable()
     {
-        Mapinteractable.showJournal -= OpenJournalHint;
-        Mapinteractable.showJournal -= FreezeCam;
+        // Mapinteractable.showJournal -= OpenJournalHint;
+        // Mapinteractable.showJournal -= FreezeCam;
         Mapinteractable.nextscene -= nextScene;
+        interactable.onMap -= stuff;
+
+        
+    }
+    //journal behavior
+    public void stuff()
+    {
+            if(!journalopen)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                journalcanvas.enabled = true;
+                DOTween.Restart("animateIn"); 
+                DOTween.Play ("animateIn");
+                journalopen = true;
+                instructions();
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                DOTween.Restart("animateOut"); 
+                DOTween.Play ("animateOut");
+                journalopen = false;
+                
+            }
+    }
+
+    private void instructions()
+    {
+        print("trying to start dialogue");
+        DialogueManager.instance.LoadDialog("StoreMap");
+        DialogueManager.instance.StartDialog();
+        DialogueManager.instance.OnDialogOver();
     }
 
     private void nextScene()
@@ -55,24 +84,24 @@ public class IntroSceneManager : MonoBehaviour
 
     private void OpenJournalHint()
     {
+        print("freezing stuff");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        journalActive = true;
-        StartCoroutine(hintroutine());
+        //StartCoroutine(hintroutine());
     }
 
-    private IEnumerator hintroutine()
-    {
-        print("starting");
-        Sequence theSequence = DOTween.Sequence();
-        rect = Map.gameObject.GetComponent<RectTransform>();
-        journalcanvas.enabled = true;
-        theSequence.Append(book.transform.DOLocalMove(centeredBookPos, 1).SetEase(Ease.InOutQuad));
-        theSequence.Append(rect.DOAnchorPos(centeredMapPos, 1).SetEase(Ease.InOutQuad));
-        yield return new WaitForSeconds(wait);
-        print("playing sequence");
-        theSequence.Play();
-    }
+    // private IEnumerator hintroutine()
+    // {
+    //     print("starting");
+    //     Sequence theSequence = DOTween.Sequence();
+    //     rect = Map.gameObject.GetComponent<RectTransform>();
+    //     journalcanvas.enabled = true;
+    //     theSequence.Append(book.transform.DOLocalMove(centeredBookPos, 1).SetEase(Ease.InOutQuad));
+    //     theSequence.Append(rect.DOAnchorPos(centeredMapPos, 1).SetEase(Ease.InOutQuad));
+    //     yield return new WaitForSeconds(wait);
+    //     print("playing sequence");
+    //     theSequence.Play();
+    // }
 
     void OnTriggerEnter(Collider hit)
     {
@@ -126,6 +155,8 @@ public class IntroSceneManager : MonoBehaviour
         TPCam.SetActive(true);
        
     }
+
+
 }
 
 
