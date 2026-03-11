@@ -24,11 +24,7 @@ public class fakeJournalBehavior : MonoBehaviour
         DialogueManager.instance.StartDialog();
         DialogueManager.instance.OnDialogOver();
         yield return new WaitForSeconds (2f);
-        enablebutton();
     }
 
-    private void enablebutton()
-    {
-        print("enabling button");
-    }
+ 
 }

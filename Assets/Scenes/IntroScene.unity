@@ -2593,8 +2593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb5ecd71ee2b4ee09a7239d12146e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  journalcanvas: {fileID: 0}
-  book: {fileID: 0}
+  journalcanvas: {fileID: 934969115}
+  book: {fileID: 146754022}
   Map: {fileID: 236304076}
   TPCam: {fileID: 1551611732}
   NOJournal: {fileID: 11400000, guid: d3917d82316d0a744ac9ca2158df6b4c, type: 2}
