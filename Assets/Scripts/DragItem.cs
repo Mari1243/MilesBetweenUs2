@@ -281,7 +281,7 @@ void EndDrag()
                 print("whats underneath is " + result.gameObject.name);
                 this.transform.position = result.gameObject.transform.position;
                 this.enabled = false;
-                fakeJournalBehavior.instance.mapsnapped();
+                IntroSceneManager.instance.mapsnapped();
             }
         }
         

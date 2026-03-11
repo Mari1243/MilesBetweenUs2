@@ -22,9 +22,9 @@ public class fakeJournalBehavior : MonoBehaviour
         DialogueManager.instance.LoadDialog("WhatisJournal");
         yield return new WaitForSeconds (.5f);
         DialogueManager.instance.StartDialog();
+        
+        yield return new WaitForSeconds (.5f);
         DialogueManager.instance.OnDialogOver();
-        yield return new WaitForSeconds (2f);
     }
 
- 
 }
