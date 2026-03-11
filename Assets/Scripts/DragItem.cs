@@ -83,7 +83,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             loreDrop(itemdata.node);
             lorePlaced = false;
             loreDone = true;
-            GetComponent<OutlineUI>().enabled= false;
+            //GetComponent<OutlineUI>().enabled= false;
             GetComponent<Image>().DOKill();
             GetComponent<Image>().DOColor(Color.white, 0f);
         }
