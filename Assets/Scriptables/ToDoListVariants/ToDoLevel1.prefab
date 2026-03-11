@@ -457,6 +457,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 423335256070104652, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: toDoItems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 423335256070104652, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
+      propertyPath: 'toDoItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 4255333847322540167}
+    - target: {fileID: 423335256070104652, guid: e730d678cb7ee2c479465b0b9e13fd26, type: 3}
       propertyPath: 'Collectables.Array.data[0]'
       value: 
       objectReference: {fileID: 7291822587195480766}

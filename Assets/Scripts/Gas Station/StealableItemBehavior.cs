@@ -58,13 +58,14 @@ public class StealableItemBehavior : MonoBehaviour
     }
     void floatObj(float progress)
     {
-
-        gameObject.transform.DOLocalMoveY(progress, 1f);
+        Debug.Log("Floating");
+        //gameObject.transform.DOLocalMoveY(progress, 1f);
 
     }
     void droppingObj()
     {
-        gameObject.transform.DOLocalMoveY(-2, 1f);
+        //gameObject.transform.DOLocalMoveY(-2, 1f);
+        Debug.Log("Dropping");
     }
    
 }

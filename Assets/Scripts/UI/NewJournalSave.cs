@@ -64,11 +64,11 @@ public class NewJournalSave : MonoBehaviour
     public void SetState(States newstate)
     {
         print("setting state");
-        if (newstate == NewJournalSave.States.Gasstation)
+        if (newstate == States.Gasstation)
         {
             GasStationJournal();
         }
-        else if (newstate == NewJournalSave.States.Car)
+        else if (newstate == States.Car)
         {
             CarJournal();
         }

@@ -24,7 +24,7 @@ public class GasStationManager : MonoBehaviour
  public GameObject toDoList1;
  public static event Action journalNotif;
 
- private GameObject kidObjective;
+ [SerializeField] private GameObject kidObjective;
     //CALL THIS SHIT PLZZZ WHEN THE CAR IS DONE PULLING UP!!!!
     public void triggerIntroCutscene()
     {
@@ -48,7 +48,19 @@ public class GasStationManager : MonoBehaviour
     //1. collected snacks
     //2. got some sort of lore item for the brother
     //this is largely based on what is IN the inventory, its easier to check that way
+    private void Start()
+    {
 
+        GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
+        kidObjective = mainPage.transform.GetChild(2).gameObject;
+        kidObjective.SetActive(false);
+        if (kidObjective.activeInHierarchy)
+            Debug.Log("Yasss");
+        else
+            Debug.Log("noooo..");
+     
+               
+    }
     public static void checkconditions(List<InventoryItem> list)
     {
         if (!completedAllObjectives)
@@ -91,12 +103,12 @@ public class GasStationManager : MonoBehaviour
 
             case "StartkidQuest":
 
-
-                GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
-                kidObjective = mainPage.transform.GetChild(2).gameObject;
-
+                Debug.Log("Giving kid quest");
                 kidObjective.SetActive(true);
-
+                if (kidObjective)
+                    Debug.Log("KID QUEST IS ACTIVE");
+                else
+                    Debug.Log("NOPE NOT TO BE FOUND");
                 journalNotif?.Invoke();
 
                 break;
