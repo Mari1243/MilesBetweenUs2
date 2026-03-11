@@ -347,8 +347,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30255859}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.020149184, y: 0.70413727, z: -0.019996995, w: 0.7094962}
-  m_LocalPosition: {x: -38.35, y: 3.72, z: -19.7}
+  m_LocalRotation: {x: 0.02142414, y: 0.65581155, z: -0.018624587, w: 0.7543907}
+  m_LocalPosition: {x: -37.4366, y: 3.6939387, z: -20.629211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4130,8 +4130,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477968235}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.020149184, y: 0.70413727, z: -0.019996995, w: 0.7094962}
-  m_LocalPosition: {x: -38.14, y: 3.92, z: -11.44}
+  m_LocalRotation: {x: -0.0045701293, y: 0.7009917, z: 0.004492276, w: 0.7131407}
+  m_LocalPosition: {x: -37.938465, y: 3.580299, z: -11.519112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4502,6 +4502,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 51fbd8bd8b87a534483b712864f960f6, type: 3}
   m_PrefabInstance: {fileID: 527317053}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &531243925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531243927}
+  - component: {fileID: 531243926}
+  m_Layer: 0
+  m_Name: CutsceneCamera4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &531243926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531243925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 1
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 23
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 32
+--- !u!4 &531243927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531243925}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.20287795, z: -0, w: 0.97920406}
+  m_LocalPosition: {x: -116.2, y: 0.8, z: -104.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 23.411, z: 0}
 --- !u!1 &531589451
 GameObject:
   m_ObjectHideFlags: 0
@@ -17106,6 +17181,7 @@ GameObject:
   - component: {fileID: 1612915136}
   - component: {fileID: 1612915135}
   - component: {fileID: 1612915134}
+  - component: {fileID: 1612915140}
   m_Layer: 0
   m_Name: Car
   m_TagString: canTalk
@@ -17243,12 +17319,34 @@ Transform:
   m_GameObject: {fileID: 1612915133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -80.57, y: 1.63, z: 3.16}
+  m_LocalPosition: {x: -103.5, y: 1.36, z: -113.3}
   m_LocalScale: {x: 30.622059, y: 30.622059, z: 30.622059}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1612915140
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612915133}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7dae079c2e68d0946ab07ba98074453b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1646291639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7778994343786907572, guid: ecd284d35e9364f26badf3a0ad658cc5, type: 3}
@@ -22199,8 +22297,9 @@ MonoBehaviour:
   - {fileID: 477968236}
   - {fileID: 30255860}
   - {fileID: 2089356132}
+  - {fileID: 2089356132}
   currentCamera: {fileID: 0}
-  hasCutscene: 0
+  hasCutscene: 1
 --- !u!114 &2098778499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34712,6 +34811,7 @@ SceneRoots:
   - {fileID: 1185077581}
   - {fileID: 1786789364}
   - {fileID: 2089356133}
+  - {fileID: 531243927}
   - {fileID: 2023624361}
   - {fileID: 477968237}
   - {fileID: 30255861}

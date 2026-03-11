@@ -7,7 +7,7 @@ public class StealableItemBehavior : MonoBehaviour
     public int camIndex;
     public static StealableItemBehavior instance;
     private bool thisItem;
-
+    private float holdProgress;
     private void OnEnable()
     {
         Interactor.OnHoldCompleted += defaultCamera;
@@ -38,6 +38,11 @@ public class StealableItemBehavior : MonoBehaviour
             instance = this;
 
     }
+    private void Update()
+    {
+        
+    }
+
     public void setCamera(int cam)
     {
         if (thisItem)
@@ -54,7 +59,8 @@ public class StealableItemBehavior : MonoBehaviour
     }
     void floatObj(float progress)
     {
-        //gameObject.transform.DOLocalMove(, 1f);
+
+        gameObject.transform.DOLocalMoveY(progress, 1f);
 
     }
     void droppingObj()
