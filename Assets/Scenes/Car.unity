@@ -2654,6 +2654,30 @@ PrefabInstance:
       propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0020122288
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0020122288
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0020122288
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.806
+      objectReference: {fileID: 0}
     - target: {fileID: 7559722874699538978, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2678,14 +2702,37 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7559722875680622994, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7559722875680622998, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7559722875680622998, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559722875680622998, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559722875680622998, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559722875680622998, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7966713172738614608, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1734905905}
   m_SourcePrefab: {fileID: 100100000, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
 --- !u!114 &974117751 stripped
 MonoBehaviour:
@@ -4497,6 +4544,23 @@ Transform:
   - {fileID: 1396173504}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1734905900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7966713172738614608, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+  m_PrefabInstance: {fileID: 974117750}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1734905905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734905900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954a7512651f3f94181e09352e63dcd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1792980321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4944559223813419333, guid: 034023ff02a37fc47aab6bc6c49bf15b, type: 3}
