@@ -2968,27 +2968,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8039613103989778838, guid: 015547d6d0adbe84d82aec490ae75bdf, type: 3}
---- !u!65 &1036405470
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7235740969601702550}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.20346077, y: 0.10209646, z: 0.31752443}
-  m_Center: {x: -0.023269081, y: 0, z: -0.041237406}
 --- !u!1001 &1049226489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7547,7 +7526,6 @@ GameObject:
   - component: {fileID: 2056995994476021398}
   - component: {fileID: 2056995994476021400}
   - component: {fileID: 2056995994476021399}
-  - component: {fileID: 2056995994476021401}
   m_Layer: 0
   m_Name: Car_3.0 2
   m_TagString: coin
@@ -7588,7 +7566,7 @@ MonoBehaviour:
   book: {fileID: 146754022}
   Map: {fileID: 236304076}
   TPCam: {fileID: 1551611732}
-  NOJournal: {fileID: 11400000, guid: 7ef025da6f9c742af95e435982182225, type: 2}
+  NOJournal: {fileID: 11400000, guid: f9efa87c15816455a886765374d17a65, type: 2}
   instructionss: {fileID: 1451236270}
 --- !u!65 &2056995994476021400
 BoxCollider:
@@ -7611,19 +7589,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21767943, y: 0.5765983, z: 0.37712005}
   m_Center: {x: 0.016499948, y: -0.21170054, z: -0.007835807}
---- !u!114 &2056995994476021401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711432016514604076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7efc750d8e0fe54ea35c2193ea2c85b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 7ef025da6f9c742af95e435982182225, type: 2}
 --- !u!33 &2190721036526485440
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7787,7 +7752,7 @@ GameObject:
   - component: {fileID: 2721010468376775331}
   - component: {fileID: 1036405462}
   - component: {fileID: 1036405464}
-  - component: {fileID: 1036405470}
+  - component: {fileID: 7235740969601702551}
   m_Layer: 0
   m_Name: Car
   m_TagString: coin
@@ -7795,6 +7760,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7235740969601702551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7235740969601702550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7efc750d8e0fe54ea35c2193ea2c85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: f9efa87c15816455a886765374d17a65, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -280,8 +280,8 @@ void EndDrag()
             {
                 print("whats underneath is " + result.gameObject.name);
                 this.transform.position = result.gameObject.transform.position;
-                this.enabled = false;
                 IntroSceneManager.instance.mapsnapped();
+                this.enabled = false;
             }
         }
         
@@ -330,6 +330,7 @@ void EndDrag()
         else
         {
             print("gameobject is map, parent should be fine");
+            
         }
 
     }
