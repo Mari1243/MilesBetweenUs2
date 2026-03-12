@@ -7,6 +7,7 @@ using DG.Tweening;
 using DG.Tweening.Core.Easing;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
+using Unity.VisualScripting;
 
 public class IntroSceneManager : MonoBehaviour
 {
@@ -141,7 +142,10 @@ public class IntroSceneManager : MonoBehaviour
             else
             {
                 print("doesnt have journal");
-                DialogueManager.instance.TalkInteraction(NOJournal);
+                
+                //DialogueManager.instance.TalkInteraction(NOJournal);
+                DialogueManager.instance?.LoadDialog("noJournal");
+                DialogueManager.instance?.StartDialog();
             }
         }
     }

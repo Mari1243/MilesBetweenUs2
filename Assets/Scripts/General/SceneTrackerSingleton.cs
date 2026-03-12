@@ -6,12 +6,16 @@ public class SceneTrackerSingleton : MonoBehaviour
 {
     public static SceneTrackerSingleton Instance { get; private set; }
 
+    private int carnum = 0;
+
     public string CurrentSceneName { get; private set; }
     public string PreviousSceneName { get; private set; }
 
     public List<SceneScriptables> scenes = new List<SceneScriptables>();
 
     private string currentscenename;
+
+    //public static Unity event action string
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
@@ -45,6 +49,8 @@ public class SceneTrackerSingleton : MonoBehaviour
         print("tring to change state bc is car is "+ iscar);
         if(iscar == true)
         {
+            carnum++;
+            changeStartNode(carnum);
             NewJournalSave.instance.SetState(NewJournalSave.States.Car);
         }
         else
@@ -83,6 +89,7 @@ public class SceneTrackerSingleton : MonoBehaviour
 
         Debug.Log($"Scene changed: {PreviousSceneName} -> {CurrentSceneName}");
         settingstate();
+        //call event with Previous Scene Name
     }
 
     void OnDestroy()
@@ -91,6 +98,14 @@ public class SceneTrackerSingleton : MonoBehaviour
         if (Instance == this)
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+    }
+
+    private void changeStartNode(int carnum)
+    {
+        if(carnum == 0)
+        {
+            
         }
     }
 

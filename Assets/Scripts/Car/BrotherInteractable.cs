@@ -16,6 +16,7 @@ public class BrotherInteractable : MonoBehaviour
     public int minWait, maxWait;
     private void OnEnable()
     {
+        //subscribe to scene tracker singleton instance
         DialogueManager.DialogOver += StartTimer;
         DialogueManager.DialogStart += CloseBubble;
         DragItem.loreDrop += loreDropping;
@@ -30,9 +31,17 @@ public class BrotherInteractable : MonoBehaviour
     {
 
         interactableData.item.node = "Car0";
+        Debug.Log("Hello this was previous scene : "+ SceneTrackerSingleton.Instance.CurrentSceneName);
+
         
-        if (SceneTrackerSingleton.Instance.PreviousSceneName == "GasStation")
+    }
+
+    public void stuff(string askdf)
+    {
+        ////take scene tracker singleton instance here (string) and 
+        if (askdf == "GasStation")
         {
+            print("last scene was gas station");
             interactableData.item = newItem;
         }
     }

@@ -2234,17 +2234,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b421333dec1cd74081a6b62123c2c23, type: 3}
   m_PrefabInstance: {fileID: 622952765}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &691738664 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5509407909149994577, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
-  m_PrefabInstance: {fileID: 5466525184088623627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &770444865 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1046680391553635996, guid: 1447b161bef7a42fc9e9d904f6dd627c, type: 3}
@@ -7562,7 +7551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journalcanvas: {fileID: 934969115}
-  diaRun: {fileID: 691738664}
+  diaRun: {fileID: 1244282130}
   book: {fileID: 146754022}
   Map: {fileID: 236304076}
   TPCam: {fileID: 1551611732}
