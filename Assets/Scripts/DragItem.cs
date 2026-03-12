@@ -280,8 +280,8 @@ void EndDrag()
             {
                 print("whats underneath is " + result.gameObject.name);
                 this.transform.position = result.gameObject.transform.position;
-                this.enabled = false;
                 IntroSceneManager.instance.mapsnapped();
+                this.enabled = false;
             }
         }
         
@@ -321,9 +321,18 @@ void EndDrag()
 
     private void notinjournal()
     {
-        print("calling not in journal, deparenting");
-        transform.parent = canvas.transform;
        
+        if (gameObject.tag != "Map")
+        {
+            print("calling not in journal, deparenting");
+            transform.parent = canvas.transform;
+        }
+        else
+        {
+            print("gameobject is map, parent should be fine");
+            
+        }
+
     }
 
 

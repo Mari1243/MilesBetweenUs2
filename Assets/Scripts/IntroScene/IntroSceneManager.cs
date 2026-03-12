@@ -7,6 +7,7 @@ using DG.Tweening;
 using DG.Tweening.Core.Easing;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
+using Unity.VisualScripting;
 
 public class IntroSceneManager : MonoBehaviour
 {
@@ -19,13 +20,14 @@ public class IntroSceneManager : MonoBehaviour
     private RectTransform rect;
     private float wait = 3.5f;
     public GameObject TPCam;
-    public static event Action<string> OnHintNeeded;
+    private bool hasJournal = false;
     public Item NOJournal;
     public static bool journalopen = false;
 
     public GameObject instructionss;
 
     public static IntroSceneManager instance;
+    private bool mapPlaced= false;
 
     void Awake()
     {
@@ -34,14 +36,17 @@ public class IntroSceneManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Mapinteractable.nextscene += nextScene;
+        // Mapinteractable.showJournal += OpenJournalHint;
+        // Mapinteractable.showJournal += FreezeCam;
         interactable.onMap += stuff;
+        DialogueManager.DialogOver += diaRun.Stop;
     }
     private void OnDisable()
     {
-        Mapinteractable.nextscene -= nextScene;
+        // Mapinteractable.showJournal -= OpenJournalHint;
+        // Mapinteractable.showJournal -= FreezeCam;
         interactable.onMap -= stuff;
-
+        DialogueManager.DialogOver -= diaRun.Stop;
         
     }
 
@@ -67,49 +72,54 @@ public class IntroSceneManager : MonoBehaviour
                 TPCam.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                journalcanvas.enabled = false;
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
                 instructionss.SetActive(true);
+                diaRun.Stop();
             }
     }
 
     private void instructions()
     {
+        print("trying to start dialogue");
         DialogueManager.instance.LoadDialog("StoreMap");
         DialogueManager.instance.StartDialog();
-        DialogueManager.instance.OnDialogOver();
+        //call wait for map place
     }
 
     public void mapsnapped()
     {
+        Map.transform.parent = book.transform;
+        if (DialogueManager.DialogStart != null)
+        {
+            diaRun.Stop();
+        }
         StartCoroutine(waittt());
+        //set bool that triggers wait for map place
     }
+
+    // static async YarnTask waitForMapPlace() {
+
+    //     Wait for bool here
+    //     await YarnTask.Delay(mapPlaced);
+    //     //start the next dialogue??
+        
+    // }    
 
     private IEnumerator waittt()
     {
+        hasJournal = true;
         print("ok doing journal stuff now");
+        yield return new WaitForSeconds (.5f);
+        //make sure previous dialogue is finished playing)
+
         DialogueManager.instance.LoadDialog("WhatisJournal");
-        yield return new WaitForSeconds (.5f);
         DialogueManager.instance.StartDialog();
-        
-        yield return new WaitForSeconds (.5f);
-        DialogueManager.instance.OnDialogOver();
+        //DialogueManager.instance.OnDialogOver();
     }
 
-    private void nextScene()
-    {
-        if (InventoryManager.instance.HasItem("Map"))
-        {
-            SceneSwitch.Instance.SwitchScene("Car");
-        }
-        else
-        {
-            DialogueManager.instance.TalkInteraction(NOJournal);
-        }
-    }
-
+   
     private void OpenJournalHint()
     {
         print("freezing stuff");
@@ -118,42 +128,29 @@ public class IntroSceneManager : MonoBehaviour
         //StartCoroutine(hintroutine());
     }
 
-    // private IEnumerator hintroutine()
-    // {
-    //     print("starting");
-    //     Sequence theSequence = DOTween.Sequence();
-    //     rect = Map.gameObject.GetComponent<RectTransform>();
-    //     journalcanvas.enabled = true;
-    //     theSequence.Append(book.transform.DOLocalMove(centeredBookPos, 1).SetEase(Ease.InOutQuad));
-    //     theSequence.Append(rect.DOAnchorPos(centeredMapPos, 1).SetEase(Ease.InOutQuad));
-    //     yield return new WaitForSeconds(wait);
-    //     print("playing sequence");
-    //     theSequence.Play();
-    // }
+  
 
     void OnTriggerEnter(Collider hit)
     {
-        print("hitting");
+        print("hitting "+ hit.gameObject.name);
         if (hit.name == "Player")
         {
-            bool hasJournal = HasItemByName("Journal");
-            //print(hasJournal);
             if (hasJournal)
             {
                 NextScene();
             }
             else
             {
-                sendingHint("I should grab my journal first");
+                print("doesnt have journal");
+                
+                //DialogueManager.instance.TalkInteraction(NOJournal);
+                DialogueManager.instance?.LoadDialog("noJournal");
+                DialogueManager.instance?.StartDialog();
             }
         }
     }
 
-    private void sendingHint(string str)
-    {
-        OnHintNeeded?.Invoke("nojournal");
-        //this should invoke an image instead??
-    }
+   
 
     public bool HasItemByName(string itemName)
     {
@@ -173,6 +170,9 @@ public class IntroSceneManager : MonoBehaviour
         //TransitionManager.Instance.PlayTransition(2f, 2f);
         SceneSwitch.Instance.SwitchScene("Car");
     }
+
+    
+
 
 }
 

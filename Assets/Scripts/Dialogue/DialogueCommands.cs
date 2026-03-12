@@ -25,11 +25,19 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<int>("cameraIndex", OnCamChange);
         dialogueRunner.AddCommandHandler<string>("changeScene", OnChangeScene);
         dialogueRunner.AddCommandHandler<string>("startAction", OnStartAction);
+        
 
         
     }
 
-   
+    void OnEnable()
+    {
+        startAction+=StartAction;
+    }
+    void OnDisable()
+    {
+        startAction-=StartAction;
+    }
     void OnCamChange(int cam)
     {
         if (currentCam != null)
@@ -80,7 +88,15 @@ public class DialogueCommands : MonoBehaviour
 
     }
 
+    public void StartAction(string action)
+    {
+         switch (action)
+        {
+            case "stop":
 
-
-
+                DialogueManager.instance.OnDialogOver();
+                Debug.Log("Kill me right now");
+                break;
+        }
+    }
 }
