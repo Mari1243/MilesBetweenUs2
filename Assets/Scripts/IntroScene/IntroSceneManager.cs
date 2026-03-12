@@ -27,13 +27,21 @@ public class IntroSceneManager : MonoBehaviour
     public GameObject instructionss;
 
     public static IntroSceneManager instance;
+    public GameObject TutorialDialogueSystem;
+    public GameObject DialogueSystem;
+
     private bool mapPlaced= false;
+
 
     void Awake()
     {
         instance = this;
-    }
 
+    }
+    private void Start()
+    {
+        toggleDefaultSystem();
+    }
     private void OnEnable()
     {
         // Mapinteractable.showJournal += OpenJournalHint;
@@ -57,6 +65,7 @@ public class IntroSceneManager : MonoBehaviour
         print("calling stuff");
             if(!journalopen)
             {
+                toggleTutSystem();
                 TPCam.SetActive(false);
                 instructionss.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
@@ -69,6 +78,7 @@ public class IntroSceneManager : MonoBehaviour
             }
             else
             {
+                toggleDefaultSystem ();
                 TPCam.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -143,9 +153,8 @@ public class IntroSceneManager : MonoBehaviour
             {
                 print("doesnt have journal");
                 
-                //DialogueManager.instance.TalkInteraction(NOJournal);
-                DialogueManager.instance?.LoadDialog("noJournal");
-                DialogueManager.instance?.StartDialog();
+                DialogueManager.instance.TalkInteraction(NOJournal);
+            
             }
         }
     }
@@ -171,7 +180,16 @@ public class IntroSceneManager : MonoBehaviour
         SceneSwitch.Instance.SwitchScene("Car");
     }
 
-    
+    void toggleTutSystem()
+    {
+        TutorialDialogueSystem.SetActive(true);
+        DialogueSystem.SetActive(false);
+    }
+    void toggleDefaultSystem()
+    {
+        TutorialDialogueSystem.SetActive(false);
+        DialogueSystem.SetActive(true);
+    }
 
 
 }

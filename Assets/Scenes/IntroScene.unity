@@ -3648,6 +3648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Dialogue System '
       objectReference: {fileID: 0}
+    - target: {fileID: 827195159269362016, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2080794050152235293, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: autoStart
       value: 1
@@ -3866,7 +3870,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2199349623406605485, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
   m_PrefabInstance: {fileID: 1244282122}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1491419505}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7297948bce90e7a48870c3da47a16238, type: 3}
@@ -3882,7 +3886,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 414091783524130327, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
   m_PrefabInstance: {fileID: 1244282122}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1491419505}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eacb56952912de84ba1aac9d96091b24, type: 3}
@@ -3893,7 +3897,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2080794050152235293, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
   m_PrefabInstance: {fileID: 1244282122}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1491419505}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
@@ -4811,6 +4815,11 @@ MonoBehaviour:
   - {fileID: 1592495104}
   currentCamera: {fileID: 0}
   hasCutscene: 0
+--- !u!1 &1491419505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 827195159269362016, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+  m_PrefabInstance: {fileID: 1244282122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1515798961
 GameObject:
   m_ObjectHideFlags: 0
@@ -5574,6 +5583,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5b8de414112a004a82d0437b5f7a780, type: 3}
+--- !u!1 &1615217909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5697807870763318628, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
+  m_PrefabInstance: {fileID: 5466525184088623627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1656475467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5788,6 +5802,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2056995994476021399}
+        m_TargetAssemblyTypeName: IntroSceneManager, Assembly-CSharp
+        m_MethodName: stuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1244282125}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: LoadDialog
@@ -5803,18 +5829,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1244282125}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: StartDialog
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2056995994476021399}
-        m_TargetAssemblyTypeName: IntroSceneManager, Assembly-CSharp
-        m_MethodName: stuff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7565,6 +7579,8 @@ MonoBehaviour:
   TPCam: {fileID: 1551611732}
   NOJournal: {fileID: 11400000, guid: f9efa87c15816455a886765374d17a65, type: 2}
   instructionss: {fileID: 1451236270}
+  TutorialDialogueSystem: {fileID: 1615217909}
+  DialogueSystem: {fileID: 1491419505}
 --- !u!65 &2056995994476021400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7706,6 +7722,10 @@ PrefabInstance:
     - target: {fileID: 5697807870763318628, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_Name
       value: TutorialSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697807870763318628, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613805754464331818, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_LocalPosition.x
