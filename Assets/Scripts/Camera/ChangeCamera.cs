@@ -1,6 +1,4 @@
 using Unity.Cinemachine;
-using Unity.VisualScripting;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class ChangeCamera : MonoBehaviour
