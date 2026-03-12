@@ -5,6 +5,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using Unity.Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class ToggleJournal : MonoBehaviour
 {
@@ -105,7 +106,16 @@ public class ToggleJournal : MonoBehaviour
 
     public void enablePlayer()
     {
-        playerCam.enabled = true;
-        playerMovement.enabled = true;
+        if (SceneManager.GetActiveScene().name != "Car")
+        {
+
+            playerCam.enabled = true;
+            playerMovement.enabled = true;
+        }
+        else
+        {
+            return;
+        }
+        
     }
 }

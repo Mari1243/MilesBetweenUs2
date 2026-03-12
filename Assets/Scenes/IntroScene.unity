@@ -786,7 +786,7 @@ MonoBehaviour:
   autoPlay: 1
   useTargetAsV3: 1
   endValueFloat: 0
-  endValueV3: {x: 0, y: 0, z: 0}
+  endValueV3: {x: 46.000008, y: 9, z: 0}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
@@ -5294,13 +5294,29 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 2160
       objectReference: {fileID: 0}
+    - target: {fileID: 2857501691372158790, guid: f36a2f0ab5d7e499e9df77ce99755645, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035271195265075980, guid: f36a2f0ab5d7e499e9df77ce99755645, type: 3}
+      propertyPath: m_Color.b
+      value: 0.33962265
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035271195265075980, guid: f36a2f0ab5d7e499e9df77ce99755645, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3920506
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035271195265075980, guid: f36a2f0ab5d7e499e9df77ce99755645, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4528302
+      objectReference: {fileID: 0}
     - target: {fileID: 5447847857950423598, guid: f36a2f0ab5d7e499e9df77ce99755645, type: 3}
       propertyPath: m_Name
       value: prototypePopup
       objectReference: {fileID: 0}
     - target: {fileID: 5447847857950423598, guid: f36a2f0ab5d7e499e9df77ce99755645, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9054820567525309379, guid: f36a2f0ab5d7e499e9df77ce99755645, type: 3}
       propertyPath: m_Pivot.x
