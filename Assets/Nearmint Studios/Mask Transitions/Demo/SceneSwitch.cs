@@ -41,14 +41,14 @@
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
                 int nextSceneIndex = currentSceneIndex + 1;
                 string name = SceneManager.GetSceneByBuildIndex(nextSceneIndex).name;
-                TransitionManager.Instance.LoadLevel(name, 2f);
+                TransitionManager.Instance.LoadLevel(name, .5f);
             }
            
             else
             {
                 sceneToLoadName = scene;
                 print("switching scene to " + sceneToLoadName);
-                TransitionManager.Instance.LoadLevel(sceneToLoadName, 2f);
+                TransitionManager.Instance.LoadLevel(sceneToLoadName, .5f);
             }
             
         }

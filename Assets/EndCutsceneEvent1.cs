@@ -1,19 +1,13 @@
 using MaskTransitions;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EndCutsceneEvent1 : MonoBehaviour
 {
     public GasStationManager GS;
-
-    private void OnEnable()
-    {
-        DialogueCommands.taskComplete += destroyCollider;
-    }
-    private void OnDisable()
-    {
-        DialogueCommands.taskComplete -= destroyCollider;
-    }
+    public GameObject dialogueSystem;
+   
     public void endCutScene()
 
     {
@@ -34,9 +28,5 @@ public class EndCutsceneEvent1 : MonoBehaviour
         
     }
 
-    private void destroyCollider()
-    {
-        BoxCollider collider = GetComponent<BoxCollider>();
-        Destroy(collider);
-    }
+   
 }

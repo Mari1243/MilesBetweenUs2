@@ -1982,7 +1982,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 414091783524130327, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
   m_PrefabInstance: {fileID: 1989817973}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 835047531}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eacb56952912de84ba1aac9d96091b24, type: 3}
@@ -6948,6 +6948,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3970362433325434546, guid: 64722b5766cf5f547ab9376719a6d502, type: 3}
+--- !u!1 &835047531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 827195159269362016, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+  m_PrefabInstance: {fileID: 1989817973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &846640169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7778994343786907572, guid: ecd284d35e9364f26badf3a0ad658cc5, type: 3}
@@ -17389,6 +17394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GS: {fileID: 253008668}
+  dialogueSystem: {fileID: 835047531}
 --- !u!1 &1646291639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7778994343786907572, guid: ecd284d35e9364f26badf3a0ad658cc5, type: 3}
@@ -20921,7 +20927,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2080794050152235293, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
   m_PrefabInstance: {fileID: 1989817973}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 835047531}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
@@ -20932,7 +20938,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2199349623406605485, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
   m_PrefabInstance: {fileID: 1989817973}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 835047531}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7297948bce90e7a48870c3da47a16238, type: 3}

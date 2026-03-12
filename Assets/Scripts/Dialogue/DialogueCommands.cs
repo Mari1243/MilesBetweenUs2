@@ -13,7 +13,6 @@ public class DialogueCommands : MonoBehaviour
     public static UnityAction<string> scenename;
 
     public static UnityAction<string> startAction;
-    public static event Action taskComplete;
     [Header("Inventory")]
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
 
@@ -67,7 +66,6 @@ public class DialogueCommands : MonoBehaviour
                 {
                     Debug.Log("Found!");
                     yarnVariables.SetValue("$hasSnacks", true);
-                    taskComplete?.Invoke();
                 }
                 else if (item.itemData.itemName == "Lollipop") //name specific 
                 {
