@@ -49,7 +49,6 @@ public class IntroUIManager : MonoBehaviour
         Mapinteractable.onPickedUp += rewardText;
 
 
-        IntroSceneManager.OnHintNeeded += hint;
         InputManager.Pause += pausegame;
     }
 
@@ -65,7 +64,6 @@ public class IntroUIManager : MonoBehaviour
         Mapinteractable.onPickedUp -= ShowItemHUD;
         Mapinteractable.onPickedUp -= rewardText;
 
-        IntroSceneManager.OnHintNeeded -= hint;
         InputManager.Pause -= pausegame;
     }
 

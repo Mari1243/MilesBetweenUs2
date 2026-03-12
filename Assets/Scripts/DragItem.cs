@@ -321,9 +321,17 @@ void EndDrag()
 
     private void notinjournal()
     {
-        print("calling not in journal, deparenting");
-        transform.parent = canvas.transform;
        
+        if (gameObject.tag != "Map")
+        {
+            print("calling not in journal, deparenting");
+            transform.parent = canvas.transform;
+        }
+        else
+        {
+            print("gameobject is map, parent should be fine");
+        }
+
     }
 
 
