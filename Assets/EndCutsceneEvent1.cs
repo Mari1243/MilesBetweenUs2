@@ -5,7 +5,17 @@ using UnityEngine;
 public class EndCutsceneEvent1 : MonoBehaviour
 {
     public GasStationManager GS;
-  public void endCutScene()
+
+    private void OnEnable()
+    {
+        DialogueCommands.taskComplete += destroyCollider;
+    }
+    private void OnDisable()
+    {
+        DialogueCommands.taskComplete -= destroyCollider;
+    }
+    public void endCutScene()
+
     {
         StartCoroutine(endingScene());
     }
@@ -22,5 +32,11 @@ public class EndCutsceneEvent1 : MonoBehaviour
 
         GS.triggerIntroCutscene();
         
+    }
+
+    private void destroyCollider()
+    {
+        BoxCollider collider = GetComponent<BoxCollider>();
+        Destroy(collider);
     }
 }

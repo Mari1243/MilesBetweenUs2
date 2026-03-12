@@ -34,7 +34,6 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     private void Start()
     {
-        Debug.Log("This is my current name: " + this.GetComponent<Image>().sprite.name + "and my node is: " + itemdata.node);
 
 
 

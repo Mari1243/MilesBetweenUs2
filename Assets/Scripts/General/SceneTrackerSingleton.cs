@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System;
 
 public class SceneTrackerSingleton : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class SceneTrackerSingleton : MonoBehaviour
 
     private string currentscenename;
 
-    //public static Unity event action string
+    public static event Action<string> onSceneName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
@@ -86,10 +87,9 @@ public class SceneTrackerSingleton : MonoBehaviour
         // Update previous scene before changing current
         PreviousSceneName = CurrentSceneName;
         CurrentSceneName = scene.name;
-
+        onSceneName?.Invoke(PreviousSceneName);
         Debug.Log($"Scene changed: {PreviousSceneName} -> {CurrentSceneName}");
         settingstate();
-        //call event with Previous Scene Name
     }
 
     void OnDestroy()

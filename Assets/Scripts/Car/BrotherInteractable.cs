@@ -14,35 +14,31 @@ public class BrotherInteractable : MonoBehaviour
     private int barkCount, barkIndex;
     public Image img;
     public int minWait, maxWait;
+    bool car1=false;
     private void OnEnable()
     {
-        //subscribe to scene tracker singleton instance
         DialogueManager.DialogOver += StartTimer;
         DialogueManager.DialogStart += CloseBubble;
         DragItem.loreDrop += loreDropping;
+        SceneTrackerSingleton.onSceneName += PreviousScene;
     }
     private void OnDisable()
     {
         DialogueManager.DialogStart -= CloseBubble;
         DialogueManager.DialogOver -= StartTimer;
+        SceneTrackerSingleton.onSceneName -= PreviousScene;
+
     }
 
-    private void Start()
+    public void PreviousScene(string scene)
     {
-
-        interactableData.item.node = "Car0";
-        Debug.Log("Hello this was previous scene : "+ SceneTrackerSingleton.Instance.CurrentSceneName);
-
-        
-    }
-
-    public void stuff(string askdf)
-    {
+        Debug.Log("THIS WAS PREVIOUS SCENE " + scene);
         ////take scene tracker singleton instance here (string) and 
-        if (askdf == "GasStation")
+        if (scene == "GasStation")
         {
             print("last scene was gas station");
             interactableData.item = newItem;
+            car1 = true;
         }
     }
 
@@ -76,7 +72,11 @@ public class BrotherInteractable : MonoBehaviour
 
 
         //also make it so he "barks" only like twice but each time between then is randomized 
-        interactableData.item.node = "Car0";
+        if (car1)
+            interactableData.item.node = "Car1";
+        else
+            interactableData.item.node = "Car0";
+
 
         barkCount = barks.Count;
         int rand = Random.Range(minWait, maxWait); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 

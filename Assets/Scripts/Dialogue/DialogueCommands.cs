@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,7 +13,7 @@ public class DialogueCommands : MonoBehaviour
     public static UnityAction<string> scenename;
 
     public static UnityAction<string> startAction;
-
+    public static event Action taskComplete;
     [Header("Inventory")]
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
 
@@ -30,14 +31,7 @@ public class DialogueCommands : MonoBehaviour
         
     }
 
-    void OnEnable()
-    {
-        startAction+=StartAction;
-    }
-    void OnDisable()
-    {
-        startAction-=StartAction;
-    }
+   
     void OnCamChange(int cam)
     {
         if (currentCam != null)
@@ -73,6 +67,7 @@ public class DialogueCommands : MonoBehaviour
                 {
                     Debug.Log("Found!");
                     yarnVariables.SetValue("$hasSnacks", true);
+                    taskComplete?.Invoke();
                 }
                 else if (item.itemData.itemName == "Lollipop") //name specific 
                 {
@@ -88,15 +83,5 @@ public class DialogueCommands : MonoBehaviour
 
     }
 
-    public void StartAction(string action)
-    {
-         switch (action)
-        {
-            case "stop":
-
-                DialogueManager.instance.OnDialogOver();
-                Debug.Log("Kill me right now");
-                break;
-        }
-    }
+ 
 }

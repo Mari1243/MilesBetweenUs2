@@ -34,6 +34,7 @@
 
         public void SwitchScene(string scene)
         {
+
             if (scene == null)
             {
                 print("scene was null");

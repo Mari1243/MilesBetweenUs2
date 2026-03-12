@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndDemoScene.unity
     guid: b188488694806426fb45b0f6efc5794b
+  - enabled: 1
+    path: Assets/Scenes/DragonLand_Greybox.unity
+    guid: 0c38690ab30e442819d4f3787390cd20
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: e55da78f71798da4081d875114c4ceea, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

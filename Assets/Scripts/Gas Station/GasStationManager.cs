@@ -25,7 +25,6 @@ public class GasStationManager : MonoBehaviour
  public static event Action journalNotif;
 
  [SerializeField] private GameObject kidObjective;
-    //CALL THIS SHIT PLZZZ WHEN THE CAR IS DONE PULLING UP!!!!
     public void triggerIntroCutscene()
     {
         DialogueManager.instance.TalkInteraction(item);
