@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Yarn.Unity;
+using System.Collections;
+using System.Runtime.InteropServices;
 public class DialogueCommands : MonoBehaviour
 {
 
@@ -25,11 +27,26 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<int>("cameraIndex", OnCamChange);
         dialogueRunner.AddCommandHandler<string>("changeScene", OnChangeScene);
         dialogueRunner.AddCommandHandler<string>("startAction", OnStartAction);
-        
+        dialogueRunner.AddCommandHandler("waitForMapDrop", WaitForMapDrop);
+        dialogueRunner.AddCommandHandler("autoAdvance", AutoAdvance);
+
 
         
     }
 
+    private IEnumerator AutoAdvance()
+{
+    // tell line presenter to auto advance just for next line
+    linePresenter.autoAdvance = true;
+    yield return null;
+    linePresenter.autoAdvance = false;
+}
+
+    private IEnumerator WaitForMapDrop()
+    {
+        yield return new WaitUntil(() => IntroSceneManager.mapPlaced);
+        print("wait for map drop");
+    }
    
     void OnCamChange(int cam)
     {
@@ -49,6 +66,8 @@ public class DialogueCommands : MonoBehaviour
             startAction(action);
             
     }
+
+    
 
     public void checkInventory()
     //find a place to better implement 

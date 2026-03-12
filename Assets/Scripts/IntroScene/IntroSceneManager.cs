@@ -8,6 +8,7 @@ using DG.Tweening.Core.Easing;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 using Unity.VisualScripting;
+using System.Runtime.InteropServices;
 
 public class IntroSceneManager : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class IntroSceneManager : MonoBehaviour
     public GameObject TutorialDialogueSystem;
     public GameObject DialogueSystem;
 
-    private bool mapPlaced= false;
+    public static bool mapPlaced= false;
 
 
     void Awake()
@@ -100,22 +101,12 @@ public class IntroSceneManager : MonoBehaviour
 
     public void mapsnapped()
     {
+        print("snappingmap");
         Map.transform.parent = book.transform;
-        if (DialogueManager.DialogStart != null)
-        {
-            diaRun.Stop();
-        }
-        StartCoroutine(waittt());
-        //set bool that triggers wait for map place
+
+        Map.transform.parent = book.transform;
+        mapPlaced = true;
     }
-
-    // static async YarnTask waitForMapPlace() {
-
-    //     Wait for bool here
-    //     await YarnTask.Delay(mapPlaced);
-    //     //start the next dialogue??
-        
-    // }    
 
     private IEnumerator waittt()
     {

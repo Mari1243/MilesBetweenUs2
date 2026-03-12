@@ -330,6 +330,7 @@ void EndDrag()
         {
             print("gameobject is map, parent should be fine");
             
+            
         }
 
     }

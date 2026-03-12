@@ -68,8 +68,12 @@ public class DialogueManager : MonoBehaviour
     }
     public void OnDialogOver()
     {
+        print("calling dialogue over: " + System.Environment.StackTrace);
         if (DialogStart != null)
+        {
+            print("calling dialogue over");
             DialogOver();
+        }
 
         dialogStarted = false;
 
