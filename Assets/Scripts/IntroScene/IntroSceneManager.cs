@@ -141,7 +141,7 @@ public class IntroSceneManager : MonoBehaviour
             else
             {
                 print("doesnt have journal");
-            DialogueManager.instance.TalkInteraction(NOJournal);
+                DialogueManager.instance.TalkInteraction(NOJournal);
             }
         }
     }

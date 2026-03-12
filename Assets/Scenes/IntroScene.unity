@@ -5742,7 +5742,7 @@ GameObject:
   - component: {fileID: 1713106522}
   - component: {fileID: 1713106521}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5812,7 +5812,31 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1244282125}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: LoadDialog
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MapRecieved
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1244282125}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: StartDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2056995994476021399}
         m_TargetAssemblyTypeName: IntroSceneManager, Assembly-CSharp
         m_MethodName: stuff
         m_Mode: 1
@@ -7561,10 +7585,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   journalcanvas: {fileID: 934969115}
   diaRun: {fileID: 691738664}
-  book: {fileID: 934969111}
+  book: {fileID: 146754022}
   Map: {fileID: 236304076}
   TPCam: {fileID: 1551611732}
-  NOJournal: {fileID: 0}
+  NOJournal: {fileID: 11400000, guid: 7ef025da6f9c742af95e435982182225, type: 2}
   instructionss: {fileID: 1451236270}
 --- !u!65 &2056995994476021400
 BoxCollider:
@@ -7599,7 +7623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7efc750d8e0fe54ea35c2193ea2c85b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 7ef025da6f9c742af95e435982182225, type: 2}
 --- !u!33 &2190721036526485440
 MeshFilter:
   m_ObjectHideFlags: 0
