@@ -61,6 +61,7 @@ public class StealingManager : MonoBehaviour
 
     public void StopStealin() //THIS IS WHAT HAPPENS WHEN STEALING IS OVER
     {
+        print("stop stealin");
         stealingActive = false;
         // Stop immediately when disabled.
         if (cycleRoutine != null)

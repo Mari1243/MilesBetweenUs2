@@ -82,7 +82,7 @@ public class FixedTPMovement : MonoBehaviour
             else
             {
                 verticalVelocity += gravity * Time.deltaTime;
-
+                print("canmove is false");
             }
 
             movement.y = verticalVelocity;
