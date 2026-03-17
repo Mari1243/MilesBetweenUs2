@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PauseCanvasAnims : MonoBehaviour
 {
@@ -88,5 +89,13 @@ public class PauseCanvasAnims : MonoBehaviour
         Debug.Log("EXITING");
 
         Application.Quit();
+    }
+
+    public void backTitle()
+    {
+        Debug.Log("Loading Title Scene");
+
+        Time.timeScale = 1f; // So new scene isn't frozen
+        SceneManager.LoadScene("TitleScreen"); 
     }
 }
