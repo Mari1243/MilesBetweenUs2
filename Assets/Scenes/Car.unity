@@ -3677,6 +3677,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+--- !u!1 &1338271285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3333436010807260285, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+  m_PrefabInstance: {fileID: 1338271284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1396173504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
@@ -3797,13 +3802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2797835ed113c4f8a56ec3fae2c231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-  - itemData: {fileID: 11400000, guid: 637105c5ed2c81f468294606a570d06c, type: 2}
-    stackSize: 1
-  - itemData: {fileID: 11400000, guid: 8482ede4b95368e498958fa8d30f70de, type: 2}
-    stackSize: 1
-  - itemData: {fileID: 11400000, guid: c5aabd150b511064a92a8cd937d4101a, type: 2}
-    stackSize: 1
+  inventory: []
   loreItemAmt: 0
   moneyAmount: 0
 --- !u!4 &1426822555
@@ -5790,6 +5789,10 @@ PrefabInstance:
       propertyPath: DG
       value: 
       objectReference: {fileID: 4792769920164054658, guid: c83a883728b8747799f88e95b0341676, type: 3}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: tabs
+      value: 
+      objectReference: {fileID: 1338271285}
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: lilBro
       value: 
