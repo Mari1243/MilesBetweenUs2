@@ -1,6 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
+using System.Collections;
 
 public class NewJournalSave : MonoBehaviour
 {
@@ -23,17 +25,18 @@ public class NewJournalSave : MonoBehaviour
         Car,
     }
 
+    //for spawning stuff in journal
+    public GameObject DraggableItemPrefab;
+    public GameObject tabholder;
+    private GameObject Tab1;
+    public List<InventoryItem> currentInventory = new List<InventoryItem>();
 
-    // void OnEnable()
-    // {
-    //     NewJournalSave.ChangeJournal += OnJournalChanged;
-    // }
-
-    // void OnDisable()
-    // {
-    //     NewJournalSave.ChangeJournal -= OnJournalChanged;
-    // }
-
+    void Start()
+    {
+        Tab1 = tabholder.transform.GetChild(0).gameObject;
+        currentInventory = InventoryManager.instance.inventory;
+      
+    }
 
 
     void Awake()
@@ -96,6 +99,40 @@ public class NewJournalSave : MonoBehaviour
         if(currentList != null)
         {
             Destroy(currentList);
+        }
+
+        StartCoroutine(manage());
+    }
+
+    private IEnumerator manage()
+    {
+        yield return new WaitForSeconds (1f);
+        manageItems();
+    }
+
+    public void manageItems()
+    {
+        //Inventory
+        if (currentInventory.Count == 0)
+        {
+            print("Empty");
+        }
+        else
+        {
+            print("instantiating inventory");
+            foreach (InventoryItem items in currentInventory)
+            {
+                var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity); //the connecting data
+
+                //getting tab 1
+                
+                journalItem.transform.SetParent(Tab1.transform);
+                journalItem.transform.localPosition = Vector2.zero;
+
+                //this  assigns data
+                DraggableItemPrefab.GetComponent<DragItem>().itemdata=items.itemData;
+                print("instantiating " + journalItem.name);
+            }
         }
     }
 }

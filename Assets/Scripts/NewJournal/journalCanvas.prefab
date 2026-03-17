@@ -2149,6 +2149,9 @@ MonoBehaviour:
   - {fileID: 3858602058654858274, guid: e768d9c545bfa43babbf9a2671f8cb91, type: 3}
   currentList: {fileID: 3858602058654858274, guid: e768d9c545bfa43babbf9a2671f8cb91, type: 3}
   inventoryObject: {fileID: 7359117660989336068}
+  DraggableItemPrefab: {fileID: 6843374984016170095, guid: c83a883728b8747799f88e95b0341676, type: 3}
+  tabholder: {fileID: 7359117660989336068}
+  currentInventory: []
 --- !u!1 &5202809015146736748
 GameObject:
   m_ObjectHideFlags: 0

@@ -3798,16 +3798,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory:
-  - itemData: {fileID: 11400000, guid: 428669f288279234aacbf0e8c15c1f17, type: 2}
-    stackSize: 0
-  - itemData: {fileID: 11400000, guid: 46603623567ed83459d157a7205b4a71, type: 2}
-    stackSize: 0
-  - itemData: {fileID: 11400000, guid: d2dcb10b6d232e44e87f9ab23ae1e1af, type: 2}
-    stackSize: 0
-  - itemData: {fileID: 11400000, guid: a631da5154ee88e45a80977cdfcfb22d, type: 2}
-    stackSize: 0
-  - itemData: {fileID: 11400000, guid: 004886a318593c84e908e24b8540d223, type: 2}
-    stackSize: 0
+  - itemData: {fileID: 11400000, guid: 637105c5ed2c81f468294606a570d06c, type: 2}
+    stackSize: 1
+  - itemData: {fileID: 11400000, guid: 8482ede4b95368e498958fa8d30f70de, type: 2}
+    stackSize: 1
+  - itemData: {fileID: 11400000, guid: c5aabd150b511064a92a8cd937d4101a, type: 2}
+    stackSize: 1
   loreItemAmt: 0
   moneyAmount: 0
 --- !u!4 &1426822555
@@ -5887,7 +5883,8 @@ PrefabInstance:
       value: CarSceneManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1354421148223308124, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
