@@ -8,11 +8,14 @@ using UnityEngine.Rendering;
 
 public class CutSceneTrigger : MonoBehaviour
 {
-
+    //kid cutscene specific, can detect what tag is obj for specification
     public Item item;
     public DialogueManager dialogueManager;
     private CinemachineBasicMultiChannelPerlin camShake;
     public CinemachineCamera cam;
+    public GameObject brother, newLocation;
+    private BoxCollider brotherCollider;
+     
     private void OnEnable()
     {
         DialogueManager.DialogOver += unShakeCamera;
@@ -24,24 +27,20 @@ public class CutSceneTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (gameObject.tag == "Border")
-        {
-            StartDialogue();
-        }
- 
-        else
-        {
-            shakeCamera();
-            StartDialogue();
-            Collider trigger = GetComponent<Collider>();
-            trigger.enabled = false;
-        }
+        
+        shakeCamera();
+        StartDialogue();
+        Collider trigger = GetComponent<Collider>();
+        trigger.enabled = false;
+        moveBrother();
 
             
     }
 
     private void Start()
     {
+        brotherCollider = brother.GetComponent<BoxCollider>();
+        brotherCollider.enabled = false;
         camShake = cam.GetComponent<CinemachineBasicMultiChannelPerlin>();
 
     }
@@ -81,21 +80,14 @@ public class CutSceneTrigger : MonoBehaviour
     {
         dialogueManager.TalkInteraction(item);
     }
-   
-    public void broDialogue()
+    
+    public void moveBrother()
     {
-        GameObject camera = GameObject.Find("CameraHolder");
-        GameObject playercam = camera.transform.GetChild(0).gameObject;
-
-        playercam.transform.DOLocalRotate(new Vector3(0f, 8.5f, 0f), 1f);
-
-        playercam.transform.DOLocalMoveZ(1f, 1f);
-        playercam.GetComponent<PlayerCam>().enabled = false;
-        StartDialogue();
-    }
-    public void loadNextScene()
-    {
-        SceneManager.LoadScene("StateMachineWork");
+        Vector3 pos = newLocation.transform.position;
+        brother.transform.position = pos;
+        brother.GetComponent<Animator>().Play("Armature_BigBro_Smoke");
+        brotherCollider.enabled = true;
+        
     }
    
 }

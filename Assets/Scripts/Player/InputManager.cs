@@ -63,10 +63,6 @@ public class InputManager : MonoBehaviour
             inputActions["ToggleInstructions"].performed += ToggleMenu;
             inputActions["Restart"].performed += RestartScene;
 
-
-            inputActions["Scale"].started += OnScaleStarted;
-            inputActions["Scale"].canceled += OnScaleCanceled;
-
             interactable.showJournal += togglebool;
             ToggleJournal.hideJournal +=togglebool;
 
@@ -122,7 +118,16 @@ public class InputManager : MonoBehaviour
 
     private void checkJournal(InputAction.CallbackContext context)
     {
-        OpenJournal?.Invoke();
+        if(SceneTrackerSingleton.CurrentSceneName == "Car")
+        {
+            
+        }
+        else
+        {
+            print("invoking journal");
+            OpenJournal?.Invoke();
+        }
+       
     }
 
     //for tutorial!!
@@ -185,27 +190,10 @@ public class InputManager : MonoBehaviour
         print("Rotate canceled: " + canRotate);
         onRotateChanged?.Invoke(canRotate);
         }
-    }
-     private void OnScaleStarted(InputAction.CallbackContext context)
-    {
-        if (JournalOpen)
-        {
-        print("hey hi ummm scale started or smthn");
-        canScale = true;
-        onScaleChanged?.Invoke(canScale);
-        }
+    
     }
 
-    private void OnScaleCanceled(InputAction.CallbackContext context)
-    {
-        if (JournalOpen)
-        {
-        canScale = false;
-        onScaleChanged?.Invoke(canScale);
-        print("scale ended");
-        }
-    }
-    
+
     public void onClearSave(InputAction.CallbackContext context)
     {
         if (context.performed)

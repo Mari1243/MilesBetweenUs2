@@ -9,7 +9,7 @@ public class SceneTrackerSingleton : MonoBehaviour
 
     private int carnum = 0;
 
-    public string CurrentSceneName { get; private set; }
+    public static string CurrentSceneName { get; private set; }
     public string PreviousSceneName { get; private set; }
 
     public List<SceneScriptables> scenes = new List<SceneScriptables>();

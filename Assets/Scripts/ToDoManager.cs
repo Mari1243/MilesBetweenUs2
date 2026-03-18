@@ -52,6 +52,7 @@ public class ToDoManager : MonoBehaviour
 
     public void CollectedLoreItem(Item item)
     {
+        print("this to do manager is activated and detected on "+ this.gameObject.name);
         foreach (var col in Collectables)
         {
             print(col.name);

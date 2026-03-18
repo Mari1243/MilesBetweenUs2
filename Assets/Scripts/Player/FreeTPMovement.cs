@@ -28,14 +28,14 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void OnEnable()
     {
-
+        print("enabled movement");
         DialogueManager.DialogStart += OnDialogStart;
         DialogueManager.DialogOver += OnDialogOver;
     }
 
     private void OnDisable()
-    {
-
+    {   
+        print("disabled movement");
         DialogueManager.DialogStart -= OnDialogStart;
         DialogueManager.DialogOver -= OnDialogOver;
     }
@@ -103,6 +103,7 @@ public class ThirdPersonMovement : MonoBehaviour
         animator.SetBool("isWalking", false);
 
         canMove = false;
+        print("canmove is false bc dialogue");
     }
     private void OnDialogOver()
     {

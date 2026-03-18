@@ -98,8 +98,6 @@ public class GasStationManager : MonoBehaviour
                 journalNotif?.Invoke();
 
                 break;
-
-
             case "StartkidQuest":
 
                 Debug.Log("Giving kid quest");
