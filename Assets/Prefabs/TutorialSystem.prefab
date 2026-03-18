@@ -650,8 +650,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: asdfasdfasdfasdfasdf
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
+  m_sharedMaterial: {fileID: -6955914548417487326, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -826,7 +826,6 @@ GameObject:
   - component: {fileID: 6613805754464331818}
   - component: {fileID: 756523465075037347}
   - component: {fileID: 5509407909149994577}
-  - component: {fileID: 5542639576961296723}
   - component: {fileID: 6063018457073849218}
   - component: {fileID: 4530488108972837122}
   m_Layer: 0
@@ -883,7 +882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yarnProject: {fileID: 7545569452688597077, guid: bf1dc23be26484ed2a83c76a72397842, type: 3}
   variableStorage: {fileID: 6063018457073849218}
-  lineProvider: {fileID: 5542639576961296723}
+  lineProvider: {fileID: 0}
   saliencyStrategy: 0
   dialoguePresenters:
   - {fileID: 4791722964168642036}
@@ -919,22 +918,6 @@ MonoBehaviour:
   onUnhandledCommand:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5542639576961296723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5697807870763318628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b6798449caec4a32a5ad27badb06624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _textLocaleCode: en
-  _assetLocaleCode: en
-  _useFallback: 0
-  _fallbackLocaleCode: en
 --- !u!114 &6063018457073849218
 MonoBehaviour:
   m_ObjectHideFlags: 0

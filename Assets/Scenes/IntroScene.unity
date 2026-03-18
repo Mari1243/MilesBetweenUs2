@@ -7780,6 +7780,14 @@ PrefabInstance:
       propertyPath: autoStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5509407909149994577, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
+      propertyPath: lineProvider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509407909149994577, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
+      propertyPath: runSelectedOptionAsLine
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5649812889403570280, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -7840,7 +7848,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5542639576961296723, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
