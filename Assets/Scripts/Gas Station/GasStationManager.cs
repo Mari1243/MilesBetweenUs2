@@ -24,6 +24,8 @@ public class GasStationManager : MonoBehaviour
  public GameObject toDoList1;
  public static event Action journalNotif;
 
+ private bool firstTimeSteal = true;
+
  [SerializeField] private GameObject kidObjective;
     public void triggerIntroCutscene()
     {
@@ -36,11 +38,35 @@ public class GasStationManager : MonoBehaviour
     {
         InventoryManager.OnInventoryChange += checkconditions;
         DialogueCommands.startAction += StartAction;
+        UIManager.StealStep += StealTutorial;
     }
     private void OnDisable()
     {
         InventoryManager.OnInventoryChange -= checkconditions;
         DialogueCommands.startAction -= StartAction;
+        UIManager.StealStep -= StealTutorial;
+    }
+
+    private void StealTutorial(int stage)
+    {
+        if (firstTimeSteal)
+        {
+            if (stage == 1)
+            {
+                print("STAGE 1, i have started stealing for the first time, giving explainer");
+            }
+            else if(stage == 2)
+            {
+                print("STAGE 2, STOP, let go of E at this stage...");
+            }
+            else if(stage == 3)
+            {
+                print("STAGE 3, if it runs out totally ill probably have to try again");
+            }
+
+          
+        }
+        return;
     }
 
     //conditions for tasks specifically in this level, this will involve checking each time you interact with something whether the conditions were met

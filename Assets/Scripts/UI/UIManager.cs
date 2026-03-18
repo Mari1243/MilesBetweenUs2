@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
     private GameObject journalnotification;
     public static Sprite[] hintsprites;
 
+    public static event Action<int> StealStep;
+
 
     private bool journalopen = false;
 
@@ -48,6 +50,8 @@ public class UIManager : MonoBehaviour
 
     //private refs to dog sprites
     private Texture2D CurrentDog;
+
+    
 
    
     private void OnEnable()
@@ -238,10 +242,12 @@ public class UIManager : MonoBehaviour
         if (stealcheck == true)
         {
              StealingCanvas.SetActive(true);
+             StealStep?.Invoke(1);
         }
         else
         {
              StealingCanvas.SetActive(false);
+             StealStep?.Invoke(3);
         }
     }
 
@@ -296,6 +302,7 @@ private void SusUI()
 
 private void DangerUI()
 {
+    StealStep?.Invoke(2);
     DOVirtual.Color(previouscolor, Color.red, 1, (value) =>
     {
         BackgroundRen.color = value;
