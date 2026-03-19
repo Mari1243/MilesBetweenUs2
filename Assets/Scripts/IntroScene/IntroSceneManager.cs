@@ -39,10 +39,6 @@ public class IntroSceneManager : MonoBehaviour
         instance = this;
 
     }
-    private void Start()
-    {
-        toggleDefaultSystem();
-    }
     private void OnEnable()
     {
         // Mapinteractable.showJournal += OpenJournalHint;
@@ -66,7 +62,6 @@ public class IntroSceneManager : MonoBehaviour
         print("calling stuff");
             if(!journalopen)
             {
-                toggleTutSystem();
                 TPCam.SetActive(false);
                 instructionss.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
@@ -79,7 +74,6 @@ public class IntroSceneManager : MonoBehaviour
             }
             else
             {
-                toggleDefaultSystem ();
                 TPCam.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -95,8 +89,8 @@ public class IntroSceneManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         print("trying to start dialogue");
-        DialogueManager.instance.LoadDialog("StoreMap");
-        DialogueManager.instance.StartDialog();
+        DialogueManager.tutorialInstance.LoadDialog("StoreMap");
+        DialogueManager.tutorialInstance.StartDialog();
         //call wait for map place
     }
 
@@ -119,8 +113,8 @@ public class IntroSceneManager : MonoBehaviour
         yield return new WaitForSeconds (1f);
         //make sure previous dialogue is finished playing)
 
-        DialogueManager.instance.LoadDialog("WhatisJournal");
-        DialogueManager.instance.StartDialog();
+        DialogueManager.tutorialInstance.LoadDialog("WhatisJournal");
+        DialogueManager.tutorialInstance.StartDialog();
         //DialogueManager.instance.OnDialogOver();
     }
 
@@ -174,18 +168,6 @@ public class IntroSceneManager : MonoBehaviour
         //TransitionManager.Instance.PlayTransition(2f, 2f);
         SceneSwitch.Instance.SwitchScene("Car");
     }
-
-    void toggleTutSystem()
-    {
-        TutorialDialogueSystem.SetActive(true);
-        DialogueSystem.SetActive(false);
-    }
-    void toggleDefaultSystem()
-    {
-        TutorialDialogueSystem.SetActive(false);
-        DialogueSystem.SetActive(true);
-    }
-
 
 }
 

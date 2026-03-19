@@ -26,7 +26,14 @@ public class GasStationManager : MonoBehaviour
 
  private bool firstTimeSteal = true;
 
+//for tutorial
+public GameObject TutorialDialogueSystem;
+public GameObject DialogueSystem;
+public DialogueRunner diaRun;
+
  [SerializeField] private GameObject kidObjective;
+
+ 
     public void triggerIntroCutscene()
     {
         DialogueManager.instance.TalkInteraction(item);
@@ -49,6 +56,8 @@ public class GasStationManager : MonoBehaviour
 
     private void StealTutorial(int stage)
     {
+        
+        //instructionss.SetActive(false);
         if (firstTimeSteal)
         {
             if (stage == 1)
@@ -63,7 +72,6 @@ public class GasStationManager : MonoBehaviour
             {
                 StartCoroutine(instructions("instruction3"));
             }
-
           
         }
         return;
@@ -71,11 +79,13 @@ public class GasStationManager : MonoBehaviour
 
     private IEnumerator instructions(string instruction)
     {
+        if (DialogueManager.DialogStart != null)
+        {
+            diaRun.Stop();
+        }
         yield return new WaitForSeconds(2f);
-        print("Trying to activate "+ instruction);
-        DialogueManager.instance.LoadDialog(instruction);
-        DialogueManager.instance.StartDialog();
-        //call wait for map place
+        DialogueManager.tutorialInstance.LoadDialog(instruction);
+        DialogueManager.tutorialInstance.StartDialog();
     }
 
 
@@ -86,17 +96,15 @@ public class GasStationManager : MonoBehaviour
     //this is largely based on what is IN the inventory, its easier to check that way
     private void Start()
     {
-
         GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
         kidObjective = mainPage.transform.GetChild(2).gameObject;
         kidObjective.SetActive(false);
         if (kidObjective.activeInHierarchy)
             Debug.Log("Yasss");
         else
-            Debug.Log("noooo..");
-     
-               
+            Debug.Log("noooo..");       
     }
+
     public static void checkconditions(List<InventoryItem> list)
     {
         if (!completedAllObjectives)

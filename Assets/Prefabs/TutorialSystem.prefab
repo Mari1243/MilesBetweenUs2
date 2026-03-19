@@ -865,6 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacb56952912de84ba1aac9d96091b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTutorialSystem: 1
   dialogReady: 0
   dialogStarted: 0
   dialoguePos: {fileID: 1193499982209185619}
