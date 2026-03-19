@@ -917,6 +917,8 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 2ecb8b9c3a3da374984724a8cb649245, type: 2}
   dialogueManager: {fileID: 247394349}
   cam: {fileID: 1896960887}
+  brother: {fileID: 1430410938}
+  newLocation: {fileID: 832015928}
 --- !u!64 &89113322
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1934,6 +1936,8 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: ae93536bf01b10b41ae95acf0f7f649f, type: 2}
   dialogueManager: {fileID: 247394349}
   cam: {fileID: 1786789363}
+  brother: {fileID: 0}
+  newLocation: {fileID: 0}
 --- !u!65 &234728589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6553,6 +6557,8 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: ae93536bf01b10b41ae95acf0f7f649f, type: 2}
   dialogueManager: {fileID: 247394349}
   cam: {fileID: 1786789363}
+  brother: {fileID: 0}
+  newLocation: {fileID: 0}
 --- !u!65 &780969704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6948,6 +6954,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3970362433325434546, guid: 64722b5766cf5f547ab9376719a6d502, type: 3}
+--- !u!1 &832015928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 832015929}
+  m_Layer: 10
+  m_Name: NewLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &832015929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832015928}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.72699934, z: -0, w: 0.6866382}
+  m_LocalPosition: {x: -48.73574, y: 4.828865, z: -24.351635}
+  m_LocalScale: {x: 21.111004, y: 21.111, z: 21.111004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &835047531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 827195159269362016, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
@@ -11177,6 +11214,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1018038935447479838, guid: 64722b5766cf5f547ab9376719a6d502, type: 3}
+--- !u!1 &1430410938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 375490117767029983, guid: 3d984c8f07bba954f8af77e8bf1af8ca, type: 3}
+  m_PrefabInstance: {fileID: 2129024420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434791695 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7778994343786907572, guid: ecd284d35e9364f26badf3a0ad658cc5, type: 3}
@@ -16893,6 +16935,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3934565142877967674, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: playerCam
       value: 
@@ -20362,6 +20420,8 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: ae93536bf01b10b41ae95acf0f7f649f, type: 2}
   dialogueManager: {fileID: 247394349}
   cam: {fileID: 1786789363}
+  brother: {fileID: 0}
+  newLocation: {fileID: 0}
 --- !u!65 &1968288338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34750,6 +34810,7 @@ SceneRoots:
   - {fileID: 543450651792653866}
   - {fileID: 1612915139}
   - {fileID: 2129024420}
+  - {fileID: 832015929}
   - {fileID: 1505349621004071568}
   - {fileID: 1441474978}
   - {fileID: 547559013}

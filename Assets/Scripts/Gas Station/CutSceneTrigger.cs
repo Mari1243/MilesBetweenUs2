@@ -34,11 +34,22 @@ public class CutSceneTrigger : MonoBehaviour
         trigger.enabled = false;
         moveBrother();
 
-            
+
+
     }
 
     private void Start()
     {
+        if (newLocation && brother != null)
+        {
+            Debug.Log(gameObject.name);
+
+        }
+        else
+        {
+            return;
+        }
+
         brotherCollider = brother.GetComponent<BoxCollider>();
         brotherCollider.enabled = false;
         camShake = cam.GetComponent<CinemachineBasicMultiChannelPerlin>();

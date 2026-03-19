@@ -385,7 +385,7 @@ public class Interactor : MonoBehaviour
         holdDirection = 0;
         isInWarningPeriod = false;
         OnHoldCompleted?.Invoke();
-        
+        movement.moveSpeed = 8f;
         if (pickedUpObj != null)
         {  
             if (StealingManager.Instance != null)

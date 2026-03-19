@@ -3802,11 +3802,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2797835ed113c4f8a56ec3fae2c231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   inventory:
   - itemData: {fileID: 11400000, guid: 428669f288279234aacbf0e8c15c1f17, type: 2}
     stackSize: 0
   - itemData: {fileID: 11400000, guid: c5aabd150b511064a92a8cd937d4101a, type: 2}
     stackSize: 0
+=======
+  inventory: []
+>>>>>>> Stashed changes
   loreItemAmt: 0
   moneyAmount: 0
 --- !u!4 &1426822555
