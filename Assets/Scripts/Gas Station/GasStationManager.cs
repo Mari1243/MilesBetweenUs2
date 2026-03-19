@@ -53,21 +53,32 @@ public class GasStationManager : MonoBehaviour
         {
             if (stage == 1)
             {
-                print("STAGE 1, i have started stealing for the first time, giving explainer");
+                StartCoroutine(instructions("instruction1"));
             }
             else if(stage == 2)
             {
-                print("STAGE 2, STOP, let go of E at this stage...");
+                StartCoroutine(instructions("instruction2"));
             }
             else if(stage == 3)
             {
-                print("STAGE 3, if it runs out totally ill probably have to try again");
+                StartCoroutine(instructions("instruction3"));
             }
 
           
         }
         return;
     }
+
+    private IEnumerator instructions(string instruction)
+    {
+        yield return new WaitForSeconds(2f);
+        print("Trying to activate "+ instruction);
+        DialogueManager.instance.LoadDialog(instruction);
+        DialogueManager.instance.StartDialog();
+        //call wait for map place
+    }
+
+
 
     //conditions for tasks specifically in this level, this will involve checking each time you interact with something whether the conditions were met
     //1. collected snacks
