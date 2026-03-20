@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class EndCutsceneEvent1 : MonoBehaviour
+public class EndCutsceneEvent2 : MonoBehaviour
 {
-    public GasStationManager GSManager;
+    public DragonLandManager DLManager;
    
     public void endCutScene()
 
@@ -24,7 +24,7 @@ public class EndCutsceneEvent1 : MonoBehaviour
 
         TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
 
-        GSManager.triggerIntroCutscene();
+        DLManager.triggerIntroCutscene();
 
         
     }
