@@ -30,19 +30,19 @@ public class ToggleJournal : MonoBehaviour
         DragItem.loreDrop += closeJournal;
 
         InputManager.OpenJournal += journal;
-        InputManager.OpenJournal += disablePlayer;
 
         interactable.showJournal += journal;
         
         DialogueManager.DialogStart += disableJournal; //makes it so you cant open journal while in dialogue
         DialogueManager.DialogOver += enableJournal;
+
+
     }
     private void OnDisable()
     {
         DragItem.loreDrop -= closeJournal;
 
         InputManager.OpenJournal -= journal;
-        InputManager.OpenJournal -= disablePlayer;
    
         interactable.showJournal -= journal;
 
@@ -70,7 +70,6 @@ public class ToggleJournal : MonoBehaviour
         print("disabling journal");
         this.GetComponent<Canvas>().enabled = false;
         
-        enablePlayer();
         enableJournal();
     }
 
@@ -88,16 +87,16 @@ public class ToggleJournal : MonoBehaviour
                 DOTween.Restart("animateIn"); 
                 DOTween.Play ("animateIn");
                 journalopen = true;
+                disablePlayer();
             }
             else
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
                 hideJournal?.Invoke();
-                
+                enablePlayer();
             }
         }
     }
@@ -116,7 +115,7 @@ public class ToggleJournal : MonoBehaviour
         }
     }
 
-   public void disablePlayer()
+   public void disablePlayer() //THIRD PERSON
     {
         playerCam.enabled = false;
         playerMovement.enabled = false;
@@ -126,13 +125,13 @@ public class ToggleJournal : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name != "Car")
         {
-
+            Debug.Log("Enabling player");
             playerCam.enabled = true;
             playerMovement.enabled = true;
         }
         else
         {
-            return;
+          
         }
         
     }

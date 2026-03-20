@@ -51,6 +51,7 @@ public class CarSceneManager : MonoBehaviour
         interactable.showJournal += JournalScene;
         interactable.onInteract += playRadio;
         ToggleJournal.hideJournal += ExitJournal;
+        DialogueManager.DialogOver += ExitJournal;
 
     }
     private void OnDisable()
@@ -58,6 +59,7 @@ public class CarSceneManager : MonoBehaviour
         interactable.showJournal -= JournalScene;
         interactable.onInteract -= playRadio;
         ToggleJournal.hideJournal -= ExitJournal;
+        DialogueManager.DialogOver -= ExitJournal;
     }
 
     
@@ -72,30 +74,7 @@ public class CarSceneManager : MonoBehaviour
         //Cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
-        //Inventory
-        // currentInventory = InventoryManager.instance.inventory;
-        // if (currentInventory.Count == 0)
-        // {
-        //     print("Empty");
-        // }
-        // else
-        // {
-        //     print("instantiating inventory");
-        //     foreach (InventoryItem items in currentInventory)
-        //     {
-        //         var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity); //the connecting data
-
-        //         //getting tab 1
-        //         GameObject Tab1 = tabs.transform.GetChild(0).gameObject;
-        //         journalItem.transform.SetParent(Tab1.transform);
-        //         journalItem.transform.localPosition = Vector2.zero;
-
-        //         //this  assigns data
-        //         DG.itemdata=items.itemData;
-        //         print("instantiating " + journalItem.name);
-        //     }
-        // }
+ 
 
         Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);  
     }
@@ -139,6 +118,7 @@ public class CarSceneManager : MonoBehaviour
         }
 
     }
+
 
     public void playRadio()
     {

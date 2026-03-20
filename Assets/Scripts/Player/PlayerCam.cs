@@ -154,15 +154,15 @@ public class PlayerCam : MonoBehaviour
         isInDialogue = true; 
         gameObject.transform.DOLocalRotate(new Vector3(1.00179132f, 16.0000038f, 0), 1.5f);
         gameObject.transform.DOLocalMove(new Vector3(-0.104000002f, 1.24899995f, 0.669999957f), 1.5f);
- 
+
     }
-    
+
     public void DefaultCamera()
     {
 
         gameObject.transform.DOLocalMove(new Vector3(-0.104000002f, 1.24899995f, -0.675999999f), 1.5f);
         isInDialogue = false;
-
+   
     }
 
 
