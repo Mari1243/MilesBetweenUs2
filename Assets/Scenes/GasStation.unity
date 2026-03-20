@@ -23097,6 +23097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 5697807870763318628, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6613805754464331818, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63.48

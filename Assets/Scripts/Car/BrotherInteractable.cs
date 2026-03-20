@@ -27,6 +27,7 @@ public class BrotherInteractable : MonoBehaviour
         DialogueManager.DialogStart -= CloseBubble;
         DialogueManager.DialogOver -= StartTimer;
         SceneTrackerSingleton.onSceneName -= PreviousScene;
+        DragItem.loreDrop -= loreDropping;
 
     }
 
