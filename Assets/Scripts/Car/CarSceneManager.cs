@@ -18,7 +18,7 @@ public class CarSceneManager : MonoBehaviour
 {
     [Header("Inventory")]
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
-    public GameObject tabs;
+    //public GameObject tabs;
 
     [Header("Cursor")]
     public Texture2D cursor;
@@ -27,8 +27,8 @@ public class CarSceneManager : MonoBehaviour
     [Header("Journal")]
     public GameObject journalItem;
     public static bool journalActive;
-    public GameObject DraggableItemPrefab;
-    public DragItem DG;
+    //public GameObject DraggableItemPrefab;
+    //public DragItem DG;
 
 
     [Header("Player Input")]
@@ -72,29 +72,30 @@ public class CarSceneManager : MonoBehaviour
         //Cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
+        //Inventory
+        // currentInventory = InventoryManager.instance.inventory;
+        // if (currentInventory.Count == 0)
+        // {
+        //     print("Empty");
+        // }
+        // else
+        // {
+        //     print("instantiating inventory");
+        //     foreach (InventoryItem items in currentInventory)
+        //     {
+        //         var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity); //the connecting data
 
-         currentInventory = InventoryManager.instance.inventory;
-        if (currentInventory.Count == 0)
-        {
-            print("Empty");
-        }
-        else
-        {
-            print("instantiating inventory");
-            foreach (InventoryItem items in currentInventory)
-            {
-                var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity); //the connecting data
+        //         //getting tab 1
+        //         GameObject Tab1 = tabs.transform.GetChild(0).gameObject;
+        //         journalItem.transform.SetParent(Tab1.transform);
+        //         journalItem.transform.localPosition = Vector2.zero;
 
-                //getting tab 1
-                GameObject Tab1 = tabs.transform.GetChild(0).gameObject;
-                journalItem.transform.SetParent(Tab1.transform);
-                journalItem.transform.localPosition = Vector2.zero;
-
-                //this  assigns data
-                DG.itemdata = items.itemData;
-                print("instantiating " + journalItem.name);
-            }
-        }
+        //         //this  assigns data
+        //         DG.itemdata=items.itemData;
+        //         print("instantiating " + journalItem.name);
+        //     }
+        // }
 
         Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);  
     }
