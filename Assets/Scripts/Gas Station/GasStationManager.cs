@@ -1,13 +1,14 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.InteropServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
-using System;
-using System.Runtime.InteropServices;
 
 
 /*
@@ -18,6 +19,7 @@ public class GasStationManager : MonoBehaviour
 {
     public Item item;
  public Item knife;
+    public Animator car;
  //this exists so once ive completed all objectives it wont keep checking everytime i interact
  private static bool completedAllObjectives;
  private static int allobjectives = 2;
@@ -32,10 +34,10 @@ public GameObject TutorialDialogueSystem;
 public GameObject DialogueSystem;
 public DialogueRunner diaRun;
 private bool hasExecuted = false;
+ 
 
  [SerializeField] private GameObject kidObjective;
 
- 
     public void triggerIntroCutscene()
     {
         DialogueManager.instance.TalkInteraction(item);
@@ -113,6 +115,8 @@ private bool hasExecuted = false;
     //this is largely based on what is IN the inventory, its easier to check that way
     private void Start()
     {
+        car.Play("GSCar");
+
         GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
         kidObjective = mainPage.transform.GetChild(2).gameObject;
         kidObjective.SetActive(false);

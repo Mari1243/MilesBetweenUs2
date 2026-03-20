@@ -2317,6 +2317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 35e6bc31dea2d5742bc3f1a48c9a9e53, type: 2}
   knife: {fileID: 11400000, guid: 46603623567ed83459d157a7205b4a71, type: 2}
+  car: {fileID: 1612915140}
   toDoList1: {fileID: 3858602058654858274, guid: e768d9c545bfa43babbf9a2671f8cb91, type: 3}
   TutorialDialogueSystem: {fileID: 1318626096}
   DialogueSystem: {fileID: 835047531}
