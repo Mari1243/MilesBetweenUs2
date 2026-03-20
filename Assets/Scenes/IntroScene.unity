@@ -5661,6 +5661,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5697807870763318628, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
   m_PrefabInstance: {fileID: 5466525184088623627}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1615217912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5509407909149994577, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
+  m_PrefabInstance: {fileID: 5466525184088623627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615217909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1656475467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7646,7 +7657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journalcanvas: {fileID: 934969115}
-  diaRun: {fileID: 1244282130}
+  diaRun: {fileID: 1615217912}
   book: {fileID: 146754022}
   Map: {fileID: 236304076}
   TPCam: {fileID: 1551611732}
@@ -7776,29 +7787,9 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5509407909149994577, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
-      propertyPath: autoStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5649812889403570280, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
-    - target: {fileID: 5649812889403570280, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -6955914548417487326, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
-    - target: {fileID: 5649812889403570280, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5697807870763318628, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_Name
       value: TutorialSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 5697807870763318628, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6613805754464331818, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_LocalPosition.x

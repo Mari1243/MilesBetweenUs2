@@ -24,7 +24,16 @@ public class GasStationManager : MonoBehaviour
  public GameObject toDoList1;
  public static event Action journalNotif;
 
+ private bool firstTimeSteal = true;
+
+//for tutorial
+public GameObject TutorialDialogueSystem;
+public GameObject DialogueSystem;
+public DialogueRunner diaRun;
+
  [SerializeField] private GameObject kidObjective;
+
+ 
     public void triggerIntroCutscene()
     {
         DialogueManager.instance.TalkInteraction(item);
@@ -36,12 +45,50 @@ public class GasStationManager : MonoBehaviour
     {
         InventoryManager.OnInventoryChange += checkconditions;
         DialogueCommands.startAction += StartAction;
+        UIManager.StealStep += StealTutorial;
     }
     private void OnDisable()
     {
         InventoryManager.OnInventoryChange -= checkconditions;
         DialogueCommands.startAction -= StartAction;
+        UIManager.StealStep -= StealTutorial;
     }
+
+    private void StealTutorial(int stage)
+    {
+        
+        //instructionss.SetActive(false);
+        if (firstTimeSteal)
+        {
+            if (stage == 1)
+            {
+                StartCoroutine(instructions("instruction1"));
+            }
+            else if(stage == 2)
+            {
+                StartCoroutine(instructions("instruction2"));
+            }
+            else if(stage == 3)
+            {
+                StartCoroutine(instructions("instruction3"));
+            }
+          
+        }
+        return;
+    }
+
+    private IEnumerator instructions(string instruction)
+    {
+        if (DialogueManager.DialogStart != null)
+        {
+            diaRun.Stop();
+        }
+        yield return new WaitForSeconds(2f);
+        DialogueManager.tutorialInstance.LoadDialog(instruction);
+        DialogueManager.tutorialInstance.StartDialog();
+    }
+
+
 
     //conditions for tasks specifically in this level, this will involve checking each time you interact with something whether the conditions were met
     //1. collected snacks
@@ -49,17 +96,15 @@ public class GasStationManager : MonoBehaviour
     //this is largely based on what is IN the inventory, its easier to check that way
     private void Start()
     {
-
         GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
         kidObjective = mainPage.transform.GetChild(2).gameObject;
         kidObjective.SetActive(false);
         if (kidObjective.activeInHierarchy)
             Debug.Log("Yasss");
         else
-            Debug.Log("noooo..");
-     
-               
+            Debug.Log("noooo..");       
     }
+
     public static void checkconditions(List<InventoryItem> list)
     {
         if (!completedAllObjectives)

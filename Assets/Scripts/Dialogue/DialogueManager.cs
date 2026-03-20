@@ -12,6 +12,8 @@ using Unity.VisualScripting;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    public static DialogueManager tutorialInstance;
+    [SerializeField] private bool isTutorialSystem = false;
     private DialogueRunner dialogueRunner;
     public static UnityAction DialogStart, DialogOver;
 
@@ -19,15 +21,13 @@ public class DialogueManager : MonoBehaviour
     public Canvas dialoguePos;
     void Awake()
     {
-
-        if (instance == null)
-            instance = this;
-
-    }
-    private void Start()
-    {
+       if (isTutorialSystem)
+        tutorialInstance = this;
+        else
+        instance = this;
         dialogueRunner=GetComponent<DialogueRunner>();
     }
+
     private void OnEnable()
     {
         interactable.onTalk += TalkInteraction;
@@ -48,7 +48,6 @@ public class DialogueManager : MonoBehaviour
 
     public void LoadDialog(string node)
     {
-        Debug.Log("starting node is "+ node);
         dialogueRunner.startNode = node;
         dialogReady = true;
     }
