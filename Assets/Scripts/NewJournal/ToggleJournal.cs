@@ -35,6 +35,8 @@ public class ToggleJournal : MonoBehaviour
         
         DialogueManager.DialogStart += disableJournal; //makes it so you cant open journal while in dialogue
         DialogueManager.DialogOver += enableJournal;
+
+
     }
     private void OnDisable()
     {
@@ -89,8 +91,7 @@ public class ToggleJournal : MonoBehaviour
             }
             else
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
@@ -130,7 +131,7 @@ public class ToggleJournal : MonoBehaviour
         }
         else
         {
-            return;
+          
         }
         
     }
