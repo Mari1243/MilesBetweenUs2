@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class ToggleJournal : MonoBehaviour
 {
     public static event Action hideJournal;
-    private bool journalopen = false;
+    [SerializeField]private bool journalopen = false;
     private Canvas canvas;
    
     [Header("Public References")]
@@ -49,6 +49,7 @@ public class ToggleJournal : MonoBehaviour
     {
         //unfreeze input
         //set mouse inactive
+        journalopen = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         print("disabling journal");
