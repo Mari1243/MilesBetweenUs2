@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
 using Unity.VisualScripting;
+using System.Runtime.InteropServices;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -22,7 +23,10 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
        if (isTutorialSystem)
-        tutorialInstance = this;
+        {
+            tutorialInstance = this;
+            print(tutorialInstance.name);
+        }
         else
         instance = this;
         dialogueRunner=GetComponent<DialogueRunner>();
@@ -30,7 +34,11 @@ public class DialogueManager : MonoBehaviour
 
     private void OnEnable()
     {
-        interactable.onTalk += TalkInteraction;
+        if (!isTutorialSystem)
+        {
+            interactable.onTalk += TalkInteraction;
+        }
+       
        // DialogOver += GiveItem; 
        //^^^^^^^^^^^ DialogOver event doesn't take in itemdata
     }
@@ -38,7 +46,10 @@ public class DialogueManager : MonoBehaviour
 
     private void OnDisable()
     {
-        interactable.onTalk -= TalkInteraction;
+         if (!isTutorialSystem)
+        {
+            interactable.onTalk -= TalkInteraction;
+        }
        
         // DialogOver -= GiveItem;
         //^^^^^^^^^^^ DialogOver event doesn't take in itemdata
