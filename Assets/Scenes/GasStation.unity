@@ -17410,8 +17410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a26b67a3100f640867605ac2d9060f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GS: {fileID: 253008668}
-  dialogueSystem: {fileID: 835047531}
+  GSManager: {fileID: 253008668}
 --- !u!1 &1646291639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7778994343786907572, guid: ecd284d35e9364f26badf3a0ad658cc5, type: 3}
