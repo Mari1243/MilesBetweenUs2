@@ -38,10 +38,6 @@ public class SceneTrackerSingleton : MonoBehaviour
                 bool iscar = scene.iscar;
                 changestate(iscar);
             }
-            else
-            {
-                print("current scene isnt registed in scene tracker script");
-            }
         }
     }
 
