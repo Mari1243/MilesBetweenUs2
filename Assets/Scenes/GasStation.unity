@@ -19470,7 +19470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1627, y: 45}
+  m_AnchoredPosition: {x: -1587, y: 22}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872895456
@@ -19486,7 +19486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -31729,12 +31729,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: StealingCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5334384675734391575, guid: 0f28d134727494bc595a780b0a78d84f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6923540096374510382, guid: 0f28d134727494bc595a780b0a78d84f, type: 3}
       propertyPath: m_text
       value: "Hold Down 'E' to steal \n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5334384675734391575, guid: 0f28d134727494bc595a780b0a78d84f, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 121146276396187225, guid: 0f28d134727494bc595a780b0a78d84f, type: 3}
       insertIndex: -1
