@@ -11,6 +11,7 @@ public class ToggleJournal : MonoBehaviour
 {
     public static event Action hideJournal;
     [SerializeField]private bool journalopen = false;
+    [SerializeField] private bool canOpen = false;
     private Canvas canvas;
    
     [Header("Public References")]
@@ -28,22 +29,36 @@ public class ToggleJournal : MonoBehaviour
     {
         DragItem.loreDrop += closeJournal;
 
-        InputManager.OpenJournal += inventory;
+        InputManager.OpenJournal += journal;
         InputManager.OpenJournal += disablePlayer;
-        hideJournal += enablePlayer;
-        interactable.showJournal += inventory;
+
+        interactable.showJournal += journal;
         
+        DialogueManager.DialogStart += disableJournal; //makes it so you cant open journal while in dialogue
+        DialogueManager.DialogOver += enableJournal;
     }
     private void OnDisable()
     {
         DragItem.loreDrop -= closeJournal;
 
-        InputManager.OpenJournal -= inventory;
+        InputManager.OpenJournal -= journal;
         InputManager.OpenJournal -= disablePlayer;
-        hideJournal -= enablePlayer;
-        interactable.showJournal -= inventory;
-        
+   
+        interactable.showJournal -= journal;
+
+        DialogueManager.DialogStart -= disableJournal;
+        DialogueManager.DialogOver -= enableJournal;
     }
+
+    public void enableJournal()
+    {
+        canOpen = true;
+    }
+    public void disableJournal()
+    {
+        canOpen = false;
+    }
+
 
     public void closeJournal(string node)
     {
@@ -54,16 +69,18 @@ public class ToggleJournal : MonoBehaviour
         Cursor.visible = false;
         print("disabling journal");
         this.GetComponent<Canvas>().enabled = false;
-        hideJournal?.Invoke();
+        
+        enablePlayer();
+        enableJournal();
     }
 
-    public void inventory()
+    public void journal()
     {
         print("calling animations and journal stuff from UI manager");
         print("asdffff");
        if(this.GetComponent<Canvas>() != null)
         {
-            if(!journalopen)
+            if(!journalopen&&canOpen)
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
