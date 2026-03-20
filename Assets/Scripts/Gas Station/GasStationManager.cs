@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 using System;
+using System.Runtime.InteropServices;
 
 
 /*
@@ -30,6 +31,7 @@ public class GasStationManager : MonoBehaviour
 public GameObject TutorialDialogueSystem;
 public GameObject DialogueSystem;
 public DialogueRunner diaRun;
+private bool hasExecuted = false;
 
  [SerializeField] private GameObject kidObjective;
 
@@ -45,13 +47,13 @@ public DialogueRunner diaRun;
     {
         InventoryManager.OnInventoryChange += checkconditions;
         DialogueCommands.startAction += StartAction;
-        UIManager.StealStep += StealTutorial;
+        Interactor.StealStep += StealTutorial;
     }
     private void OnDisable()
     {
         InventoryManager.OnInventoryChange -= checkconditions;
         DialogueCommands.startAction -= StartAction;
-        UIManager.StealStep -= StealTutorial;
+        Interactor.StealStep -= StealTutorial;
     }
 
     private void StealTutorial(int stage)
@@ -66,11 +68,26 @@ public DialogueRunner diaRun;
             }
             else if(stage == 2)
             {
-                StartCoroutine(instructions("instruction2"));
+                //be sure to only do this once!
+                if (!hasExecuted)
+                {
+                    StartCoroutine(instructions("instruction2"));
+                }
+                hasExecuted = true;
             }
             else if(stage == 3)
             {
-                StartCoroutine(instructions("instruction3"));
+                //got caught
+                StartCoroutine(instructions("gotCaught"));
+            }
+            else if(stage == 4)
+            {
+                StartCoroutine(instructions("ranOut"));
+            }
+            else if(stage == 5)
+            {
+                StartCoroutine(instructions("successfullyStole"));
+                firstTimeSteal = false;
             }
           
         }
@@ -83,7 +100,7 @@ public DialogueRunner diaRun;
         {
             diaRun.Stop();
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.3f);
         DialogueManager.tutorialInstance.LoadDialog(instruction);
         DialogueManager.tutorialInstance.StartDialog();
     }

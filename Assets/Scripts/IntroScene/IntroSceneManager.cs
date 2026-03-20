@@ -148,8 +148,6 @@ public class IntroSceneManager : MonoBehaviour
         }
     }
 
-   
-
     public bool HasItemByName(string itemName)
     {
         foreach (var kvp in InventoryManager.instance.itemDictionary)

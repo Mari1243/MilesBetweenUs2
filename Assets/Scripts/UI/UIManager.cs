@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static StealingManager;
@@ -31,8 +30,6 @@ public class UIManager : MonoBehaviour
     public GameObject LoreitemPopup;
     private GameObject journalnotification;
     public static Sprite[] hintsprites;
-
-    public static event Action<int> StealStep;
 
 
     private bool journalopen = false;
@@ -241,13 +238,12 @@ public class UIManager : MonoBehaviour
     {
         if (stealcheck == true)
         {
-             StealingCanvas.SetActive(true);
-             StealStep?.Invoke(1);
+            StealingCanvas.SetActive(true);
+
         }
         else
         {
-             StealingCanvas.SetActive(false);
-             StealStep?.Invoke(3);
+            StealingCanvas.SetActive(false);
         }
     }
 
@@ -302,7 +298,6 @@ private void SusUI()
 
 private void DangerUI()
 {
-    StealStep?.Invoke(2);
     DOVirtual.Color(previouscolor, Color.red, 1, (value) =>
     {
         BackgroundRen.color = value;
