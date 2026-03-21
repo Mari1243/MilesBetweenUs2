@@ -15,8 +15,8 @@ public class ToggleJournal : MonoBehaviour
     private Canvas canvas;
    
     [Header("Public References")]
-    public CinemachineInputAxisController playerCam;
-    public ThirdPersonMovement playerMovement;
+    private CinemachineInputAxisController playerCam;
+    private ThirdPersonMovement playerMovement;
      
     private void Start()
     {
@@ -115,23 +115,28 @@ public class ToggleJournal : MonoBehaviour
 
    public void disablePlayer() //THIRD PERSON
     {
-        playerCam.enabled = false;
-        playerMovement.enabled = false;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        playerCam = GameObject.Find("ThirdPersonCamera").GetComponent<CinemachineInputAxisController>();
+        playerMovement = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
+        if (playerCam != null && playerMovement != null)
+        {
+            playerCam.enabled = false;
+            playerMovement.enabled = false;
+        }
     }
 
     public void enablePlayer()
     {
         if (SceneManager.GetActiveScene().name != "Car")
         {
-            Debug.Log("Enabling player");
-            playerCam.enabled = true;
-            playerMovement.enabled = true;
+            playerCam = GameObject.Find("ThirdPersonCamera").GetComponent<CinemachineInputAxisController>();
+            playerMovement = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
+            if (playerCam != null && playerMovement != null)
+            {
+                playerCam.enabled = true;
+                playerMovement.enabled = true;
+            }
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+
         }
         else
         {
