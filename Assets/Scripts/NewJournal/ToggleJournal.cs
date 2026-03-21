@@ -23,6 +23,8 @@ public class ToggleJournal : MonoBehaviour
 
         canvas = this.GetComponent<Canvas>();
         canvas.enabled = false;
+
+
     }
 
     private void OnEnable()
@@ -81,39 +83,35 @@ public class ToggleJournal : MonoBehaviour
         {
             if(!journalopen&&canOpen)
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
                 canvas.enabled = true;
                 DOTween.Restart("animateIn"); 
                 DOTween.Play ("animateIn");
                 journalopen = true;
-                //disablePlayer();
+
+                if (SceneManager.GetActiveScene().name != "Car")
+                {
+                    disablePlayer();
+                }
             }
             else
             {
-                
+                 
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
                 hideJournal?.Invoke();
-                //enablePlayer();
+         
+
+                if (SceneManager.GetActiveScene().name != "Car")
+                {
+                    enablePlayer();
+                }
             }
         }
     }
    
 
-    public void onAnimCompleted()
-    {
-        if( journalopen == true)
-        {
-            
-        }
-        else
-        {
-            canvas.enabled = false;
-            Time.timeScale = 1;
-        }
-    }
+ 
 
     // public void disablePlayer() //THIRD PERSON
     // {
@@ -121,18 +119,18 @@ public class ToggleJournal : MonoBehaviour
     //     playerMovement.enabled = false;
     // }
 
-    // public void enablePlayer()
-    // {
-    //     if (SceneManager.GetActiveScene().name != "Car")
-    //     {
-    //         Debug.Log("Enabling player");
-    //         playerCam.enabled = true;
-    //         playerMovement.enabled = true;
-    //     }
-    //     else
-    //     {
-          
-    //     }
+    public void enablePlayer()
+    {
+        if (SceneManager.GetActiveScene().name != "Car")
+        {
+            Debug.Log("Enabling player");
+            playerCam.enabled = true;
+            playerMovement.enabled = true;
+        }
+        else
+        {
+            return;
+        }
         
     // }
 }
