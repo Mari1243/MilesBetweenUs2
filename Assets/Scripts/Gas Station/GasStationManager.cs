@@ -159,7 +159,7 @@ private bool hasExecuted = false;
         switch (action)
         {
             case "kidQuest":
-                if (!completedAllObjectives)
+                if (!completedKidQuest)
                 {
                     InventoryManager.instance.Add(knife);
                     journalNotif?.Invoke();
