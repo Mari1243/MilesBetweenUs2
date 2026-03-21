@@ -95,7 +95,8 @@ public class ToggleJournal : MonoBehaviour
             }
             else
             {
-                 
+                canvas.enabled = false;
+
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
