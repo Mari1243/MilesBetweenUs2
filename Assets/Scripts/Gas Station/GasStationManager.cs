@@ -26,7 +26,7 @@ public class GasStationManager : MonoBehaviour
  private static int completedobjectives = 0;
  public GameObject toDoList1;
  public static event Action journalNotif;
-
+    private bool completedKidQuest = false;
  private bool firstTimeSteal = true;
 
 //for tutorial
@@ -159,10 +159,13 @@ private bool hasExecuted = false;
         switch (action)
         {
             case "kidQuest":
-
-                InventoryManager.instance.Add(knife);
-                journalNotif?.Invoke();
-
+                if (!completedAllObjectives)
+                {
+                    InventoryManager.instance.Add(knife);
+                    journalNotif?.Invoke();
+                    completedKidQuest = true;
+              
+                }
                 break;
             case "StartkidQuest":
 
