@@ -118,8 +118,6 @@ public class ToggleJournal : MonoBehaviour
         playerCam.enabled = false;
         playerMovement.enabled = false;
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
     }
 
     public void enablePlayer()
@@ -130,8 +128,7 @@ public class ToggleJournal : MonoBehaviour
             playerCam.enabled = true;
             playerMovement.enabled = true;
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+
         }
         else
         {
