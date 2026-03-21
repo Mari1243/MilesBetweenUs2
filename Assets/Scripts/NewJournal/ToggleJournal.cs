@@ -95,7 +95,8 @@ public class ToggleJournal : MonoBehaviour
             }
             else
             {
-                 
+                canvas.enabled = false;
+
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
@@ -121,6 +122,7 @@ public class ToggleJournal : MonoBehaviour
         {
             playerCam.enabled = false;
             playerMovement.enabled = false;
+   
         }
     }
 
@@ -134,6 +136,7 @@ public class ToggleJournal : MonoBehaviour
             {
                 playerCam.enabled = true;
                 playerMovement.enabled = true;
+          
             }
 
 
