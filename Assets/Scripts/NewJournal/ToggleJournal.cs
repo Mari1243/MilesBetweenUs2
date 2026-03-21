@@ -14,9 +14,9 @@ public class ToggleJournal : MonoBehaviour
     [SerializeField] private bool canOpen = false;
     private Canvas canvas;
    
-    [Header("Public References")]
-    public CinemachineInputAxisController playerCam;
-    public ThirdPersonMovement playerMovement;
+    //[Header("Public References")]
+    // public CinemachineInputAxisController playerCam;
+    // public ThirdPersonMovement playerMovement;
      
     private void Start()
     {
@@ -87,7 +87,7 @@ public class ToggleJournal : MonoBehaviour
                 DOTween.Restart("animateIn"); 
                 DOTween.Play ("animateIn");
                 journalopen = true;
-                disablePlayer();
+                //disablePlayer();
             }
             else
             {
@@ -96,7 +96,7 @@ public class ToggleJournal : MonoBehaviour
                 DOTween.Play ("animateOut");
                 journalopen = false;
                 hideJournal?.Invoke();
-                enablePlayer();
+                //enablePlayer();
             }
         }
     }
@@ -115,24 +115,24 @@ public class ToggleJournal : MonoBehaviour
         }
     }
 
-   public void disablePlayer() //THIRD PERSON
-    {
-        playerCam.enabled = false;
-        playerMovement.enabled = false;
-    }
+    // public void disablePlayer() //THIRD PERSON
+    // {
+    //     playerCam.enabled = false;
+    //     playerMovement.enabled = false;
+    // }
 
-    public void enablePlayer()
-    {
-        if (SceneManager.GetActiveScene().name != "Car")
-        {
-            Debug.Log("Enabling player");
-            playerCam.enabled = true;
-            playerMovement.enabled = true;
-        }
-        else
-        {
+    // public void enablePlayer()
+    // {
+    //     if (SceneManager.GetActiveScene().name != "Car")
+    //     {
+    //         Debug.Log("Enabling player");
+    //         playerCam.enabled = true;
+    //         playerMovement.enabled = true;
+    //     }
+    //     else
+    //     {
           
-        }
+    //     }
         
-    }
+    // }
 }
