@@ -14,9 +14,9 @@ public class ToggleJournal : MonoBehaviour
     [SerializeField] private bool canOpen = false;
     private Canvas canvas;
    
-    //[Header("Public References")]
-    // public CinemachineInputAxisController playerCam;
-    // public ThirdPersonMovement playerMovement;
+    [Header("Public References")]
+    public CinemachineInputAxisController playerCam;
+    public ThirdPersonMovement playerMovement;
      
     private void Start()
     {
@@ -113,11 +113,14 @@ public class ToggleJournal : MonoBehaviour
 
  
 
-    // public void disablePlayer() //THIRD PERSON
-    // {
-    //     playerCam.enabled = false;
-    //     playerMovement.enabled = false;
-    // }
+   public void disablePlayer() //THIRD PERSON
+    {
+        playerCam.enabled = false;
+        playerMovement.enabled = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
+    }
 
     public void enablePlayer()
     {
@@ -126,11 +129,14 @@ public class ToggleJournal : MonoBehaviour
             Debug.Log("Enabling player");
             playerCam.enabled = true;
             playerMovement.enabled = true;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else
         {
             return;
         }
         
-    // }
+    }
 }
