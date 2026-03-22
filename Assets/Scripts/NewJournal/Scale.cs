@@ -56,7 +56,7 @@ public class Scale : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
         parentRect.GetWorldCorners(corners);
         
         // Corners are: 0=bottom-left, 1=top-left, 2=top-right, 3=bottom-right
-        Vector3 bottomRight = corners[3];
+        Vector3 bottomRight = corners[2];
         
         // Get the right and down directions of the rotated parent
         Vector3 rightDirection = (corners[3] - corners[0]).normalized;

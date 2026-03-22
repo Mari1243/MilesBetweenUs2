@@ -58,7 +58,6 @@ public class StealableItemBehavior : MonoBehaviour
     }
     void floatObj(float progress)
     {
-        Debug.Log("Floating");
         //gameObject.transform.DOLocalMoveY(progress, 1f);
 
     }
