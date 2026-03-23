@@ -3868,6 +3868,8 @@ MonoBehaviour:
     stackSize: 0
   - itemData: {fileID: 11400000, guid: d2dcb10b6d232e44e87f9ab23ae1e1af, type: 2}
     stackSize: 0
+  - itemData: {fileID: 11400000, guid: 428669f288279234aacbf0e8c15c1f17, type: 2}
+    stackSize: 0
   loreItemAmt: 1
   moneyAmount: 0
 --- !u!4 &1426822555

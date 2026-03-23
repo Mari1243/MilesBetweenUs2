@@ -28,14 +28,14 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private bool loreDone = false;
     public static UnityAction<string> loreDrop;
     public Item itemdata;
-
+    public Image loreIcon;
     // Static reference to currently selected item
     public static DragItem currentlySelected;
 
     private void Start()
     {
 
-
+        loreIcon.enabled = false;
 
         mainCamera = Camera.main;
         if (mainCamera == null)
@@ -83,6 +83,8 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             lorePlaced = false;
             loreDone = true;
             //GetComponent<OutlineUI>().enabled= false;
+            loreIcon.enabled = false;
+
             GetComponent<Image>().DOKill();
             GetComponent<Image>().DOColor(Color.white, 0f);
         }
@@ -297,24 +299,16 @@ void EndDrag()
         {
             lorePlaced = true;
 
-            if (item.gameObject.GetComponent<Outline>() != null)
-            {
-
-                //item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
-                //item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
-
-
-            }
-            else
-            {
+           
                 //item.gameObject.AddComponent<OutlineUI>();
                 //item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
                 //item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
-                //item.gameObject.GetComponent<Image>().DOColor(Color.yellow, .7f).SetLoops(-1, LoopType.Yoyo);
+                item.gameObject.GetComponent<Image>().DOColor(Color.yellow, .7f).SetLoops(-1, LoopType.Yoyo);
+                loreIcon.enabled = true;
+                loreIcon.gameObject.GetComponent<Image>().DOFade(1, .7f).SetLoops(-1, LoopType.Yoyo);
 
-            }
         }
-       
+
     }
 
 
