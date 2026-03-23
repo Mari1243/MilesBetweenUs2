@@ -910,6 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragThreshold: 5
   itemdata: {fileID: 11400000, guid: 7ef025da6f9c742af95e435982182225, type: 2}
+  loreIcon: {fileID: 1771041538}
 --- !u!114 &236304081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6356,6 +6357,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739385870}
   m_CullTransparentMesh: 1
+--- !u!114 &1771041538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 261716079230588313, guid: 27afd0dd76925421588701165b13258a, type: 3}
+  m_PrefabInstance: {fileID: 1882075146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1800007760
 PrefabInstance:
   m_ObjectHideFlags: 0
