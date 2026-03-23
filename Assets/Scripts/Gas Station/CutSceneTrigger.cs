@@ -13,8 +13,7 @@ public class CutSceneTrigger : MonoBehaviour
     public DialogueManager dialogueManager;
     private CinemachineBasicMultiChannelPerlin camShake;
     public CinemachineCamera cam;
-    public GameObject brother, newLocation;
-    private BoxCollider brotherCollider;
+  
      
     private void OnEnable()
     {
@@ -32,15 +31,12 @@ public class CutSceneTrigger : MonoBehaviour
         StartDialogue();
         Collider trigger = GetComponent<Collider>();
         trigger.enabled = false;
-        moveBrother();
 
             
     }
 
     private void Start()
     {
-        brotherCollider = brother.GetComponent<BoxCollider>();
-        brotherCollider.enabled = false;
         camShake = cam.GetComponent<CinemachineBasicMultiChannelPerlin>();
 
     }
@@ -81,13 +77,6 @@ public class CutSceneTrigger : MonoBehaviour
         dialogueManager.TalkInteraction(item);
     }
     
-    public void moveBrother()
-    {
-        Vector3 pos = newLocation.transform.position;
-        brother.transform.position = pos;
-        brother.GetComponent<Animator>().Play("Armature_BigBro_Smoke");
-        brotherCollider.enabled = true;
-        
-    }
+    
    
 }
