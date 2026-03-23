@@ -149,7 +149,7 @@ public class InputManager : MonoBehaviour
     {
         if (context.performed)
         {
-            //Restart?.Invoke();
+            Restart?.Invoke();
             restartscene();
         }
     }
@@ -158,6 +158,7 @@ public class InputManager : MonoBehaviour
     {
         print("restartingscene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 
     void Start()
