@@ -1,12 +1,14 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.InteropServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
-using System;
 
 
 /*
@@ -17,14 +19,25 @@ public class GasStationManager : MonoBehaviour
 {
     public Item item;
  public Item knife;
+    public Animator car;
  //this exists so once ive completed all objectives it wont keep checking everytime i interact
  private static bool completedAllObjectives;
  private static int allobjectives = 2;
  private static int completedobjectives = 0;
  public GameObject toDoList1;
  public static event Action journalNotif;
+    private bool completedKidQuest = false;
+ private bool firstTimeSteal = true;
+
+//for tutorial
+public GameObject TutorialDialogueSystem;
+public GameObject DialogueSystem;
+public DialogueRunner diaRun;
+private bool hasExecuted = false;
+ 
 
  [SerializeField] private GameObject kidObjective;
+
     public void triggerIntroCutscene()
     {
         DialogueManager.instance.TalkInteraction(item);
@@ -36,12 +49,65 @@ public class GasStationManager : MonoBehaviour
     {
         InventoryManager.OnInventoryChange += checkconditions;
         DialogueCommands.startAction += StartAction;
+        Interactor.StealStep += StealTutorial;
     }
     private void OnDisable()
     {
         InventoryManager.OnInventoryChange -= checkconditions;
         DialogueCommands.startAction -= StartAction;
+        Interactor.StealStep -= StealTutorial;
     }
+
+    private void StealTutorial(int stage)
+    {
+        
+        //instructionss.SetActive(false);
+        if (firstTimeSteal)
+        {
+            if (stage == 1)
+            {
+                StartCoroutine(instructions("instruction1"));
+            }
+            else if(stage == 2)
+            {
+                //be sure to only do this once!
+                if (!hasExecuted)
+                {
+                    StartCoroutine(instructions("instruction2"));
+                }
+                hasExecuted = true;
+            }
+            else if(stage == 3)
+            {
+                //got caught
+                StartCoroutine(instructions("gotCaught"));
+            }
+            else if(stage == 4)
+            {
+                StartCoroutine(instructions("ranOut"));
+            }
+            else if(stage == 5)
+            {
+                StartCoroutine(instructions("successfullyStole"));
+                firstTimeSteal = false;
+            }
+          
+        }
+        return;
+    }
+
+    private IEnumerator instructions(string instruction)
+    {
+        if (DialogueManager.DialogStart != null)
+        {
+            diaRun.Stop();
+        }
+        yield return new WaitForSeconds(.3f);
+        DialogueManager.tutorialInstance.LoadDialog(instruction);
+        DialogueManager.tutorialInstance.StartDialog();
+    }
+
+
 
     //conditions for tasks specifically in this level, this will involve checking each time you interact with something whether the conditions were met
     //1. collected snacks
@@ -49,6 +115,7 @@ public class GasStationManager : MonoBehaviour
     //this is largely based on what is IN the inventory, its easier to check that way
     private void Start()
     {
+        car.Play("GSCar");
 
         GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
         kidObjective = mainPage.transform.GetChild(2).gameObject;
@@ -56,10 +123,9 @@ public class GasStationManager : MonoBehaviour
         if (kidObjective.activeInHierarchy)
             Debug.Log("Yasss");
         else
-            Debug.Log("noooo..");
-     
-               
+            Debug.Log("noooo..");       
     }
+
     public static void checkconditions(List<InventoryItem> list)
     {
         if (!completedAllObjectives)
@@ -93,13 +159,14 @@ public class GasStationManager : MonoBehaviour
         switch (action)
         {
             case "kidQuest":
-
-                InventoryManager.instance.Add(knife);
-                journalNotif?.Invoke();
-
+                if (!completedKidQuest)
+                {
+                    InventoryManager.instance.Add(knife);
+                    journalNotif?.Invoke();
+                    completedKidQuest = true;
+              
+                }
                 break;
-
-
             case "StartkidQuest":
 
                 Debug.Log("Giving kid quest");

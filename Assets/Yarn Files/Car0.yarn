@@ -28,7 +28,7 @@ Brother: You wanna go?
 -> Ya!
 	Brother: Awesome,
 	Brother: Well. Next Stop's Dino Land.
-	<<changeScene DragonLand_Greybox>>
+	<<changeScene DragonLand>>
 -> Nah, not yet.
 	Ok, make up your mind soon.
 ===

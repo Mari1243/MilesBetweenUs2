@@ -8,10 +8,13 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
 using Unity.VisualScripting;
+using System.Runtime.InteropServices;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    public static DialogueManager tutorialInstance;
+    [SerializeField] private bool isTutorialSystem = false;
     private DialogueRunner dialogueRunner;
     public static UnityAction DialogStart, DialogOver;
 
@@ -19,18 +22,23 @@ public class DialogueManager : MonoBehaviour
     public Canvas dialoguePos;
     void Awake()
     {
-
-        if (instance == null)
-            instance = this;
-
-    }
-    private void Start()
-    {
+       if (isTutorialSystem)
+        {
+            tutorialInstance = this;
+            print(tutorialInstance.name);
+        }
+        else
+        instance = this;
         dialogueRunner=GetComponent<DialogueRunner>();
     }
+
     private void OnEnable()
     {
-        interactable.onTalk += TalkInteraction;
+        if (!isTutorialSystem)
+        {
+            interactable.onTalk += TalkInteraction;
+        }
+       
        // DialogOver += GiveItem; 
        //^^^^^^^^^^^ DialogOver event doesn't take in itemdata
     }
@@ -38,7 +46,10 @@ public class DialogueManager : MonoBehaviour
 
     private void OnDisable()
     {
-        interactable.onTalk -= TalkInteraction;
+         if (!isTutorialSystem)
+        {
+            interactable.onTalk -= TalkInteraction;
+        }
        
         // DialogOver -= GiveItem;
         //^^^^^^^^^^^ DialogOver event doesn't take in itemdata
@@ -48,7 +59,6 @@ public class DialogueManager : MonoBehaviour
 
     public void LoadDialog(string node)
     {
-        Debug.Log("starting node is "+ node);
         dialogueRunner.startNode = node;
         dialogReady = true;
     }

@@ -2,11 +2,11 @@ using MaskTransitions;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class EndCutsceneEvent1 : MonoBehaviour
 {
-    public GasStationManager GS;
-    public GameObject dialogueSystem;
+    public GasStationManager GSManager;
    
     public void endCutScene()
 
@@ -24,9 +24,11 @@ public class EndCutsceneEvent1 : MonoBehaviour
 
         TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
 
-        GS.triggerIntroCutscene();
+        GSManager.triggerIntroCutscene();
+
         
     }
 
+    
    
 }

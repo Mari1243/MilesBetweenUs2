@@ -21,6 +21,8 @@ public class Interactor : MonoBehaviour
         private float warningStartTime;
         [SerializeField] private float warningDuration = 1f;
 
+        public static event Action<int> StealStep;
+
 
     [Header("Pickup References")]
         public GameObject pickupUI;
@@ -203,6 +205,7 @@ public class Interactor : MonoBehaviour
     private IEnumerator FailedStealing()
     {
         print("failing stealing");
+        StealStep?.Invoke(3);
         yield return new WaitForSeconds(1f);
         
         if (StealingManager.Instance != null)
@@ -241,6 +244,7 @@ public class Interactor : MonoBehaviour
                     if (StealingManager.Instance != null)
                     {
                         StealingManager.Instance.StartStealin();
+                        StealStep?.Invoke(1);
                     }
                     return;
                 }
@@ -357,7 +361,7 @@ public class Interactor : MonoBehaviour
                 
                 StopHoldRoutine();
                 OnHoldCanceled?.Invoke();
-
+                
                 if (hasStartedStealing || isInStealingConfirmMode)
                 {
                     if (StealingManager.Instance != null)
@@ -366,6 +370,7 @@ public class Interactor : MonoBehaviour
                     }
                     hasStartedStealing = false;
                     isInStealingConfirmMode = false;
+                    StealStep?.Invoke(4);
                 }
 
                 yield break;
@@ -416,6 +421,7 @@ public class Interactor : MonoBehaviour
         if (newState == StealingManager.DangerState.Caught)
         {
             isDanger = true;
+            StealStep?.Invoke(2);
         }
         else
         {

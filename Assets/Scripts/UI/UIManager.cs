@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static StealingManager;
@@ -42,12 +41,10 @@ public class UIManager : MonoBehaviour
     public Image loreImg;
     public AudioClip pickupsound;
 
-    //for pause
-    private bool isPaused = false;
-    public static event System.Action<bool> onPause;
-
     //private refs to dog sprites
     private Texture2D CurrentDog;
+
+    
 
    
     private void OnEnable()
@@ -64,8 +61,6 @@ public class UIManager : MonoBehaviour
         InventoryManager.AddedItem += ShowItemHUD;
         interactable.onPickedUp += rewardText;
         Interactor.StealWarning += dangerState;
-
-        InputManager.Pause += pausegame;
 
         GasStationManager.journalNotif += INjournalNotif;
         InputManager.OpenJournal += OUTjournalNotif;
@@ -86,7 +81,6 @@ public class UIManager : MonoBehaviour
         interactable.onPickedUp -= ShowItemHUD;
         interactable.onPickedUp -= rewardText;
         InventoryManager.AddedItem -= ShowItemHUD;
-        InputManager.Pause -= pausegame;
 
         GasStationManager.journalNotif -= INjournalNotif;
         InputManager.OpenJournal -= OUTjournalNotif;
@@ -237,11 +231,12 @@ public class UIManager : MonoBehaviour
     {
         if (stealcheck == true)
         {
-             StealingCanvas.SetActive(true);
+            StealingCanvas.SetActive(true);
+
         }
         else
         {
-             StealingCanvas.SetActive(false);
+            StealingCanvas.SetActive(false);
         }
     }
 
@@ -306,24 +301,6 @@ private void DangerUI()
 }
 
     
-    //listening for pause
-    private void pausegame()
-    {
-        if (!isPaused)
-        {
-            print("pausing");
-                isPaused = true;
-                onPause?.Invoke(isPaused);
-        }
-        else
-        {
-            print("playing");
-            isPaused = false;
-            onPause?.Invoke(isPaused);
-        }
-    }
-
-
 
 
 

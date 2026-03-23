@@ -25,12 +25,14 @@ public class InventoryManager : MonoBehaviour
     {
         interactable.onPickedUp += Add;
         Mapinteractable.onPickedUp += Add;
-  
+        InputManager.Restart += clearInventory;
+
     }
     private void OnDisable()
     {
         interactable.onPickedUp -= Add;
         Mapinteractable.onPickedUp -= Add;
+        InputManager.Restart -= clearInventory; 
     }
 
     private void Awake()
@@ -89,6 +91,9 @@ public class InventoryManager : MonoBehaviour
         return inventory.Any(item => item.itemData.itemName == itemName);
     }
 
- 
+    public void clearInventory()
+    {
+        inventory.Clear();
+    }
 
 }

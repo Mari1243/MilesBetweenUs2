@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PauseCanvasAnims : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class PauseCanvasAnims : MonoBehaviour
     private RectTransform doodle;
     private Canvas canvas;
     private Coroutine currentRoutine;
-    public InputManager inputManager;
+    private bool isPaused = false;
+
+    public static event System.Action<bool> onPause;
     private void Start()
     {
         canvas = GetComponent<Canvas>();
@@ -26,16 +29,27 @@ public class PauseCanvasAnims : MonoBehaviour
 
     private void OnEnable()
     {
-        UIManager.onPause += PauseRoutine;
-        IntroUIManager.onPause +=PauseRoutine;
+        InputManager.Pause += PauseManage;
     }
 
     private void OnDisable()
     {
-        UIManager.onPause -= PauseRoutine;
-         IntroUIManager.onPause -=PauseRoutine;
+          InputManager.Pause -= PauseManage;
     }
 
+    private void PauseManage()
+    {
+        if (!isPaused)
+        {
+                isPaused = true;
+                PauseRoutine(isPaused);
+        }
+        else
+        {
+            isPaused = false;
+            PauseRoutine(isPaused);
+        }
+    }
     private void PauseRoutine(bool paused)
     {
         if (currentRoutine != null)
@@ -48,15 +62,19 @@ public class PauseCanvasAnims : MonoBehaviour
         doodle.DOKill();
 
         if (paused)
+        {
             currentRoutine = StartCoroutine(PauseGame());
+            print("pawsing");
+        }  
         else
             currentRoutine = StartCoroutine(StartGame());
+            print("playing");
     }
 
     private IEnumerator PauseGame()
     {
         canvas.enabled = true;
-        inputManager.inputActions["checkJournal"].Disable();
+        //inputManager.inputActions["checkJournal"].Disable();
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -70,7 +88,7 @@ public class PauseCanvasAnims : MonoBehaviour
 
     private IEnumerator StartGame()
     {
-        inputManager.inputActions["checkJournal"].Enable();
+        //inputManager.inputActions["checkJournal"].Enable();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;
@@ -88,5 +106,13 @@ public class PauseCanvasAnims : MonoBehaviour
         Debug.Log("EXITING");
 
         Application.Quit();
+    }
+
+    public void backTitle()
+    {
+        Debug.Log("Loading Title Scene");
+
+        Time.timeScale = 1f; // So new scene isn't frozen
+        SceneManager.LoadScene("TitleScreen"); 
     }
 }

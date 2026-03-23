@@ -8,6 +8,7 @@ using DG.Tweening.Core.Easing;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 using Unity.VisualScripting;
+using System.Runtime.InteropServices;
 
 public class IntroSceneManager : MonoBehaviour
 {
@@ -38,23 +39,19 @@ public class IntroSceneManager : MonoBehaviour
         instance = this;
 
     }
-    private void Start()
-    {
-        toggleDefaultSystem();
-    }
     private void OnEnable()
     {
         // Mapinteractable.showJournal += OpenJournalHint;
         // Mapinteractable.showJournal += FreezeCam;
         interactable.onMap += stuff;
-        DialogueManager.DialogOver += diaRun.Stop;
+        //DialogueManager.DialogOver += diaRun.Stop;
     }
     private void OnDisable()
     {
         // Mapinteractable.showJournal -= OpenJournalHint;
         // Mapinteractable.showJournal -= FreezeCam;
         interactable.onMap -= stuff;
-        DialogueManager.DialogOver -= diaRun.Stop;
+        //DialogueManager.DialogOver -= diaRun.Stop;
         
     }
 
@@ -65,7 +62,6 @@ public class IntroSceneManager : MonoBehaviour
         print("calling stuff");
             if(!journalopen)
             {
-                toggleTutSystem();
                 TPCam.SetActive(false);
                 instructionss.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
@@ -74,11 +70,10 @@ public class IntroSceneManager : MonoBehaviour
                 DOTween.Restart("animateIn"); 
                 DOTween.Play ("animateIn");
                 journalopen = true;
-                instructions();
+                StartCoroutine(instructions1());
             }
             else
             {
-                toggleDefaultSystem ();
                 TPCam.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -90,11 +85,12 @@ public class IntroSceneManager : MonoBehaviour
             }
     }
 
-    private void instructions()
+    private IEnumerator instructions1()
     {
+        yield return new WaitForSeconds(2f);
         print("trying to start dialogue");
-        DialogueManager.instance.LoadDialog("StoreMap");
-        DialogueManager.instance.StartDialog();
+        DialogueManager.tutorialInstance.LoadDialog("StoreMap");
+        DialogueManager.tutorialInstance.StartDialog();
         //call wait for map place
     }
 
@@ -104,28 +100,21 @@ public class IntroSceneManager : MonoBehaviour
         if (DialogueManager.DialogStart != null)
         {
             diaRun.Stop();
+            print("turning dialogue off, dialogstart is now "+ DialogueManager.DialogStart);
         }
         StartCoroutine(waittt());
         //set bool that triggers wait for map place
     }
 
-    // static async YarnTask waitForMapPlace() {
-
-    //     Wait for bool here
-    //     await YarnTask.Delay(mapPlaced);
-    //     //start the next dialogue??
-        
-    // }    
-
     private IEnumerator waittt()
     {
         hasJournal = true;
         print("ok doing journal stuff now");
-        yield return new WaitForSeconds (.5f);
+        yield return new WaitForSeconds (1f);
         //make sure previous dialogue is finished playing)
 
-        DialogueManager.instance.LoadDialog("WhatisJournal");
-        DialogueManager.instance.StartDialog();
+        DialogueManager.tutorialInstance.LoadDialog("WhatisJournal");
+        DialogueManager.tutorialInstance.StartDialog();
         //DialogueManager.instance.OnDialogOver();
     }
 
@@ -159,8 +148,6 @@ public class IntroSceneManager : MonoBehaviour
         }
     }
 
-   
-
     public bool HasItemByName(string itemName)
     {
         foreach (var kvp in InventoryManager.instance.itemDictionary)
@@ -179,18 +166,6 @@ public class IntroSceneManager : MonoBehaviour
         //TransitionManager.Instance.PlayTransition(2f, 2f);
         SceneSwitch.Instance.SwitchScene("Car");
     }
-
-    void toggleTutSystem()
-    {
-        TutorialDialogueSystem.SetActive(true);
-        DialogueSystem.SetActive(false);
-    }
-    void toggleDefaultSystem()
-    {
-        TutorialDialogueSystem.SetActive(false);
-        DialogueSystem.SetActive(true);
-    }
-
 
 }
 
