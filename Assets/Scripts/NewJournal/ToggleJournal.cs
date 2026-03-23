@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class ToggleJournal : MonoBehaviour
 {
     public static event Action hideJournal;
-    [SerializeField]private bool journalopen = false;
+    [SerializeField]public static bool journalopen = false;
     [SerializeField] private bool canOpen = false;
     private Canvas canvas;
    
