@@ -24,7 +24,7 @@ public class GasStationManager : MonoBehaviour
  private static bool completedAllObjectives;
  private static int allobjectives = 2;
  private static int completedobjectives = 0;
- public GameObject toDoList1;
+ //public GameObject toDoList1;
  public static event Action journalNotif;
     private bool completedKidQuest = false;
  private bool firstTimeSteal = true;
@@ -117,13 +117,13 @@ private bool hasExecuted = false;
     {
         car.Play("GSCar");
 
-        GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
-        kidObjective = mainPage.transform.GetChild(2).gameObject;
-        kidObjective.SetActive(false);
-        if (kidObjective.activeInHierarchy)
-            Debug.Log("Yasss");
-        else
-            Debug.Log("noooo..");       
+        //GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
+        //kidObjective = mainPage.transform.GetChild(2).gameObject;
+        //kidObjective.SetActive(false);
+        //if (kidObjective.activeInHierarchy)
+        //    Debug.Log("Yasss");
+        //else
+        //    Debug.Log("noooo..");       
     }
 
     public static void checkconditions(List<InventoryItem> list)
@@ -159,23 +159,23 @@ private bool hasExecuted = false;
         switch (action)
         {
             case "kidQuest":
-                if (!completedKidQuest)
-                {
+                //if (!completedKidQuest)
+                //{
                     InventoryManager.instance.Add(knife);
                     journalNotif?.Invoke();
-                    completedKidQuest = true;
+                    //completedKidQuest = true;
               
-                }
+                //}
                 break;
             case "StartkidQuest":
 
                 Debug.Log("Giving kid quest");
-                kidObjective.SetActive(true);
-                if (kidObjective)
-                    Debug.Log("KID QUEST IS ACTIVE");
-                else
-                    Debug.Log("NOPE NOT TO BE FOUND");
-                journalNotif?.Invoke();
+                //kidObjective.SetActive(true);
+                //if (kidObjective)
+                //    Debug.Log("KID QUEST IS ACTIVE");
+                //else
+                //    Debug.Log("NOPE NOT TO BE FOUND");
+                //journalNotif?.Invoke();
 
                 break;
 
