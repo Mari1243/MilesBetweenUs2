@@ -979,6 +979,7 @@ MonoBehaviour:
   cameras:
   - {fileID: 555982957}
   - {fileID: 592349052}
+  - {fileID: 2117406605}
   - {fileID: 1370771101}
   currentCamera: {fileID: 0}
   hasCutscene: 1
