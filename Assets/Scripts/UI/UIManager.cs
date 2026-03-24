@@ -86,8 +86,7 @@ public class UIManager : MonoBehaviour
         InputManager.OpenJournal -= OUTjournalNotif;
     }
 
-
-    private void Start()
+    private void Awake()
     {
         if(LoreitemPopup != null)
         {
@@ -100,19 +99,20 @@ public class UIManager : MonoBehaviour
             progressbar.fillAmount = 0;
             progressbar.enabled = false;
         }
-       
-        SetSprites();
-
+        journalCanvas = GameObject.Find("journalCanvas").GetComponent<Canvas>();
+        LoreitemPopup.SetActive(false);
         if (journalCanvas != null){
             journalCanvas.enabled = false;
         }
-
-        LoreitemPopup.SetActive(false);
-        journalCanvas = GameObject.Find("journalCanvas").GetComponent<Canvas>();
         journal = journalCanvas.transform.GetChild(0).gameObject;
-
         NotifPopup.transform.localScale = new Vector3(0, 0, 0);
 
+    } 
+
+
+    private void Start()
+    {
+        SetSprites();
     }
 
 

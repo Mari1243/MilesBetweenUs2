@@ -12,8 +12,10 @@ public class NewJournalSave : MonoBehaviour
     public States currentstate;
 
     //to do list is going to be a different object depending on the scene, should prob assign by searching by name for it in the scene 
-    public GameObject[] ToDoListPrefabs;
-    [SerializeField] private GameObject currentList;
+    //public GameObject[] ToDoListPrefabs;
+    [SerializeField] private ToDoListData toDoListData;
+
+    private GameObject currentList;
     private GameObject journal;
     private int sceneList = 0;
 
@@ -33,15 +35,10 @@ public class NewJournalSave : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (instance != null && instance != this) { Destroy(gameObject); return; }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
         journal = this.transform.GetChild(0).gameObject;
         print("journal object name is "+journal.name);
 
@@ -55,12 +52,40 @@ public class NewJournalSave : MonoBehaviour
 
     private void SpawnList()
     {
-        if (sceneList < ToDoListPrefabs.Length && ToDoListPrefabs[sceneList] != null)
+        // //correct calls should be 
+        // print("calling spawn list in GAS STATION");
+        // //sceneList num is 0
+        // print("sceneList num is "+ sceneList);
+        // //there should only be one to do list prefab here, confirming its 1
+        // print("there should only be one to do list prefab here, confirming its "+ ToDoListPrefabs.Length);
+        // //should print ToDoLevel1 
+        // print("seeing if to do list prefabs [scenelist]is not null, its "+ ToDoListPrefabs[sceneList]);
+
+        Debug.Log($"toDoListData is null: {toDoListData == null}");
+        if (toDoListData != null)
         {
-            currentList = Instantiate(ToDoListPrefabs[sceneList], journal.transform);
-            currentList.transform.localPosition = new Vector3(-214,65, 0);
-            print("Spawned: " + currentList.name + " | Parent: " + currentList.transform.parent.name + " | Active: " + currentList.activeSelf);
+            Debug.Log($"Array length: {toDoListData.ToDoListPrefabs.Length}");
+            Debug.Log($"Element 0 is null: {toDoListData.ToDoListPrefabs[0] == null}");
         }
+
+        if (sceneList < toDoListData.ToDoListPrefabs.Length && toDoListData.ToDoListPrefabs[sceneList] != null)
+        {
+        currentList = Instantiate(toDoListData.ToDoListPrefabs[sceneList], journal.transform);
+        currentList.transform.localPosition = new Vector3(-214, 65, 0);
+        print("Spawned: " + currentList.name);
+        }
+        else
+        {
+        Debug.LogError($"Prefab at index {sceneList} is null or out of range!", this);
+        }
+       
+        // if (sceneList < ToDoListPrefabs.Length && ToDoListPrefabs[sceneList] != null)
+        // {
+        //     print("trying to instantiate current list "+ ToDoListPrefabs[sceneList]);
+        //     currentList = Instantiate(ToDoListPrefabs[sceneList], journal.transform);
+        //     currentList.transform.localPosition = new Vector3(-214,65, 0);
+        //     print("Spawned: " + currentList.name + " | Parent: " + currentList.transform.parent.name + " | Active: " + currentList.activeSelf);
+        // }
     }
 
     public void SetState(States newstate)
@@ -97,6 +122,7 @@ public class NewJournalSave : MonoBehaviour
             inventoryObject.SetActive(true);
         if(currentList != null)
         {
+            //may be causing errors???]
             Destroy(currentList);
         }
 

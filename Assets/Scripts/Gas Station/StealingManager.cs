@@ -40,8 +40,9 @@ public class StealingManager : MonoBehaviour
     private int cycleIndex;
     private Coroutine cycleRoutine;
 
-    private void Awake()
+   private void Awake()
     {
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
     }
 

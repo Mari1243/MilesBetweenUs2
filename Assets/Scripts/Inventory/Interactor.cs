@@ -58,7 +58,7 @@ public class Interactor : MonoBehaviour
     public GameObject inventoryHUD;
     public ThirdPersonMovement movement;
 
-    private void Awake()
+    private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         inputActions = playerInput.actions;
@@ -74,10 +74,7 @@ public class Interactor : MonoBehaviour
         {
             Debug.Log("Cant find this input action");
         }
-    }
 
-    private void Start()
-    {
         inputActions["Interacted"].Disable();
         pickedUpObj = null;
         Interactable = null;

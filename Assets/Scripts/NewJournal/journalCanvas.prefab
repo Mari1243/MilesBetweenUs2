@@ -1607,7 +1607,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3934565142877967674}
         m_TargetAssemblyTypeName: ToggleJournal, Assembly-CSharp
-        m_MethodName: inventory
+        m_MethodName: journal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2130,7 +2130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59295647e154c708165c1c6bbd6428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  journalopen: 0
   canOpen: 0
 --- !u!114 &8502000836159243437
 MonoBehaviour:
@@ -2145,8 +2144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentstate: 0
-  ToDoListPrefabs:
-  - {fileID: 3858602058654858274, guid: e768d9c545bfa43babbf9a2671f8cb91, type: 3}
+  toDoListData: {fileID: 11400000, guid: c1024a77bb0644edcafe1b777fa69443, type: 2}
   currentList: {fileID: 3858602058654858274, guid: e768d9c545bfa43babbf9a2671f8cb91, type: 3}
   inventoryObject: {fileID: 7359117660989336068}
   DraggableItemPrefab: {fileID: 6843374984016170095, guid: c83a883728b8747799f88e95b0341676, type: 3}
