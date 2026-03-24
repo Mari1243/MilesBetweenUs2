@@ -19,11 +19,32 @@ public class SceneTrackerSingleton : MonoBehaviour
     public static event Action<string> onSceneName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
-    public void Start()
+     void Awake()
     {
+        
+        // Singleton pattern
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        // Initialize with current scene
+        CurrentSceneName = SceneManager.GetActiveScene().name;
+        PreviousSceneName = "None";
+
+        // Subscribe to scene loaded event
+        SceneManager.sceneLoaded += OnSceneLoaded;
         settingstate();
     }
+
 
     private void settingstate()
     {
@@ -57,27 +78,7 @@ public class SceneTrackerSingleton : MonoBehaviour
        
     }
 
-    void Awake()
-    {
-        // Singleton pattern
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-
-            // Initialize with current scene
-            CurrentSceneName = SceneManager.GetActiveScene().name;
-            PreviousSceneName = "None";
-
-            // Subscribe to scene loaded event
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
+   
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Update previous scene before changing current

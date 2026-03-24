@@ -31,14 +31,6 @@ public class NewJournalSave : MonoBehaviour
     private GameObject Tab1;
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
 
-    void Start()
-    {
-        Tab1 = tabholder.transform.GetChild(0).gameObject;
-        currentInventory = InventoryManager.instance.inventory;
-      
-    }
-
-
     void Awake()
     {
         if (instance == null)
@@ -52,6 +44,13 @@ public class NewJournalSave : MonoBehaviour
         }
         journal = this.transform.GetChild(0).gameObject;
         print("journal object name is "+journal.name);
+
+        Tab1 = tabholder.transform.GetChild(0).gameObject;
+    }
+
+    private void Start()
+    {
+        currentInventory = InventoryManager.instance.inventory;
     }
 
     private void SpawnList()

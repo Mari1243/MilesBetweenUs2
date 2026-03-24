@@ -44,11 +44,15 @@ public class SoundManager : MonoBehaviour
     private void playmusic()
     {
 
+        print("playing music");
         if (playBackgroundMusic)
         {
             musicAudioSource.loop = true;
+            //musicAudioSource.Play();
+            //musicAudioSource.AudioSource=backgroundMusic;
+            musicAudioSource.clip=backgroundMusic;
             musicAudioSource.Play();
-        }
+            }
     }
 
 

@@ -922,8 +922,6 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 2ecb8b9c3a3da374984724a8cb649245, type: 2}
   dialogueManager: {fileID: 247394349}
   cam: {fileID: 1896960887}
-  brother: {fileID: 0}
-  newLocation: {fileID: 0}
 --- !u!64 &89113322
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1941,8 +1939,6 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: ae93536bf01b10b41ae95acf0f7f649f, type: 2}
   dialogueManager: {fileID: 247394349}
   cam: {fileID: 1786789363}
-  brother: {fileID: 0}
-  newLocation: {fileID: 0}
 --- !u!65 &234728589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6566,8 +6562,6 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: ae93536bf01b10b41ae95acf0f7f649f, type: 2}
   dialogueManager: {fileID: 247394349}
   cam: {fileID: 1786789363}
-  brother: {fileID: 0}
-  newLocation: {fileID: 0}
 --- !u!65 &780969704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20537,8 +20531,6 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: ae93536bf01b10b41ae95acf0f7f649f, type: 2}
   dialogueManager: {fileID: 247394349}
   cam: {fileID: 1786789363}
-  brother: {fileID: 0}
-  newLocation: {fileID: 0}
 --- !u!65 &1968288338
 BoxCollider:
   m_ObjectHideFlags: 0

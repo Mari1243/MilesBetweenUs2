@@ -208,6 +208,11 @@ public class InputManager : MonoBehaviour
         if (context.performed)
         {
             Pause?.Invoke();
+            //close journal if open
+            if (ToggleJournal.journalopen)
+            {
+                 OpenJournal?.Invoke();
+            }
         }
     }
 
