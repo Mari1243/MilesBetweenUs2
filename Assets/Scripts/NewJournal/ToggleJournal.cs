@@ -18,7 +18,7 @@ public class ToggleJournal : MonoBehaviour
     private CinemachineInputAxisController playerCam;
     private ThirdPersonMovement playerMovement;
      
-    private void Start()
+    private void Awake()
     {
 
         canvas = this.GetComponent<Canvas>();
