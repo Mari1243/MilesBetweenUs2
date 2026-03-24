@@ -11,7 +11,7 @@ public class ToggleJournal : MonoBehaviour
 {
     public static event Action hideJournal;
     [SerializeField]public static bool journalopen = false;
-    [SerializeField] private bool canOpen = false;
+    [SerializeField]public bool canOpen = false;
     private Canvas canvas;
    
     [Header("Public References")]
@@ -52,6 +52,10 @@ public class ToggleJournal : MonoBehaviour
         DialogueManager.DialogOver -= enableJournal;
     }
 
+    private void Start()
+    {
+        canOpen = false;
+    }
     public void enableJournal()
     {
         canOpen = true;

@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class EndCutsceneEvent1 : MonoBehaviour
 {
     public GasStationManager GSManager;
-   
+    public ToggleJournal journalAccess;
     public void endCutScene()
 
     {
+        journalAccess.canOpen = true;
         StartCoroutine(endingScene());
     }
 
