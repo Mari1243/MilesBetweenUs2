@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1de6175c812df84e84a4646cd2211ec
+guid: d149b0a34a4cf154dba71cd6fd14ef99
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,43 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bod
-    second: {fileID: 2100000, guid: 8b905264418a52f45b1796d4d6ee598c, type: 2}
+      name: MainMat
+    second: {fileID: 2100000, guid: 5569cbdc954662b43a4120a6b952aaad, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Earrings
-    second: {fileID: 2100000, guid: 768ea3912ab9fa6418d04ff97484e354, type: 2}
+      name: Main_1Mat
+    second: {fileID: 2100000, guid: 2dabcdb9aade58542960349f2fbe2d28, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Eyes
-    second: {fileID: 2100000, guid: c0c7e4a2064a2ec46b7c5e39e5d843ba, type: 2}
+      name: Main_2Mat
+    second: {fileID: 2100000, guid: 18d0d37ea39184f4485c523af05f70fb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glasses
-    second: {fileID: 2100000, guid: 83b06e7326e67c142a1683548b0bccb3, type: 2}
+      name: PatchMat
+    second: {fileID: 2100000, guid: c3507b9b45c367f4ba0b85b091f4bf2f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Head
-    second: {fileID: 2100000, guid: 0faed76439e25e24ea11a4315dc8595a, type: 2}
+      name: Patch_1Mat
+    second: {fileID: 2100000, guid: a305ebabe57280f4ea1e77d9f1f7212e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Scarf
-    second: {fileID: 2100000, guid: b7de17a2853f3cf4882a8520d7f97591, type: 2}
+      name: Patch_2Mat
+    second: {fileID: 2100000, guid: 25339c0c03307484c8860d6fd15e2a46, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Shawl
-    second: {fileID: 2100000, guid: d48aa8330735a584cb1e2a063f99bbde, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tail
-    second: {fileID: 2100000, guid: 57fdd6195b8769d40be18a3150d10a90, type: 2}
+      name: Patch_3Mat
+    second: {fileID: 2100000, guid: 06d0b3d5abe68a746b804173b1ce0ee8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -69,36 +64,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Armature|Granny_Idle
-      takeName: Armature|Granny_Idle
-      internalID: 5533364958400877668
-      firstFrame: 0
-      lastFrame: 239
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []

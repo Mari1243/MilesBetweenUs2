@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1de6175c812df84e84a4646cd2211ec
+guid: 74b8d427aa27fe94990a30d043515fd9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,43 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bod
-    second: {fileID: 2100000, guid: 8b905264418a52f45b1796d4d6ee598c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Earrings
-    second: {fileID: 2100000, guid: 768ea3912ab9fa6418d04ff97484e354, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Eyes
-    second: {fileID: 2100000, guid: c0c7e4a2064a2ec46b7c5e39e5d843ba, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glasses
-    second: {fileID: 2100000, guid: 83b06e7326e67c142a1683548b0bccb3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Head
-    second: {fileID: 2100000, guid: 0faed76439e25e24ea11a4315dc8595a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Scarf
-    second: {fileID: 2100000, guid: b7de17a2853f3cf4882a8520d7f97591, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shawl
-    second: {fileID: 2100000, guid: d48aa8330735a584cb1e2a063f99bbde, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tail
-    second: {fileID: 2100000, guid: 57fdd6195b8769d40be18a3150d10a90, type: 2}
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 7ffc41092f6b3f440a7d33b223b77bf5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -69,36 +34,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Armature|Granny_Idle
-      takeName: Armature|Granny_Idle
-      internalID: 5533364958400877668
-      firstFrame: 0
-      lastFrame: 239
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
