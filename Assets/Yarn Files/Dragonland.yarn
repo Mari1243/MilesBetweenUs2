@@ -18,3 +18,45 @@ Brother: Alright let's head out then
 <<cameraIndex 0>>
 <<changeScene Car>>
 ===
+
+
+title: Granny1
+---
+<<cameraIndex 2>>
+Welcome to Dino- I mean DragonLand!
+Feel free to look around 
+And let me know if you have any questions
+Or if you want any dragon facts
+
+<<cameraIndex 0>>
+===
+
+
+title: Mouse1
+---
+<<cameraIndex 3>>
+Ugh, what the hell!
+I cannot find my ID anywhere
+How did I lose it in a dessert? 
+Its literally just sand.
+...
+Oh uh hi.
+Let me know if you see an ID anywhere 
+And Ill get you a sticker or something.
+
+<<cameraIndex 0>>
+===
+
+
+
+
+
+title: Rooster1
+---
+<<cameraIndex 4>>
+You see that son? That is one of our ancestors.
+We used to be one of the most powerful and feared animals.
+Woooahhh
+And we also used to be blue.
+<<cameraIndex 0>>
+===
