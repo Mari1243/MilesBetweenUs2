@@ -82,7 +82,7 @@ title: BrotherStart
 tags:
 ---
 <<cameraIndex 2>>
-Brother: Get some snacks for the road will ya?
+Brother: Get some snacks for the road too
 Brother: Don't take too long though we still have a long way to go.
 <<startAction StartbroQuest>>
 <<cameraIndex 0>>
