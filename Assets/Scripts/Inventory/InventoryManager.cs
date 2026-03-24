@@ -50,9 +50,6 @@ public class InventoryManager : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-    }
     public void Add(Item itemData) 
     {
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item)) //is item in dictionary
