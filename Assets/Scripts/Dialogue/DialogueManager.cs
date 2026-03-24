@@ -95,5 +95,8 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    
+    public void StopDialogue()
+    {
+        dialogueRunner.Stop();
+    }
 }
