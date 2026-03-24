@@ -159,13 +159,13 @@ private bool hasExecuted = false;
         switch (action)
         {
             case "kidQuest":
-                //if (!completedKidQuest)
-                //{
+                if (!completedKidQuest)
+                {
                     InventoryManager.instance.Add(knife);
                     journalNotif?.Invoke();
-                    //completedKidQuest = true;
+                    completedKidQuest = true;
               
-                //}
+                }
                 break;
             case "StartkidQuest":
 
