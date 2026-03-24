@@ -23,11 +23,11 @@ title: Car0
 title: Car1
 ---
 Brother: Oh hey,
-Brother: It's Dino Land.
+Brother: It's DragonLand.
 Brother: You wanna go?
 -> Ya!
 	Brother: Awesome,
-	Brother: Well. Next Stop's Dino Land.
+	Brother: Well. Next Stop's DragonLand.
 	<<changeScene DragonLand>>
 -> Nah, not yet.
 	Ok, make up your mind soon.
@@ -122,14 +122,18 @@ Brother: You hungry now?
 
 title: knife
 ---
+Brother: Jesus dude is that a knife?
 Brother: I haven't seen this brand in ages.
 ->When did you last see them?
 	Brother: When me and dad used to go camping together.
-	Brother: He kept this kind of knife on him.
+	Brother: He never let me use it though
+	Brother: Said it wasn't safe for a 10 year old.
+	Brother: Or whatever
 ->Yeah, cuz ur so old.
 	Brother: Shut up... 
-	Brother: Dad used to have one of these
-	Brother: when we used to go camping together.
+	Brother: I was literally your age dad and I went camping
+	Brother: and we got to use that cool knife
+	Brother: So I'm cooler than you
 
 ===
 
@@ -139,20 +143,37 @@ Brother: ...
 Brother: Did you find these off the floor or something? 
 ->I snatched 'em from a counter top.
 	BROTHER: Badass, lil dude.. give me them though.
+	Brother: If mom and dad found out you stole
+	Brother: And I smoked
+	Brother: they would be so mad
+	Brother: Especially Dad
+	Brother:...
+	Brother: I won't tell if you don't
 ->I found them. 
 	BROTHER: Cool, I'll take those.
+	BROTHER: But uh smoking is bad for you
+	Brother: Don't do it
+	Brother: And don't tell dad.
 ===
 
 title: CD
 ---
 Brother: Dude this is SICK! 
 Brother: How'd you know I like this?
-->Don't ya like this weird dark bloody looking stuff?
+->Don't ya like this weird looking stuff?
 	Brother: Um yeah, it's cool. 
-	Brother: I love post emo punk rock. 
-	Brother: I was in a band back in high school.
-->I saw photos of you in a band back at home!
+	Brother: I dig post emo punk rock. 
+	Brother: Especially when me and my band were still going
+	Brother: We got soooo many chicks
+	Brother: Well, not really
+	Brother: But we would play songs about getting chicks
+->I saw photos of you dressed all weird!
 	Brother: It's not weird, it's cool.
+	Brother: And look whos talking
+	Brother: All you wear is that stupid dino shirt
+	Brother: Ugh, colors are so overrated
+	Brother: That was also the name of our band
+	Brother:...We didn't sound very good
 
 ===
 
