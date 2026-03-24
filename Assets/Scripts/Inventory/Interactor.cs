@@ -271,6 +271,7 @@ public class Interactor : MonoBehaviour
             }
             else if (canInteract)
             {
+                print("calling interactable.interact");
                 Interactable.Interact();
             }
         }

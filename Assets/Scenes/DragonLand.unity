@@ -10022,6 +10022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Dialogue System '
       objectReference: {fileID: 0}
+    - target: {fileID: 827195159269362016, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2080794050152235293, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: autoStart
       value: 0

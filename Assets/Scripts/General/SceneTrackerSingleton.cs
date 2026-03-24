@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System;
+using System.Runtime.InteropServices;
 
 public class SceneTrackerSingleton : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class SceneTrackerSingleton : MonoBehaviour
         }
         else
         {
-             NewJournalSave.instance.SetState(NewJournalSave.States.Gasstation);
+            NewJournalSave.instance.SetState(NewJournalSave.States.Gasstation);
         }
        
     }
@@ -104,6 +105,10 @@ public class SceneTrackerSingleton : MonoBehaviour
         if(carnum == 0)
         {
             
+        }
+         if(carnum == 3)
+        {
+            print("carnum is 3");
         }
     }
 

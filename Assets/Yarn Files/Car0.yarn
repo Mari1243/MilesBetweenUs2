@@ -33,6 +33,18 @@ Brother: You wanna go?
 	Ok, make up your mind soon.
 ===
 
+title: Car2
+---
+Brother: Oh hey, looks like finished the demo...
+Brother: You can still finish up your journal, no rush
+Brother: Do you want more time?
+-> Keep journaling
+	Brother: Hell yea lil dude
+-> End Demo
+	Cool, thanks for playing!
+	<<changeScene EndDemoScene>>
+===
+
 
 title: CarBark1
 ---
@@ -170,3 +182,4 @@ Brother: So get comfy.
 
 
 ===
+

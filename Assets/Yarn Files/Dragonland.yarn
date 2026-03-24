@@ -1,6 +1,7 @@
 title: IntroCutScene
 ---
 <<cameraIndex 1>>
+
 Brother: Cool, we're like halfway
 Brother: I'm beat so make yourself busy for a bit
 Brother: And don't get into too much trouble
@@ -11,6 +12,7 @@ Brother: And don't get into too much trouble
 title: Car3
 ---
 <<cameraIndex 1>>
+
 Brother: Done already? 
 Brother: Alright let's head out then
 <<cameraIndex 0>>
