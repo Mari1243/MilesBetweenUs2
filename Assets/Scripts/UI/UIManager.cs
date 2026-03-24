@@ -255,6 +255,7 @@ public class UIManager : MonoBehaviour
         progressbar.fillAmount = 0;
         progressbar.enabled = false;
         StealingCanvas.SetActive(false);
+        DialogueManager.instance.StopDialogue();
     }
 
 
