@@ -8,6 +8,7 @@ using TMPro;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using System.Runtime.InteropServices;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -68,6 +69,8 @@ public class InventoryManager : MonoBehaviour
             OnInventoryChange?.Invoke(inventory);
         }
         AddedItem?.Invoke(itemData);
+        print("item was just added " + itemData.name);
+        print("contents of inventory is "+ inventory);
     }
 
     public void RemoveItem(Item itemData)

@@ -7,7 +7,8 @@ public class DialogueCommands : MonoBehaviour
 {
 
     private DialogueRunner dialogueRunner;
-    public static InMemoryVariableStorage yarnVariables;
+    //changed to not static
+    public InMemoryVariableStorage yarnVariables;
 
     public static UnityAction<int> currentCam; //change camera position 
     public static UnityAction<string> scenename;
@@ -54,6 +55,11 @@ public class DialogueCommands : MonoBehaviour
     //find a place to better implement 
     //called in events in dialogue manager in gas station
     {
+        if (yarnVariables == null)
+        {
+        Debug.LogError("yarnVariables is null! DialogueCommands may not have initialized.", this);
+        yarnVariables = GetComponent<InMemoryVariableStorage>(); // attempt recovery
+        }
         currentInventory = InventoryManager.instance.inventory;
 
         Debug.Log("Checking inventory!");
