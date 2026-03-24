@@ -94,6 +94,7 @@ public class InventoryManager : MonoBehaviour
     public void clearInventory()
     {
         inventory.Clear();
+        itemDictionary.Clear(); // add this!
     }
 
 }

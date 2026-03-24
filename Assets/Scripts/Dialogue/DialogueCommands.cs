@@ -55,14 +55,15 @@ public class DialogueCommands : MonoBehaviour
     //find a place to better implement 
     //called in events in dialogue manager in gas station
     {
+        Debug.Log("checkInventory called from: " + System.Environment.StackTrace);
         if (yarnVariables == null)
         {
         Debug.LogError("yarnVariables is null! DialogueCommands may not have initialized.", this);
         yarnVariables = GetComponent<InMemoryVariableStorage>(); // attempt recovery
         }
-        currentInventory = InventoryManager.instance.inventory;
+         List<InventoryItem> currentInventory = InventoryManager.instance.inventory;
+         Debug.Log("Checking inventory! Count: " + currentInventory.Count);
 
-        Debug.Log("Checking inventory!");
         if (currentInventory.Count >= 1)
         {
             foreach (InventoryItem item in currentInventory)
