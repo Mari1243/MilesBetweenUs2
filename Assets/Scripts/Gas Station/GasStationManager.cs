@@ -21,9 +21,9 @@ public class GasStationManager : MonoBehaviour
  public Item knife;
     public Animator car;
  //this exists so once ive completed all objectives it wont keep checking everytime i interact
- private static bool completedAllObjectives;
- private static int allobjectives = 2;
- private static int completedobjectives = 0;
+ private bool completedAllObjectives;
+ private int allobjectives = 2;
+ private int completedobjectives = 0;
  //public GameObject toDoList1;
  public static event Action journalNotif;
     private bool completedKidQuest = false;
@@ -60,7 +60,6 @@ private bool hasExecuted = false;
 
     private void StealTutorial(int stage)
     {
-        
         //instructionss.SetActive(false);
         if (firstTimeSteal)
         {
@@ -126,7 +125,7 @@ private bool hasExecuted = false;
         //    Debug.Log("noooo..");       
     }
 
-    public static void checkconditions(List<InventoryItem> list)
+    public void checkconditions(List<InventoryItem> list)
     {
         if (!completedAllObjectives)
         {
@@ -134,7 +133,8 @@ private bool hasExecuted = false;
             {
                 if (item.itemData.itemName == "Snacks")
                 {
-                    ToDoManager.instance.CompleteItem("SnacksforRoad");
+                    if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
+                   ToDoManager.instance.CompleteItem("SnacksforRoad");
                     completedobjectives++;
                 }
                 else if (item.itemData.itemName == "Cigarettes" || item.itemData.itemName == "PocketKnife" || item.itemData.itemName == "BloodPawz CD")

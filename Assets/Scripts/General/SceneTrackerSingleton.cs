@@ -67,6 +67,7 @@ public class SceneTrackerSingleton : MonoBehaviour
         print("tring to change state bc is car is "+ iscar);
         if(iscar == true)
         {
+            //this is to change the start node for which car scene ur in!
             carnum++;
             changeStartNode(carnum);
             NewJournalSave.instance.SetState(NewJournalSave.States.Car);

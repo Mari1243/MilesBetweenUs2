@@ -10,19 +10,20 @@ public class ToDoManager : MonoBehaviour
     private Dictionary<string, ToDoItemBehavior> Tasks;
     public GameObject[] Collectables;
 
-    private void Awake()
+    void Awake()
     {
-        instance = this;
-        Tasks = new Dictionary<string, ToDoItemBehavior>();
-
-        //this is gonna go through and add the script with the items name for easy access later
-        foreach (var item in toDoItems)
-        {
-            var behavior = item.GetComponent<ToDoItemBehavior>();
-            if (behavior != null)
-                Tasks.Add(item.name, behavior);
-        }
+    if (instance != null && instance != this) { Destroy(gameObject); return; }
+    instance = this;
+    //DontDestroyOnLoad(gameObject);
+    
+    Tasks = new Dictionary<string, ToDoItemBehavior>();
+    foreach (var item in toDoItems)
+    {
+        var behavior = item.GetComponent<ToDoItemBehavior>();
+        if (behavior != null)
+            Tasks.Add(item.name, behavior);
     }
+    }  
     private void OnEnable()
     {
         InventoryManager.AddedItem += CollectedLoreItem;
