@@ -1,3 +1,4 @@
+
 title: IntroCutScene
 ---
 <<cameraIndex 1>>
@@ -9,6 +10,9 @@ Brother: And don't get into too much trouble
 
 ===
 
+
+
+
 title: Car3
 ---
 <<cameraIndex 1>>
@@ -18,6 +22,8 @@ Brother: Alright let's head out then
 <<cameraIndex 0>>
 <<changeScene Car>>
 ===
+
+
 
 
 title: Granny1
@@ -89,6 +95,24 @@ And we also used to be blue.
 title: patch
 ---
 
+How- 
+Where did you find this?
+I didn't even know Cobra had cool patches like this.
+	->I found it on a jacket
+		Oh really?
+		I wish you had shown me.
+		Who knows what other patches it might have had.
+		Maybe it was that girl's jacket…
+		Ugh nevermind.
+			->The band gave it to me themself
+				REALLY? COBRA WAS-?
+				Wait.
+				Ugh dude shut up, not funny.
+				They stopped making music years ago.
+				Me and my old band covered so many of their songs.
+				Damnit, that would have been a cool thing to tell that girl…
+				Ugh nevermind.
+
 ===
 
 
@@ -97,6 +121,20 @@ title: patch
 
 title: photo
 ---
+Who…are these people? Where did you even find this?
+	->I think it’s the Dragon Lady’s Family
+		Dude why did you take a family photo?
+		Imagine if a random kid took one of our family photos
+		Well maybe we are not the best example
+		It’s not like we have that many of those anyways
+		But still, don’t take other people’s photos man.
+			->I don’t know
+				Well I hope no one is gonna miss this, it looks old.
+				Eh they have probably others
+				Maybe I should have brought one with us…
+				Ugh no that’s waaay too cheesy for me.
+				It’s not like we even have that many anyways.
+
 
 ===
 
@@ -106,5 +144,22 @@ title: photo
 
 title: plant
 ---
+Brother: Woah you got one of the agave pups? 
+Bother: Nice find dude 
+Brother: I didn’t see any that were small enough to take.
+Brother: I’ll have to pot it up when we get to Uni.
+
+->A puppy? I thought this was a plant.
+	No, not like an actual puppy dude.
+	It’s like a baby plant.
+	They're called that because they grow near their big mother plant.
+	At least that's what my book told me.
+		->I thought the car plant could use a friend.
+			I guess so…
+			Succulents and pothos don’t really go together.
+			Pothos like more tropical weather
+			And succulents like…
+			well, the dessert.
+			At least that's what my book told me.
 
 ===

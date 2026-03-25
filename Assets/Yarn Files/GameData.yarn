@@ -3,7 +3,7 @@ tags:
 ---
 <<declare $hasSnacks = false>>
 <<declare $hasPostcard=false>>
-<<declare hasID = false>>
+<<declare $hasID = false>>
 
 <<declare $giveReward = false>>
 ===
