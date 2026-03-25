@@ -9,12 +9,13 @@ using UnityEngine.UI;
 public class BrotherInteractable : MonoBehaviour
 {
     public interactable interactableData;
-    public Item newItem;
+    public Item DLPrompt;
+    public Item EndPrompt;
     public List<string> barks = new List<string>();
     private int barkCount, barkIndex;
     public Image img;
     public int minWait, maxWait;
-    bool car1=false;
+    bool car1,car2=false;
     private void OnEnable()
     {
         DialogueManager.DialogOver += StartTimer;
@@ -38,8 +39,15 @@ public class BrotherInteractable : MonoBehaviour
         if (scene == "GasStation")
         {
             print("last scene was gas station");
-            interactableData.item = newItem;
+            interactableData.item = DLPrompt;
             car1 = true;
+        }
+        else if(scene == "DragonLand")
+        {
+            interactableData.item = EndPrompt;
+            Debug.Log("Last scene was dragonland");
+            car1 = false;
+            car2 = true;
         }
     }
 
@@ -75,6 +83,9 @@ public class BrotherInteractable : MonoBehaviour
         //also make it so he "barks" only like twice but each time between then is randomized 
         if (car1)
             interactableData.item.node = "Car1";
+        else if(car2)
+            interactableData.item.node = "Car2";
+
         else
             interactableData.item.node = "Car0";
 
@@ -101,8 +112,8 @@ public class BrotherInteractable : MonoBehaviour
 
     public void loreDropping(string node)
     {
-        newItem.node = node; //change the node in the scriptable obj 
-        DialogueManager.instance.TalkInteraction(newItem);
+        DLPrompt.node = node; //change the node in the scriptable obj 
+        DialogueManager.instance.TalkInteraction(DLPrompt);
     }
 
     private void AnimateBubble()

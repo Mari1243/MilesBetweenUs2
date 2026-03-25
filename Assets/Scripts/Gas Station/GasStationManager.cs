@@ -115,8 +115,7 @@ private bool hasExecuted = false;
     private void Start()
     {
         car.Play("GSCar");
-
-        //GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
+        
         //kidObjective = mainPage.transform.GetChild(2).gameObject;
         //kidObjective.SetActive(false);
         //if (kidObjective.activeInHierarchy)
