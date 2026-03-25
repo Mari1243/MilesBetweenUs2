@@ -6710,6 +6710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCutScene: {fileID: 11400000, guid: 455f974f9b75145439d1ab1604c5cac5, type: 2}
+  MouseReward: {fileID: 11400000, guid: 8e9a12a532dbec64c8f2c078b5d74fad, type: 2}
   bro: {fileID: 348741762}
   car: {fileID: 1767020684}
 --- !u!1001 &1020819666

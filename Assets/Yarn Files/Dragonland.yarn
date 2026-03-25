@@ -32,6 +32,28 @@ Or if you want any dragon facts
 ===
 
 
+
+title: MouseQuest
+---
+<<cameraIndex 3>>
+<<if $hasID==true>>
+Oh.
+My.
+GOODD.
+Thank youuu soo much!!
+Literally saved my liiiife.
+Here, have this
+<<startAction mouseQuest>>
+
+<<else>>
+	<<jump Mouse1>>
+<<endif>>
+<<cameraIndex 0>>
+===
+
+
+
+
 title: Mouse1
 ---
 <<cameraIndex 3>>
@@ -51,6 +73,7 @@ And Ill get you a sticker or something.
 
 
 
+
 title: Rooster1
 ---
 <<cameraIndex 4>>
@@ -59,4 +82,29 @@ We used to be one of the most powerful and feared animals.
 Woooahhh
 And we also used to be blue.
 <<cameraIndex 0>>
+===
+
+
+
+title: patch
+---
+
+===
+
+
+
+
+
+title: photo
+---
+
+===
+
+
+
+
+
+title: plant
+---
+
 ===

@@ -79,6 +79,11 @@ public class DialogueCommands : MonoBehaviour
                     yarnVariables.SetValue("$hasPostcard", true);
 
                 }
+                else if (item.itemData.itemName == "An ID!") //name specific 
+                {
+                    yarnVariables.SetValue("$hasID", true);
+
+                }
             }
         }
         else
