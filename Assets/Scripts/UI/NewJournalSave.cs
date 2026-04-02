@@ -50,43 +50,51 @@ public class NewJournalSave : MonoBehaviour
         currentInventory = InventoryManager.instance.inventory;
     }
 
-    private void SpawnList()
+    public void newspawnlist(GameObject data)
     {
-        // //correct calls should be 
-        // print("calling spawn list in GAS STATION");
-        // //sceneList num is 0
-        // print("sceneList num is "+ sceneList);
-        // //there should only be one to do list prefab here, confirming its 1
-        // print("there should only be one to do list prefab here, confirming its "+ ToDoListPrefabs.Length);
-        // //should print ToDoLevel1 
-        // print("seeing if to do list prefabs [scenelist]is not null, its "+ ToDoListPrefabs[sceneList]);
-
-        Debug.Log($"toDoListData is null: {toDoListData == null}");
-        if (toDoListData != null)
+        if (data != null)
         {
-            Debug.Log($"Array length: {toDoListData.ToDoListPrefabs.Length}");
-            Debug.Log($"Element 0 is null: {toDoListData.ToDoListPrefabs[0] == null}");
-        }
-
-        if (sceneList < toDoListData.ToDoListPrefabs.Length && toDoListData.ToDoListPrefabs[sceneList] != null)
-        {
-        currentList = Instantiate(toDoListData.ToDoListPrefabs[sceneList], journal.transform);
-        currentList.transform.localPosition = new Vector3(-214, 65, 0);
-        print("Spawned: " + currentList.name);
+            currentList = Instantiate(data, journal.transform);
+            currentList.transform.localPosition = new Vector3(-214, 65, 0);
+            print("Spawned: " + currentList.name);
         }
         else
         {
-        Debug.LogError($"Prefab at index {sceneList} is null or out of range!", this);
+         Debug.LogError($"Prefab at index {sceneList} is null or out of range!", this);
         }
-       
-        // if (sceneList < ToDoListPrefabs.Length && ToDoListPrefabs[sceneList] != null)
-        // {
-        //     print("trying to instantiate current list "+ ToDoListPrefabs[sceneList]);
-        //     currentList = Instantiate(ToDoListPrefabs[sceneList], journal.transform);
-        //     currentList.transform.localPosition = new Vector3(-214,65, 0);
-        //     print("Spawned: " + currentList.name + " | Parent: " + currentList.transform.parent.name + " | Active: " + currentList.activeSelf);
-        // }
     }
+
+    // private void SpawnList()
+    // {
+    //     //this should be called by scenetrackersingleton, sending over the scene todoitem
+
+
+    //     // Debug.Log($"toDoListData is null: {toDoListData == null}");
+    //     // if (toDoListData != null)
+    //     // {
+    //     //     Debug.Log($"Array length: {toDoListData.ToDoListPrefabs.Length}");
+    //     //     Debug.Log($"Element 0 is null: {toDoListData.ToDoListPrefabs[0] == null}");
+    //     // }
+
+    //     if (sceneList < toDoListData.ToDoListPrefabs.Length && toDoListData.ToDoListPrefabs[sceneList] != null)
+    //     {
+    //     currentList = Instantiate(toDoListData.ToDoListPrefabs[sceneList], journal.transform);
+    //     currentList.transform.localPosition = new Vector3(-214, 65, 0);
+    //     print("Spawned: " + currentList.name);
+    //     }
+    //     else
+    //     {
+    //     Debug.LogError($"Prefab at index {sceneList} is null or out of range!", this);
+    //     }
+       
+    //     // if (sceneList < ToDoListPrefabs.Length && ToDoListPrefabs[sceneList] != null)
+    //     // {
+    //     //     print("trying to instantiate current list "+ ToDoListPrefabs[sceneList]);
+    //     //     currentList = Instantiate(ToDoListPrefabs[sceneList], journal.transform);
+    //     //     currentList.transform.localPosition = new Vector3(-214,65, 0);
+    //     //     print("Spawned: " + currentList.name + " | Parent: " + currentList.transform.parent.name + " | Active: " + currentList.activeSelf);
+    //     // }
+    // }
 
     public void SetState(States newstate)
     {
@@ -104,7 +112,7 @@ public class NewJournalSave : MonoBehaviour
     {
         print("setting journal state to GAS STATION");
         
-        SpawnList();
+        //SpawnList();
 
         if (inventoryObject != null)
             inventoryObject.SetActive(false);

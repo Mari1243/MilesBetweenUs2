@@ -231,12 +231,14 @@ public class UIManager : MonoBehaviour
     {
         if (stealcheck == true)
         {
+            print("setting stealing canvas active in uimanager");
             StealingCanvas.SetActive(true);
 
         }
         else
         {
             StealingCanvas.SetActive(false);
+             print("setting stealing canvas FALSE in uimanager");
         }
     }
 
@@ -255,6 +257,7 @@ public class UIManager : MonoBehaviour
         progressbar.fillAmount = 0;
         progressbar.enabled = false;
         StealingCanvas.SetActive(false);
+        print("hidign stealing canvas");
         DialogueManager.instance.StopDialogue();
     }
 

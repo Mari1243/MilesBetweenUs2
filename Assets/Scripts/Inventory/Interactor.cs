@@ -193,6 +193,7 @@ public class Interactor : MonoBehaviour
             if (isInStealingConfirmMode)
             {
                 StartCoroutine(FailedStealing());
+                print("failed stealing coroutine");
             }
             
             canInteract = false;

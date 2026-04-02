@@ -88,6 +88,8 @@ public class DialogueManager : MonoBehaviour
     public void TalkInteraction(Item itemdata) //enables cutscene 
     {
         Debug.Log("Talking rn" + itemdata.name);
+        print("position is " + itemdata.diagPos);
+        print("gonna play node "+ itemdata.node);
         
         dialoguePos.transform.localPosition = itemdata.diagPos;
         LoadDialog(itemdata.node);

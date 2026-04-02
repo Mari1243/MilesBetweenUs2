@@ -53,9 +53,12 @@ public class ToDoManager : MonoBehaviour
 
     public void CollectedLoreItem(Item item)
     {
-        print("this to do manager is activated and detected on "+ this.gameObject.name);
-        foreach (var col in Collectables)
+        //added april 2nd
+        if(Collectables.Length != 0)
         {
+            print("this to do manager is activated and detected on "+ this.gameObject.name);
+            foreach (var col in Collectables)
+            {
             print(col.name);
             print(item.itemName);
             if (col.name == item.itemName)
@@ -63,6 +66,7 @@ public class ToDoManager : MonoBehaviour
                 TextMeshProUGUI txt = col.GetComponentInChildren<TextMeshProUGUI>();
                 txt.text = item.itemName;
                 col.transform.GetChild(0).gameObject.SetActive(false);
+            }
             }
         }
     }

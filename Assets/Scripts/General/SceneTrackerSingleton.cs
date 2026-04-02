@@ -14,6 +14,8 @@ public class SceneTrackerSingleton : MonoBehaviour
     public string PreviousSceneName { get; private set; }
 
     public List<SceneScriptables> scenes = new List<SceneScriptables>();
+    private SceneScriptables currentscene;
+    private GameObject ToDoListPrefab;
 
     private string currentscenename;
 
@@ -22,7 +24,7 @@ public class SceneTrackerSingleton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
      void Awake()
     {
-        
+
         // Singleton pattern
         if (Instance == null)
         {
@@ -57,6 +59,8 @@ public class SceneTrackerSingleton : MonoBehaviour
             if(scenename == currentscenename)
             {
                 print("found current scene in list");
+                currentscene = scene;
+                //setting to car if true or false if not
                 bool iscar = scene.iscar;
                 changestate(iscar);
             }
@@ -76,6 +80,14 @@ public class SceneTrackerSingleton : MonoBehaviour
         else
         {
             NewJournalSave.instance.SetState(NewJournalSave.States.Gasstation);
+            //spawn list
+            //getting scenescriptable
+            if (currentscene.ToDoList != null)
+            {
+                print("setting todolist and beginning spawn between scenetracker and new journal save");
+                ToDoListPrefab = currentscene.ToDoList;
+                NewJournalSave.instance.newspawnlist(ToDoListPrefab);
+            }
         }
        
     }
@@ -86,6 +98,7 @@ public class SceneTrackerSingleton : MonoBehaviour
         // Update previous scene before changing current
         PreviousSceneName = CurrentSceneName;
         CurrentSceneName = scene.name;
+     
         onSceneName?.Invoke(PreviousSceneName);
         Debug.Log($"Scene changed: {PreviousSceneName} -> {CurrentSceneName}");
         settingstate();
