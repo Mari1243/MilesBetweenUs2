@@ -6607,7 +6607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033fbc3c06d50cb43a3eb3233fa8d6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCutScene: {fileID: 11400000, guid: 455f974f9b75145439d1ab1604c5cac5, type: 2}
+  startCutScene: {fileID: 11400000, guid: 26d01d326b694416082f39e7843df554, type: 2}
   bro: {fileID: 348741762}
   car: {fileID: 1767020684}
 --- !u!114 &1013245663

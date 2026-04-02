@@ -5,8 +5,10 @@ This is an example of a Yarn Spinner script. Write your dialogue here!
 
 title: IntroCutSceneSchool
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
 <<cameraIndex 1>>
+
+This is an example of a Yarn Spinner script. Write your dialogue here!
+<<cameraIndex 0>>
 ===
 
 
