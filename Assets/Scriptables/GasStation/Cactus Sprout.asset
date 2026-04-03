@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5ca27fd2861bf640ad653064e610ac7, type: 3}
-  m_Name: FamilyPhoto
+  m_Name: Cactus Sprout
   m_EditorClassIdentifier: 
-  img: {fileID: -90815176, guid: 9ed21fe3d37ce744ba8bc0cb3414c108, type: 3}
-  itemName: A Family Photo!
-  loreItem: 0
+  img: {fileID: -1771050167, guid: 760e2dabd35ebee4f92aab0313e32aa4, type: 3}
+  itemName: Cactus Sprout
+  loreItem: 1
   node: 
   diagPos: {x: 0, y: 0, z: 0}
