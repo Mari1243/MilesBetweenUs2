@@ -24,7 +24,7 @@ public class interactable : MonoBehaviour, IInteractable
     public static event Action onInteract;
 
     public static event Action onMap;
-
+    public static event Action onEND;
 
     public void Interact()
     {
@@ -44,8 +44,8 @@ public class interactable : MonoBehaviour, IInteractable
                 {
                     gameObject.transform.GetComponent<Outline>().enabled = false;
                 }
-
-                if (SceneManager.GetActiveScene().name == "GasStation" ||SceneManager.GetActiveScene().name == "DragonLand" ) //CHANGE IN FUTURE TO DETECT GAME STATES SO NOT SCENE NAME DEPENDENT
+                //why dis,,, what dis do....
+                if (SceneManager.GetActiveScene().name == "GasStation" ||SceneManager.GetActiveScene().name == "DragonLand" || SceneManager.GetActiveScene().name == "School") //CHANGE IN FUTURE TO DETECT GAME STATES SO NOT SCENE NAME DEPENDENT
                 {
                     onTalk?.Invoke(item); //called in DialogueManager
                 
@@ -80,6 +80,9 @@ public class interactable : MonoBehaviour, IInteractable
             case "Map":
                 onMap?.Invoke(); //called in Introscenemanager
                 Destroy(gameObject);
+                break;
+            case "END":
+                onEND?.Invoke(); //called in schoolmanager
                 break;
                 
         }

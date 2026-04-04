@@ -26,12 +26,9 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<int>("cameraIndex", OnCamChange);
         dialogueRunner.AddCommandHandler<string>("changeScene", OnChangeScene);
         dialogueRunner.AddCommandHandler<string>("startAction", OnStartAction);
-        
 
-        
     }
-
-   
+ 
     void OnCamChange(int cam)
     {
         if (currentCam != null)
@@ -71,12 +68,17 @@ public class DialogueCommands : MonoBehaviour
                 Debug.Log("Inventory has this item: " + item.itemData.itemName);
                 if (item.itemData.itemName == "Snacks") //name specific 
                 {
-                    Debug.Log("Found!");
                     yarnVariables.SetValue("$hasSnacks", true);
                 }
                 else if (item.itemData.itemName == "Lollipop") //name specific 
                 {
                     yarnVariables.SetValue("$hasPostcard", true);
+
+                }
+                else if (item.itemData.itemName == "Jacket Patch") //name specific 
+                {
+                    print("found jacket patch");
+                    yarnVariables.SetValue("$didDragonLandThing", true);
 
                 }
             }
