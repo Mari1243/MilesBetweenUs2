@@ -253,7 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warningDuration: 1
-  pickupUI: {fileID: 2286637174487126277, guid: af13243986cb0412dad16503199b2a16, type: 3}
+  pickupUi: {fileID: 2286637174487126277, guid: af13243986cb0412dad16503199b2a16, type: 3}
+  pickupUIVariants: {fileID: 0}
   fillSpeedPickup: 0.7
   fillSpeedSteal: 0.2
   drainSpeed: 0.2
@@ -309,7 +310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4720682911728995482
 RectTransform:
   m_ObjectHideFlags: 0

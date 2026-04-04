@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using DG.Tweening;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 
 public class Interactor : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Interactor : MonoBehaviour
 
 
     [Header("Pickup References")]
-        public GameObject pickupUI;
+        public GameObject pickupUi;
         [SerializeField] private PickupUIVariants pickupUIVariants;
         private GameObject instantiatedUI;
         private GameObject pickedUpObj;
@@ -117,15 +118,7 @@ public class Interactor : MonoBehaviour
             if (highlight.gameObject.GetComponent<Outline>() != null)
             {
                 highlight.gameObject.GetComponent<Outline>().enabled = true;
-                
-                if(other.gameObject.tag == "canSteal")
-                {
-                    SpawnPickupUI(true);
-                }
-                else
-                {
-                    SpawnPickupUI(false);
-                }
+                checkstate(other.gameObject);
             }
             else
             {
@@ -133,30 +126,37 @@ public class Interactor : MonoBehaviour
                 outline.enabled = true;
                 outline.OutlineColor = Color.white;
                 outline.OutlineWidth = 7.0f;
-                if (other.gameObject.tag == "canSteal")
-                {
-                    SpawnPickupUI(true);
-                }
-                else
-                {
-                    SpawnPickupUI(false);
-                }
+                checkstate(other.gameObject);
             }
         }
     }
 
-    private void SpawnPickupUI(bool stealable)
+    private void checkstate(GameObject other)
+    {
+        print("checking state");
+        if (other.tag == "canSteal")
+        {
+            SpawnPickupUI("canSteal");
+        }
+        else if (other.tag == "END")
+        {
+            SpawnPickupUI("END");
+        }
+        else
+        {
+             SpawnPickupUI("canInteract");
+         }
+    }
+
+    private void SpawnPickupUI(string str)
     {
         DestroyPickupUI();
         Vector3 spawnPosition = new Vector3(0, 1f, .5f);
-        instantiatedUI = Instantiate(pickupUI, this.transform);
+        instantiatedUI = Instantiate(pickupUi, this.transform);
         instantiatedUI.transform.localPosition = spawnPosition;
 
-        if (stealable)
-        {
-            PickupUIVariants pickupUI = instantiatedUI.GetComponent<PickupUIVariants>();
-            pickupUI.ChangeUI(stealable);
-        }
+        PickupUIVariants pickupUI = instantiatedUI.GetComponent<PickupUIVariants>();
+        pickupUI.ChangeUI(str);
     }
     public void DestroyPickupUI()
     {

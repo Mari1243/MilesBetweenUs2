@@ -19,6 +19,7 @@ TagManager:
   - InventoryItem
   - coin
   - Map
+  - END
   layers:
   - Default
   - TransparentFX

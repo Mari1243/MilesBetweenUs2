@@ -29311,6 +29311,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1618742477388477251, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
+      propertyPath: pickupUi
+      value: 
+      objectReference: {fileID: 2286637174487126277, guid: af13243986cb0412dad16503199b2a16, type: 3}
     - target: {fileID: 1779065774503811971, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_Layer
       value: 10
