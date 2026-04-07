@@ -75,11 +75,11 @@ public class SceneTrackerSingleton : MonoBehaviour
             //this is to change the start node for which car scene ur in!
             carnum++;
             changeStartNode(carnum);
-            NewJournalSave.instance.SetState(NewJournalSave.States.Car);
+            NewJournalSave.instance.SetState(States.Car);
         }
         else
         {
-            NewJournalSave.instance.SetState(NewJournalSave.States.Gasstation);
+            NewJournalSave.instance.SetState(States.Gasstation);
             //spawn list
             //getting scenescriptable
             if (currentscene.ToDoList != null)

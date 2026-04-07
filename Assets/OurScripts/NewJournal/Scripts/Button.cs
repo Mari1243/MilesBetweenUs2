@@ -1,7 +1,7 @@
 using BookCurlPro;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class button : MonoBehaviour
 {
     public int pageIndex;
     public BookPro book;

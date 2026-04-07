@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using System.Numerics;
 
 public class ToggleJournal : MonoBehaviour
 {
@@ -13,16 +15,24 @@ public class ToggleJournal : MonoBehaviour
     [SerializeField]public static bool journalopen = false;
     [SerializeField]public bool canOpen = false;
     private Canvas canvas;
+    public UnityEngine.UI.Button xbutton;
+    private UnityEngine.Vector3 oldPos;
+    private GameObject journalContents;
    
     [Header("Public References")]
     private CinemachineInputAxisController playerCam;
     private ThirdPersonMovement playerMovement;
+
+    private NewJournalSave jouralstatesystem;
      
     private void Awake()
     {
 
         canvas = this.GetComponent<Canvas>();
         canvas.enabled = false;
+        journalContents = this.transform.GetChild(0).gameObject;
+        oldPos = journalContents.transform.position;
+        jouralstatesystem = this.GetComponent<NewJournalSave>();
 
 
     }
@@ -87,6 +97,7 @@ public class ToggleJournal : MonoBehaviour
         {
             if(!journalopen&&canOpen)
             {
+                print("journal isnt open and it can open so were enabling it");
                 canvas.enabled = true;
                 DOTween.Restart("animateIn"); 
                 DOTween.Play ("animateIn");
@@ -99,6 +110,7 @@ public class ToggleJournal : MonoBehaviour
             }
             else
             {
+                print("journal is either open or cant open so this disables it");
                 canvas.enabled = false;
 
                 DOTween.Restart("animateOut"); 
@@ -113,9 +125,26 @@ public class ToggleJournal : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            print("canvas is null");
+        }
     }
    
+    public void animateOpen()
+    {
+        //this is only ever called once to open the journal in a different way at the end of the game!
+        journalContents.transform.position = new UnityEngine.Vector3(oldPos.x, oldPos.y + 2800, 0);
+        print("the active pos is " + oldPos);
 
+        print("animating open");
+        xbutton.gameObject.SetActive(false);
+        canvas.enabled = true;
+        journalopen = true;
+
+        //here ill change the journal state to car temporarily
+        jouralstatesystem.SetState(States.Car);
+    }
  
 
    public void disablePlayer() //THIRD PERSON

@@ -65,6 +65,7 @@ public class StealableItemBehavior : MonoBehaviour
     {
         //gameObject.transform.DOLocalMoveY(-2, 1f);
         Debug.Log("Dropping");
+        
     }
    
 }

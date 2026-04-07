@@ -4,6 +4,13 @@ using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Collections;
 
+
+    public enum States
+    {
+        Gasstation,
+        Car,
+    }
+
 public class NewJournalSave : MonoBehaviour
 {
     // public static event System.Action<bool> ChangeJournal;
@@ -21,11 +28,7 @@ public class NewJournalSave : MonoBehaviour
 
     public GameObject inventoryObject;
 
-    public enum States
-    {
-        Gasstation,
-        Car,
-    }
+
 
     //for spawning stuff in journal
     public GameObject DraggableItemPrefab;
@@ -50,6 +53,17 @@ public class NewJournalSave : MonoBehaviour
         currentInventory = InventoryManager.instance.inventory;
     }
 
+         private void OnEnable()
+    {
+        InventoryManager.AddedItem += CollectedLoreItem;
+
+    }
+    private void OnDisable()
+    {
+        InventoryManager.AddedItem -= CollectedLoreItem;
+
+    }
+
     public void newspawnlist(GameObject data)
     {
         if (data != null)
@@ -62,6 +76,10 @@ public class NewJournalSave : MonoBehaviour
         {
          Debug.LogError($"Prefab at index {sceneList} is null or out of range!", this);
         }
+    }
+    private void CollectedLoreItem(Item item)
+    {
+        
     }
 
     // private void SpawnList()

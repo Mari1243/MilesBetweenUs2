@@ -193,7 +193,7 @@ public class Interactor : MonoBehaviour
             if (isInStealingConfirmMode)
             {
                 StartCoroutine(FailedStealing());
-                print("failed stealing coroutine");
+                print("on trigger exit stopped stealing??");
             }
             
             canInteract = false;
@@ -203,7 +203,6 @@ public class Interactor : MonoBehaviour
     private IEnumerator FailedStealing()
     {
         print("failing stealing");
-        StealStep?.Invoke(3);
         yield return new WaitForSeconds(1f);
         
         if (StealingManager.Instance != null)
@@ -315,6 +314,7 @@ public class Interactor : MonoBehaviour
                     if (Time.time - warningStartTime >= warningDuration)
                     {
                         inputActions["Interacted"].Disable();
+                        StealStep?.Invoke(3);
                         StartCoroutine(FailedStealing());
                         StopHoldRoutine();
                         warningStartTime = -999f;
@@ -360,7 +360,8 @@ public class Interactor : MonoBehaviour
                 
                 StopHoldRoutine();
                 OnHoldCanceled?.Invoke();
-                
+                StealStep?.Invoke(4);
+                CleanupAfterInteraction();
                 if (hasStartedStealing || isInStealingConfirmMode)
                 {
                     if (StealingManager.Instance != null)
@@ -369,7 +370,7 @@ public class Interactor : MonoBehaviour
                     }
                     hasStartedStealing = false;
                     isInStealingConfirmMode = false;
-                    StealStep?.Invoke(4);
+                    
                 }
 
                 yield break;
@@ -413,6 +414,8 @@ public class Interactor : MonoBehaviour
         holdDirection = 0;
         canInteract = false;
         highlight = null;
+        print("clean up after interaction");
+        StealStep?.Invoke(6);
     }
 
     private void CheckState(StealingManager.DangerState newState)

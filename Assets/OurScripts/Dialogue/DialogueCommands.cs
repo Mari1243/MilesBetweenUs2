@@ -13,6 +13,8 @@ public class DialogueCommands : MonoBehaviour
     public static UnityAction<int> currentCam; //change camera position 
     public static UnityAction<string> scenename;
 
+    public static UnityAction diaopenJournal;
+
     public static UnityAction<string> startAction;
     [Header("Inventory")]
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
@@ -26,6 +28,8 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<int>("cameraIndex", OnCamChange);
         dialogueRunner.AddCommandHandler<string>("changeScene", OnChangeScene);
         dialogueRunner.AddCommandHandler<string>("startAction", OnStartAction);
+        dialogueRunner.AddCommandHandler<bool>("openJournal", OnJournalOpen);
+
 
     }
  
@@ -34,6 +38,18 @@ public class DialogueCommands : MonoBehaviour
         if (currentCam != null)
             currentCam(cam);
 
+    }
+     void OnJournalOpen(bool bol)
+    {
+        if (bol)
+        {
+            print("opening journal in dialogue comamnds");
+            diaopenJournal?.Invoke();
+        }
+        else
+        {
+            print("uhh no true??");
+        }
     }
     void OnChangeScene(string scene)
     {

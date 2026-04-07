@@ -90,6 +90,10 @@ private bool hasExecuted = false;
                 StartCoroutine(instructions("successfullyStole"));
                 firstTimeSteal = false;
             }
+             else if(stage == 6)
+            {
+                StartCoroutine(endDialogue());
+            }
           
         }
         return;
@@ -104,6 +108,14 @@ private bool hasExecuted = false;
         yield return new WaitForSeconds(.3f);
         DialogueManager.tutorialInstance.LoadDialog(instruction);
         DialogueManager.tutorialInstance.StartDialog();
+    }
+
+    private IEnumerator endDialogue()
+    {
+        yield return new WaitForSeconds (5f);
+        print("disappearing dialogue");
+        diaRun.Stop();
+
     }
 
 

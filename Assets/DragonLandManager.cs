@@ -62,8 +62,6 @@ public class DragonLandManager : MonoBehaviour
                 }
             }
         }
-
-        
     }
     //not totally sure how this works
     // public void StartAction(string action)

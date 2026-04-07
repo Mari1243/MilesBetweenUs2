@@ -68,7 +68,7 @@ public class StealingManager : MonoBehaviour
         if (cycleRoutine != null)
             StopCoroutine(cycleRoutine);
         OnStealingActionChanged?.Invoke(false);
-        //StartCoroutine(CamChange());
+        
     }
 
 

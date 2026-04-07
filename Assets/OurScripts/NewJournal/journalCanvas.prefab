@@ -2783,6 +2783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canOpen: 0
+  xbutton: {fileID: 8798144423261181708}
 --- !u!114 &8502000836159243437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3874,7 +3875,7 @@ MonoBehaviour:
   loops: 1
   id: animateIn
   isRelative: 1
-  isFrom: 0
+  isFrom: 1
   isIndependentUpdate: 1
   autoKill: 0
   autoGenerate: 1
@@ -3887,7 +3888,7 @@ MonoBehaviour:
   autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
-  endValueV3: {x: 0, y: 2800, z: 0}
+  endValueV3: {x: 0, y: -2800, z: 0}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
@@ -3992,7 +3993,7 @@ MonoBehaviour:
   animationType: 1
   targetType: 11
   forcedTargetType: 0
-  autoPlay: 1
+  autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
   endValueV3: {x: 0, y: -2800, z: 0}

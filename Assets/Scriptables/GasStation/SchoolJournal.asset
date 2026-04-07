@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5ca27fd2861bf640ad653064e610ac7, type: 3}
-  m_Name: Car3
+  m_Name: SchoolJournal
   m_EditorClassIdentifier: 
   img: {fileID: 0}
-  itemName: 
+  itemName: Journal
   loreItem: 0
-  node: BroCutsceneSchool
-  diagPos: {x: 75.86, y: 5.54, z: -63.92}
+  node: EndDialogue2
+  diagPos: {x: 0, y: 0, z: 0}

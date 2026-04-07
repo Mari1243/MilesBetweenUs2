@@ -36,11 +36,11 @@ public class SceneTracker : MonoBehaviour
         print("tring to change state bc is car is "+ iscar);
         if(iscar == true)
         {
-            NewJournalSave.instance.SetState(NewJournalSave.States.Car);
+            NewJournalSave.instance.SetState(States.Car);
         }
         else
         {
-             NewJournalSave.instance.SetState(NewJournalSave.States.Gasstation);
+             NewJournalSave.instance.SetState(States.Gasstation);
         }
        
     }
