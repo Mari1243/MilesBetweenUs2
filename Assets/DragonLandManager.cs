@@ -42,7 +42,7 @@ public class DragonLandManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-        public void checkconditions(List<InventoryItem> list)
+    public void checkconditions(List<InventoryItem> list)
     {
         if (!completedAllObjectives)
         {

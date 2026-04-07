@@ -6,7 +6,9 @@ This is an example of a Yarn Spinner script. Write your dialogue here!
 title: IntroCutSceneSchool
 ---
 <<cameraIndex 1>>
-holy fuc we hereee
+Brother: Wow we finally made it
+Brother: Would you mind grabbing me a map or something?
+Brother: Those frat dudes look like they know their way around.
 <<cameraIndex 0>>
 ===
 
@@ -43,6 +45,13 @@ title: Lore1
 <<cameraIndex 4>>
 special item!
 <<cameraIndex 3>>
+===
+
+title: FratBros1
+---
+<<cameraIndex 3>>
+Frat Dude: yo hey im a frat duuuuude
+<<cameraIndex 0>>
 ===
 
 
