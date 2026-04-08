@@ -13,8 +13,25 @@ title: Car3
 ---
 <<cameraIndex 1>>
 
+<<if $didDragonLandThing == true>>
 Brother: Done already? 
 Brother: Alright let's head out then
-<<cameraIndex 0>>
 <<changeScene Car>>
+
+<<else>>
+    <<jump BrotherAgainn>>
+<<endif>>
+<<cameraIndex 0>>
 ===
+
+title: BrotherAgainn
+tags:
+---
+<<cameraIndex 1>>
+
+Brother: I need to stretch my legs for a bit
+Brother: Make yourself busy and play in the dirt or something
+
+<<cameraIndex 0>>
+===
+

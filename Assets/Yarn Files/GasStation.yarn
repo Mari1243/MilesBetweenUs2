@@ -6,7 +6,7 @@ tags:
 
 
 <<if visited("KidNoPost")>>
-Kids: WAIIIIIII!!!!@!!1
+Kids: WAIIIIIIIT!!!
 Kids: If you're gonna take something,
 Kids: Get a lollipop for us wouldja?
 <<startAction StartkidQuest>>

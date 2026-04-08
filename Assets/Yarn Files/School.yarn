@@ -1,0 +1,59 @@
+﻿title: School
+---
+This is an example of a Yarn Spinner script. Write your dialogue here!
+===
+
+title: IntroCutSceneSchool
+---
+<<cameraIndex 1>>
+Brother: Wow we finally made it
+Brother: Would you mind grabbing me a map or something?
+Brother: Those frat dudes look like they know their way around.
+<<cameraIndex 0>>
+===
+
+title: BroCutsceneSchool
+---
+<<cameraIndex 1>>
+holy fuc we hereee
+<<cameraIndex 0>>
+===
+
+
+title: EndDialogue1
+---
+<<cameraIndex 2>>
+I should go through stuff before I give it to Max
+    -> Finish journal
+        <<cameraIndex 3>>
+    -> Not Yet
+        <<cameraIndex 0>>
+
+===
+
+title: EndDialogue2
+---
+<<openJournal true>>
+<<cameraIndex 3>>
+Brother: hey you have something to show me?
+Brother: Is that your journal?
+
+===
+
+title: Lore1
+---
+<<cameraIndex 4>>
+special item!
+<<cameraIndex 3>>
+===
+
+title: FratBros1
+---
+<<cameraIndex 3>>
+Frat Dude: yo hey im a frat duuuuude
+<<cameraIndex 0>>
+===
+
+
+
+

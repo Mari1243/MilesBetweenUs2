@@ -115,3 +115,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSprite: {fileID: 21300000, guid: 8f40c4be877924e9b88e8b7f9880edb5, type: 3}
   stealSprite: {fileID: 21300000, guid: 465221827f2be7646b34ae9214246d14, type: 3}
+  endSprite: {fileID: 21300000, guid: 4e958ef289bafd24cb44fd148089bb6f, type: 3}
