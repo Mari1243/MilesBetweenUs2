@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using MaskTransitions;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class SchoolManager : MonoBehaviour
 {
@@ -122,6 +125,27 @@ public class SchoolManager : MonoBehaviour
         print("toggle is "+ journalToggle.gameObject);
         //open journal in car state (without x button)
         physicalJournal.SetActive(false);
+    }
+   
+    public void endCutScene()
+
+    {
+        StartCoroutine(endingScene());
+    }
+
+
+     IEnumerator endingScene()
+    {
+        TransitionManager.Instance.PlayStartHalfTransition(1f, .2f);
+        yield return new WaitForSeconds(1f);
+
+        ChangeCamera.instance.changeCamera(2);
+
+        TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
+
+        this.triggerIntroCutscene();
+
+        
     }
 
 
