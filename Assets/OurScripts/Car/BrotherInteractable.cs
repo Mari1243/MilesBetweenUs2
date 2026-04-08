@@ -101,6 +101,7 @@ public class BrotherInteractable : MonoBehaviour
 
     public void loreDropping(string node)
     {
+        print("loredropping in broter interactable "+ newItem.name);
         newItem.node = node; //change the node in the scriptable obj 
         DialogueManager.instance.TalkInteraction(newItem);
     }

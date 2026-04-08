@@ -94,12 +94,17 @@ public class SchoolManager : MonoBehaviour
     private IEnumerator endanimation()
     {
         yield return wait;
+        ChangeCamera.instance.changeCamera(3);
+        print("triggering journal open");
+        yield return wait;
+        openjournal();
+
         //call a cutscene cam3 here
         //trigger dialogue with bro
-        DialogueManager.tutorialInstance.LoadDialog("EndDialogue1");
-        DialogueManager.tutorialInstance.StartDialog();
+        //DialogueManager.tutorialInstance.LoadDialog("EndDialogue1");
+        //DialogueManager.tutorialInstance.StartDialog();
         //show journal object
-        physicalJournal.SetActive(true);
+        //physicalJournal.SetActive(true);
        
         // if (DialogueManager.DialogStart != null)
         // {
