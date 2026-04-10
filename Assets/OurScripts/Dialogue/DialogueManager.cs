@@ -83,6 +83,8 @@ public class DialogueManager : MonoBehaviour
     }
     public void OnDialogOver()
     {
+        print("calling dialogue over");
+        print("the journal state (ToggleJournal.journalopen) is now "+ ToggleJournal.journalopen);
         if (DialogStart != null)
             DialogOver();
 
@@ -106,5 +108,6 @@ public class DialogueManager : MonoBehaviour
     public void StopDialogue()
     {
         dialogueRunner.Stop();
+      
     }
 }

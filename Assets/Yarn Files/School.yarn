@@ -43,6 +43,7 @@ title: Lore1
 ---
 <<cameraIndex 4>>
 special item!
+<<openJournal true>>
 <<cameraIndex 3>>
 ===
 
