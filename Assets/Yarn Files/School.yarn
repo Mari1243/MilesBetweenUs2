@@ -37,13 +37,13 @@ title: EndDialogue2
 <<cameraIndex 3>>
 Brother: hey you have something to show me?
 Brother: Is that your journal?
-
 ===
 
 title: Lore1
 ---
 <<cameraIndex 4>>
 special item!
+<<openJournal true>>
 <<cameraIndex 3>>
 ===
 

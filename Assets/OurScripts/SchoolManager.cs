@@ -18,6 +18,8 @@ public class SchoolManager : MonoBehaviour
     public int allobjectives = 1;
     private int completedobjectives = 0;
 
+    private ToggleJournal journalToggle;
+
 
     //for intro
     public Item startCutScene;
@@ -58,8 +60,10 @@ public class SchoolManager : MonoBehaviour
         if (!hasPlayed)
         {
             hasPlayed = true;
-            print("game over yayyyy");
+            //print("game over yayyyy");
             StartCoroutine(endanimation());
+            //finding and assigning journal
+            journalToggle = Object.FindAnyObjectByType<ToggleJournal>();
         }
     } 
 
@@ -94,38 +98,22 @@ public class SchoolManager : MonoBehaviour
     private IEnumerator endanimation()
     {
         yield return wait;
-        //call a cutscene cam3 here
-        //trigger dialogue with bro
-        DialogueManager.tutorialInstance.LoadDialog("EndDialogue1");
-        DialogueManager.tutorialInstance.StartDialog();
-        //show journal object
-        physicalJournal.SetActive(true);
-       
-        // if (DialogueManager.DialogStart != null)
-        // {
-        //     diaRun.Stop();
-        //     print("turning dialogue off, dialogstart is now "+ DialogueManager.DialogStart);
-        // }
+        ChangeCamera.instance.changeCamera(3);
+        //print("triggering journal open");
+        yield return wait;
+
+        journalToggle.animateOpen();
+        //print("toggle is "+ journalToggle.gameObject);
+        //open journal in car state (without x button)
+        physicalJournal.SetActive(false);
+        
     }
 
     private void openjournal()
     {
-        StartCoroutine(slowjournalopen());
-
+        //this should happen for opening the journal when youve talked to the bro
+        journalToggle.Open();
     } 
-
-    private IEnumerator slowjournalopen()
-    {
-        yield return new WaitForSeconds (2.5f);
-                print("OPEENING JOURNALLLL");
-         //make clickable to open and edit
-        ToggleJournal journalToggle = Object.FindAnyObjectByType<ToggleJournal>();
-
-        journalToggle.animateOpen();
-        print("toggle is "+ journalToggle.gameObject);
-        //open journal in car state (without x button)
-        physicalJournal.SetActive(false);
-    }
    
     public void endCutScene()
 
