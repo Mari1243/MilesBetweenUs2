@@ -15,5 +15,5 @@ MonoBehaviour:
   img: {fileID: 0}
   itemName: 
   loreItem: 0
-  node: 
-  diagPos: {x: 0, y: 0, z: 0}
+  node: Mouse
+  diagPos: {x: 58.94, y: 5.65, z: 19.26}
