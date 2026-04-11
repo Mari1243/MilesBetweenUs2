@@ -4,4 +4,5 @@ tags:
 <<declare $hasSnacks = false>>
 <<declare $hasPostcard=false>>
 <<declare $giveReward = false>>
+<<declare $hasID = false>>
 ===

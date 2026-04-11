@@ -8,7 +8,7 @@ public class SceneTrackerSingleton : MonoBehaviour
 {
     public static SceneTrackerSingleton Instance { get; private set; }
 
-    private int carnum = 0;
+    public int carnum = 0;
 
     public static string CurrentSceneName { get; private set; }
     public string PreviousSceneName { get; private set; }
@@ -74,7 +74,6 @@ public class SceneTrackerSingleton : MonoBehaviour
         {
             //this is to change the start node for which car scene ur in!
             carnum++;
-            changeStartNode(carnum);
             NewJournalSave.instance.SetState(States.Car);
         }
         else
@@ -113,17 +112,5 @@ public class SceneTrackerSingleton : MonoBehaviour
         }
     }
 
-    private void changeStartNode(int carnum)
-    {
-        if(carnum == 0)
-        {
-            
-        }
-         if(carnum == 3)
-        {
-            print("carnum is 3");
-        }
-    }
-
-    
+   
 }

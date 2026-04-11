@@ -1,4 +1,4 @@
-title: IntroCutScene
+﻿title: IntroCutScene
 ---
 <<cameraIndex 1>>
 
@@ -35,3 +35,130 @@ Brother: Make yourself busy and play in the dirt or something
 <<cameraIndex 0>>
 ===
 
+
+title: DragonLady
+tags:
+---
+<<cameraIndex 2>>
+
+Welcome to Dino- I mean DragonLand!
+Feel free to look around 
+And let me know if you have any questions
+Or if you want any dragon facts
+<<cameraIndex 0>>
+===
+
+
+title: Rooster
+tags:
+---
+<<cameraIndex 4>>
+
+
+You see that son? That is one of our ancestors.
+We used to be one of the most powerful and feared animals.
+Woooahhh
+And we also used to be blue.
+
+<<cameraIndex 0>>
+===
+
+
+title: MouseQuest
+---
+<<cameraIndex 3>>
+<<if $hasID==true>>
+Oh.
+My.
+GOODD.
+Thank youuu soo much!!
+Literally saved my liiiife.
+Here, have this
+<<startAction mouseQuest>>
+
+<<else>>
+	<<jump Mouse1>>
+<<endif>>
+<<cameraIndex 0>>
+===
+
+
+
+title: Mouse1
+tags:
+---
+<<cameraIndex 3>>
+Ugh, what the hell!
+I can’t find my ID anywhere
+How did I lose it in a dessert? It's literally just sand.
+Oh uh hi.
+Let me know if you see an ID anywhere 
+And I’ll get you a sticker or something.
+
+<<cameraIndex 0>>
+===
+
+
+title: patch
+---
+
+How- 
+Where did you find this?
+I didn't even know Cobra had cool patches like this.
+	->I found it on a jacket
+		Oh really?
+		I wish you had shown me.
+		Who knows what other patches it might have had.
+		Maybe it was that girl's jacket?
+		Ugh nevermind.
+			->The band gave it to me themself
+				REALLY? COBRA WAS-?
+				Wait.
+				Ugh dude shut up, not funny.
+				They stopped making music years ago.
+				Me and my old band covered so many of their songs.
+				Damnit, that would have been a cool thing to tell that girl-
+				Ugh nevermind.
+
+===
+
+title: photo
+---
+Who are these people? Where did you even find this?
+	->I think its the Dragon Ladys Family
+		Dude why did you take a family photo?
+		Imagine if a random kid took one of our family photos
+		Well maybe we are not the best example
+		It�s not like we have that many of those anyways
+		But still, don't take other people's photos man.
+			->I don't know
+				Well I hope no one is gonna miss this, it looks old.
+				Eh they have probably others
+				Maybe I should have brought one with us
+				Ugh no that's waaay too cheesy for me.
+				It's not like we even have that many anyways.
+
+
+===
+
+title: plant
+---
+Brother: Woah you got one of the agave pups? 
+Bother: Nice find dude 
+Brother: I didn't see any that were small enough to take.
+Brother: I'll have to pot it up when we get to Uni.
+
+->A puppy? I thought this was a plant.
+	No, not like an actual puppy dude.
+	It�s like a baby plant.
+	They're called that because they grow near their big mother plant.
+	At least that's what my book told me.
+		->I thought the car plant could use a friend.
+			I guess so,
+			Succulents and pothos don't really go together.
+			Pothos like more tropical weather
+			And succulents like-
+			well, the dessert.
+			At least that's what my book told me.
+
+===

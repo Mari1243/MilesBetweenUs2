@@ -69,10 +69,13 @@ public class ToggleJournal : MonoBehaviour
     public void enableJournal()
     {
         canOpen = true;
+        //print("enabling journal");
     }
+    //called when you talk to bro
     public void disableJournal()
     {
         canOpen = false;
+        //print("disabling journal");
     }
 
 
@@ -83,7 +86,7 @@ public class ToggleJournal : MonoBehaviour
         journalopen = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        print("disabling journal");
+        //print("disabling journal");
         this.GetComponent<Canvas>().enabled = false;
         
         enableJournal();
@@ -91,17 +94,16 @@ public class ToggleJournal : MonoBehaviour
 
     public void journal()
     {
-        print("calling animations and journal stuff from UI manager");
-        print("asdffff");
        if(this.GetComponent<Canvas>() != null)
         {
             if(!journalopen&&canOpen)
             {
-                print("journal isnt open and it can open so were enabling it");
+                //print("journal isnt open and it can open so were enabling it");
                 canvas.enabled = true;
                 DOTween.Restart("animateIn"); 
                 DOTween.Play ("animateIn");
                 journalopen = true;
+                Cursor.lockState = CursorLockMode.None;
 
                 if (SceneManager.GetActiveScene().name != "Car")
                 {
@@ -110,7 +112,7 @@ public class ToggleJournal : MonoBehaviour
             }
             else
             {
-                print("journal is either open or cant open so this disables it");
+                //print("journal is either open or cant open so this disables it");
                 canvas.enabled = false;
 
                 DOTween.Restart("animateOut"); 
@@ -133,17 +135,17 @@ public class ToggleJournal : MonoBehaviour
    
     public void animateOpen()
     {
-        //this is only ever called once to open the journal in a different way at the end of the game!
-        journalContents.transform.position = new UnityEngine.Vector3(oldPos.x, oldPos.y + 2800, 0);
-        print("the active pos is " + oldPos);
-
-        print("animating open");
-        xbutton.gameObject.SetActive(false);
-        canvas.enabled = true;
-        journalopen = true;
-
         //here ill change the journal state to car temporarily
         jouralstatesystem.SetState(States.Car);
+        xbutton.gameObject.SetActive(false);
+        journal();
+    }
+
+    public void Open()
+    {
+        journalopen = false;
+        canOpen = true;
+        journal();
     }
  
 
