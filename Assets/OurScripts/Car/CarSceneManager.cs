@@ -50,7 +50,7 @@ public class CarSceneManager : MonoBehaviour
     {
         interactable.showJournal += JournalScene;
         interactable.onInteract += playRadio;
-        ToggleJournal.hideJournal += ExitJournal;
+        ToggleJournal.OnJournalClosed += ExitJournal;
         DialogueManager.DialogOver += ExitJournal;
 
     }
@@ -58,7 +58,7 @@ public class CarSceneManager : MonoBehaviour
     {
         interactable.showJournal -= JournalScene;
         interactable.onInteract -= playRadio;
-        ToggleJournal.hideJournal -= ExitJournal;
+        ToggleJournal.OnJournalClosed -= ExitJournal;
         DialogueManager.DialogOver -= ExitJournal;
     }
 

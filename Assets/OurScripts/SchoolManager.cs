@@ -56,15 +56,10 @@ public class SchoolManager : MonoBehaviour
 
     private void triggerEND()
     {
-        //only do once
-        if (!hasPlayed)
-        {
-            hasPlayed = true;
-            //print("game over yayyyy");
-            StartCoroutine(endanimation());
-            //finding and assigning journal
-            journalToggle = Object.FindAnyObjectByType<ToggleJournal>();
-        }
+        //print("game over yayyyy");
+        StartCoroutine(endanimation());
+        //finding and assigning journal
+        journalToggle = Object.FindAnyObjectByType<ToggleJournal>();
     } 
 
     public void checkconditions(List<InventoryItem> list)
@@ -97,22 +92,27 @@ public class SchoolManager : MonoBehaviour
 
     private IEnumerator endanimation()
     {
-        yield return wait;
-        ChangeCamera.instance.changeCamera(3);
-        //print("triggering journal open");
+        physicalJournal.SetActive(true);
         yield return wait;
 
-        journalToggle.animateOpen();
-        //print("toggle is "+ journalToggle.gameObject);
-        //open journal in car state (without x button)
-        physicalJournal.SetActive(false);
+        //this presents the option to open the journal
+        DialogueManager.tutorialInstance.LoadDialog("EndDialogue1");
+        DialogueManager.tutorialInstance.StartDialog();
+        hasPlayed = true;
         
+        //try doing this with dialogue instead
+        //journalToggle.animateOpen();
+
+        //open journal in car state (without x button)
+        //physicalJournal.SetActive(false);
     }
 
     private void openjournal()
     {
+        //be sure to set the state!!
+        journalToggle.animateOpen();
         //this should happen for opening the journal when youve talked to the bro
-        journalToggle.Open();
+        //journalToggle.Open();
     } 
    
     public void endCutScene()

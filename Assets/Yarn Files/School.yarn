@@ -26,6 +26,7 @@ title: EndDialogue1
 I should go through stuff before I give it to Max
     -> Finish journal
         <<cameraIndex 3>>
+        <<openJournal true>>
     -> Not Yet
         <<cameraIndex 0>>
 
