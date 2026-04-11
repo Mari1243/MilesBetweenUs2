@@ -8,8 +8,10 @@ public class DragonLandManager : MonoBehaviour
     public Item startCutScene;
     public GameObject bro;
     public Animator car;
+    public Item MouseReward;
+    private bool completedMouseQuest = false;
 
-    
+
 
     //for to do list
     [SerializeField]private bool completedAllObjectives;
@@ -65,19 +67,24 @@ public class DragonLandManager : MonoBehaviour
             }
         }
     }
-     public void StartAction(string action)
+    public void StartAction(string action)
     {
 
         switch (action)
         {
-            case "StartbroQuest":
-                journalNotif?.Invoke();
-
+            case "mouseQuest":
+                if (!completedMouseQuest)
+                {
+                    InventoryManager.instance.Add(MouseReward);
+                    completedMouseQuest = true;
+                }
                 break;
+
 
 
         }
     }
+}
 
 
 }
