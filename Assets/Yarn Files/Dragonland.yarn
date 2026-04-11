@@ -39,7 +39,7 @@ Brother: Make yourself busy and play in the dirt or something
 title: DragonLady
 tags:
 ---
-<<cameraIndex 1>>
+<<cameraIndex 2>>
 
 Welcome to Dino- I mean DragonLand!
 Feel free to look around 
@@ -64,12 +64,30 @@ And we also used to be blue.
 ===
 
 
-title: Mouse
+title: MouseQuest
+---
+<<cameraIndex 3>>
+<<if $hasID==true>>
+Oh.
+My.
+GOODD.
+Thank youuu soo much!!
+Literally saved my liiiife.
+Here, have this
+<<startAction mouseQuest>>
+
+<<else>>
+	<<jump Mouse1>>
+<<endif>>
+<<cameraIndex 0>>
+===
+
+
+
+title: Mouse1
 tags:
 ---
 <<cameraIndex 3>>
-
-Mouse Girl:
 Ugh, what the hell!
 I can’t find my ID anywhere
 How did I lose it in a dessert? It's literally just sand.
