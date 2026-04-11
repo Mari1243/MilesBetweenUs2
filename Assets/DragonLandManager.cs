@@ -28,10 +28,12 @@ public class DragonLandManager : MonoBehaviour
      private void OnEnable()
     {
         InventoryManager.OnInventoryChange += checkconditions;
+        DialogueCommands.startAction += StartAction;
     }
     private void OnDisable()
     {
         InventoryManager.OnInventoryChange -= checkconditions;
+        DialogueCommands.startAction -= StartAction;    
     }
 
     public void triggerIntroCutscene()
@@ -63,20 +65,19 @@ public class DragonLandManager : MonoBehaviour
             }
         }
     }
-    //not totally sure how this works
-    // public void StartAction(string action)
-    // {
+     public void StartAction(string action)
+    {
 
-    //     switch (action)
-    //     {
-    //         case "StartbroQuest":
-    //             journalNotif?.Invoke();
+        switch (action)
+        {
+            case "StartbroQuest":
+                journalNotif?.Invoke();
 
-    //             break;
+                break;
 
 
-    //     }
-    // }
-    
+        }
+    }
+
 
 }
