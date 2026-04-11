@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
@@ -45,6 +46,9 @@ public class CarSceneManager : MonoBehaviour
     public List<AudioClip> radioClips = new List<AudioClip>();
     private bool isPlaying = false;
 
+    [Header("SceneChanges")]
+    private int carScene;
+    public GameObject treeSpawners;
 
     private void OnEnable()
     {
@@ -52,6 +56,9 @@ public class CarSceneManager : MonoBehaviour
         interactable.onInteract += playRadio;
         ToggleJournal.hideJournal += ExitJournal;
         DialogueManager.DialogOver += ExitJournal;
+        SceneTrackerSingleton.carOver -= ClearInventory;
+
+
 
     }
     private void OnDisable()
@@ -60,9 +67,11 @@ public class CarSceneManager : MonoBehaviour
         interactable.onInteract -= playRadio;
         ToggleJournal.hideJournal -= ExitJournal;
         DialogueManager.DialogOver -= ExitJournal;
+        SceneTrackerSingleton.carOver += ClearInventory;
+
     }
 
-    
+
 
     private void Start()
     {
@@ -76,10 +85,14 @@ public class CarSceneManager : MonoBehaviour
         Cursor.visible = false;
  
 
-        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);  
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+
+        carScene = SceneTrackerSingleton.Instance.carnum;
+        environmentChange();
+
     }
 
-    
+
 
     public void JournalScene() //SHOWS JOURNAL 
     {
@@ -119,7 +132,20 @@ public class CarSceneManager : MonoBehaviour
 
     }
 
-
+    public void environmentChange() //if we wanna change the exterior how it looks 
+    {
+        switch (carScene)
+        {
+            case 1: //pre gas station
+                break;
+            case 2: //pre dragon land
+                Debug.Log("Treeeeeees gone");
+                treeSpawners.SetActive(false);
+                break;
+            case 3: //pre college
+                break;
+        }
+    }
     public void playRadio()
     {
         if (!isPlaying)
@@ -128,5 +154,11 @@ public class CarSceneManager : MonoBehaviour
             SoundManager.Instance.PlayAudio(radioClips[randClip]);
         }
         
+    }
+
+    public void ClearInventory()
+    {
+        currentInventory.Clear();
+        InventoryManager.instance.inventory.Clear();
     }
 }

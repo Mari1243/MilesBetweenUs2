@@ -3458,12 +3458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2797835ed113c4f8a56ec3fae2c231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-  - itemData: {fileID: 11400000, guid: 428669f288279234aacbf0e8c15c1f17, type: 2}
-    stackSize: 1
-  - itemData: {fileID: 11400000, guid: 46603623567ed83459d157a7205b4a71, type: 2}
-    stackSize: 1
-  loreItemAmt: 1
+  inventory: []
+  loreItemAmt: 0
   moneyAmount: 0
 --- !u!4 &1426822555
 Transform:
@@ -5465,6 +5461,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
+      propertyPath: carnum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
       propertyPath: scenes.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -5841,6 +5841,10 @@ PrefabInstance:
       propertyPath: holdingImage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: treeSpawners
+      value: 
+      objectReference: {fileID: 95519904}
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: DraggableItemPrefab
       value: 
