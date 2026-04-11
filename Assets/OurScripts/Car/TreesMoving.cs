@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TreesMoving : MonoBehaviour
 {
-    public float speed = 80f;
+    public float speed;
     private void Update()
     {
         transform.Translate(Vector3.back * speed * Time.deltaTime);
