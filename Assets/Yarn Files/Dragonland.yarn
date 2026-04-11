@@ -162,3 +162,22 @@ Brother: I'll have to pot it up when we get to Uni.
 			At least that's what my book told me.
 
 ===
+
+
+
+
+title: EndDragonLand
+---
+<<cameraIndex 1>>
+
+Brother: Ya done stomping around?
+-> Yea lets gettouta here
+	Aight
+	Also
+	You're really dusty 
+	<<changeScene Car>>
+-> No just kidding
+	Oook, take your sweet time.
+<<cameraIndex 0>>
+
+===
