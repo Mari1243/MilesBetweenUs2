@@ -58,6 +58,26 @@ public class BrotherInteractable : MonoBehaviour
     private void Start()
     {
         carScene = SceneTrackerSingleton.Instance.carnum;
+        switch (carScene)
+        {
+            case 1:
+
+                interactableData.item.node = "Car0Start";
+                DialogueManager.instance.TalkInteraction(interactableData.item);
+
+                break;
+            case 2:
+                interactableData.item.node = "Car1Start";
+                DialogueManager.instance.TalkInteraction(interactableData.item);
+
+                break;
+            case 3:
+                interactableData.item.node = "Car2Start";
+                DialogueManager.instance.TalkInteraction(interactableData.item);
+
+                break;
+        }
+
     }
 
     private void StartTimer()
