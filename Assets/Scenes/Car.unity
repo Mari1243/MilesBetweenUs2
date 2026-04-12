@@ -1326,6 +1326,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 685195320120420345, guid: 512b72c73a22e904d87662ebca8eb1e1, type: 3}
   m_PrefabInstance: {fileID: 1980515229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &343793876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343793877}
+  - component: {fileID: 343793878}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &343793877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343793876}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.8, y: 3, z: 55.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1695179350}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &343793878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343793876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7a859d7dedf3e4a8f8c4dbc33fd834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ennemies:
+  - {fileID: 2655141885491274241, guid: a365f9c2c7d2d4849be4bb00658f7aca, type: 3}
+  - {fileID: 2655141885491274241, guid: 6ae39efa9443eb143b67e33b50266671, type: 3}
+  - {fileID: 2655141885491274241, guid: 36a7fb7d3c52bfc4fb0fcfa205760629, type: 3}
+  - {fileID: 2655141885491274241, guid: e7bdc7e0bd462414897fcddb47c693b2, type: 3}
+  spawnValues: {x: 2, y: 0, z: 80}
+  spawnWait: 0
+  spawnMostWait: 5
+  spawnLeastWait: 1
+  startWait: 1
+  stop: 0
 --- !u!4 &409381503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
@@ -3213,6 +3268,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 887202080963443201, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2904
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: isRelative
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: endValueV3.y
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 1616451728402434421, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3308,6 +3375,14 @@ PrefabInstance:
     - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775854182488427552, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: isRelative
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775854182488427552, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: endValueV3.y
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Name
@@ -3438,12 +3513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2797835ed113c4f8a56ec3fae2c231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-  - itemData: {fileID: 11400000, guid: 428669f288279234aacbf0e8c15c1f17, type: 2}
-    stackSize: 1
-  - itemData: {fileID: 11400000, guid: 46603623567ed83459d157a7205b4a71, type: 2}
-    stackSize: 1
-  loreItemAmt: 1
+  inventory: []
+  loreItemAmt: 0
   moneyAmount: 0
 --- !u!4 &1426822555
 Transform:
@@ -4155,6 +4226,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 685195320120420345, guid: 512b72c73a22e904d87662ebca8eb1e1, type: 3}
   m_PrefabInstance: {fileID: 690672233}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1695179349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695179350}
+  m_Layer: 0
+  m_Name: CarSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695179350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695179349}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.49, z: 0}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 343793877}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1733774484
 GameObject:
   m_ObjectHideFlags: 0
@@ -5445,6 +5548,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
+      propertyPath: carnum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
       propertyPath: scenes.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -5822,6 +5929,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: treeSpawners
+      value: 
+      objectReference: {fileID: 95519904}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: DraggableItemPrefab
       value: 
       objectReference: {fileID: 6843374984016170095, guid: c83a883728b8747799f88e95b0341676, type: 3}
@@ -5883,6 +5994,7 @@ SceneRoots:
   - {fileID: 1869728377}
   - {fileID: 82619150}
   - {fileID: 95519905}
+  - {fileID: 1695179350}
   - {fileID: 7745599316662536353}
   - {fileID: 1003267969}
   - {fileID: 131354174}

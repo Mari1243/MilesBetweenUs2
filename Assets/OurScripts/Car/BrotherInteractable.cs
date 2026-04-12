@@ -16,10 +16,15 @@ public class BrotherInteractable : MonoBehaviour
     private int barkCount, barkIndex;
     public Image img;
     public int minWait, maxWait;
+
     public int loreItemsAskedAbout = 0;
 
 
     bool car1=false;
+
+    private int carScene;
+    //bool car1=false;
+
     private void OnEnable()
     {
         DialogueManager.DialogOver += StartTimer;
@@ -39,17 +44,17 @@ public class BrotherInteractable : MonoBehaviour
     {
         Debug.Log("THIS WAS PREVIOUS SCENE " + scene);
         ////take scene tracker singleton instance here (string) and 
-        if (scene == "GasStation")
+        if (carScene==1)
         {
             print("last scene was gas station");
             interactableData.item = newItem;
-            car1 = true;
+            
         }
     }
 
-    
+
     //listens to if dialogue is not playing and when dialogue is over and executes coroutine 
-    
+
     //randomizes time between notification pop up
 
     //changes interactable item data node
@@ -58,7 +63,30 @@ public class BrotherInteractable : MonoBehaviour
 
     //talk UI notification appears and hovers near brother 
 
+    private void Start()
+    {
+        carScene = SceneTrackerSingleton.Instance.carnum;
+        switch (carScene)
+        {
+            case 1:
 
+                interactableData.item.node = "Car0Start";
+                DialogueManager.instance.TalkInteraction(interactableData.item);
+
+                break;
+            case 2:
+                interactableData.item.node = "Car1Start";
+                DialogueManager.instance.TalkInteraction(interactableData.item);
+
+                break;
+            case 3:
+                interactableData.item.node = "Car2Start";
+                DialogueManager.instance.TalkInteraction(interactableData.item);
+
+                break;
+        }
+
+    }
 
     private void StartTimer()
     {
@@ -77,14 +105,27 @@ public class BrotherInteractable : MonoBehaviour
 
 
         //also make it so he "barks" only like twice but each time between then is randomized 
-        if (car1)
-            interactableData.item.node = "Car1";
-        else
-            interactableData.item.node = "Car0";
 
+        switch (carScene)
+        {
+            case 1:
 
         barkCount = barks.Count;
         int rand = UnityEngine.Random.Range(minWait, maxWait); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
+
+                interactableData.item.node = "Car0";
+                break;
+            case 2:
+                interactableData.item.node = "Car1";
+                break;
+            case 3:
+                interactableData.item.node = "Car2";
+                break;
+        }
+
+                barkCount = barks.Count;
+        int rand = Random.Range(minWait, maxWait); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
+
         yield return new WaitForSeconds(rand);
 
         if (barkCount == 0)

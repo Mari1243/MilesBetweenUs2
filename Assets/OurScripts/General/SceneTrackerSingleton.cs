@@ -8,7 +8,7 @@ public class SceneTrackerSingleton : MonoBehaviour
 {
     public static SceneTrackerSingleton Instance { get; private set; }
 
-    private int carnum = 0;
+    public int carnum = 0;
 
     public static string CurrentSceneName { get; private set; }
     public string PreviousSceneName { get; private set; }
@@ -20,9 +20,11 @@ public class SceneTrackerSingleton : MonoBehaviour
     private string currentscenename;
 
     public static event Action<string> onSceneName;
+    public static event Action carOver;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-     void Awake()
+    void Awake()
     {
 
         // Singleton pattern
@@ -74,7 +76,6 @@ public class SceneTrackerSingleton : MonoBehaviour
         {
             //this is to change the start node for which car scene ur in!
             carnum++;
-            changeStartNode(carnum);
             NewJournalSave.instance.SetState(States.Car);
         }
         else
@@ -85,6 +86,7 @@ public class SceneTrackerSingleton : MonoBehaviour
             if (currentscene.ToDoList != null)
             {
                 print("setting todolist and beginning spawn between scenetracker and new journal save");
+                carOver.Invoke();
                 ToDoListPrefab = currentscene.ToDoList;
                 NewJournalSave.instance.newspawnlist(ToDoListPrefab);
             }
@@ -113,17 +115,5 @@ public class SceneTrackerSingleton : MonoBehaviour
         }
     }
 
-    private void changeStartNode(int carnum)
-    {
-        if(carnum == 0)
-        {
-            
-        }
-         if(carnum == 3)
-        {
-            print("carnum is 3");
-        }
-    }
-
-    
+   
 }
