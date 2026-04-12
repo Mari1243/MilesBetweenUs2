@@ -10,7 +10,7 @@ public class SchoolManager : MonoBehaviour
 {
     private WaitForSeconds wait = new WaitForSeconds(1f);
     public GameObject physicalJournal;
-    private bool hasPlayed=false;
+    public static bool hasPlayed=false;
     public DialogueRunner diaRun;
 
     //for todo logic
@@ -37,13 +37,14 @@ public class SchoolManager : MonoBehaviour
     void OnEnable()
     {
         interactable.onEND += triggerEND;
-        DialogueCommands.diaopenJournal+= openjournal;
         InventoryManager.OnInventoryChange += checkconditions;
+        BrotherInteractable.askedAbtAllLoreItems += triggerFinishedJournal;
     }
     void OnDisable()
     {
-        interactable.onEND += triggerEND;
+        interactable.onEND -= triggerEND;
         InventoryManager.OnInventoryChange -= checkconditions;
+        BrotherInteractable.askedAbtAllLoreItems -= triggerFinishedJournal;
     }
 
     public void triggerIntroCutscene()
@@ -56,11 +57,23 @@ public class SchoolManager : MonoBehaviour
 
     private void triggerEND()
     {
-        //print("game over yayyyy");
-        StartCoroutine(endanimation());
-        //finding and assigning journal
-        journalToggle = Object.FindAnyObjectByType<ToggleJournal>();
+        if (!hasPlayed)
+        {
+            hasPlayed = true;
+            //print("game over yayyyy");
+            StartCoroutine(endanimation());
+            //finding and assigning journal
+            journalToggle = Object.FindAnyObjectByType<ToggleJournal>();
+        }
     } 
+
+    private void triggerFinishedJournal()
+    {
+        print("triggering FINISHED JOURNAL");
+        //this triggeres when youve asked aout all the lore items
+        DialogueManager.tutorialInstance.LoadDialog("ShowBrotherPrompt");
+        DialogueManager.tutorialInstance.StartDialog();
+    }
 
     public void checkconditions(List<InventoryItem> list)
     {
@@ -107,13 +120,6 @@ public class SchoolManager : MonoBehaviour
         //physicalJournal.SetActive(false);
     }
 
-    private void openjournal()
-    {
-        //be sure to set the state!!
-        journalToggle.animateOpen();
-        //this should happen for opening the journal when youve talked to the bro
-        //journalToggle.Open();
-    } 
    
     public void endCutScene()
 

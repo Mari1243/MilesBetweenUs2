@@ -87,9 +87,12 @@ public class InputManager : MonoBehaviour
         print("toggling player map off");
         JournalOpen = true;
         //maybe instead of disabling UI we just disable interact
-        inputActions["Interacted"].Disable();
-        inputActions["Interact"].Disable();
-
+        if (inputActions["Interacted"].enabled)
+        {
+            inputActions["Interacted"].Disable();
+            inputActions["Interact"].Disable();
+        }
+        
         //inputActions.FindActionMap("UI").Disable();
         //inputActions.FindActionMap("Player").Disable();
     }
@@ -97,10 +100,11 @@ public class InputManager : MonoBehaviour
     {
          print("toggling player map on");
         JournalOpen = false;
-
-        inputActions["Interacted"].Enable();
-        inputActions["Interact"].Enable();
-
+            if (!inputActions["Interacted"].enabled)
+            {
+                inputActions["Interacted"].Enable();
+                inputActions["Interact"].Enable();
+            }
         // inputActions.FindActionMap("UI").Enable();
         // inputActions.FindActionMap("Player").Disable();
     }

@@ -1873,11 +1873,11 @@ MonoBehaviour:
   inventory:
   - itemData: {fileID: 11400000, guid: fc268680b54774bcf93d04838553c83f, type: 2}
     stackSize: 1
-  - itemData: {fileID: 11400000, guid: 7d01e8b06ba5eb04aa6186df918cd885, type: 2}
+  - itemData: {fileID: 11400000, guid: fc268680b54774bcf93d04838553c83f, type: 2}
     stackSize: 1
   - itemData: {fileID: 11400000, guid: fc268680b54774bcf93d04838553c83f, type: 2}
     stackSize: 1
-  loreItemAmt: 0
+  loreItemAmt: 3
   moneyAmount: 0
 --- !u!4 &538916798
 Transform:
@@ -1964,7 +1964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2980622296183901663, guid: 3d984c8f07bba954f8af77e8bf1af8ca, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1988,7 +1988,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 543267457}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543267458}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7efc750d8e0fe54ea35c2193ea2c85b, type: 3}
   m_Name: 
@@ -2000,7 +2000,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543267458}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e956eaf6ba6059648b4b1eb6cb8f53d6, type: 3}
   m_Name: 
@@ -2011,6 +2011,7 @@ MonoBehaviour:
   img: {fileID: 1041149671}
   minWait: 10
   maxWait: 30
+  loreItemsAskedAbout: 0
 --- !u!4 &543267461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1044222588208561765, guid: 3d984c8f07bba954f8af77e8bf1af8ca, type: 3}

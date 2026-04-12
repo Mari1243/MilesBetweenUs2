@@ -79,6 +79,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         }
         if (lorePlaced)
         {
+            print("triggering lore drop");
             //when place
             loreDrop(itemdata.node);
             lorePlaced = false;

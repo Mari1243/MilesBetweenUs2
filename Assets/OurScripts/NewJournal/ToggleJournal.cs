@@ -48,8 +48,9 @@ public class ToggleJournal : MonoBehaviour
 
         interactable.showJournal += journal;
         
-        DialogueManager.DialogStart += disableJournal; //makes it so you cant open journal while in dialogue
-        DialogueManager.DialogOver += enableJournal;
+        // DialogueManager.DialogStart += disableJournal; //makes it so you cant open journal while in dialogue
+        // DialogueManager.DialogOver += enableJournal;
+        DialogueCommands.diaopenJournal += animateOpen;
 
 
     }
@@ -61,8 +62,9 @@ public class ToggleJournal : MonoBehaviour
    
         interactable.showJournal -= journal;
 
-        DialogueManager.DialogStart -= disableJournal;
-        DialogueManager.DialogOver -= enableJournal;
+        // DialogueManager.DialogStart -= disableJournal;
+        // DialogueManager.DialogOver -= enableJournal;
+        DialogueCommands.diaopenJournal -= animateOpen;
     }
 
     private void Start()
@@ -84,9 +86,7 @@ public class ToggleJournal : MonoBehaviour
 
     public void closeJournal(string node)
     {
-        //unfreeze input
-        //set mouse inactive
-        journalopen = false;
+        journal();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         //print("disabling journal");
@@ -100,28 +100,28 @@ public class ToggleJournal : MonoBehaviour
        if(this.GetComponent<Canvas>() != null)
         {
             if(!journalopen && canOpen)
-    {
-        canvas.enabled = true;
-        DOTween.Restart("animateIn"); 
-        DOTween.Play("animateIn");
-        journalopen = true;
-        Cursor.lockState = CursorLockMode.None;
-        OnJournalOpened?.Invoke(); // add this
+            {
+                canvas.enabled = true;
+                DOTween.Restart("animateIn"); 
+                DOTween.Play("animateIn");
+                journalopen = true;
+                Cursor.lockState = CursorLockMode.None;
+                OnJournalOpened?.Invoke(); // add this
 
-        if (SceneManager.GetActiveScene().name != "Car")
-        disablePlayer();
-    }
-    else
-    {
-        canvas.enabled = false;
-        DOTween.Restart("animateOut"); 
-        DOTween.Play("animateOut");
-        journalopen = false;
-        OnJournalClosed?.Invoke(); // add this
+            if (SceneManager.GetActiveScene().name != "Car")
+            disablePlayer();
+            }
+            else
+            {
+                canvas.enabled = false;
+                DOTween.Restart("animateOut"); 
+                DOTween.Play("animateOut");
+                journalopen = false;
+                OnJournalClosed?.Invoke(); // add this
 
-    if (SceneManager.GetActiveScene().name != "Car")
-        enablePlayer();
-    }
+                if (SceneManager.GetActiveScene().name != "Car")
+                enablePlayer();
+            }
         }
         else
         {
@@ -143,6 +143,8 @@ public class ToggleJournal : MonoBehaviour
         xbutton.gameObject.SetActive(false);
         journalopen = false;
         canOpen = true;
+
+        
         journal();
     }   
 
@@ -150,6 +152,7 @@ public class ToggleJournal : MonoBehaviour
     {
         journalopen = false;
         canOpen = true;
+        InputManager.Instance.JournalOpen = false;
         journal();
     }
  
