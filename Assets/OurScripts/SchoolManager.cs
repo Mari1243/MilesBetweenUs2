@@ -32,6 +32,14 @@ public class SchoolManager : MonoBehaviour
         physicalJournal.SetActive(false);
          bro.SetActive(false);
         car.Play("DLCar");
+        DialogueManager.DialogOver += startpatrol;
+        
+    }
+
+    private void startpatrol()
+    {
+        Patrol.instance.StartPatrol();
+        DialogueManager.DialogOver -= startpatrol;
     }
 
     void OnEnable()
