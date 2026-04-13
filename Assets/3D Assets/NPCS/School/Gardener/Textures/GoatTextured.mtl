@@ -1,0 +1,77 @@
+# Exported from Nomad Sculpt
+
+newmtl Tail
+ map_Kd Tail_color.png
+ map_roughness Tail_roughness.png
+ map_Pr Tail_roughness.png
+ map_metallic Tail_metalness.png
+ map_Pm Tail_metalness.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Head_1
+ map_Kd Head_1_color_3.png
+ map_roughness Head_1_roughness_3.png
+ map_Pr Head_1_roughness_3.png
+ map_metallic Head_1_metalness_3.png
+ map_Pm Head_1_metalness_3.png
+ map_tangentSpaceNormal Head_1_normal_3.png
+ map_bump Head_1_normal_3.png
+ norm Head_1_normal_3.png
+ bump Head_1_normal_3.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Eyes_1
+ map_Kd Eyes_1_color_3.png
+ map_roughness Eyes_1_roughness_3.png
+ map_Pr Eyes_1_roughness_3.png
+ map_metallic Eyes_1_metalness_2.png
+ map_Pm Eyes_1_metalness_2.png
+ map_tangentSpaceNormal Eyes_1_normal_3.png
+ map_bump Eyes_1_normal_3.png
+ norm Eyes_1_normal_3.png
+ bump Eyes_1_normal_3.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Torso_1
+ map_Kd Torso_1_color_2.png
+ map_roughness Torso_1_roughness_2.png
+ map_Pr Torso_1_roughness_2.png
+ map_metallic Torso_1_metalness_2.png
+ map_Pm Torso_1_metalness_2.png
+ map_tangentSpaceNormal Torso_1_normal_2.png
+ map_bump Torso_1_normal_2.png
+ norm Torso_1_normal_2.png
+ bump Torso_1_normal_2.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Pants_1
+ map_Kd Pants_1_color_3.png
+ map_roughness Pants_1_roughness_3.png
+ map_Pr Pants_1_roughness_3.png
+ map_metallic Pants_1_metalness_3.png
+ map_Pm Pants_1_metalness_3.png
+ map_tangentSpaceNormal Pants_1_normal_3.png
+ map_bump Pants_1_normal_3.png
+ norm Pants_1_normal_3.png
+ bump Pants_1_normal_3.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Shirt_1
+ map_Kd Shirt_1_color_2.png
+ map_roughness Shirt_1_roughness_2.png
+ map_Pr Shirt_1_roughness_2.png
+ map_metallic Shirt_1_metalness_2.png
+ map_Pm Shirt_1_metalness_2.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
