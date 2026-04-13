@@ -119,6 +119,10 @@ public class DialogueCommands : MonoBehaviour
                     yarnVariables.SetValue("$hasID", true);
 
                 }
+                else if(item.itemData.itemName=="Someone's number!")
+                {
+                    yarnVariables.SetValue("$hasNumber", true);
+                }
             }
         }
         else
