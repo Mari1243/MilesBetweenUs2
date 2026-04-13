@@ -26,17 +26,25 @@ title: EndDialogue1
 I should go through stuff before I give it to Max
     -> Finish journal
         <<cameraIndex 3>>
+        <<openJournal true>>
     -> Not Yet
         <<cameraIndex 0>>
+        <<end false>>
 
 ===
 
-title: EndDialogue2
+title: ShowBrotherPrompt
 ---
-<<openJournal true>>
 <<cameraIndex 3>>
 Brother: hey you have something to show me?
 Brother: Is that your journal?
+    -> I'm Done!
+        <<cameraIndex 3>>
+        <<openJournal true>>
+        <<end true>>
+    -> Not Yet
+        <<cameraIndex 0>>
+        <<end false>>
 ===
 
 title: Lore1

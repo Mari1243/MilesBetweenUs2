@@ -10,7 +10,7 @@ public class SchoolManager : MonoBehaviour
 {
     private WaitForSeconds wait = new WaitForSeconds(1f);
     public GameObject physicalJournal;
-    private bool hasPlayed=false;
+    public static bool hasPlayed=false;
     public DialogueRunner diaRun;
 
     //for todo logic
@@ -32,18 +32,27 @@ public class SchoolManager : MonoBehaviour
         physicalJournal.SetActive(false);
          bro.SetActive(false);
         car.Play("DLCar");
+        DialogueManager.DialogOver += startpatrol;
+        
+    }
+
+    private void startpatrol()
+    {
+        Patrol.instance.StartPatrol();
+        DialogueManager.DialogOver -= startpatrol;
     }
 
     void OnEnable()
     {
         interactable.onEND += triggerEND;
-        DialogueCommands.diaopenJournal+= openjournal;
         InventoryManager.OnInventoryChange += checkconditions;
+        BrotherInteractable.askedAbtAllLoreItems += triggerFinishedJournal;
     }
     void OnDisable()
     {
-        interactable.onEND += triggerEND;
+        interactable.onEND -= triggerEND;
         InventoryManager.OnInventoryChange -= checkconditions;
+        BrotherInteractable.askedAbtAllLoreItems -= triggerFinishedJournal;
     }
 
     public void triggerIntroCutscene()
@@ -56,7 +65,6 @@ public class SchoolManager : MonoBehaviour
 
     private void triggerEND()
     {
-        //only do once
         if (!hasPlayed)
         {
             hasPlayed = true;
@@ -66,6 +74,14 @@ public class SchoolManager : MonoBehaviour
             journalToggle = Object.FindAnyObjectByType<ToggleJournal>();
         }
     } 
+
+    private void triggerFinishedJournal()
+    {
+        print("triggering FINISHED JOURNAL");
+        //this triggeres when youve asked aout all the lore items
+        DialogueManager.tutorialInstance.LoadDialog("ShowBrotherPrompt");
+        DialogueManager.tutorialInstance.StartDialog();
+    }
 
     public void checkconditions(List<InventoryItem> list)
     {
@@ -97,23 +113,21 @@ public class SchoolManager : MonoBehaviour
 
     private IEnumerator endanimation()
     {
-        yield return wait;
-        ChangeCamera.instance.changeCamera(3);
-        //print("triggering journal open");
+        physicalJournal.SetActive(true);
         yield return wait;
 
-        journalToggle.animateOpen();
-        //print("toggle is "+ journalToggle.gameObject);
-        //open journal in car state (without x button)
-        physicalJournal.SetActive(false);
+        //this presents the option to open the journal
+        DialogueManager.tutorialInstance.LoadDialog("EndDialogue1");
+        DialogueManager.tutorialInstance.StartDialog();
+        hasPlayed = true;
         
+        //try doing this with dialogue instead
+        //journalToggle.animateOpen();
+
+        //open journal in car state (without x button)
+        //physicalJournal.SetActive(false);
     }
 
-    private void openjournal()
-    {
-        //this should happen for opening the journal when youve talked to the bro
-        journalToggle.Open();
-    } 
    
     public void endCutScene()
 

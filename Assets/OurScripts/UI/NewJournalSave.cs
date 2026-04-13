@@ -170,7 +170,7 @@ public class NewJournalSave : MonoBehaviour
         }
         else
         {
-            print("instantiating inventory");
+            //print("instantiating inventory");
             foreach (InventoryItem items in currentInventory)
             {
                 var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity); //the connecting data
@@ -182,8 +182,10 @@ public class NewJournalSave : MonoBehaviour
 
                 //this  assigns data
                 DraggableItemPrefab.GetComponent<DragItem>().itemdata=items.itemData;
-                print("instantiating " + journalItem.name);
+                //print("instantiating " + journalItem.name);
             }
+            //added bc reinstantiation
+            currentInventory.Clear();
         }
     }
 }

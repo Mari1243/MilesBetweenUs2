@@ -8,12 +8,16 @@ using Unity.Cinemachine;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System.Numerics;
+using System.Runtime.InteropServices;
 
 public class ToggleJournal : MonoBehaviour
 {
-    public static event Action hideJournal;
+    public static event Action OnJournalOpened;
+    public static event Action OnJournalClosed;
+
+
     [SerializeField]public static bool journalopen = false;
-    [SerializeField]public bool canOpen = false;
+    [SerializeField]public bool canOpen = true;
     private Canvas canvas;
     public UnityEngine.UI.Button xbutton;
     private UnityEngine.Vector3 oldPos;
@@ -47,6 +51,7 @@ public class ToggleJournal : MonoBehaviour
         
         DialogueManager.DialogStart += disableJournal; //makes it so you cant open journal while in dialogue
         DialogueManager.DialogOver += enableJournal;
+        DialogueCommands.diaopenJournal += animateOpen;
 
 
     }
@@ -60,11 +65,11 @@ public class ToggleJournal : MonoBehaviour
 
         DialogueManager.DialogStart -= disableJournal;
         DialogueManager.DialogOver -= enableJournal;
+        DialogueCommands.diaopenJournal -= animateOpen;
     }
 
     private void Start()
     {
-        canOpen = false;
     }
     public void enableJournal()
     {
@@ -81,9 +86,7 @@ public class ToggleJournal : MonoBehaviour
 
     public void closeJournal(string node)
     {
-        //unfreeze input
-        //set mouse inactive
-        journalopen = false;
+        journal();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         //print("disabling journal");
@@ -94,37 +97,34 @@ public class ToggleJournal : MonoBehaviour
 
     public void journal()
     {
+        print("journalOpen is "+ journalopen + " and canOpen is "+canOpen);
+
        if(this.GetComponent<Canvas>() != null)
         {
-            if(!journalopen&&canOpen)
+            if(!journalopen && canOpen)
             {
-                //print("journal isnt open and it can open so were enabling it");
+                print("animating in");
                 canvas.enabled = true;
                 DOTween.Restart("animateIn"); 
-                DOTween.Play ("animateIn");
+                DOTween.Play("animateIn");
                 journalopen = true;
                 Cursor.lockState = CursorLockMode.None;
+                OnJournalOpened?.Invoke(); // add this
 
                 if (SceneManager.GetActiveScene().name != "Car")
-                {
-                    disablePlayer();
-                }
+                disablePlayer();
             }
             else
             {
-                //print("journal is either open or cant open so this disables it");
+                print("animating out");
                 canvas.enabled = false;
-
                 DOTween.Restart("animateOut"); 
-                DOTween.Play ("animateOut");
+                DOTween.Play("animateOut");
                 journalopen = false;
-                hideJournal?.Invoke();
-         
+                OnJournalClosed?.Invoke(); // add this
 
                 if (SceneManager.GetActiveScene().name != "Car")
-                {
-                    enablePlayer();
-                }
+                enablePlayer();
             }
         }
         else
@@ -135,16 +135,28 @@ public class ToggleJournal : MonoBehaviour
    
     public void animateOpen()
     {
-        //here ill change the journal state to car temporarily
+        //this is necessary to prevent the journal from trying to open until dialogue is over
+        //otherwise we keep on triggering dialogue while trying to interact with journal
+        StartCoroutine(waitForDialogueEnd());
+    }
+    private IEnumerator waitForDialogueEnd()
+    {
+        yield return new WaitUntil(() => !DialogueManager.tutorialInstance.dialogStarted);
+    
         jouralstatesystem.SetState(States.Car);
         xbutton.gameObject.SetActive(false);
+        journalopen = false;
+        canOpen = true;
+
+        
         journal();
-    }
+    }   
 
     public void Open()
     {
         journalopen = false;
         canOpen = true;
+        InputManager.Instance.JournalOpen = false;
         journal();
     }
  

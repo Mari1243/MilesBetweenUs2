@@ -51,7 +51,7 @@ public class Interactor : MonoBehaviour
     private Transform selection;
     private interactable Interactable;
     private PlayerInput playerInput;
-    private InputActionAsset inputActions;
+    //private InputActionAsset inputActions;
     private GameObject interactableItem;
     [SerializeField] bool canInteract;
 
@@ -59,39 +59,94 @@ public class Interactor : MonoBehaviour
     public GameObject inventoryHUD;
     public ThirdPersonMovement movement;
 
-    private void Start()
-    {
-        playerInput = GetComponent<PlayerInput>();
-        inputActions = playerInput.actions;
-
-        inputActions["Interacted"].started += Interacted;
-        inputActions["Interacted"].canceled += StartDrain;
-
-        if (inputActions["Interacted"] == null)
-        {
-            Debug.Log("Cant find this input action");
-        }
-        if (inputActions["Drop"] == null)
-        {
-            Debug.Log("Cant find this input action");
-        }
-
-        inputActions["Interacted"].Disable();
-        pickedUpObj = null;
-        Interactable = null;
-        canInteract = false;
-        isHeld = false;
-    }
-
     private void OnEnable()
-    {
-        StealingManager.OnStateChanged += CheckState;
-    }
+{
+    StealingManager.OnStateChanged += CheckState;
+    InputManager.OnInteractStarted += HandleInteractStarted;
+    InputManager.OnInteractCanceled += HandleInteractCanceled;
+}
 
-    void OnDisable()
-    {
-        StealingManager.OnStateChanged -= CheckState;
-    }
+void OnDisable()
+{
+    StealingManager.OnStateChanged -= CheckState;
+    InputManager.OnInteractStarted -= HandleInteractStarted;
+    InputManager.OnInteractCanceled -= HandleInteractCanceled;
+}
+
+private void HandleInteractStarted()
+{
+    // Add null checks at the start
+        if (pickedUpObj == null || Interactable == null)
+        {
+            Debug.LogWarning("Interaction attempted but object or interactable is null");
+            return;
+        }
+            DestroyPickupUI();
+            if (pickedUpObj.tag == "canSteal")
+            {
+                if (!isInStealingConfirmMode)
+                {
+                    print("First press: Entering stealing confirmation mode");
+                    isInStealingConfirmMode = true;
+                    OnStartedStealing?.Invoke(StealableItemBehavior.instance.camIndex);
+
+                    if (StealingManager.Instance != null)
+                    {
+                        StealingManager.Instance.StartStealin();
+                        StealStep?.Invoke(1);
+                    }
+                    return;
+                }
+                else
+                {
+                   
+                    if (holdProgressRoutine == null)
+                    {
+                        holdDirection = +1;
+                        hasStartedStealing = true;
+                        holdProgressRoutine = StartCoroutine(HoldProgressLoop(fillSpeedSteal));
+                    }
+                    else
+                    {
+                        holdDirection = +1;
+                    }
+                }
+            }    
+            else if (pickedUpObj.tag == "canPickUp" || pickedUpObj.tag == "coin")
+            {
+               if (canInteract)
+                {
+                    pickedUpObj = highlight.gameObject;
+                    Interactable.Interact(); 
+                    Destroy(instantiatedUI);
+                }
+            }
+            else if (canInteract)
+            {
+                print("calling interactable.interact");
+                Interactable.Interact();
+            }
+    // move the contents of your Interacted() method here
+    // you no longer need the InputAction.CallbackContext parameter
+}
+
+private void HandleInteractCanceled()
+{
+    // move the contents of your StartDrain() method here
+      if (holdProgress > 0)
+        {
+            holdDirection = -1;
+        }
+}
+    
+  private void Start()
+{
+    pickedUpObj = null;
+    Interactable = null;
+    canInteract = false;
+    isHeld = false;
+}
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -107,7 +162,7 @@ public class Interactor : MonoBehaviour
 
         if (other.GetComponent<interactable>() != null)
         {
-            inputActions["Interacted"].Enable();
+            //inputActions["Interacted"].Enable();
             highlight = other.transform;
             
             Interactable = other.gameObject.GetComponent<interactable>();
@@ -213,80 +268,12 @@ public class Interactor : MonoBehaviour
         CleanupAfterInteraction();
         
         yield return new WaitForSeconds(.5f);
-        inputActions["Interacted"].Enable();
+        //inputActions["Interacted"].Enable();
         movement.moveSpeed = 6f;
         print("Input re-enabled!");
     }
 
-    public void Interacted(InputAction.CallbackContext context)
-    {
-        // Add null checks at the start
-        if (pickedUpObj == null || Interactable == null)
-        {
-            Debug.LogWarning("Interaction attempted but object or interactable is null");
-            return;
-        }
 
-        if (context.started)
-        {
-            DestroyPickupUI();
-            if (pickedUpObj.tag == "canSteal")
-            {
-                if (!isInStealingConfirmMode)
-                {
-                    print("First press: Entering stealing confirmation mode");
-                    isInStealingConfirmMode = true;
-                    OnStartedStealing?.Invoke(StealableItemBehavior.instance.camIndex);
-
-                    if (StealingManager.Instance != null)
-                    {
-                        StealingManager.Instance.StartStealin();
-                        StealStep?.Invoke(1);
-                    }
-                    return;
-                }
-                else
-                {
-                   
-                    if (holdProgressRoutine == null)
-                    {
-                        holdDirection = +1;
-                        hasStartedStealing = true;
-                        holdProgressRoutine = StartCoroutine(HoldProgressLoop(fillSpeedSteal));
-                    }
-                    else
-                    {
-                        holdDirection = +1;
-                    }
-                }
-            }    
-            else if (pickedUpObj.tag == "canPickUp" || pickedUpObj.tag == "coin")
-            {
-               if (canInteract)
-                {
-                    pickedUpObj = highlight.gameObject;
-                    Interactable.Interact(); 
-                    Destroy(instantiatedUI);
-                }
-            }
-            else if (canInteract)
-            {
-                print("calling interactable.interact");
-                Interactable.Interact();
-            }
-        }
-    }
-
-    private void StartDrain(InputAction.CallbackContext context)
-    {
-        if (holdProgress > 0)
-        {
-            if (context.canceled)
-            {
-                holdDirection = -1;
-            }
-        }
-    }
     
     private IEnumerator HoldProgressLoop(float fillspeed)
     {
@@ -313,7 +300,7 @@ public class Interactor : MonoBehaviour
                     
                     if (Time.time - warningStartTime >= warningDuration)
                     {
-                        inputActions["Interacted"].Disable();
+                        //inputActions["Interacted"].Disable();
                         StealStep?.Invoke(3);
                         StartCoroutine(FailedStealing());
                         StopHoldRoutine();

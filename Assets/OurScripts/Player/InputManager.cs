@@ -26,6 +26,9 @@ public class InputManager : MonoBehaviour
     public static event System.Action<bool> onRotateChanged;
     public static event System.Action<bool> onScaleChanged;
     public static event System.Action OpenJournal;
+    public static event Action OnInteractStarted;
+    public static event Action OnInteractCanceled;
+
 
     public static event Action drop;
     public static event Action openInventory;
@@ -63,25 +66,48 @@ public class InputManager : MonoBehaviour
             inputActions["ToggleInstructions"].performed += ToggleMenu;
             inputActions["Restart"].performed += RestartScene;
 
-            interactable.showJournal += togglebool;
-            ToggleJournal.hideJournal +=togglebool;
+            ToggleJournal.OnJournalOpened +=togglebool;
+            ToggleJournal.OnJournalClosed +=togglebool;
 
             inputActions["Drop"].performed += DropItem;
             inputActions["OpenInventory"].performed += OpenInventory;
+
+            //for interactor
+            inputActions["Interacted"].started += ctx => OnInteractStarted?.Invoke();
+            inputActions["Interacted"].canceled += ctx => OnInteractCanceled?.Invoke();
         
         }
     }
-
+    
+    //changed to disable player interaction when the journal is open
     private void togglebool()
     {
-        if (!JournalOpen)
+    if (!JournalOpen)
+    {
+        print("toggling player map off");
+        JournalOpen = true;
+        //maybe instead of disabling UI we just disable interact
+        if (inputActions["Interacted"].enabled)
         {
-            JournalOpen=true;
+            inputActions["Interacted"].Disable();
+            inputActions["Interact"].Disable();
         }
-        else
-        {
-            JournalOpen = false;
-        }
+        
+        //inputActions.FindActionMap("UI").Disable();
+        //inputActions.FindActionMap("Player").Disable();
+    }
+    else
+    {
+         print("toggling player map on");
+        JournalOpen = false;
+            if (!inputActions["Interacted"].enabled)
+            {
+                inputActions["Interacted"].Enable();
+                inputActions["Interact"].Enable();
+            }
+        // inputActions.FindActionMap("UI").Enable();
+        // inputActions.FindActionMap("Player").Disable();
+    }
     }
     
     private void OnDisable()
@@ -99,11 +125,15 @@ public class InputManager : MonoBehaviour
 
             inputActions["Restart"].performed -= RestartScene;
         }
-        interactable.showJournal -= togglebool;
-        ToggleJournal.hideJournal -=togglebool;
+        ToggleJournal.OnJournalOpened -=togglebool;
+        ToggleJournal.OnJournalClosed -=togglebool;
 
         inputActions["Drop"].performed -= DropItem;
         inputActions["OpenInventory"].performed -= OpenInventory;   
+
+        //for interactor
+        inputActions["Interacted"].started -= ctx => OnInteractStarted?.Invoke();
+        inputActions["Interacted"].canceled -= ctx => OnInteractCanceled?.Invoke();
     }
 
     private void DropItem(InputAction.CallbackContext context)
@@ -126,6 +156,7 @@ public class InputManager : MonoBehaviour
         {
             print("invoking journal");
             OpenJournal?.Invoke();
+
         }
        
     }

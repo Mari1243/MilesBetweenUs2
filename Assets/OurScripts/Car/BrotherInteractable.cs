@@ -5,17 +5,26 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class BrotherInteractable : MonoBehaviour
 {
+    public static event Action askedAbtAllLoreItems;
     public interactable interactableData;
     public Item newItem;
     public List<string> barks = new List<string>();
     private int barkCount, barkIndex;
     public Image img;
     public int minWait, maxWait;
+
+    public int loreItemsAskedAbout = 0;
+
+
+    bool car1=false;
+
     private int carScene;
     //bool car1=false;
+
     private void OnEnable()
     {
         DialogueManager.DialogOver += StartTimer;
@@ -29,7 +38,6 @@ public class BrotherInteractable : MonoBehaviour
         DialogueManager.DialogOver -= StartTimer;
         SceneTrackerSingleton.onSceneName -= PreviousScene;
         DragItem.loreDrop -= loreDropping;
-
     }
 
     public void PreviousScene(string scene)
@@ -97,10 +105,14 @@ public class BrotherInteractable : MonoBehaviour
 
 
         //also make it so he "barks" only like twice but each time between then is randomized 
+        int rand = UnityEngine.Random.Range(minWait, maxWait);
 
         switch (carScene)
         {
             case 1:
+
+            barkCount = barks.Count;
+            //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
 
                 interactableData.item.node = "Car0";
                 break;
@@ -113,8 +125,9 @@ public class BrotherInteractable : MonoBehaviour
         }
 
                 barkCount = barks.Count;
-        int rand = Random.Range(minWait, maxWait); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
-        yield return new WaitForSeconds(rand);
+            //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
+
+            yield return new WaitForSeconds(rand);
 
         if (barkCount == 0)
         {
@@ -123,7 +136,7 @@ public class BrotherInteractable : MonoBehaviour
         else if (!DialogueManager.instance.dialogStarted )
         {
             AnimateBubble();
-            barkIndex = Random.Range(0, barks.Count);
+            barkIndex = UnityEngine.Random.Range(0, barks.Count);
             interactableData.item.node = barks[barkIndex]; //change the node in the scriptable obj 
             barks.Remove(barks[barkIndex]);
 
@@ -134,9 +147,25 @@ public class BrotherInteractable : MonoBehaviour
 
     public void loreDropping(string node)
     {
+
+        print("brother interactable lore drop happened");
         print("loredropping in broter interactable "+ newItem.name);
         newItem.node = node; //change the node in the scriptable obj 
         DialogueManager.instance.TalkInteraction(newItem);
+        loreItemsAskedAbout++;
+ 
+        if (loreItemsAskedAbout >= 3)
+        {
+            print("asked about all the new lore items!");
+            DialogueManager.DialogOver += OnBrotherDialogueFinished;
+        }
+    }
+
+    private void OnBrotherDialogueFinished()
+    {
+        //wait for dialogue to end 
+        askedAbtAllLoreItems?.Invoke();
+        DialogueManager.DialogOver -= OnBrotherDialogueFinished;
     }
 
     private void AnimateBubble()
