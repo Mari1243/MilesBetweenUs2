@@ -1,14 +1,16 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ToDoManager : MonoBehaviour
 {
     public static ToDoManager instance;
-
-    public GameObject[] toDoItems;
+    public List<GameObject> toDoItems = new List<GameObject>();
     private Dictionary<string, ToDoItemBehavior> Tasks;
     public GameObject[] Collectables;
+    public GameObject taskprefab;
+    public GameObject ToDoItemParent;
 
     void Awake()
     {
@@ -32,6 +34,18 @@ public class ToDoManager : MonoBehaviour
     private void OnDisable()
     {
         InventoryManager.AddedItem -= CollectedLoreItem;
+
+    }
+
+    public void spawnnewToDoTask(string taskname, string taskdescription)
+    {
+        //instantiating new task to list
+        Instantiate(taskprefab , ToDoItemParent.transform);
+        //setting its info internally
+        taskprefab.GetComponent<ToDoItemBehavior>().SetNewTaskInfo(taskname, taskdescription);
+        //add to todo items to todoitem list
+        toDoItems.Add(taskprefab);
+
 
     }
 

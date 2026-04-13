@@ -24,6 +24,18 @@ public class ToDoItemBehavior : MonoBehaviour
         SetState(ToDoItemState.Incomplete);
     }
 
+    public void SetNewTaskInfo(string taskname, string taskdescription)
+    {
+        if (taskname != null)
+        {
+            objectiveText.text = taskdescription;
+        }
+        if (taskdescription != null)
+        {
+            this.name = taskname;
+        }
+    }
+
     private void OnEnable()
     {
         // Trigger animation if this item is opened while already completed
