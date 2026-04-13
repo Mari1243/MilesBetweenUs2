@@ -80,6 +80,8 @@ Erm get lost, can’t you see we’re busy??
 
 title: Gardener1
 ---
+<<cameraIndex 5>>
+
 Whats going on little man
 Need something?
 	-> Are you a student 
@@ -93,9 +95,38 @@ Need something?
             Takes a lot of courage.
             But I mean if you find one laying around, 
             Let me know little man
+            <<cameraIndex 0>>
+
+
 ===
 
+title: GardenerQuest
+---
+<<cameraIndex 5>>
+<<if $hasNumber==true>>
+Hey you’re back,
+You got something for me?
+What whose number is this??
+You don’t know? 
+Haha you’re too funny you know that.
+Here, in exchange for this mystery number
+Have my business card.
+Let me know if you ever need landscaping.
+<<startAction gardenerQuest>>
 
+<<else>>
+	<<jump Gardener1>>
+<<endif>>
+<<cameraIndex 0>>
+===
+
+title: card
+---
+<<cameraIndex 4>>
+special item!
+<<openJournal true>>
+<<cameraIndex 3>>
+===
 
 
 

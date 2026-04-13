@@ -25,7 +25,10 @@ public class SchoolManager : MonoBehaviour
     public Item startCutScene;
     public GameObject bro;
     public Animator car;
-
+    
+    //for this levels fetchquest
+    private bool completedGardenerQuest = false;
+    public Item GardenerReward;
 
     private void Start()
     {
@@ -40,6 +43,7 @@ public class SchoolManager : MonoBehaviour
     {
         Patrol.instance.StartPatrol();
         DialogueManager.DialogOver -= startpatrol;
+
     }
 
     void OnEnable()
@@ -47,12 +51,15 @@ public class SchoolManager : MonoBehaviour
         interactable.onEND += triggerEND;
         InventoryManager.OnInventoryChange += checkconditions;
         BrotherInteractable.askedAbtAllLoreItems += triggerFinishedJournal;
+        DialogueCommands.startAction += StartAction;
+
     }
     void OnDisable()
     {
         interactable.onEND -= triggerEND;
         InventoryManager.OnInventoryChange -= checkconditions;
         BrotherInteractable.askedAbtAllLoreItems -= triggerFinishedJournal;
+        DialogueCommands.startAction -= StartAction;
     }
 
     public void triggerIntroCutscene()
@@ -157,4 +164,21 @@ public class SchoolManager : MonoBehaviour
     Frat flyer brother lore item
     school pamphlet
     */
+
+    public void StartAction(string action)
+    {
+        switch (action)
+        {
+            case "gardenerQuest":
+                if (!completedGardenerQuest)
+                {
+                    InventoryManager.instance.Add(GardenerReward);
+                    completedGardenerQuest = true;
+                }
+                break;
+
+
+
+        }
+    }
 }
