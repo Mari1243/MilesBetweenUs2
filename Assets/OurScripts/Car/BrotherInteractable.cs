@@ -105,13 +105,14 @@ public class BrotherInteractable : MonoBehaviour
 
 
         //also make it so he "barks" only like twice but each time between then is randomized 
+        int rand = UnityEngine.Random.Range(minWait, maxWait);
 
         switch (carScene)
         {
             case 1:
 
-        barkCount = barks.Count;
-        int rand = UnityEngine.Random.Range(minWait, maxWait); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
+            barkCount = barks.Count;
+            //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
 
                 interactableData.item.node = "Car0";
                 break;
@@ -124,9 +125,9 @@ public class BrotherInteractable : MonoBehaviour
         }
 
                 barkCount = barks.Count;
-        int rand = Random.Range(minWait, maxWait); //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
+            //how do I space these out? Or quanitfy how many times the brother speaks to you? Also make this a public reference so you can tweak it 
 
-        yield return new WaitForSeconds(rand);
+            yield return new WaitForSeconds(rand);
 
         if (barkCount == 0)
         {

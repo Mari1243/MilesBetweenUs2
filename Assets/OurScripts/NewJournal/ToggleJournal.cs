@@ -8,6 +8,7 @@ using Unity.Cinemachine;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System.Numerics;
+using System.Runtime.InteropServices;
 
 public class ToggleJournal : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class ToggleJournal : MonoBehaviour
 
 
     [SerializeField]public static bool journalopen = false;
-    [SerializeField]public bool canOpen = false;
+    [SerializeField]public bool canOpen = true;
     private Canvas canvas;
     public UnityEngine.UI.Button xbutton;
     private UnityEngine.Vector3 oldPos;
@@ -48,8 +49,8 @@ public class ToggleJournal : MonoBehaviour
 
         interactable.showJournal += journal;
         
-        // DialogueManager.DialogStart += disableJournal; //makes it so you cant open journal while in dialogue
-        // DialogueManager.DialogOver += enableJournal;
+        DialogueManager.DialogStart += disableJournal; //makes it so you cant open journal while in dialogue
+        DialogueManager.DialogOver += enableJournal;
         DialogueCommands.diaopenJournal += animateOpen;
 
 
@@ -62,14 +63,13 @@ public class ToggleJournal : MonoBehaviour
    
         interactable.showJournal -= journal;
 
-        // DialogueManager.DialogStart -= disableJournal;
-        // DialogueManager.DialogOver -= enableJournal;
+        DialogueManager.DialogStart -= disableJournal;
+        DialogueManager.DialogOver -= enableJournal;
         DialogueCommands.diaopenJournal -= animateOpen;
     }
 
     private void Start()
     {
-        canOpen = false;
     }
     public void enableJournal()
     {
@@ -97,10 +97,13 @@ public class ToggleJournal : MonoBehaviour
 
     public void journal()
     {
+        print("journalOpen is "+ journalopen + " and canOpen is "+canOpen);
+
        if(this.GetComponent<Canvas>() != null)
         {
             if(!journalopen && canOpen)
             {
+                print("animating in");
                 canvas.enabled = true;
                 DOTween.Restart("animateIn"); 
                 DOTween.Play("animateIn");
@@ -108,11 +111,12 @@ public class ToggleJournal : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 OnJournalOpened?.Invoke(); // add this
 
-            if (SceneManager.GetActiveScene().name != "Car")
-            disablePlayer();
+                if (SceneManager.GetActiveScene().name != "Car")
+                disablePlayer();
             }
             else
             {
+                print("animating out");
                 canvas.enabled = false;
                 DOTween.Restart("animateOut"); 
                 DOTween.Play("animateOut");
