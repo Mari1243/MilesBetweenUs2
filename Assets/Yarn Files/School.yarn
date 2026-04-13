@@ -58,9 +58,45 @@ special item!
 title: FratBros1
 ---
 <<cameraIndex 3>>
-Frat Dude: yo hey im a frat duuuuude
+Yoo lil bro!
+You tryna join the frat?
+	-> No
+	-> What’s a frat?
+SICK DUDE SICKK!!
+Here do me a favor lil bro,
+Pass these around to everyone.
+We’re trying to get 50 pledges by the end of the week.
+Thanks lil bro you tha beeeest.
+
 <<cameraIndex 0>>
 ===
+
+title: PeopleOnBlanket
+---
+Erm get lost, can’t you see we’re busy??
+    ->Steal the number from the dude behind his back.
+    ->Steal the girls sketchbook pages
+ ===
+
+title: Gardener1
+---
+Whats going on little man
+Need something?
+	-> Are you a student 
+    Haha, no are you? 
+    Nope, just a landscaper.
+    It’s my business I started out of highschool
+		-> Do you have a girlfriend?
+		    Wow, very personal
+            No I do not.
+            It’s hard to get someone’s number
+            Takes a lot of courage.
+            But I mean if you find one laying around, 
+            Let me know little man
+===
+
+
+
 
 
 
