@@ -86,7 +86,7 @@ public class SceneTrackerSingleton : MonoBehaviour
             if (currentscene.ToDoList != null)
             {
                 print("setting todolist and beginning spawn between scenetracker and new journal save");
-                carOver.Invoke();
+                carOver?.Invoke();
                 ToDoListPrefab = currentscene.ToDoList;
                 NewJournalSave.instance.newspawnlist(ToDoListPrefab);
             }

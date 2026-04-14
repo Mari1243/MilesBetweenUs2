@@ -163,7 +163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Get snacks for the road
+  m_text: Grab candy for kids
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
   m_sharedMaterial: {fileID: -6955914548417487326, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7045319999662871924}
   strikethrough: {fileID: 2460335153008929167}
-  objectiveText: {fileID: 0}
+  objectiveText: {fileID: 8408876951638536616}
 --- !u!1 &2170062342477423002
 GameObject:
   m_ObjectHideFlags: 0
