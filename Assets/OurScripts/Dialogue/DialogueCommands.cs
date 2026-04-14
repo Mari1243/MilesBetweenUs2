@@ -29,6 +29,7 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<string>("changeScene", OnChangeScene);
         dialogueRunner.AddCommandHandler<string>("startAction", OnStartAction);
         dialogueRunner.AddCommandHandler<bool>("openJournal", OnJournalOpen);
+        dialogueRunner.AddCommandHandler<bool>("end", EndGame);
 
 
     }
@@ -39,6 +40,22 @@ public class DialogueCommands : MonoBehaviour
             currentCam(cam);
 
     }
+
+    private void EndGame(bool willend)
+    {
+        if (willend)
+        {
+            print("TRIGGER FINAL CUTSCENE");
+        }
+        else
+        {
+            //close journal and reset
+            SchoolManager.hasPlayed = false;
+            
+        }
+    }
+
+
      void OnJournalOpen(bool bol)
     {
         if (bol)

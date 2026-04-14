@@ -1,4 +1,5 @@
 using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 
 public class PatrolCoroutines : MonoBehaviour
@@ -9,8 +10,14 @@ public class PatrolCoroutines : MonoBehaviour
     private float _speed = 2f;
 
     private float _waitTime = 1f; // in seconds
+    public static PatrolCoroutines instance; 
 
     private Coroutine _prevCoroutine;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {

@@ -21,9 +21,14 @@ public class Patrol : MonoBehaviour
 
     public GameObject player;
 
-
+    public static Patrol instance;
     private int currentPointIndex = 0;
     private Coroutine patrolCoroutine;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
