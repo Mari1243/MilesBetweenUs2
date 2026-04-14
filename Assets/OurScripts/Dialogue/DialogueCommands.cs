@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
 using Yarn.Unity;
@@ -37,9 +38,13 @@ public class DialogueCommands : MonoBehaviour
     void OnCamChange(int cam)
     {
         if (currentCam != null)
+        {
             currentCam(cam);
+        }
+            
 
     }
+
 
     private void EndGame(bool willend)
     {
@@ -82,7 +87,8 @@ public class DialogueCommands : MonoBehaviour
     }
 
     public void checkInventory()
-    //find a place to better implement 
+    //find a place to better implement
+    //decided to put make this manually triggered by dialogue command
     //called in events in dialogue manager in gas station
     {
         Debug.Log("checkInventory called from: " + System.Environment.StackTrace);

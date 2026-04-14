@@ -5,6 +5,8 @@ using Yarn.Unity;
 using MaskTransitions;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Linq;
+
 
 public class SchoolManager : MonoBehaviour
 {
@@ -29,6 +31,8 @@ public class SchoolManager : MonoBehaviour
     //for this levels fetchquest
     private bool completedGardenerQuest = false;
     public Item GardenerReward;
+    public Item FratItem;
+    public Item SchoolPamphlet;
 
     private void Start()
     {
@@ -60,6 +64,11 @@ public class SchoolManager : MonoBehaviour
         InventoryManager.OnInventoryChange -= checkconditions;
         BrotherInteractable.askedAbtAllLoreItems -= triggerFinishedJournal;
         DialogueCommands.startAction -= StartAction;
+    }
+
+    private void giftItem(Item itemData)
+    {
+        InventoryManager.instance.Add(itemData);
     }
 
     public void triggerIntroCutscene()
@@ -175,6 +184,12 @@ public class SchoolManager : MonoBehaviour
                     InventoryManager.instance.Add(GardenerReward);
                     completedGardenerQuest = true;
                 }
+                break;
+            case "Frat":
+                InventoryManager.instance.Add(FratItem);
+                break;
+            case "Pamphlet":
+                InventoryManager.instance.Add(SchoolPamphlet);
                 break;
 
 

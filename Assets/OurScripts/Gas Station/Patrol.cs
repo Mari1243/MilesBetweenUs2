@@ -6,13 +6,13 @@ public class Patrol : MonoBehaviour
 {
     [Header("Patrol Settings")]
     [SerializeField] private Transform[] patrolPoints;
-    [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float waitTime = 1f;
+    public float moveSpeed = 3f;
+    public float waitTime = 0f;
     [SerializeField] private Ease moveEase = Ease.Linear;
 
     [Header("Options")]
-    [SerializeField] private bool loopPatrol = true;
-    [SerializeField] private bool startOnAwake = true;
+    [SerializeField] private bool loopPatrol;
+    [SerializeField] private bool startOnAwake;
     [SerializeField] private bool IsOntoYou = false;
 
     [Header("Animator")]
@@ -45,6 +45,8 @@ public class Patrol : MonoBehaviour
             StopCoroutine(patrolCoroutine);
         }
         patrolCoroutine = StartCoroutine(PatrolRoutine());
+        //start animation
+        dogAnimator.SetTrigger("walk");
     }
 
     public void StopPatrol()
@@ -54,6 +56,8 @@ public class Patrol : MonoBehaviour
             StopCoroutine(patrolCoroutine);
             transform.DOKill();
         }
+        //end animation
+        dogAnimator.SetTrigger("idle");
     }
 
     private IEnumerator PatrolRoutine()
@@ -103,15 +107,15 @@ public class Patrol : MonoBehaviour
                 
                 if (loopPatrol)
                 {
-                    currentPointIndex = 0;
-                }
-                else
-                {
-                    sus();
-
                     // For ping-pong, reverse direction
                     currentPointIndex = patrolPoints.Length - 2;
                     System.Array.Reverse(patrolPoints);
+                    
+                }
+                else
+                {
+                   StopPatrol();
+                    
                 }
             }
         }

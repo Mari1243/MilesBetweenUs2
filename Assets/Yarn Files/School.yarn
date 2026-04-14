@@ -9,6 +9,7 @@ title: IntroCutSceneSchool
 Brother: Wow we finally made it
 Brother: Would you mind grabbing me a map or something?
 Brother: Those frat dudes look like they know their way around.
+<<declare $EmployeetimesVisited = 0>>
 <<cameraIndex 0>>
 ===
 
@@ -57,7 +58,7 @@ special item!
 
 title: FratBros1
 ---
-<<cameraIndex 3>>
+<<cameraIndex 6>>
 Yoo lil bro!
 You tryna join the frat?
 	-> No
@@ -67,7 +68,7 @@ Here do me a favor lil bro,
 Pass these around to everyone.
 We’re trying to get 50 pledges by the end of the week.
 Thanks lil bro you tha beeeest.
-
+<<startAction Frat>>
 <<cameraIndex 0>>
 ===
 
@@ -126,6 +127,39 @@ title: card
 special item!
 <<openJournal true>>
 <<cameraIndex 3>>
+===
+
+title: Pamphlet
+---
+<<cameraIndex 7>>
+<<if $EmployeetimesVisited == 0>>
+    Hii!
+    Welcome to Pawperdine College!!
+    Are you lost?
+    Here! 
+    Take a pamphlet!
+    Here you’ll find all our resources available!
+<<elseif $EmployeetimesVisited == 1>>
+    Hi again!!
+    Did you find everything ok?
+    oh, you want another?
+    Here ya go!
+<<elseif $EmployeetimesVisited == 2>>
+    Uh haha, you already have two pamphlets!
+    What do you need all these for?
+<<elseif $EmployeetimesVisited == 3>>
+    Sure. Take another.
+    I don’t care.
+<<elseif $EmployeetimesVisited > 3>>
+    Seriously.
+    I DON’T HAVE TIME FOR THIS.
+    PLEASE LEAVE THE BOOTH.
+    ALL INFO AND RESOURCES ARE FOUND ON THE
+    4 PAMPHLETS YOU HAVE.
+<<endif>>
+<<set $EmployeetimesVisited to $EmployeetimesVisited+1>>
+<<startAction Pamphlet>>
+<<cameraIndex 0>>
 ===
 
 

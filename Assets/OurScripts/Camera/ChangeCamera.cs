@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -52,6 +53,7 @@ public class ChangeCamera : MonoBehaviour
             camera.enabled = camera == currentCamera;
 
         }
+        print(currentCamera.name);
 
     }
 
