@@ -1,29 +1,47 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ToDoManager : MonoBehaviour
 {
     public static ToDoManager instance;
-
-    public GameObject[] toDoItems;
-    private Dictionary<string, ToDoItemBehavior> Tasks;
+    public List<GameObject> toDoItems = new List<GameObject>();
+    private Dictionary<string, ToDoItemBehavior> Tasks = new Dictionary<string, ToDoItemBehavior>();
     public GameObject[] Collectables;
+    public GameObject taskprefab;
+    public GameObject ToDoItemParent;
 
     void Awake()
     {
-    if (instance != null && instance != this) { Destroy(gameObject); return; }
-    instance = this;
-    //DontDestroyOnLoad(gameObject);
-    
-    Tasks = new Dictionary<string, ToDoItemBehavior>();
-    foreach (var item in toDoItems)
-    {
-        var behavior = item.GetComponent<ToDoItemBehavior>();
-        if (behavior != null)
+        if (instance != null && instance != this) { Destroy(gameObject); return; }
+        instance = this;
+        //DontDestroyOnLoad(gameObject);
+        //populating list with 
+        foreach (var item in toDoItems)
+        {
+            var behavior = item.GetComponent<ToDoItemBehavior>();
+            if (behavior != null)
             Tasks.Add(item.name, behavior);
-    }
+        }
+
+
     }  
+
+    private void addtasks(GameObject newobj)
+    {
+        var behavior = newobj.GetComponent<ToDoItemBehavior>();
+        if (behavior != null)
+        {
+            Tasks.Add(newobj.name, behavior);
+        
+        }
+        else
+        {
+            Debug.LogError("behavior is null on the task im adding");
+        }
+        
+    }
     private void OnEnable()
     {
         InventoryManager.AddedItem += CollectedLoreItem;
@@ -35,12 +53,28 @@ public class ToDoManager : MonoBehaviour
 
     }
 
+    public void spawnnewToDoTask(string taskname, string taskdescription)
+    {
+        GameObject newTask = Instantiate(taskprefab, ToDoItemParent.transform);
+        newTask.GetComponent<ToDoItemBehavior>().SetNewTaskInfo(taskname, taskdescription);
+        addtasks(newTask);
+    }
+
     public void CompleteItem(string itemName)
     {
+        print("trying to check off item by the name of "+ itemName);
         if (Tasks.TryGetValue(itemName, out ToDoItemBehavior item))
+        {
             item.SetState(ToDoItemState.Completed);
+            print("successfully completed item");
+        } 
         else
             Debug.LogWarning($"ToDoItem '{itemName}' not found.");
+
+        foreach (KeyValuePair<string, ToDoItemBehavior> thing in Tasks)
+        {
+            print(thing.Key);
+        }
     }
 
     public void ResetItem(string itemName)

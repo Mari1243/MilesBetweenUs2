@@ -143,10 +143,17 @@ private bool hasExecuted = false;
         {
             foreach (InventoryItem item in list)
             {
+                print("i have "+ item.itemData.itemName);
                 if (item.itemData.itemName == "Snacks")
                 {
                     if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
                    ToDoManager.instance.CompleteItem("SnacksforRoad");
+                    completedobjectives++;
+                }
+                if (item.itemData.itemName == "Lollipop")
+                {
+                    if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
+                   ToDoManager.instance.CompleteItem("KidCandy");
                     completedobjectives++;
                 }
                 else if (item.itemData.itemName == "Cigarettes" || item.itemData.itemName == "PocketKnife" || item.itemData.itemName == "BloodPawz CD")
@@ -182,13 +189,7 @@ private bool hasExecuted = false;
             case "StartkidQuest":
 
                 Debug.Log("Giving kid quest");
-                //kidObjective.SetActive(true);
-                //if (kidObjective)
-                //    Debug.Log("KID QUEST IS ACTIVE");
-                //else
-                //    Debug.Log("NOPE NOT TO BE FOUND");
-                //journalNotif?.Invoke();
-
+                ToDoManager.instance.spawnnewToDoTask("KidCandy", "Grab candy for kids");
                 break;
 
             case "StartbroQuest":

@@ -5,4 +5,5 @@ tags:
 <<declare $hasPostcard=false>>
 <<declare $giveReward = false>>
 <<declare $hasID = false>>
+<<declare $hasNumber = false>>
 ===

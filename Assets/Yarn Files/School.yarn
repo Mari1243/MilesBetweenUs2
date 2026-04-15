@@ -9,6 +9,7 @@ title: IntroCutSceneSchool
 Brother: Wow we finally made it
 Brother: Would you mind grabbing me a map or something?
 Brother: Those frat dudes look like they know their way around.
+<<declare $EmployeetimesVisited = 0>>
 <<cameraIndex 0>>
 ===
 
@@ -57,10 +58,110 @@ special item!
 
 title: FratBros1
 ---
-<<cameraIndex 3>>
-Frat Dude: yo hey im a frat duuuuude
+<<cameraIndex 6>>
+Yoo lil bro!
+You tryna join the frat?
+	-> No
+	-> What’s a frat?
+SICK DUDE SICKK!!
+Here do me a favor lil bro,
+Pass these around to everyone.
+We’re trying to get 50 pledges by the end of the week.
+Thanks lil bro you tha beeeest.
+<<startAction Frat>>
 <<cameraIndex 0>>
 ===
+
+title: PeopleOnBlanket
+---
+Erm get lost, can’t you see we’re busy??
+    ->Steal the number from the dude behind his back.
+    ->Steal the girls sketchbook pages
+ ===
+
+title: Gardener1
+---
+<<cameraIndex 5>>
+
+Whats going on little man
+Need something?
+	-> Are you a student 
+    Haha, no are you? 
+    Nope, just a landscaper.
+    It’s my business I started out of highschool
+		-> Do you have a girlfriend?
+		    Wow, very personal
+            No I do not.
+            It’s hard to get someone’s number
+            Takes a lot of courage.
+            But I mean if you find one laying around, 
+            Let me know little man
+            <<cameraIndex 0>>
+
+
+===
+
+title: GardenerQuest
+---
+<<cameraIndex 5>>
+<<if $hasNumber==true>>
+Hey you’re back,
+You got something for me?
+What whose number is this??
+You don’t know? 
+Haha you’re too funny you know that.
+Here, in exchange for this mystery number
+Have my business card.
+Let me know if you ever need landscaping.
+<<startAction gardenerQuest>>
+
+<<else>>
+	<<jump Gardener1>>
+<<endif>>
+<<cameraIndex 0>>
+===
+
+title: card
+---
+<<cameraIndex 4>>
+special item!
+<<openJournal true>>
+<<cameraIndex 3>>
+===
+
+title: Pamphlet
+---
+<<cameraIndex 7>>
+<<if $EmployeetimesVisited == 0>>
+    Hii!
+    Welcome to Pawperdine College!!
+    Are you lost?
+    Here! 
+    Take a pamphlet!
+    Here you’ll find all our resources available!
+<<elseif $EmployeetimesVisited == 1>>
+    Hi again!!
+    Did you find everything ok?
+    oh, you want another?
+    Here ya go!
+<<elseif $EmployeetimesVisited == 2>>
+    Uh haha, you already have two pamphlets!
+    What do you need all these for?
+<<elseif $EmployeetimesVisited == 3>>
+    Sure. Take another.
+    I don’t care.
+<<elseif $EmployeetimesVisited > 3>>
+    Seriously.
+    I DON’T HAVE TIME FOR THIS.
+    PLEASE LEAVE THE BOOTH.
+    ALL INFO AND RESOURCES ARE FOUND ON THE
+    4 PAMPHLETS YOU HAVE.
+<<endif>>
+<<set $EmployeetimesVisited to $EmployeetimesVisited+1>>
+<<startAction Pamphlet>>
+<<cameraIndex 0>>
+===
+
 
 
 
