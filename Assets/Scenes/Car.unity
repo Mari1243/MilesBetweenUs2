@@ -2304,11 +2304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: autoStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: startNode
-      value: Car0Start
+      value: Car1Start
       objectReference: {fileID: 0}
     - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.size
