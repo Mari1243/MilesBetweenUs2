@@ -177,7 +177,7 @@ Or some crap like that.
                 There’s so much I coulda done
                 Between high school and well
                 Now.
-
+<<openJournal true>>
 <<cameraIndex 3>>
 ===
 
@@ -200,6 +200,7 @@ Don’t talk to those people.
         But 
         At least you pick up trash.
         Even if it makes you stink a little.
+<<openJournal true>>
 <<cameraIndex 3>>
 ===
 
@@ -207,6 +208,7 @@ Don’t talk to those people.
 
 title: club
 ---
+<<cameraIndex 4>>
 Woah. Is this a legit club?
 ->Yea you like plants right!
     I don’t know. 
@@ -226,6 +228,4 @@ Woah. Is this a legit club?
                 Old friends.
                 ->Where are they now?
                     College.
-
-<<cameraIndex 3>>
 ===
