@@ -153,7 +153,7 @@ public class BrotherInteractable : MonoBehaviour
         newItem.node = node; //change the node in the scriptable obj 
         DialogueManager.instance.TalkInteraction(newItem);
         loreItemsAskedAbout++;
- 
+        Debug.Log(newItem.diagPos);
         if (loreItemsAskedAbout >= 3)
         {
             print("asked about all the new lore items!");
