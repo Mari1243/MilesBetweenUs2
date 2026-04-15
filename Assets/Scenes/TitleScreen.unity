@@ -10597,6 +10597,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
+      propertyPath: carnum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
       propertyPath: scenes.Array.size
       value: 4
       objectReference: {fileID: 0}

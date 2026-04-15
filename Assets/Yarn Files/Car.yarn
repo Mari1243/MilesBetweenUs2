@@ -8,13 +8,40 @@ Brother: it's gonna be a long trip.
 
 title: Car1Start
 ---
-Brother: Did ya have fun at the gas station ?
+Brother: Put on your seatbelt.
 
 ===
 
 title: Car2Start
 ---
-Brother: Dragon land was fun wasn't it ?
+Brother: You had fun at dino-
+Brother: I mean dragon land?
+Brother: That place was such a sham.
+Brother: Those roadside attractions are weird.
+Brother: I remember one time-
+Brother: Hold on, dad's calling.
+Brother: ...
+Brother: Hey.
+Brother: ...
+Brother: Yea, he's alright. We just were at the gas station..
+Brother: ...
+Brother: Yes Dad. I know. You don't have to remind me.
+Brother: ...
+Brother: ...
+Brother: I'm sorry.
+Brother: Yea. Ok. Bye.
+Brother: ...
+-> What did dad say?
+	Brother: Nothing. It's nothing.
+	Brother: Don't worry about it.
+	Brother: He's just always worried something's wrong.
+	Brother: Or that I did something.
+-> Are you ok?
+	Brother: What? Why?
+	Brother: It's nothing.
+	Brother: Dad's usual nagging.
+	Brother: Well for me atleast.
+
 
 ===
 

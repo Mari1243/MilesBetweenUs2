@@ -2304,11 +2304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: autoStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: startNode
-      value: CarStart
+      value: Car1Start
       objectReference: {fileID: 0}
     - target: {fileID: 3654370983575633351, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.size
@@ -3274,11 +3274,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: isRelative
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: endValueV3.x
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: endValueV3.y
-      value: 1050
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1616451728402434421, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Pivot.x
@@ -3378,11 +3382,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775854182488427552, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: isRelative
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775854182488427552, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: endValueV3.x
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: 1775854182488427552, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: endValueV3.y
-      value: -500
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Name
@@ -5549,7 +5557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
       propertyPath: carnum
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
       propertyPath: scenes.Array.size
@@ -5688,6 +5696,7 @@ MonoBehaviour:
   img: {fileID: 10838888}
   minWait: 10
   maxWait: 30
+  loreItemsAskedAbout: 0
 --- !u!1001 &7027845020657355862
 PrefabInstance:
   m_ObjectHideFlags: 0
