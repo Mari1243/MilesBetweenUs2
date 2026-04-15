@@ -963,15 +963,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 356aa0e1839f71d4ca72a5679d09c9d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6500015
+      value: -1.7600021
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 356aa0e1839f71d4ca72a5679d09c9d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.765324
+      value: -5.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 356aa0e1839f71d4ca72a5679d09c9d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.992889
+      value: -2.2328887
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 356aa0e1839f71d4ca72a5679d09c9d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1943,15 +1943,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 356aa0e1839f71d4ca72a5679d09c9d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.25
+      value: -6.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 356aa0e1839f71d4ca72a5679d09c9d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.955324
+      value: -5.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 356aa0e1839f71d4ca72a5679d09c9d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8200002
+      value: -1.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 356aa0e1839f71d4ca72a5679d09c9d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4193,7 +4193,7 @@ Transform:
   m_GameObject: {fileID: 1291408404}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7001956, y: 0.23007321, z: -0.18884376, w: 0.6489457}
-  m_LocalPosition: {x: -84.12, y: 6.589, z: -9.93}
+  m_LocalPosition: {x: -85.23, y: 6.4843245, z: -9.17}
   m_LocalScale: {x: 0.043084037, y: 0.043084037, z: 0.043084037}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7816,6 +7816,7 @@ MonoBehaviour:
   Map: {fileID: 236304076}
   TPCam: {fileID: 1551611732}
   NOJournal: {fileID: 11400000, guid: f9efa87c15816455a886765374d17a65, type: 2}
+  xButton: {fileID: 1713106521}
   instructionss: {fileID: 1451236270}
   TutorialDialogueSystem: {fileID: 1615217909}
   DialogueSystem: {fileID: 1491419505}
@@ -7947,11 +7948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2113875245164629458, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1439.9999
       objectReference: {fileID: 0}
     - target: {fileID: 2113875245164629458, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 14.01
       objectReference: {fileID: 0}
     - target: {fileID: 2113875245164629458, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_AnchoredPosition.x

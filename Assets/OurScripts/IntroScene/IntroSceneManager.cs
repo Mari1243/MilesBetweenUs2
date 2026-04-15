@@ -24,6 +24,7 @@ public class IntroSceneManager : MonoBehaviour
     private bool hasJournal = false;
     public Item NOJournal;
     public static bool journalopen = false;
+    public Button xButton;
 
     public GameObject instructionss;
 
@@ -37,7 +38,7 @@ public class IntroSceneManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-
+        xButton.gameObject.SetActive(false);
     }
     private void OnEnable()
     {
@@ -116,6 +117,8 @@ public class IntroSceneManager : MonoBehaviour
         DialogueManager.tutorialInstance.LoadDialog("WhatisJournal");
         DialogueManager.tutorialInstance.StartDialog();
         //DialogueManager.instance.OnDialogOver();
+        //set x button true
+         xButton.gameObject.SetActive(true);
     }
 
    
