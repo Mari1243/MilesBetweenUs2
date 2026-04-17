@@ -173,23 +173,34 @@ public class SchoolManager : MonoBehaviour
     Frat flyer brother lore item
     school pamphlet
     */
+    //also any time something changes with the to do list the check journal/todolist popup should be called
 
     public void StartAction(string action)
     {
         switch (action)
         {
             case "gardenerQuest":
+                //gets called twice
                 if (!completedGardenerQuest)
                 {
-                    InventoryManager.instance.Add(GardenerReward);
+                    Debug.Log("Giving gardener quest");
+                    ToDoManager.instance.spawnnewToDoTask("GardenerQuest", "Get a girls number");
                     completedGardenerQuest = true;
+                }
+                else
+                {
+                    InventoryManager.instance.Add(GardenerReward);
+                    //check off number
+                    ToDoManager.instance.CompleteItem("GardenerQuest");
                 }
                 break;
             case "Frat":
                 InventoryManager.instance.Add(FratItem);
+                ToDoManager.instance.CompleteItem("CheckoutFratBros");
                 break;
             case "Pamphlet":
                 InventoryManager.instance.Add(SchoolPamphlet);
+                ToDoManager.instance.CompleteItem("FlyerforMax");
                 break;
 
 

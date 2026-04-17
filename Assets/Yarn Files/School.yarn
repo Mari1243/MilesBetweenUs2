@@ -96,6 +96,7 @@ Need something?
             Takes a lot of courage.
             But I mean if you find one laying around, 
             Let me know little man
+            <<startAction gardenerQuest>>
             <<cameraIndex 0>>
 
 
@@ -114,7 +115,6 @@ Here, in exchange for this mystery number
 Have my business card.
 Let me know if you ever need landscaping.
 <<startAction gardenerQuest>>
-
 <<else>>
 	<<jump Gardener1>>
 <<endif>>
