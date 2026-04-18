@@ -73,6 +73,12 @@ void OnDisable()
     InputManager.OnInteractCanceled -= HandleInteractCanceled;
 }
 
+public void alternativeInteract(GameObject obj)
+{
+    pickedUpObj = obj;
+    HandleInteractStarted();
+}
+
 private void HandleInteractStarted()
 {
     // Add null checks at the start
@@ -86,7 +92,7 @@ private void HandleInteractStarted()
             {
                 if (!isInStealingConfirmMode)
                 {
-                    print("First press: Entering stealing confirmation mode");
+                    //print("First press: Entering stealing confirmation mode");
                     isInStealingConfirmMode = true;
                     OnStartedStealing?.Invoke(StealableItemBehavior.instance.camIndex);
 
@@ -179,7 +185,7 @@ private void HandleInteractCanceled()
             {
                 Outline outline = highlight.gameObject.AddComponent<Outline>();
                 outline.enabled = true;
-                outline.OutlineColor = Color.white;
+                outline.OutlineColor = Color.yellow;
                 outline.OutlineWidth = 7.0f;
                 checkstate(other.gameObject);
             }
@@ -257,7 +263,7 @@ private void HandleInteractCanceled()
 
     private IEnumerator FailedStealing()
     {
-        print("failing stealing");
+        print("ENDING stealing");
         yield return new WaitForSeconds(1f);
         
         if (StealingManager.Instance != null)
@@ -344,7 +350,7 @@ private void HandleInteractCanceled()
 
             if (holdProgress <= 0f && holdDirection == -1)
             {
-                
+                //ran out
                 StopHoldRoutine();
                 OnHoldCanceled?.Invoke();
                 StealStep?.Invoke(4);

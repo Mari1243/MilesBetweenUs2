@@ -8,6 +8,7 @@ public class StealableItemBehavior : MonoBehaviour
     public static StealableItemBehavior instance;
     private bool thisItem;
     private float holdProgress;
+    public int defaultCameraInt = 0;
     private void OnEnable()
     {
         Interactor.OnHoldCompleted += defaultCamera;
@@ -54,7 +55,7 @@ public class StealableItemBehavior : MonoBehaviour
     }
     void defaultCamera()
     {
-        ChangeCamera.instance.changeCamera(0);
+        ChangeCamera.instance.changeCamera(defaultCameraInt);
     }
     void floatObj(float progress)
     {

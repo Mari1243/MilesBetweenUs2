@@ -23,7 +23,6 @@ public class InputManager : MonoBehaviour
     
     // Events
     public static event Action Pause;
-    public static event System.Action<bool> onRotateChanged;
     public static event System.Action<bool> onScaleChanged;
     public static event System.Action OpenJournal;
     public static event Action OnInteractStarted;
@@ -118,7 +117,6 @@ public class InputManager : MonoBehaviour
             inputActions["Exit"].performed -= PauseGame;
 
             inputActions["checkJournal"].performed -= checkJournal;
-            inputActions["Rotate"].canceled -= OnRotateCanceled;
             inputActions["DeleteSave"].performed -= onClearSave;
 
             inputActions["ToggleInstructions"].performed -= ToggleMenu;
@@ -203,27 +201,6 @@ public class InputManager : MonoBehaviour
         Application.Quit();
     }
     
-    // Called when Rotate button is pressed
-    private void OnRotateStarted(InputAction.CallbackContext context)
-    {
-        if (JournalOpen)
-        {
-            canRotate = true;
-            onRotateChanged?.Invoke(canRotate);
-        }
-    }
-
-    // Called when Rotate button is released
-    private void OnRotateCanceled(InputAction.CallbackContext context)
-    {
-        if (JournalOpen)
-        {
-        canRotate = false;
-        print("Rotate canceled: " + canRotate);
-        onRotateChanged?.Invoke(canRotate);
-        }
-    
-    }
 
 
     public void onClearSave(InputAction.CallbackContext context)

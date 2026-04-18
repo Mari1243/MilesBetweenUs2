@@ -20,6 +20,7 @@ TagManager:
   - coin
   - Map
   - END
+  - Misc
   layers:
   - Default
   - TransparentFX
