@@ -73,15 +73,14 @@ tags:
 	...
 	zzzZz...
 	Zzzz...
-<<elseif $GrannyVisited == 3>>
-    Sure. Take another.
-    I don’t care.
-<<elseif $GrannyVisited > 3>>
-    Seriously.
-    I DON’T HAVE TIME FOR THIS.
-    PLEASE LEAVE THE BOOTH.
-    ALL INFO AND RESOURCES ARE FOUND ON THE
-    4 PAMPHLETS YOU HAVE.
+		-> Wake her up
+			h..huh..?
+			Sorry!
+			Anyways,
+			Let me know if you want any dragon facts!
+			<<cameraIndex 0>>
+		-> Leave
+			<<cameraIndex 0>>	
 <<endif>>
 <<set $GrannyVisited to $GrannyVisited+1>>
 
