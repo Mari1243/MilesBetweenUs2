@@ -45,6 +45,7 @@ public class Interactor : MonoBehaviour
     public static event Action<bool> StealWarning;
     public static event Action<string> HintNeeded;
     public static event Action<int> OnStartedStealing;
+    public static event Action OnStopStealing;
 
 
     private Transform highlight;
@@ -265,11 +266,8 @@ private void HandleInteractCanceled()
     {
         print("ENDING stealing");
         yield return new WaitForSeconds(1f);
-        
-        if (StealingManager.Instance != null)
-        {
-            StealingManager.Instance.StopStealin();
-        }
+
+        OnStopStealing?.Invoke();
         
         CleanupAfterInteraction();
         

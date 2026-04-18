@@ -215,12 +215,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5195522}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.1252872, z: -0, w: 0.99212056}
-  m_LocalPosition: {x: -0.82, y: 1.6, z: 44.86}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.6834393, z: -0, w: 0.7300074}
+  m_LocalPosition: {x: 0.0013828089, y: 0.00061992434, z: -0.0052705016}
+  m_LocalScale: {x: 0.008884983, y: 0.008884985, z: 0.008884983}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8804625045762038812}
   m_LocalEulerAnglesHint: {x: 0, y: -14.395, z: 0}
 --- !u!65 &5195527
 BoxCollider:
@@ -241,8 +241,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.798628, y: 7.4197807, z: 3.6683555}
-  m_Center: {x: -0.7915487, y: -2.029642, z: -1.7341777}
+  m_Size: {x: 10.938495, y: 7.4197807, z: 6.914962}
+  m_Center: {x: 0.4885392, y: -2.029642, z: -3.3574586}
 --- !u!114 &5195528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4842,8 +4842,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.798628, y: 7.4197807, z: 3.6683555}
-  m_Center: {x: -0.7915487, y: -2.029642, z: -1.7341777}
+  m_Size: {x: 10.60488, y: 7.4197807, z: 6.6874228}
+  m_Center: {x: -1.4555273, y: -2.029642, z: -3.2437057}
 --- !u!114 &1229935001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4920,12 +4920,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229934999}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.1252872, z: -0, w: 0.99212056}
-  m_LocalPosition: {x: 0.92, y: 2.37, z: 45.31}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.6834393, z: -0, w: 0.7300074}
+  m_LocalPosition: {x: 0.0024045561, y: 0.0074613616, z: 0.010665304}
+  m_LocalScale: {x: 0.008884983, y: 0.008884985, z: 0.008884983}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8804625045762038812}
   m_LocalEulerAnglesHint: {x: 0, y: -14.395, z: 0}
 --- !u!114 &1229935004
 MonoBehaviour:
@@ -14463,7 +14463,7 @@ MonoBehaviour:
   stealables:
   - {fileID: 5195522}
   - {fileID: 1229934999}
-  StealCamInt: 0
+  StealCamInt: 8
 --- !u!114 &7136840231857428373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16057,6 +16057,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4941399278169775084}
+  - {fileID: 5195526}
+  - {fileID: 1229935003}
   - {fileID: 7550094853044468677}
   m_Father: {fileID: 543450653319737404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16585,5 +16587,3 @@ SceneRoots:
   - {fileID: 1763498718}
   - {fileID: 461179659}
   - {fileID: 1931500266}
-  - {fileID: 5195526}
-  - {fileID: 1229935003}

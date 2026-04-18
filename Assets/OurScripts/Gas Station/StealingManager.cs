@@ -36,7 +36,18 @@ public class StealingManager : MonoBehaviour
         DangerState.Suspicious
     };
 
-  
+    private void OnEnable()
+    {
+        Interactor.OnStopStealing += StopStealin;
+    }
+
+    private void OnDisable()
+    {
+        Interactor.OnStopStealing -= StopStealin;
+    }
+
+
+
     private int cycleIndex;
     private Coroutine cycleRoutine;
 
