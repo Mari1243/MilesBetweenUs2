@@ -2699,6 +2699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camIndex: 6
+  defaultCameraInt: 0
 --- !u!114 &458826016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7096,6 +7097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camIndex: 7
+  defaultCameraInt: 0
 --- !u!114 &1028603493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9391,6 +9393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camIndex: 5
+  defaultCameraInt: 0
 --- !u!114 &1397258483
 MonoBehaviour:
   m_ObjectHideFlags: 0
