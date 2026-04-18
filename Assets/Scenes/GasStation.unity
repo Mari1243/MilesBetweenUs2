@@ -8591,6 +8591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camIndex: 4
+  defaultCameraInt: 0
 --- !u!65 &1066715560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9839,6 +9840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camIndex: 4
+  defaultCameraInt: 0
 --- !u!65 &1208593525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17498,22 +17500,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1616451728402434421, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
@@ -28066,6 +28052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camIndex: 4
+  defaultCameraInt: 0
 --- !u!33 &3469287837012096895
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28087,6 +28074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camIndex: 5
+  defaultCameraInt: 0
 --- !u!4 &3480445520113141285
 Transform:
   m_ObjectHideFlags: 0
@@ -33953,6 +33941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camIndex: 3
+  defaultCameraInt: 0
 --- !u!33 &8168969872480365614
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -34809,6 +34798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camIndex: 5
+  defaultCameraInt: 0
 --- !u!114 &8955080454486710784
 MonoBehaviour:
   m_ObjectHideFlags: 0

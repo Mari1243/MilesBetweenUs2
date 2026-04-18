@@ -11,6 +11,7 @@ public class MultipleStealingLogic : MonoBehaviour
     private void OnEnable()
     {
         interactable.onMisc += misc;
+        Interactor.OnStopStealing += misc;
         StealingManager.OnStealingActionChanged+=doneStealing;
         Interactor.OnHoldCanceled += ranout;
     }
@@ -31,12 +32,40 @@ public class MultipleStealingLogic : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        ChangeCamera.instance.changeCamera(StealCamInt);
+        misc();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //cleaning up the list
+       Endbehavior();
+    }
+
+    private void Endbehavior()
+    {
+        ChangeCamera.instance.changeCamera(0);
+        if (stealables.Count > 0)
+        {
+            foreach (GameObject obj in stealables)
+            {
+                if(obj != null)
+                {
+                obj.GetComponent<BoxCollider>().enabled = false;
+                }
+                else
+                {
+                stealables.Remove(obj);
+                }
+            
+            }
+        }
+    }
+
     private void misc()
     {
-        
-
-        //change cam freeze movement
-        ChangeCamera.instance.changeCamera(StealCamInt);
         //choose a random stealable and highlight it
         if (stealables.Count > 0)
         {
@@ -47,24 +76,26 @@ public class MultipleStealingLogic : MonoBehaviour
             randomObj = stealables[randomIndex];
             randomObj.GetComponent<BoxCollider>().enabled = true;
             print("focused on one obj");
+            //can we automatically trigger stealing on that object?
         }
         else
         {
-            //end;
-            
+            Endbehavior();
         }
     }
 
     private void ranout()
     {
-        //leave
+        ChangeCamera.instance.changeCamera(0);
     }
 
     private void doneStealing(bool bol)
     {
         if(bol == false)
         {
+            stealables.Remove(randomObj);
             misc();
+            print("done stealing calling misc");
         }
     }
 
