@@ -3753,7 +3753,7 @@ Transform:
   m_GameObject: {fileID: 6561797063725449350}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -314.00003, y: -1529, z: 0}
+  m_LocalPosition: {x: -221, y: -1529, z: 0}
   m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -3842,7 +3842,7 @@ MonoBehaviour:
   loopType: 0
   loops: 1
   id: animateIn
-  isRelative: 0
+  isRelative: 1
   isFrom: 0
   isIndependentUpdate: 1
   autoKill: 0
@@ -3856,7 +3856,7 @@ MonoBehaviour:
   autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
-  endValueV3: {x: 200, y: 35, z: 0}
+  endValueV3: {x: 0, y: 1110, z: 0}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
@@ -3964,7 +3964,7 @@ MonoBehaviour:
   autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
-  endValueV3: {x: 200, y: -300, z: 0}
+  endValueV3: {x: 0, y: -1569, z: 0}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
