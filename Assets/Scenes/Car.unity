@@ -2436,7 +2436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7
+      value: 6.739
       objectReference: {fileID: 0}
     - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -2465,6 +2465,10 @@ PrefabInstance:
     - target: {fileID: 7559722874699538978, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559722874699538989, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_text
+      value: ' dawd awda wd awd asd sd wa dsad asd sa dsad sd sd asd asd d'
       objectReference: {fileID: 0}
     - target: {fileID: 7559722875680622994, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_Alpha
