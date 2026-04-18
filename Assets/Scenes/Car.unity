@@ -2436,7 +2436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7
+      value: 6.739
       objectReference: {fileID: 0}
     - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -2465,6 +2465,10 @@ PrefabInstance:
     - target: {fileID: 7559722874699538978, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559722874699538989, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_text
+      value: sdasdasdsadasdasd
       objectReference: {fileID: 0}
     - target: {fileID: 7559722875680622994, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_Alpha
@@ -3269,20 +3273,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 887202080963443201, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -254
+      objectReference: {fileID: 0}
+    - target: {fileID: 887202080963443201, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2904
+      value: -1569
       objectReference: {fileID: 0}
     - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: isRelative
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: endValueV3.x
-      value: 280
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: endValueV3.y
-      value: 40
+      value: 1100
       objectReference: {fileID: 0}
     - target: {fileID: 1616451728402434421, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Pivot.x
@@ -3386,11 +3394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775854182488427552, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: endValueV3.x
-      value: 280
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1775854182488427552, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: endValueV3.y
-      value: -300
+      value: -1569
       objectReference: {fileID: 0}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Name
