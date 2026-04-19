@@ -24,8 +24,6 @@ public class ToDoManager : MonoBehaviour
             if (behavior != null)
             Tasks.Add(item.name, behavior);
         }
-
-
     }  
 
     private void addtasks(GameObject newobj)
@@ -34,13 +32,11 @@ public class ToDoManager : MonoBehaviour
         if (behavior != null)
         {
             Tasks.Add(newobj.name, behavior);
-        
         }
         else
         {
             Debug.LogError("behavior is null on the task im adding");
-        }
-        
+        } 
     }
     private void OnEnable()
     {
@@ -55,9 +51,12 @@ public class ToDoManager : MonoBehaviour
 
     public void spawnnewToDoTask(string taskname, string taskdescription)
     {
-        GameObject newTask = Instantiate(taskprefab, ToDoItemParent.transform);
-        newTask.GetComponent<ToDoItemBehavior>().SetNewTaskInfo(taskname, taskdescription);
-        addtasks(newTask);
+        if (!Tasks.ContainsKey(taskname))
+        {
+            GameObject newTask = Instantiate(taskprefab, ToDoItemParent.transform);
+            newTask.GetComponent<ToDoItemBehavior>().SetNewTaskInfo(taskname, taskdescription);
+            addtasks(newTask);
+        }  
     }
 
     public void CompleteItem(string itemName)
