@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Collections;
 
 
-    public enum States
+public enum States
     {
         Gasstation,
         Car,
@@ -17,6 +17,8 @@ public class NewJournalSave : MonoBehaviour
 
     public static NewJournalSave instance;
     public States currentstate;
+
+    public GameObject instatiateTarget; 
 
     //to do list is going to be a different object depending on the scene, should prob assign by searching by name for it in the scene 
     //public GameObject[] ToDoListPrefabs;
@@ -69,8 +71,9 @@ public class NewJournalSave : MonoBehaviour
         if (data != null)
         {
             currentList = Instantiate(data, journal.transform);
-            currentList.transform.localPosition = new Vector3(-214, 65, 0);
-            print("Spawned: " + currentList.name);
+            Vector3 vec = new Vector3(instatiateTarget.transform.position.x,instatiateTarget.transform.position.y,0);
+            currentList.transform.position = vec;
+            //print("Spawned: " + currentList.name);
         }
         else
         {
@@ -81,38 +84,6 @@ public class NewJournalSave : MonoBehaviour
     {
         
     }
-
-    // private void SpawnList()
-    // {
-    //     //this should be called by scenetrackersingleton, sending over the scene todoitem
-
-
-    //     // Debug.Log($"toDoListData is null: {toDoListData == null}");
-    //     // if (toDoListData != null)
-    //     // {
-    //     //     Debug.Log($"Array length: {toDoListData.ToDoListPrefabs.Length}");
-    //     //     Debug.Log($"Element 0 is null: {toDoListData.ToDoListPrefabs[0] == null}");
-    //     // }
-
-    //     if (sceneList < toDoListData.ToDoListPrefabs.Length && toDoListData.ToDoListPrefabs[sceneList] != null)
-    //     {
-    //     currentList = Instantiate(toDoListData.ToDoListPrefabs[sceneList], journal.transform);
-    //     currentList.transform.localPosition = new Vector3(-214, 65, 0);
-    //     print("Spawned: " + currentList.name);
-    //     }
-    //     else
-    //     {
-    //     Debug.LogError($"Prefab at index {sceneList} is null or out of range!", this);
-    //     }
-       
-    //     // if (sceneList < ToDoListPrefabs.Length && ToDoListPrefabs[sceneList] != null)
-    //     // {
-    //     //     print("trying to instantiate current list "+ ToDoListPrefabs[sceneList]);
-    //     //     currentList = Instantiate(ToDoListPrefabs[sceneList], journal.transform);
-    //     //     currentList.transform.localPosition = new Vector3(-214,65, 0);
-    //     //     print("Spawned: " + currentList.name + " | Parent: " + currentList.transform.parent.name + " | Active: " + currentList.activeSelf);
-    //     // }
-    // }
 
     public void SetState(States newstate)
     {

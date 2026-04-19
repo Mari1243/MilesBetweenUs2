@@ -23,6 +23,7 @@ public class InputManager : MonoBehaviour
     
     // Events
     public static event Action Pause;
+    private bool paused = false;
     public static event System.Action<bool> onScaleChanged;
     public static event System.Action OpenJournal;
     public static event Action OnInteractStarted;
@@ -62,7 +63,6 @@ public class InputManager : MonoBehaviour
             inputActions["Exit"].performed += PauseGame;
             inputActions["checkJournal"].performed += checkJournal;
 
-            inputActions["ToggleInstructions"].performed += ToggleMenu;
             inputActions["Restart"].performed += RestartScene;
 
             ToggleJournal.OnJournalOpened +=togglebool;
@@ -119,8 +119,6 @@ public class InputManager : MonoBehaviour
             inputActions["checkJournal"].performed -= checkJournal;
             inputActions["DeleteSave"].performed -= onClearSave;
 
-            inputActions["ToggleInstructions"].performed -= ToggleMenu;
-
             inputActions["Restart"].performed -= RestartScene;
         }
         ToggleJournal.OnJournalOpened -=togglebool;
@@ -157,21 +155,6 @@ public class InputManager : MonoBehaviour
 
         }
        
-    }
-
-    //for tutorial!!
-    private void ToggleMenu(InputAction.CallbackContext context)
-    {
-        if (!Oninstructions)
-        {
-            Oninstructions = true;
-            instructions?.Invoke(Oninstructions);
-        }
-        else
-        {
-            Oninstructions = false;
-            instructions?.Invoke(Oninstructions);
-        }
     }
 
     private void RestartScene(InputAction.CallbackContext context)
@@ -213,15 +196,13 @@ public class InputManager : MonoBehaviour
     
     private void PauseGame(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
+        print("pausing from input manager");
             Pause?.Invoke();
             //close journal if open
             if (ToggleJournal.journalopen)
             {
-                 OpenJournal?.Invoke();
+                OpenJournal?.Invoke();
             }
-        }
     }
 
 

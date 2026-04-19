@@ -2234,6 +2234,37 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &4022662237590073053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2097868169622698033}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2097868169622698033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022662237590073053}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -432, y: 983, z: 472.32523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 887202080963443201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4035783283391063785
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,6 +2796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentstate: 0
+  instatiateTarget: {fileID: 4022662237590073053}
   toDoListData: {fileID: 11400000, guid: c1024a77bb0644edcafe1b777fa69443, type: 2}
   inventoryObject: {fileID: 7359117660989336068}
   DraggableItemPrefab: {fileID: 6843374984016170095, guid: c83a883728b8747799f88e95b0341676, type: 3}
@@ -3765,6 +3797,7 @@ Transform:
   - {fileID: 2576610821825647912}
   - {fileID: 3109313899274742657}
   - {fileID: 4051405717058006612}
+  - {fileID: 2097868169622698033}
   m_Father: {fileID: 1616451728402434421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1184095313079300315
