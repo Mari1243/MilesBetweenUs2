@@ -26,8 +26,6 @@ public class IntroSceneManager : MonoBehaviour
     public static bool journalopen = false;
     public Button xButton;
 
-    public GameObject instructionss;
-
     public static IntroSceneManager instance;
     public GameObject TutorialDialogueSystem;
     public GameObject DialogueSystem;
@@ -64,7 +62,6 @@ public class IntroSceneManager : MonoBehaviour
             if(!journalopen)
             {
                 TPCam.SetActive(false);
-                instructionss.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 journalcanvas.enabled = true;
@@ -81,7 +78,6 @@ public class IntroSceneManager : MonoBehaviour
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
-                instructionss.SetActive(true);
                 diaRun.Stop();
             }
     }

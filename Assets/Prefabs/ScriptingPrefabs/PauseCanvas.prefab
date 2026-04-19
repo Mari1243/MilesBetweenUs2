@@ -221,19 +221,7 @@ MonoBehaviour:
       m_Calls: []
   onPlay:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2567757777370994492}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onUpdate:
     m_PersistentCalls:
       m_Calls: []
@@ -281,7 +269,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: animateIn
+  id: optionsIn
   isRelative: 0
   isFrom: 0
   isIndependentUpdate: 0
@@ -350,19 +338,7 @@ MonoBehaviour:
       m_Calls: []
   onComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2567757777370994492}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTweenCreated:
     m_PersistentCalls:
       m_Calls: []
@@ -401,7 +377,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: animateOut
+  id: optionsOut
   isRelative: 0
   isFrom: 0
   isIndependentUpdate: 0

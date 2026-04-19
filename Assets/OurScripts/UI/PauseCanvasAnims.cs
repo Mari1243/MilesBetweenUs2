@@ -35,7 +35,7 @@ public class PauseCanvasAnims : MonoBehaviour
 
     private void OnDisable()
     {
-          InputManager.Pause -= PauseManage;
+        InputManager.Pause -= PauseManage;
     }
 
     private void PauseManage()
@@ -114,15 +114,15 @@ public class PauseCanvasAnims : MonoBehaviour
             Controls.SetActive(true);
             print("opening control panel");
             controlsOpen=true;
-            DOTween.Restart("animateIn"); 
-            DOTween.Play("animateIn");
+            DOTween.Restart("optionsIn"); 
+            DOTween.Play("optionsIn");
         }
         else
         {
             Controls.SetActive(false);
             print("closing control panel");
-            DOTween.Restart("animateOut"); 
-            DOTween.Play("animateOut");
+            DOTween.Restart("optionsOut"); 
+            DOTween.Play("optionsOut");
             controlsOpen = false;
         }
         
