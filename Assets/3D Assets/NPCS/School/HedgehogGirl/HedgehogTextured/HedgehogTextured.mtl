@@ -1,0 +1,99 @@
+# Exported from Nomad Sculpt
+
+newmtl Pants_1
+ map_Kd Pants_1_color_2.png
+ map_roughness Pants_1_roughness_2.png
+ map_Pr Pants_1_roughness_2.png
+ map_metallic Pants_1_metalness_2.png
+ map_Pm Pants_1_metalness_2.png
+ map_tangentSpaceNormal Pants_1_normal_2.png
+ map_bump Pants_1_normal_2.png
+ norm Pants_1_normal_2.png
+ bump Pants_1_normal_2.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Shirt_1
+ map_Kd Shirt_1_color_4.png
+ map_roughness Shirt_1_roughness_4.png
+ map_Pr Shirt_1_roughness_4.png
+ map_metallic Shirt_1_metalness_4.png
+ map_Pm Shirt_1_metalness_4.png
+ map_tangentSpaceNormal Shirt_1_normal_4.png
+ map_bump Shirt_1_normal_4.png
+ norm Shirt_1_normal_4.png
+ bump Shirt_1_normal_4.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Nose_1
+ map_Kd Nose_1_color_3.png
+ map_roughness Nose_1_roughness_3.png
+ map_Pr Nose_1_roughness_3.png
+ map_metallic Nose_1_metalness_3.png
+ map_Pm Nose_1_metalness_3.png
+ map_tangentSpaceNormal Nose_1_normal_3.png
+ map_bump Nose_1_normal_3.png
+ norm Nose_1_normal_3.png
+ bump Nose_1_normal_3.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Eyes_1
+ map_Kd Eyes_1_color_3.png
+ map_roughness Eyes_1_roughness_3.png
+ map_Pr Eyes_1_roughness_3.png
+ map_metallic Eyes_1_metalness_2.png
+ map_Pm Eyes_1_metalness_2.png
+ map_tangentSpaceNormal Eyes_1_normal_3.png
+ map_bump Eyes_1_normal_3.png
+ norm Eyes_1_normal_3.png
+ bump Eyes_1_normal_3.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Lashes_1
+ map_Kd Lashes_1_color_7.png
+ map_roughness Lashes_1_roughness_7.png
+ map_Pr Lashes_1_roughness_7.png
+ map_metallic Lashes_1_metalness_7.png
+ map_Pm Lashes_1_metalness_7.png
+ map_tangentSpaceNormal Lashes_1_normal_7.png
+ map_bump Lashes_1_normal_7.png
+ norm Lashes_1_normal_7.png
+ bump Lashes_1_normal_7.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Spikes_1
+ map_Kd Spikes_1_color_1.png
+ map_roughness Spikes_1_roughness_1.png
+ map_Pr Spikes_1_roughness_1.png
+ map_metallic Spikes_1_metalness_1.png
+ map_Pm Spikes_1_metalness_1.png
+ map_tangentSpaceNormal Spikes_1_normal_1.png
+ map_bump Spikes_1_normal_1.png
+ norm Spikes_1_normal_1.png
+ bump Spikes_1_normal_1.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
+
+newmtl Body_1
+ map_Kd Body_1_color_2.png
+ map_roughness Body_1_roughness_2.png
+ map_Pr Body_1_roughness_2.png
+ map_metallic Body_1_metalness_2.png
+ map_Pm Body_1_metalness_2.png
+ map_tangentSpaceNormal Body_1_normal_2.png
+ map_bump Body_1_normal_2.png
+ norm Body_1_normal_2.png
+ bump Body_1_normal_2.png
+ Kd 1.000000 1.000000 1.000000
+ Pr 0.250000
+ Pm 0.000000
