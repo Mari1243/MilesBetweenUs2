@@ -134,6 +134,7 @@ How did I lose it in a dessert? It's literally just sand.
 Oh uh hi.
 Let me know if you see an ID anywhere 
 And I’ll get you a sticker or something.
+<<startAction mouseQuest>>
 
 <<cameraIndex 0>>
 ===

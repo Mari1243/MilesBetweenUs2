@@ -53,10 +53,16 @@ public class DragonLandManager : MonoBehaviour
             foreach (InventoryItem item in list)
             {
                 //specific quest
-                if (item.itemData.itemName == "JacketPatch")
+                if (item.itemData.itemName == "Jacket Patch")
                 {
                     if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
                    ToDoManager.instance.CompleteItem("SouvenirforMax");
+                    completedobjectives++;
+                }
+                if (item.itemData.itemName == "An ID!")
+                {
+                    if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
+                    ToDoManager.instance.CompleteItem("MouseQuest");
                     completedobjectives++;
                 }
                 if (completedobjectives >= allobjectives)
@@ -73,10 +79,18 @@ public class DragonLandManager : MonoBehaviour
         switch (action)
         {
             case "mouseQuest":
+           
                 if (!completedMouseQuest)
                 {
-                    InventoryManager.instance.Add(MouseReward);
+                    ToDoManager.instance.spawnnewToDoTask("MouseQuest", "Find Mouse girl's ID!");
                     completedMouseQuest = true;
+                    Debug.Log("giving mouse quest");
+                }
+                else
+                {
+                    InventoryManager.instance.Add(MouseReward);
+                    //check off number
+                    ToDoManager.instance.CompleteItem("MouseQuest");
                 }
                 break;
 

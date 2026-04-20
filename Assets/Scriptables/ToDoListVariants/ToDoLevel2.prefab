@@ -358,11 +358,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228770adab9e7824b88251a222324d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toDoItems: []
   Collectables:
   - {fileID: 7291822587195480766}
   - {fileID: 2477609895678969739}
   - {fileID: 7735990083863349218}
   taskprefab: {fileID: 988457377245488838, guid: cb87ef637975d4a8c8a1d7fc6d3572e2, type: 3}
+  ToDoItemParent: {fileID: 6659411320640599111}
 --- !u!114 &2066893310094687437
 MonoBehaviour:
   m_ObjectHideFlags: 0
