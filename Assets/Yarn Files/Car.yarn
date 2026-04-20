@@ -1,8 +1,9 @@
 ﻿
 title: Car0Start
 ---
-Brother: Let me know if you're comfy back there, 
-Brother: it's gonna be a long trip.
+Brother: Put on your seatbelt.
+Brother: Don't be difficult,
+Brother: Or I'm never gonna hear the end of it.
 
 ===
 
@@ -18,16 +19,29 @@ Brother: You had fun at dino-
 Brother: I mean dragon land?
 Brother: That place was such a sham.
 Brother: Those roadside attractions are weird.
+<<startAction playPhone>>
+
 Brother: I remember one time-
 Brother: Hold on, dad's calling.
+<<startAction playTalk>>
 Brother: ...
+<<startAction pauseTalk>>
 Brother: Hey.
+<<startAction playTalk>>
 Brother: ...
+<<startAction pauseTalk>>
 Brother: Yea, he's alright. We just were at the gas station..
+<<startAction playTalk>>
 Brother: ...
+<<startAction pauseTalk>>
+
 Brother: Yes Dad. I know. You don't have to remind me.
+<<startAction playTalk>>
+
 Brother: ...
 Brother: ...
+<<startAction pauseTalk>>
+
 Brother: I'm sorry.
 Brother: Yea. Ok. Bye.
 Brother: ...
@@ -80,7 +94,7 @@ Brother: Damn, it's been so long.
 ===
 
 
-title: CarBark1
+title: Car0Bark1
 ---
 Brother: don't make too much mess back there 
 Brother: with all your scraps or whatever.
@@ -88,7 +102,7 @@ Brother: with all your scraps or whatever.
 ===
 
 
-title: CarBark2
+title: Car0Bark2
 ---
 Brother: We'll make a few stops, don't worry.
 
@@ -96,23 +110,57 @@ Brother: We'll make a few stops, don't worry.
 ===
 
 
-title: CarBark3
+title: Car0Bark3
 ---
 Brother: Did you just fart, gross.
 
 ===
 
-
-
-
-
-
-title: Stamp1
+title: Car1Bark1
 ---
-Brother: Uh,
-Brother: Cool stamp?
-Brother: Where did u even get that
+Brother: PLACEHOLD
+
 ===
+
+
+title: Car1Bark2
+---
+Brother:  PLACEHOLD2
+
+===
+
+
+title: Car1Bark3
+---
+Brother:  PLACEHOLD3
+===
+
+
+
+title: Car2Bark1
+---
+Brother: Hey, about what you heard.
+Brother: Don't worry about it ok?
+Brother: I know it gets..
+Brother: Like I don't know concerning?
+Brother: It won't be an issue anymore.
+
+===
+
+
+title: Car2Bark2
+---
+Brother:  Whatever dude.
+
+===
+
+
+title: Car2Bark3
+---
+Brother: Look a red car! 
+Brother: We should play punch buggy.
+===
+
 
 title: Hungry
 ---

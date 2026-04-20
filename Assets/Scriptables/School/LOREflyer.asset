@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ca27fd2861bf640ad653064e610ac7, type: 3}
   m_Name: LOREflyer
   m_EditorClassIdentifier: 
-  img: {fileID: -1354735630, guid: 4c1d2cdd7835c994f8ab0a3e89ed57d2, type: 3}
+  img: {fileID: 525287956, guid: 5719862bfbde3cd4aacb2d6228dc3b7c, type: 3}
   itemName: A Frat Flyer!
   loreItem: 1
   node: flyer
