@@ -71,16 +71,27 @@ public class BrotherInteractable : MonoBehaviour
             case 1:
 
                 interactableData.item.node = "Car0Start";
+                barks.Clear();
+                barks.Add("Car0Bark1");
+                barks.Add("Car0Bark2");
+                barks.Add("Car0Bark3");
                 DialogueManager.instance.TalkInteraction(interactableData.item);
-
                 break;
             case 2:
                 interactableData.item.node = "Car1Start";
+                barks.Clear();
+                barks.Add("Car1Bark1");
+                barks.Add("Car1Bark2");
+                barks.Add("Car1Bark3");
                 DialogueManager.instance.TalkInteraction(interactableData.item);
 
                 break;
             case 3:
                 interactableData.item.node = "Car2Start";
+                barks.Clear();
+                barks.Add("Car2Bark1");
+                barks.Add("Car2Bark2");
+                barks.Add("Car2Bark3");
                 DialogueManager.instance.TalkInteraction(interactableData.item);
 
                 break;
