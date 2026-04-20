@@ -118,6 +118,12 @@ public class SchoolManager : MonoBehaviour
                    ToDoManager.instance.CompleteItem("CheckoutFratBros");
                     completedobjectives++;
                 }
+                if (item.itemData.itemName == "Someone's number!")
+                {
+                    if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
+                    ToDoManager.instance.CompleteItem("GardenerQuest");
+                    completedobjectives++;
+                }
                 if (completedobjectives >= allobjectives)
                 {
                     completedAllObjectives = true;
