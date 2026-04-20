@@ -21258,12 +21258,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5097828215901238595, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: eventHandlers.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5097828215901238595, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: 'eventHandlers.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1041691993}
     - target: {fileID: 5097828215901238595, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: 'eventHandlers.Array.data[1]'
       value: 
