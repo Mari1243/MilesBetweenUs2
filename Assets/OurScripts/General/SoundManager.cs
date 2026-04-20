@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     public float GeneralVolume;
     public bool playBackgroundMusic;
     public AudioClip backgroundMusic;
+    private bool isPaused;
 
     private void Awake()
     {
@@ -30,9 +31,26 @@ public class SoundManager : MonoBehaviour
 
     public void PlayAudio(AudioClip clip)
     {
-        effectAudioSource.PlayOneShot(clip, GeneralVolume);
+        
+        if(effectAudioSource!=null && isPaused)
+        {
+            effectAudioSource.UnPause();
+        }
+        else
+        {
+            effectAudioSource.PlayOneShot(clip, GeneralVolume);
+
+        }
     }
 
+    public void PauseAudio()
+    {
+        if(effectAudioSource != null)
+        {
+            effectAudioSource.Pause();
+            isPaused = true;
+        }
+    }
     //this will play a random noise out of a list, .6f is a good volume generally
     public void playRandomOneshot(AudioClip[] audioClips, float volumn)
     {
@@ -55,5 +73,15 @@ public class SoundManager : MonoBehaviour
             }
     }
 
+
+    public void loopAudioClip()
+    {
+        effectAudioSource.loop = true;
+    }
+    
+    public void lowerMusic()
+    {
+        musicAudioSource.volume = .3f;
+    }
 
 }

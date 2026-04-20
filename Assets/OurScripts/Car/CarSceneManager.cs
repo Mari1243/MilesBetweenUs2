@@ -45,6 +45,7 @@ public class CarSceneManager : MonoBehaviour
     [Header("Radio")]
     public List<AudioClip> radioClips = new List<AudioClip>();
     private bool isPlaying = false;
+    public AudioClip phoneBuzz, talking;
 
     [Header("SceneChanges")]
     private int carScene;
@@ -57,6 +58,7 @@ public class CarSceneManager : MonoBehaviour
         ToggleJournal.OnJournalClosed += ExitJournal;
         DialogueManager.DialogOver += ExitJournal;
         SceneTrackerSingleton.carOver -= ClearInventory;
+        DialogueCommands.startAction += StartAction;
 
 
 
@@ -68,6 +70,7 @@ public class CarSceneManager : MonoBehaviour
         ToggleJournal.OnJournalClosed -= ExitJournal;
         DialogueManager.DialogOver -= ExitJournal;
         SceneTrackerSingleton.carOver += ClearInventory;
+        DialogueCommands.startAction -= StartAction;
 
     }
 
@@ -161,4 +164,31 @@ public class CarSceneManager : MonoBehaviour
         currentInventory.Clear();
         InventoryManager.instance.inventory.Clear();
     }
+
+
+    public void StartAction(string action)
+    {
+        switch (action)
+        {
+            case "playPhone":
+                SoundManager.Instance.lowerMusic();
+                SoundManager.Instance.PlayAudio(phoneBuzz);
+            break;
+
+            case "playTalk":
+                SoundManager.Instance.PlayAudio(talking);
+                SoundManager.Instance.loopAudioClip();
+                break;
+
+            case "pauseTalk":
+                SoundManager.Instance.PauseAudio();
+                break;
+
+
+
+
+        }
+    }
+
+
 }

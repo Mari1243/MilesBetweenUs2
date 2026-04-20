@@ -174,6 +174,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 445376683579740708, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445376683579740708, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445376683579740708, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445376683579740708, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 796149312299198894, guid: 27afd0dd76925421588701165b13258a, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
@@ -181,6 +197,38 @@ PrefabInstance:
     - target: {fileID: 796149312299198894, guid: 27afd0dd76925421588701165b13258a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341150066212057791, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341150066212057791, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341150066212057791, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341150066212057791, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567682146926052511, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567682146926052511, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567682146926052511, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567682146926052511, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3324339174733080485, guid: 27afd0dd76925421588701165b13258a, type: 3}
       propertyPath: m_Pivot.x
@@ -2382,7 +2430,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3379385266163652429, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       insertIndex: -1
@@ -5264,6 +5313,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4937784618673470813, guid: e21f53a7befcdf1498063217e7493c06, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7679000413142360987, guid: e21f53a7befcdf1498063217e7493c06, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -5323,7 +5376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
       propertyPath: carnum
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2271127845960198634, guid: 94c74896558f94f05b1f321e319b795c, type: 3}
       propertyPath: scenes.Array.size
@@ -5672,6 +5725,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: talking
+      value: 
+      objectReference: {fileID: 8300000, guid: 76028c3d3274fae4b8c297d5ba7e9c64, type: 3}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: dragitem
       value: 
       objectReference: {fileID: 4792769920164054658, guid: c83a883728b8747799f88e95b0341676, type: 3}
@@ -5679,6 +5736,10 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 1109340994}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: phoneBuzz
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a7a2ac6230f19f41ab92708b62408cf, type: 3}
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: playerInp
       value: 

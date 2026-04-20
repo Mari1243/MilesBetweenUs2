@@ -1,8 +1,9 @@
 ﻿
 title: Car0Start
 ---
-Brother: Let me know if you're comfy back there, 
-Brother: it's gonna be a long trip.
+Brother: Put on your seatbelt.
+Brother: Don't be difficult,
+Brother: Or I'm never gonna hear the end of it.
 
 ===
 
@@ -18,16 +19,29 @@ Brother: You had fun at dino-
 Brother: I mean dragon land?
 Brother: That place was such a sham.
 Brother: Those roadside attractions are weird.
+<<startAction playPhone>>
+
 Brother: I remember one time-
 Brother: Hold on, dad's calling.
+<<startAction playTalk>>
 Brother: ...
+<<startAction pauseTalk>>
 Brother: Hey.
+<<startAction playTalk>>
 Brother: ...
+<<startAction pauseTalk>>
 Brother: Yea, he's alright. We just were at the gas station..
+<<startAction playTalk>>
 Brother: ...
+<<startAction pauseTalk>>
+
 Brother: Yes Dad. I know. You don't have to remind me.
+<<startAction playTalk>>
+
 Brother: ...
 Brother: ...
+<<startAction pauseTalk>>
+
 Brother: I'm sorry.
 Brother: Yea. Ok. Bye.
 Brother: ...
@@ -101,9 +115,6 @@ title: CarBark3
 Brother: Did you just fart, gross.
 
 ===
-
-
-
 
 
 
