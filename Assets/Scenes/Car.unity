@@ -5526,8 +5526,8 @@ MonoBehaviour:
   - CarBark2
   - CarBark3
   img: {fileID: 10838888}
-  minWait: 10
-  maxWait: 30
+  minWait: 7
+  maxWait: 20
   loreItemsAskedAbout: 0
 --- !u!1001 &7027845020657355862
 PrefabInstance:
