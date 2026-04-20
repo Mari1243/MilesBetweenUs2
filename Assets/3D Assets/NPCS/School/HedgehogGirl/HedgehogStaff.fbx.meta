@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2c5614af2c7d71449ae0804b3a6cf195
+guid: ffa631decfb867a4bb696f074ff206e9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,33 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Eyes_1
-    second: {fileID: 2100000, guid: 63abe95372f6cb34288ea1841c5c7978, type: 2}
+      name: Body_1
+    second: {fileID: 2100000, guid: 04990dcbd946db7479ed5925ffe65431, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Head_1
-    second: {fileID: 2100000, guid: 32e69b335e699af4a8f6b7a4127d0d49, type: 2}
+      name: Eyes_1
+    second: {fileID: 2100000, guid: 4eb9ba5230f3c1d4c9db21126bb0e391, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lashes_1
+    second: {fileID: 2100000, guid: 43cccb15914c5ff44be0d558deaaa480, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nose_1
+    second: {fileID: 2100000, guid: 680b1a163d9c63d40b49f8f85a325952, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pants_1
-    second: {fileID: 2100000, guid: a8a5ceb4bb74cc04d8b3275aabda9d7f, type: 2}
+    second: {fileID: 2100000, guid: e32fbfcb1f294fb47b16d84975864db1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Shirt_1
-    second: {fileID: 2100000, guid: 9144ec0a8b2925041afc38b39d5b929b, type: 2}
+    second: {fileID: 2100000, guid: 8f0159360b61c5747904bd7e3976ac63, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tail
-    second: {fileID: 2100000, guid: 8743a5ec350b9a94e9b2934f21f1c986, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Torso_1
-    second: {fileID: 2100000, guid: debc7f614140de049a5682cb7f6d241e, type: 2}
+      name: Spikes_1
+    second: {fileID: 2100000, guid: 78fabca55f4544f43b9fc3a441a23914, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -61,11 +66,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Goat_Idle
-      takeName: Armature|Goat_Idle
-      internalID: 901416906760512281
+      name: Armature|Hedgehog_Idle
+      takeName: Armature|Hedgehog_Idle
+      internalID: 1421464769768345109
       firstFrame: 0
-      lastFrame: 239
+      lastFrame: 119
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -89,7 +94,7 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2c5614af2c7d71449ae0804b3a6cf195
+guid: 85e30d2bb7d331c4b97cd6068fd7c887
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,32 +8,32 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eyes_1
-    second: {fileID: 2100000, guid: 63abe95372f6cb34288ea1841c5c7978, type: 2}
+    second: {fileID: 2100000, guid: 52857a77ee729004592f240d61a21b9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Feet_1
+    second: {fileID: 2100000, guid: 4954bc96f9f26bf47a4de716a185f02e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Head_1
-    second: {fileID: 2100000, guid: 32e69b335e699af4a8f6b7a4127d0d49, type: 2}
+    second: {fileID: 2100000, guid: 4e29733ded6911345b57e439ebecb274, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pants_1
-    second: {fileID: 2100000, guid: a8a5ceb4bb74cc04d8b3275aabda9d7f, type: 2}
+      name: Horns_1
+    second: {fileID: 2100000, guid: 7988b6584d3f5f0498a43ead91bde8b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Legs_1
+    second: {fileID: 2100000, guid: 3e4c33ee61e35924e8e3e91d589115fe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Shirt_1
-    second: {fileID: 2100000, guid: 9144ec0a8b2925041afc38b39d5b929b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tail
-    second: {fileID: 2100000, guid: 8743a5ec350b9a94e9b2934f21f1c986, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Torso_1
-    second: {fileID: 2100000, guid: debc7f614140de049a5682cb7f6d241e, type: 2}
+    second: {fileID: 2100000, guid: 5b461cb8f7e20114aaf717b2c51fa99e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -61,11 +61,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Goat_Idle
-      takeName: Armature|Goat_Idle
-      internalID: 901416906760512281
+      name: Armature|Guard_Idle
+      takeName: Armature|Guard_Idle
+      internalID: 1312555187315912699
       firstFrame: 0
-      lastFrame: 239
+      lastFrame: 309
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -89,7 +89,7 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1

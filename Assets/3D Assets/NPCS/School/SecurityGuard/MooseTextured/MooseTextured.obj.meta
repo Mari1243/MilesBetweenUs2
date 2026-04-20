@@ -1,39 +1,9 @@
 fileFormatVersion: 2
-guid: 2c5614af2c7d71449ae0804b3a6cf195
+guid: e335f6be738dddd48a353508adbf145f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Eyes_1
-    second: {fileID: 2100000, guid: 63abe95372f6cb34288ea1841c5c7978, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Head_1
-    second: {fileID: 2100000, guid: 32e69b335e699af4a8f6b7a4127d0d49, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pants_1
-    second: {fileID: 2100000, guid: a8a5ceb4bb74cc04d8b3275aabda9d7f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shirt_1
-    second: {fileID: 2100000, guid: 9144ec0a8b2925041afc38b39d5b929b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tail
-    second: {fileID: 2100000, guid: 8743a5ec350b9a94e9b2934f21f1c986, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Torso_1
-    second: {fileID: 2100000, guid: debc7f614140de049a5682cb7f6d241e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -59,37 +29,8 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Armature|Goat_Idle
-      takeName: Armature|Goat_Idle
-      internalID: 901416906760512281
-      firstFrame: 0
-      lastFrame: 239
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    isReadable: 1
+    clipAnimations: []
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
