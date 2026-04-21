@@ -221,7 +221,7 @@ MonoBehaviour:
   m_text: Option Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
-  m_sharedMaterial: {fileID: -3764184793482532192, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
+  m_sharedMaterial: {fileID: -6955914548417487326, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -304,10 +304,10 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 2
     m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 2576261519635394347}
+    m_SelectOnDown: {fileID: 2576261519635394347}
+    m_SelectOnLeft: {fileID: 2576261519635394347}
+    m_SelectOnRight: {fileID: 2576261519635394347}
   m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}

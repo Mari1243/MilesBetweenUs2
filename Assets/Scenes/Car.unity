@@ -310,10 +310,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4278752665946920770, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412031270156993625, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8352652135163752426, guid: 27afd0dd76925421588701165b13258a, type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 2098778499}
+    - target: {fileID: 8446610108508391180, guid: 27afd0dd76925421588701165b13258a, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -733,7 +745,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 6240969308177333660, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
@@ -2202,6 +2214,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3362681383177747581, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: lastLineContainer
+      value: 
+      objectReference: {fileID: 1274723871}
     - target: {fileID: 3401983691350493124, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2410,6 +2426,10 @@ PrefabInstance:
       propertyPath: m_text
       value: sdasdasdsadasdasd
       objectReference: {fileID: 0}
+    - target: {fileID: 7559722874740569522, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7559722875680622994, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_Alpha
       value: 1
@@ -2437,6 +2457,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3379385266163652429, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+    - {fileID: 8189797454872879600, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+    - {fileID: 5449556803015987113, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       insertIndex: -1
@@ -3127,6 +3149,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
   m_PrefabInstance: {fileID: 2084730582}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1274723871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3362681382678827017, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+  m_PrefabInstance: {fileID: 974117750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1298725487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3317,9 +3344,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3701012546927490882, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Name
       value: journalCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444008440852152235, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362873717257106193, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659891120781698861, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798144423261181708, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
