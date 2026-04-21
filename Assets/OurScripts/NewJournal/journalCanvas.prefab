@@ -1924,6 +1924,37 @@ MonoBehaviour:
       m_Calls: []
   tabGroup: {fileID: 9065289419071802293}
   background: {fileID: 6343320345971881889}
+--- !u!1 &3365414963403314494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7210491241035415894}
+  m_Layer: 5
+  m_Name: activeanimtarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7210491241035415894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3365414963403314494}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -249, y: -453, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1616451728402434421}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3389517488205398104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,6 +2730,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 887202080963443201}
+  - {fileID: 7210491241035415894}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3891,7 +3923,7 @@ MonoBehaviour:
   targetType: 5
   forcedTargetType: 0
   autoPlay: 0
-  useTargetAsV3: 0
+  useTargetAsV3: 1
   endValueFloat: 0
   endValueV3: {x: 0, y: -250, z: 0}
   endValueV2: {x: 0, y: 0}
@@ -3903,7 +3935,7 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  endValueTransform: {fileID: 0}
+  endValueTransform: {fileID: 7210491241035415894}
   optionalBool0: 0
   optionalBool1: 0
   optionalFloat0: 0

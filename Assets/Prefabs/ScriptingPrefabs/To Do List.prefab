@@ -157,6 +157,8 @@ MonoBehaviour:
   - {fileID: 5573632777873296894}
   - {fileID: 6340345841276195691}
   - {fileID: 8374681685068991841}
+  taskprefab: {fileID: 0}
+  ToDoItemParent: {fileID: 0}
 --- !u!114 &3320339381820907874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
