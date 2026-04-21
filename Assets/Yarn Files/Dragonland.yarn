@@ -213,12 +213,12 @@ title: EndDragonLand
 <<cameraIndex 1>>
 
 Brother: Ya done stomping around?
--> Yea lets gettouta here
+-> Yea lets go!
 	Aight
 	Also
 	You're really dusty 
 	<<changeScene Car>>
--> No just kidding
+-> No not yet
 	Oook, take your sweet time.
 <<cameraIndex 0>>
 
