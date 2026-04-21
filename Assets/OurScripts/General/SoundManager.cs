@@ -62,7 +62,7 @@ public class SoundManager : MonoBehaviour
     private void playmusic()
     {
 
-        print("playing music");
+        //print("playing music");
         if (playBackgroundMusic)
         {
             musicAudioSource.loop = true;

@@ -27,7 +27,7 @@ public class ChangeCamera : MonoBehaviour
     {
         currentCamera = cameras[0];
         currentCamera = cameras[cameras.Length - 1];
-        print(currentCamera.name);
+        //print(currentCamera.name);
 
         foreach (CinemachineCamera camera in cameras)
         {

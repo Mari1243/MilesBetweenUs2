@@ -99,7 +99,7 @@ private void HandleInteractStarted()
 
                     if (StealingManager.Instance != null)
                     {
-                        StealingManager.Instance.StartStealin();
+                        StealingManager.Instance.StartStealin(StealableItemBehavior.instance.camIndex,StealableItemBehavior.instance.defaultCamIndex);
                         StealStep?.Invoke(1);
                     }
                     return;
@@ -130,7 +130,7 @@ private void HandleInteractStarted()
             }
             else if (canInteract)
             {
-                print("calling interactable.interact");
+                //print("calling interactable.interact");
                 Interactable.Interact();
             }
     // move the contents of your Interacted() method here
@@ -206,8 +206,8 @@ private void HandleInteractCanceled()
         }
         else
         {
-             SpawnPickupUI("canInteract");
-         }
+            SpawnPickupUI("canInteract");
+        }
     }
 
     private void SpawnPickupUI(string str)

@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
        if (isTutorialSystem)
         {
             tutorialInstance = this;
-            print(tutorialInstance.name);
+            //print(tutorialInstance.name);
         }
         else
         instance = this;
@@ -67,9 +67,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogReady && !dialogStarted)
         {
-            print("dialogue is ready and dialogue isnt started, lets start");
+            //print("dialogue is ready and dialogue isnt started, lets start");
             dialogueRunner.Stop();
-            print(dialogueRunner.name);
+            //print(dialogueRunner.name);
             dialogueRunner.StartDialogue(dialogueRunner.startNode);
             if (DialogStart != null)
                 DialogStart();
@@ -78,13 +78,13 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            print("somethig is wrong, " + dialogReady+ dialogStarted);
+            //print("somethig is wrong, " + dialogReady+ dialogStarted);
         }
     }
     public void OnDialogOver()
     {
-        print("calling dialogue over");
-        print("the journal state (ToggleJournal.journalopen) is now "+ ToggleJournal.journalopen);
+        //print("calling dialogue over");
+        //print("the journal state (ToggleJournal.journalopen) is now "+ ToggleJournal.journalopen);
         if (DialogStart != null)
             DialogOver();
 
@@ -95,9 +95,9 @@ public class DialogueManager : MonoBehaviour
     public void TalkInteraction(Item itemdata) //enables cutscene 
     {
         //this is what is being used for hte journal
-        Debug.Log("Talking rn" + itemdata.name);
-        print("position is " + itemdata.diagPos);
-        print("gonna play node "+ itemdata.node);
+        //Debug.Log("Talking rn" + itemdata.name);
+        //print("position is " + itemdata.diagPos);
+        //print("gonna play node "+ itemdata.node);
         
         dialoguePos.transform.localPosition = itemdata.diagPos;
         LoadDialog(itemdata.node);

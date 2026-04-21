@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 public class MultipleStealingLogic : MonoBehaviour
 {
     public List<GameObject> stealables;
-    public int StealCamInt;
+    public int StealCamInt = 0;
 
     private GameObject randomObj;
     private void OnEnable()
@@ -28,7 +28,6 @@ public class MultipleStealingLogic : MonoBehaviour
         {
             obj.GetComponent<BoxCollider>().enabled = false;
             //this sets their default end cam that it switches to when ur done stealing to this cam
-            obj.GetComponent<StealableItemBehavior>().defaultCameraInt = StealCamInt;
         }
     }
 

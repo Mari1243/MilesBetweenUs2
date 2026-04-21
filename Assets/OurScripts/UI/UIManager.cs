@@ -153,7 +153,7 @@ public class UIManager : MonoBehaviour
         if(textures != null && textures.Count >= 3)
         {
             BackgroundRen = stealingUI.transform.GetChild(0).GetComponent<Image>();
-            print(BackgroundRen.gameObject.name);
+            //print(BackgroundRen.gameObject.name);
             DogspriteRen = stealingUI.transform.GetChild(1).GetComponent<Image>();
             StealingCanvas.SetActive(false);
         }
