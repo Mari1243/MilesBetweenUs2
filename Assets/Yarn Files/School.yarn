@@ -96,7 +96,7 @@ Need something?
             Takes a lot of courage.
             But I mean if you find one laying around, 
             Let me know little man
-            <<startAction gardenerQuest>>
+            <<startAction StartgardenerQuest>>
             <<cameraIndex 0>>
 
 

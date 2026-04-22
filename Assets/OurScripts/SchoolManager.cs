@@ -29,7 +29,7 @@ public class SchoolManager : MonoBehaviour
     public Animator car;
     
     //for this levels fetchquest
-    private bool completedGardenerQuest = false;
+    [SerializeField]private bool completedGardenerQuest = false;
     public Item GardenerReward;
     public Item FratItem;
     public Item SchoolPamphlet;
@@ -186,19 +186,17 @@ public class SchoolManager : MonoBehaviour
         switch (action)
         {
             case "gardenerQuest":
-                //gets called twice
                 if (!completedGardenerQuest)
                 {
-                    Debug.Log("Giving gardener quest");
-                    ToDoManager.instance.spawnnewToDoTask("GardenerQuest", "Get a girls number");
+                    InventoryManager.instance.Add(GardenerReward);
+                    ToDoManager.instance.CompleteItem("GardenerQuest");
                     completedGardenerQuest = true;
                 }
-                else
-                {
-                    InventoryManager.instance.Add(GardenerReward);
-                    //check off number
-                    ToDoManager.instance.CompleteItem("GardenerQuest");
-                }
+           
+                break;
+            case "StartgardenerQuest":
+                ToDoManager.instance.spawnnewToDoTask("GardenerQuest", "Get a girls number");
+
                 break;
             case "Frat":
                 InventoryManager.instance.Add(FratItem);
