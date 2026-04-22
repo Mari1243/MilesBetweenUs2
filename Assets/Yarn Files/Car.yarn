@@ -1,20 +1,67 @@
 ﻿
 title: Car0Start
 ---
-Brother: Let me know if you're comfy back there, 
-Brother: it's gonna be a long trip.
+Brother: Put on your seatbelt.
+Brother: Don't be difficult,
+Brother: Or I'm never gonna hear the end of it.
+Brother: We’ll need to make a few stops before we get to university.
+Brother: Just don't make a mess back there with all your scraps or whatever.
+Brother: And don’t touch my stuff.
+
 
 ===
 
 title: Car1Start
 ---
-Brother: Did ya have fun at the gas station ?
+Brother: Buckled?
+Brother: Alright let's hit the road.
 
 ===
 
 title: Car2Start
 ---
-Brother: Dragon land was fun wasn't it ?
+Brother: You had fun at dino-
+Brother: I mean dragon land?
+Brother: Haha,
+Brother: That place was such a sham.
+Brother: Those roadside attractions are weird.
+<<startAction playPhone>>
+
+Brother: I remember one time-
+Brother: Hold on, dad's calling.
+<<startAction playTalk>>
+Brother: ...
+<<startAction pauseTalk>>
+Brother: Hey.
+<<startAction playTalk>>
+Brother: ...
+<<startAction pauseTalk>>
+Brother: Yea, he's alright. We just were at the gas station..
+<<startAction playTalk>>
+Brother: ...
+<<startAction pauseTalk>>
+
+Brother: Yes Dad. I know. You don't have to remind me.
+<<startAction playTalk>>
+
+Brother: ...
+Brother: ...
+<<startAction pauseTalk>>
+
+Brother: I'm sorry.
+Brother: Yea. Ok. Bye.
+Brother: ...
+-> What did dad say?
+	Brother: Nothing. It's nothing.
+	Brother: Don't worry about it.
+	Brother: He's just always worried something's wrong.
+	Brother: Or that I did something.
+-> Are you ok?
+	Brother: What? Why?
+	Brother: It's nothing.
+	Brother: Dad's usual nagging.
+	Brother: Well for me atleast.
+
 
 ===
 
@@ -48,44 +95,107 @@ title: Car2
 Brother: Look, we're almost here..
 Brother: Damn, it's been so long.
 -> Go to School
-	Brother: We're here.
 	<<changeScene School>>
 ===
 
 
-title: CarBark1
+title: Car0Bark1
 ---
-Brother: don't make too much mess back there 
-Brother: with all your scraps or whatever.
+
+Brother: Mmmm?
+Brother: Are you bored already?
+Brother: Take a nap or something.
+Brother: I don't know.
 
 ===
 
 
-title: CarBark2
+title: Car0Bark2
 ---
 Brother: We'll make a few stops, don't worry.
+Brother: If you start complaining,
+Brother: I'm leaving you on the side of the road.
 
 
 ===
 
 
-title: CarBark3
+title: Car0Bark3
 ---
 Brother: Did you just fart, gross.
 
 ===
 
-
-
-
-
-
-title: Stamp1
+title: Car1Bark1
 ---
-Brother: Uh,
-Brother: Cool stamp?
-Brother: Where did u even get that
+Brother: Dude.
+Brother: What... stinks back there?
+Brother: If you picked up a dead bird again,
+Brother: I'll show it to Mom.
+
 ===
+
+
+title: Car1Bark2
+---
+Brother: Cows!
+Brother: You missed them.
+Brother: Haha
+Brother: Sorry.
+Brother: We'll probably see more on the way.
+
+===
+
+
+title: Car1Bark3
+---
+Brother: Hey, did anything fall back there?
+Brother: Be careful, ok?
+Brother: Precious stuff back there.
+	-> Like what
+		My casette.
+		Drumsticks.
+		My photo album.
+		Those things are not cheap.
+		Make sure nothing topples.
+	-> Yea, everything fell
+		Really?
+		...
+		I'll kill you.
+===
+
+
+
+title: Car2Bark1
+---
+Brother: Hey, about what you heard.
+Brother: Don't worry about it ok?
+Brother: I know it gets..
+Brother: Like I don't know concerning?
+Brother: It won't be an issue anymore.
+
+===
+
+
+title: Car2Bark2
+---
+Brother: I know it's too late to ask but,
+Brother: did you want anything else from Dragonland?
+Brother: I got some money from Mom.
+Brother: Was gonna keep it for myself but...
+Brother: Listen, I'll get you something else
+Brother: Promise.
+
+===
+
+
+title: Car2Bark3
+---
+Brother: Look a red car! 
+Brother: We should play punch buggy.
+Brother: I won't hit you as hard as we did when we were younger.
+===
+
 
 title: Hungry
 ---

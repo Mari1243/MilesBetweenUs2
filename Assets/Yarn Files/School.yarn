@@ -96,6 +96,7 @@ Need something?
             Takes a lot of courage.
             But I mean if you find one laying around, 
             Let me know little man
+            <<startAction StartgardenerQuest>>
             <<cameraIndex 0>>
 
 
@@ -114,20 +115,13 @@ Here, in exchange for this mystery number
 Have my business card.
 Let me know if you ever need landscaping.
 <<startAction gardenerQuest>>
-
 <<else>>
 	<<jump Gardener1>>
 <<endif>>
 <<cameraIndex 0>>
 ===
 
-title: card
----
-<<cameraIndex 4>>
-special item!
-<<openJournal true>>
-<<cameraIndex 3>>
-===
+
 
 title: Pamphlet
 ---
@@ -164,5 +158,74 @@ title: Pamphlet
 
 
 
+title: card
+---
+<<cameraIndex 4>>
+Is this that guy's business card over there?
+He looks really young.
+If mom saw him she’d be all like
+“That’s who you’ll be if you don’t go to college”
+Or some crap like that.
+->He’s a business man.
+    Huh I wonder how he figured that all out
+        ->He doesn’t have a girlfriend
+            Is that all you got from your talk with him?
+            Not everyone needs a girlfriend
+            ->He’s kinda like you!
+                Mm.
+                Difference is that he made something out of himself at least.
+                There’s so much I coulda done
+                Between high school and well
+                Now.
+<<openJournal true>>
+<<cameraIndex 3>>
+===
 
 
+title: flyer
+---
+<<cameraIndex 4>>
+Who gave this to you??
+The fraternity?
+Don’t talk to those people. 
+->Why?
+    Because
+    Whatever, talk to whoever
+    They’re just so loud
+    Look at them trashing the park.
+    No care for anyone else trying to enjoy the peace and quiet.
+    It’s annoying
+    ->Am I annoying?
+        Yea sometimes
+        But 
+        At least you pick up trash.
+        Even if it makes you stink a little.
+<<openJournal true>>
+<<cameraIndex 3>>
+===
+
+
+
+title: club
+---
+<<cameraIndex 4>>
+Woah. Is this a legit club?
+->Yea you like plants right!
+    I don’t know. 
+    Don’t think this is the club for me.
+    Or at least maybe the people
+    ->Talking to people is easy!
+        Yes. For you it is.
+        You go up to everyone you see.
+        Seems like they have a lot of clubs.
+        ->Are you gonna join any?
+            Maybe not..
+            Not too sure.
+            I was a part of the light music club in highschool
+            But It only was fun 
+            cause all Connor and Isaiah were members
+            ->Who?
+                Old friends.
+                ->Where are they now?
+                    College.
+===

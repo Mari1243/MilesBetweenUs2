@@ -18,7 +18,7 @@ using Yarn.Unity;
 public class GasStationManager : MonoBehaviour
 {
     public Item item;
- public Item knife;
+    public Item knife;
     public Animator car;
  //this exists so once ive completed all objectives it wont keep checking everytime i interact
  private bool completedAllObjectives;
@@ -28,6 +28,7 @@ public class GasStationManager : MonoBehaviour
  public static event Action journalNotif;
     private bool completedKidQuest = false;
  private bool firstTimeSteal = true;
+ private HashSet<string> completedItems = new HashSet<string>();
 
 //for tutorial
 public GameObject TutorialDialogueSystem;
@@ -139,37 +140,37 @@ private bool hasExecuted = false;
 
     public void checkconditions(List<InventoryItem> list)
     {
-        if (!completedAllObjectives)
-        {
+        if (completedAllObjectives) return;
             foreach (InventoryItem item in list)
             {
-                print("i have "+ item.itemData.itemName);
-                if (item.itemData.itemName == "Snacks")
+                string name = item.itemData.itemName;
+                if (completedItems.Contains(name)) continue; // already counted
+
+                if (name == "Snacks")
                 {
-                    if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
-                   ToDoManager.instance.CompleteItem("SnacksforRoad");
+                    ToDoManager.instance.CompleteItem("SnacksforRoad");
+                    completedItems.Add(name);
                     completedobjectives++;
                 }
-                if (item.itemData.itemName == "Lollipop")
+                else if (name == "Lollipop")
                 {
-                    if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
-                   ToDoManager.instance.CompleteItem("KidCandy");
+                    ToDoManager.instance.CompleteItem("KidCandy");
+                    completedItems.Add(name);
                     completedobjectives++;
                 }
-                else if (item.itemData.itemName == "Cigarettes" || item.itemData.itemName == "PocketKnife" || item.itemData.itemName == "BloodPawz CD")
+                else if (name == "Cigarettes" || name == "PocketKnife" || name == "BloodPawz CD")
                 {
-                    print("detected taht i picked up lore item, should check off to do list");
                     ToDoManager.instance.CompleteItem("SpecialBroItem");
+                    completedItems.Add(name);
                     completedobjectives++;
                 }
 
                 if (completedobjectives >= allobjectives)
                 {
                     completedAllObjectives = true;
-                    print("completed all level objectives yay");
+                    return;
                 }
             }
-        }
     }
 
     public void StartAction(string action)
@@ -187,7 +188,7 @@ private bool hasExecuted = false;
                 }
                 break;
             case "StartkidQuest":
-
+                journalNotif?.Invoke();
                 Debug.Log("Giving kid quest");
                 ToDoManager.instance.spawnnewToDoTask("KidCandy", "Grab candy for kids");
                 break;

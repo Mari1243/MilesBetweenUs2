@@ -103,7 +103,7 @@ public class ThirdPersonMovement : MonoBehaviour
         animator.SetBool("isWalking", false);
 
         canMove = false;
-        print("canmove is false bc dialogue");
+        //print("canmove is false bc dialogue");
     }
     private void OnDialogOver()
     {

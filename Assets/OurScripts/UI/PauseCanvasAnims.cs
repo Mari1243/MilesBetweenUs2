@@ -9,10 +9,13 @@ public class PauseCanvasAnims : MonoBehaviour
     private Vector2 InactivePosition = new Vector2(0, -2100);
     private RectTransform background;
     private RectTransform paper;
-    private RectTransform doodle;
     private Canvas canvas;
     private Coroutine currentRoutine;
     private bool isPaused = false;
+    private bool controlsOpen = false;
+
+    public GameObject Controls;
+    
 
     public static event System.Action<bool> onPause;
     private void Start()
@@ -20,10 +23,8 @@ public class PauseCanvasAnims : MonoBehaviour
         canvas = GetComponent<Canvas>();
         background = transform.GetChild(0).GetComponent<RectTransform>();
         paper = transform.GetChild(1).GetComponent<RectTransform>();
-        doodle = transform.GetChild(2).GetComponent<RectTransform>();
         background.anchoredPosition = InactivePosition;
         paper.anchoredPosition = InactivePosition;
-        doodle.anchoredPosition = InactivePosition;
         canvas.enabled = false;
     }
 
@@ -34,41 +35,34 @@ public class PauseCanvasAnims : MonoBehaviour
 
     private void OnDisable()
     {
-          InputManager.Pause -= PauseManage;
+        InputManager.Pause -= PauseManage;
     }
 
     private void PauseManage()
     {
         if (!isPaused)
         {
-                isPaused = true;
-                PauseRoutine(isPaused);
+            isPaused = true;
+            PauseRoutine();
+            currentRoutine = StartCoroutine(PauseGame());
+            print("pawsing");
         }
         else
         {
             isPaused = false;
-            PauseRoutine(isPaused);
+            PauseRoutine();
+            currentRoutine = StartCoroutine(StartGame());
+            print("playing");
         }
     }
-    private void PauseRoutine(bool paused)
+    private void PauseRoutine()
     {
         if (currentRoutine != null)
         {
             StopCoroutine(currentRoutine);
         }
-
         background.DOKill();
-        paper.DOKill();
-        doodle.DOKill();
-
-        if (paused)
-        {
-            currentRoutine = StartCoroutine(PauseGame());
-            print("pawsing");
-        }  
-        else
-            currentRoutine = StartCoroutine(StartGame());
-            print("playing");
+        paper.DOKill();  
     }
 
     private IEnumerator PauseGame()
@@ -81,22 +75,19 @@ public class PauseCanvasAnims : MonoBehaviour
         background.DOAnchorPos(ActivePosition, 1).SetEase(Ease.OutBack).SetUpdate(true);
         yield return new WaitForSecondsRealtime(.2f);
         paper.DOAnchorPos(ActivePosition, 1).SetEase(Ease.OutBack).SetUpdate(true);
-        yield return new WaitForSecondsRealtime(.2f);
-        doodle.DOAnchorPos(ActivePosition, 1).SetEase(Ease.OutBack).SetUpdate(true);
     
     }
 
     private IEnumerator StartGame()
     {
-        //inputManager.inputActions["checkJournal"].Enable();
+        //inputManager.inputActions["checkFJournal"].Enable();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;
-        background.DOAnchorPos(InactivePosition, 1).SetEase(Ease.OutBack).SetUpdate(true);
+        background.DOAnchorPos(InactivePosition, .5f).SetEase(Ease.OutBack).SetUpdate(true);
         yield return new WaitForSecondsRealtime(.2f);
-        paper.DOAnchorPos(InactivePosition, 1).SetEase(Ease.OutBack).SetUpdate(true);
-        yield return new WaitForSecondsRealtime(.2f);
-        doodle.DOAnchorPos(InactivePosition, 1).SetEase(Ease.OutBack).SetUpdate(true);
+        paper.DOAnchorPos(InactivePosition, .5f).SetEase(Ease.OutBack).SetUpdate(true);
+
         yield return new WaitForSecondsRealtime(1.2f); // Wait for animation to complete
         canvas.enabled = false;
     }
@@ -114,5 +105,26 @@ public class PauseCanvasAnims : MonoBehaviour
 
         Time.timeScale = 1f; // So new scene isn't frozen
         SceneManager.LoadScene("TitleScreen"); 
+    }
+
+    public void controls()
+    {
+        if (!controlsOpen)
+        {
+            Controls.SetActive(true);
+            print("opening control panel");
+            controlsOpen=true;
+            DOTween.Restart("optionsIn"); 
+            DOTween.Play("optionsIn");
+        }
+        else
+        {
+            Controls.SetActive(false);
+            print("closing control panel");
+            DOTween.Restart("optionsOut"); 
+            DOTween.Play("optionsOut");
+            controlsOpen = false;
+        }
+        
     }
 }

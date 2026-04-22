@@ -34,16 +34,20 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     private void Start()
     {
-
-        loreIcon.enabled = false;
+        if(loreIcon != null)
+        {
+            loreIcon.enabled = false;
+        }
 
         mainCamera = Camera.main;
         if (mainCamera == null)
+        {
             mainCamera = FindObjectOfType<Camera>();
-        
+        }
+        canvas = GetComponentInParent<Canvas>();
         ValidateSetup();
 
-        canvas = GetComponentInParent<Canvas>();
+       
         rotationIcon = transform.GetChild(0).gameObject;
         scaleIcon = transform.GetChild(1).gameObject;
         rotationIcon.SetActive(false);

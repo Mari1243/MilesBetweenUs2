@@ -17,7 +17,6 @@ public class PickupUIVariants : MonoBehaviour
 
     public void ChangeUI(string str)
     {
-        print("string is "+ str);
         if (str == "canSteal")
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = stealSprite;

@@ -16,13 +16,11 @@ public class Rotate_Script : MonoBehaviour
 
     private void OnEnable()
     {
-        InputManager.onRotateChanged += OnRotateChanged;
         InputManager.onScaleChanged += OnScaleChanged;
     }
 
     private void OnDisable()
     {
-        InputManager.onRotateChanged -= OnRotateChanged;
         InputManager.onScaleChanged -= OnScaleChanged;
     }
 

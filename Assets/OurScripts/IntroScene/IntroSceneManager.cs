@@ -24,8 +24,7 @@ public class IntroSceneManager : MonoBehaviour
     private bool hasJournal = false;
     public Item NOJournal;
     public static bool journalopen = false;
-
-    public GameObject instructionss;
+    public Button xButton;
 
     public static IntroSceneManager instance;
     public GameObject TutorialDialogueSystem;
@@ -37,7 +36,7 @@ public class IntroSceneManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-
+        xButton.gameObject.SetActive(false);
     }
     private void OnEnable()
     {
@@ -63,7 +62,6 @@ public class IntroSceneManager : MonoBehaviour
             if(!journalopen)
             {
                 TPCam.SetActive(false);
-                instructionss.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 journalcanvas.enabled = true;
@@ -80,7 +78,6 @@ public class IntroSceneManager : MonoBehaviour
                 DOTween.Restart("animateOut"); 
                 DOTween.Play ("animateOut");
                 journalopen = false;
-                instructionss.SetActive(true);
                 diaRun.Stop();
             }
     }
@@ -116,6 +113,8 @@ public class IntroSceneManager : MonoBehaviour
         DialogueManager.tutorialInstance.LoadDialog("WhatisJournal");
         DialogueManager.tutorialInstance.StartDialog();
         //DialogueManager.instance.OnDialogOver();
+        //set x button true
+         xButton.gameObject.SetActive(true);
     }
 
    

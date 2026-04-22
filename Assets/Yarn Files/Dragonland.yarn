@@ -1,6 +1,7 @@
 ﻿title: IntroCutScene
 ---
 <<cameraIndex 1>>
+<<declare $GrannyVisited = 0>>
 
 Brother: Cool, we're like halfway
 Brother: I'm beat so make yourself busy for a bit
@@ -41,10 +42,49 @@ tags:
 ---
 <<cameraIndex 2>>
 
-Welcome to Dino- I mean DragonLand!
-Feel free to look around 
-And let me know if you have any questions
-Or if you want any dragon facts
+
+<<if $GrannyVisited == 0>>
+    Welcome to Dino- I mean DragonLand!
+	Feel free to look around 
+	And let me know if you have any questions
+	Or if you want any dragon facts
+<<elseif $GrannyVisited == 1>>
+    Did you know,
+	dinosaurs actually made people believe in dragons!
+	Of course the two look similar,
+	but...
+	...
+	zzZzz...
+	zzZzzz...
+		-> Wake her up
+			zzzZz..
+			Ergh.. huh..?
+			Oh sorry. What was I saying?
+			Oh! Welcome to Dragonland!
+			let me know if you have any questions
+			Or if you want any dragon facts!
+			<<cameraIndex 0>>
+		-> Leave
+			<<cameraIndex 0>>
+
+<<elseif $GrannyVisited == 2>>
+    Did you know this?
+	That our dragons come are sourced allll the way from-
+	...
+	zzzZz...
+	Zzzz...
+		-> Wake her up
+			h..huh..?
+			Sorry!
+			Anyways,
+			Let me know if you want any dragon facts!
+			<<cameraIndex 0>>
+		-> Leave
+			<<cameraIndex 0>>	
+<<endif>>
+<<set $GrannyVisited to $GrannyVisited+1>>
+
+
 <<cameraIndex 0>>
 ===
 
@@ -94,6 +134,7 @@ How did I lose it in a dessert? It's literally just sand.
 Oh uh hi.
 Let me know if you see an ID anywhere 
 And I’ll get you a sticker or something.
+<<startAction StartmouseQuest>>
 
 <<cameraIndex 0>>
 ===
@@ -116,7 +157,8 @@ I didn't even know Cobra had cool patches like this.
 				Wait.
 				Ugh dude shut up, not funny.
 				They stopped making music years ago.
-				Me and my old band covered so many of their songs.
+				Me and my old band with Connor and Isaiah,
+				we covered so many of their songs.
 				Damnit, that would have been a cool thing to tell that girl-
 				Ugh nevermind.
 
@@ -171,12 +213,12 @@ title: EndDragonLand
 <<cameraIndex 1>>
 
 Brother: Ya done stomping around?
--> Yea lets gettouta here
+-> Yea lets go!
 	Aight
 	Also
 	You're really dusty 
 	<<changeScene Car>>
--> No just kidding
+-> No not yet
 	Oook, take your sweet time.
 <<cameraIndex 0>>
 

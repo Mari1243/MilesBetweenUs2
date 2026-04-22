@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Get flyer for Max
       objectReference: {fileID: 0}
+    - target: {fileID: 1386302898540705470, guid: e768d9c545bfa43babbf9a2671f8cb91, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3858602058654858274, guid: e768d9c545bfa43babbf9a2671f8cb91, type: 3}
       propertyPath: m_Name
       value: ToDoLevel3

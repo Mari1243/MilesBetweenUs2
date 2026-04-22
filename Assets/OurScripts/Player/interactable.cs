@@ -25,6 +25,7 @@ public class interactable : MonoBehaviour, IInteractable
 
     public static event Action onMap;
     public static event Action onEND;
+    public static event Action onMisc;
 
     public void Interact()
     {
@@ -68,7 +69,7 @@ public class interactable : MonoBehaviour, IInteractable
 
    
             case "canSteal":
-
+                print("destroying gameobject because its can steal??");
                 Destroy(gameObject);
                 onPickedUp?.Invoke(item); //called in InventoryManager
                 break;
@@ -84,7 +85,9 @@ public class interactable : MonoBehaviour, IInteractable
             case "END":
                 onEND?.Invoke(); //called in schoolmanager
                 break;
-                
+            case "Misc":
+                onMisc?.Invoke(); //called in schoolmanager
+                break;     
         }
     }
   

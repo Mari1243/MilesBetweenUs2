@@ -45,6 +45,7 @@ public class Interactor : MonoBehaviour
     public static event Action<bool> StealWarning;
     public static event Action<string> HintNeeded;
     public static event Action<int> OnStartedStealing;
+    public static event Action OnStopStealing;
 
 
     private Transform highlight;
@@ -73,6 +74,12 @@ void OnDisable()
     InputManager.OnInteractCanceled -= HandleInteractCanceled;
 }
 
+public void alternativeInteract(GameObject obj)
+{
+    pickedUpObj = obj;
+    HandleInteractStarted();
+}
+
 private void HandleInteractStarted()
 {
     // Add null checks at the start
@@ -86,13 +93,13 @@ private void HandleInteractStarted()
             {
                 if (!isInStealingConfirmMode)
                 {
-                    print("First press: Entering stealing confirmation mode");
+                    //print("First press: Entering stealing confirmation mode");
                     isInStealingConfirmMode = true;
                     OnStartedStealing?.Invoke(StealableItemBehavior.instance.camIndex);
 
                     if (StealingManager.Instance != null)
                     {
-                        StealingManager.Instance.StartStealin();
+                        StealingManager.Instance.StartStealin(StealableItemBehavior.instance.camIndex,StealableItemBehavior.instance.defaultCamIndex);
                         StealStep?.Invoke(1);
                     }
                     return;
@@ -123,7 +130,7 @@ private void HandleInteractStarted()
             }
             else if (canInteract)
             {
-                print("calling interactable.interact");
+                //print("calling interactable.interact");
                 Interactable.Interact();
             }
     // move the contents of your Interacted() method here
@@ -179,7 +186,7 @@ private void HandleInteractCanceled()
             {
                 Outline outline = highlight.gameObject.AddComponent<Outline>();
                 outline.enabled = true;
-                outline.OutlineColor = Color.white;
+                outline.OutlineColor = Color.yellow;
                 outline.OutlineWidth = 7.0f;
                 checkstate(other.gameObject);
             }
@@ -199,8 +206,8 @@ private void HandleInteractCanceled()
         }
         else
         {
-             SpawnPickupUI("canInteract");
-         }
+            SpawnPickupUI("canInteract");
+        }
     }
 
     private void SpawnPickupUI(string str)
@@ -257,13 +264,10 @@ private void HandleInteractCanceled()
 
     private IEnumerator FailedStealing()
     {
-        print("failing stealing");
+        print("ENDING stealing");
         yield return new WaitForSeconds(1f);
-        
-        if (StealingManager.Instance != null)
-        {
-            StealingManager.Instance.StopStealin();
-        }
+
+        OnStopStealing?.Invoke();
         
         CleanupAfterInteraction();
         
@@ -344,7 +348,7 @@ private void HandleInteractCanceled()
 
             if (holdProgress <= 0f && holdDirection == -1)
             {
-                
+                //ran out
                 StopHoldRoutine();
                 OnHoldCanceled?.Invoke();
                 StealStep?.Invoke(4);

@@ -29,7 +29,7 @@ public class SchoolManager : MonoBehaviour
     public Animator car;
     
     //for this levels fetchquest
-    private bool completedGardenerQuest = false;
+    [SerializeField]private bool completedGardenerQuest = false;
     public Item GardenerReward;
     public Item FratItem;
     public Item SchoolPamphlet;
@@ -118,6 +118,12 @@ public class SchoolManager : MonoBehaviour
                    ToDoManager.instance.CompleteItem("CheckoutFratBros");
                     completedobjectives++;
                 }
+                if (item.itemData.itemName == "Someone's number!")
+                {
+                    if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
+                    ToDoManager.instance.CompleteItem("GardenerQuest");
+                    completedobjectives++;
+                }
                 if (completedobjectives >= allobjectives)
                 {
                     completedAllObjectives = true;
@@ -173,6 +179,7 @@ public class SchoolManager : MonoBehaviour
     Frat flyer brother lore item
     school pamphlet
     */
+    //also any time something changes with the to do list the check journal/todolist popup should be called
 
     public void StartAction(string action)
     {
@@ -182,14 +189,22 @@ public class SchoolManager : MonoBehaviour
                 if (!completedGardenerQuest)
                 {
                     InventoryManager.instance.Add(GardenerReward);
+                    ToDoManager.instance.CompleteItem("GardenerQuest");
                     completedGardenerQuest = true;
                 }
+           
+                break;
+            case "StartgardenerQuest":
+                ToDoManager.instance.spawnnewToDoTask("GardenerQuest", "Get a girls number");
+
                 break;
             case "Frat":
                 InventoryManager.instance.Add(FratItem);
+                ToDoManager.instance.CompleteItem("CheckoutFratBros");
                 break;
             case "Pamphlet":
                 InventoryManager.instance.Add(SchoolPamphlet);
+                ToDoManager.instance.CompleteItem("FlyerforMax");
                 break;
 
 

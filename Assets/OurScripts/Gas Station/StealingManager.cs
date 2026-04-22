@@ -25,6 +25,8 @@ public class StealingManager : MonoBehaviour
 
 
     private bool stealingActive = false;
+    private int activeCamIndex = 0;
+    private int activeDefaultCamIndex = 0;
 
     public GameObject player;
 
@@ -36,7 +38,18 @@ public class StealingManager : MonoBehaviour
         DangerState.Suspicious
     };
 
-  
+    private void OnEnable()
+    {
+        Interactor.OnStopStealing += StopStealin;
+    }
+
+    private void OnDisable()
+    {
+        Interactor.OnStopStealing -= StopStealin;
+    }
+
+
+
     private int cycleIndex;
     private Coroutine cycleRoutine;
 
@@ -47,16 +60,17 @@ public class StealingManager : MonoBehaviour
     }
 
     
-    public void StartStealin()
+    public void StartStealin(int camIndex, int defaultCamIndex = 0)
     {
         if (stealingActive) return;
-        //if (!stealingActive) { stealingCamera(); }
         stealingActive = true;
-        // Reset and begin the cycle when enabled.
+        activeCamIndex = camIndex;
+        activeDefaultCamIndex = defaultCamIndex;
+    
         cycleIndex = 0;
         SetState(stateCycle[cycleIndex]);
-        //this will enable the UI
         OnStealingActionChanged?.Invoke(true);
+        ChangeCamera.instance.changeCamera(activeCamIndex);
         cycleRoutine = StartCoroutine(StateCycleRoutine());
     }
 
@@ -64,11 +78,10 @@ public class StealingManager : MonoBehaviour
     {
         print("stop stealin");
         stealingActive = false;
-        // Stop immediately when disabled.
         if (cycleRoutine != null)
-            StopCoroutine(cycleRoutine);
+        StopCoroutine(cycleRoutine);
+        ChangeCamera.instance.changeCamera(activeDefaultCamIndex); // uses whatever was passed in
         OnStealingActionChanged?.Invoke(false);
-        
     }
 
 
