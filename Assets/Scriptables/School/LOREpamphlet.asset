@@ -15,5 +15,5 @@ MonoBehaviour:
   img: {fileID: 619059605, guid: 5719862bfbde3cd4aacb2d6228dc3b7c, type: 3}
   itemName: College!
   loreItem: 1
-  node: pamphlet
+  node: club
   diagPos: {x: 82.89, y: 5.71, z: -27.76}
