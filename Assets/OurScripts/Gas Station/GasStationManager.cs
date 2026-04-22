@@ -188,7 +188,7 @@ private bool hasExecuted = false;
                 }
                 break;
             case "StartkidQuest":
-
+                journalNotif?.Invoke();
                 Debug.Log("Giving kid quest");
                 ToDoManager.instance.spawnnewToDoTask("KidCandy", "Grab candy for kids");
                 break;

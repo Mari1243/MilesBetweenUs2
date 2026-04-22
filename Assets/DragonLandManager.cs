@@ -82,19 +82,21 @@ public class DragonLandManager : MonoBehaviour
            
                 if (!completedMouseQuest)
                 {
-                    ToDoManager.instance.spawnnewToDoTask("MouseQuest", "Find Mouse girl's ID!");
-                    completedMouseQuest = true;
-                    Debug.Log("giving mouse quest");
-                }
-                else
-                {
                     InventoryManager.instance.Add(MouseReward);
+         
+                    completedMouseQuest = true;
+
                     //check off number
                     ToDoManager.instance.CompleteItem("MouseQuest");
                 }
+               
                 break;
 
+            case "StartmouseQuest":
 
+                journalNotif?.Invoke();
+                ToDoManager.instance.spawnnewToDoTask("MouseQuest", "Find Mouse girl's ID!");
+                break;
 
         }
     }
