@@ -3,12 +3,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Collections;
+using System;
+using UnityEngine.UI;
 
 
 public enum States
     {
         Gasstation,
         Car,
+        End,
     }
 
 public class NewJournalSave : MonoBehaviour
@@ -29,6 +32,7 @@ public class NewJournalSave : MonoBehaviour
     private int sceneList = 0;
 
     public GameObject inventoryObject;
+    public Button xbutton;
 
 
 
@@ -55,15 +59,16 @@ public class NewJournalSave : MonoBehaviour
         currentInventory = InventoryManager.instance.inventory;
     }
 
-         private void OnEnable()
+    private void OnEnable()
     {
         InventoryManager.AddedItem += CollectedLoreItem;
-
+        DialogueCommands.EndJournalState +=EndJournal;
+        
     }
     private void OnDisable()
     {
         InventoryManager.AddedItem -= CollectedLoreItem;
-
+         DialogueCommands.EndJournalState -=EndJournal;
     }
 
     public void newspawnlist(GameObject data)
@@ -88,6 +93,7 @@ public class NewJournalSave : MonoBehaviour
     public void SetState(States newstate)
     {
         print("setting state");
+        print("new state is " + newstate);
         if (newstate == States.Gasstation)
         {
             GasStationJournal();
@@ -96,12 +102,18 @@ public class NewJournalSave : MonoBehaviour
         {
             CarJournal();
         }
+        else if (newstate == States.End)
+        {
+            EndJournalState();
+        }
     }
     private void GasStationJournal()
     {
         print("setting journal state to GAS STATION");
         
-        //SpawnList();
+        //set the xbutton click to activate end dialogue
+        xbutton.onClick.RemoveAllListeners();
+        xbutton.onClick.AddListener(ToggleJournal.instance.journal);
 
         if (inventoryObject != null)
             inventoryObject.SetActive(false);
@@ -110,7 +122,49 @@ public class NewJournalSave : MonoBehaviour
             currentList.SetActive(true);
         }
         sceneList++; // advance to next list in sequence
+        
     }
+
+    private void EndJournalState()
+    {
+        //set the xbutton click to activate end dialogue
+        print("triggering end journal state");
+        xbutton.gameObject.SetActive(true);
+        xbutton.onClick.RemoveAllListeners();
+        xbutton.onClick.AddListener(TriggerEndDialogue);
+         if (inventoryObject != null)
+            inventoryObject.SetActive(true);
+        if(currentList != null)
+        {
+            //may be causing errors???]
+            Destroy(currentList);
+        }
+
+        StartCoroutine(manage());
+    }
+    
+
+    private void TriggerEndDialogue()
+    {
+        DialogueManager.tutorialInstance.LoadDialog("ShowBrotherPrompt");
+        DialogueManager.tutorialInstance.StartDialog();
+    }
+
+    private void EndJournal(bool isEndstate)
+    {
+        if (isEndstate)
+        {
+            print("activating end journal state");
+            SetState(States.End);
+        }
+        else
+        {
+            print("activating normal journal state");
+            SetState(States.Gasstation);
+        }
+        
+    }
+
     private void CarJournal()
     {
        print("setting journal state to CAR");

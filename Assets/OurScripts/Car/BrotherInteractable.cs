@@ -9,6 +9,8 @@ using System;
 
 public class BrotherInteractable : MonoBehaviour
 {
+
+    public BrotherInteractable instance;
     public static event Action askedAbtAllLoreItems;
     public interactable interactableData;
     public Item newItem;
@@ -17,13 +19,16 @@ public class BrotherInteractable : MonoBehaviour
     public Image img;
     public int minWait, maxWait;
 
-    public int loreItemsAskedAbout = 0;
-
 
     bool car1=false;
 
     private int carScene;
     //bool car1=false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void OnEnable()
     {
@@ -171,13 +176,13 @@ public class BrotherInteractable : MonoBehaviour
         }
       
         DialogueManager.instance.TalkInteraction(newItem);
-        loreItemsAskedAbout++;
         Debug.Log(newItem.diagPos);
-        if (loreItemsAskedAbout >= 3)
-        {
-            print("asked about all the new lore items!");
-            DialogueManager.DialogOver += OnBrotherDialogueFinished;
-        }
+        
+    }
+
+    public void endjournal()
+    {
+        DialogueManager.DialogOver += OnBrotherDialogueFinished;
     }
 
     private void OnBrotherDialogueFinished()

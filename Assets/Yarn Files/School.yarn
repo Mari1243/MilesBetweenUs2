@@ -28,9 +28,11 @@ I should go through stuff before I give it to Max
     -> Finish journal
         <<cameraIndex 3>>
         <<openJournal true>>
+        <<SetEndstate true>>
     -> Not Yet
         <<cameraIndex 0>>
         <<end false>>
+        <<SetEndstate false>>
 
 ===
 
@@ -45,6 +47,7 @@ Brother: Is that your journal?
         <<end true>>
     -> Not Yet
         <<cameraIndex 0>>
+        <<SetEndstate false>>
         <<end false>>
 ===
 

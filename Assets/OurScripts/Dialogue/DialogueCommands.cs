@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 public class DialogueCommands : MonoBehaviour
 {
 
@@ -15,6 +17,7 @@ public class DialogueCommands : MonoBehaviour
     public static UnityAction<string> scenename;
 
     public static UnityAction diaopenJournal;
+    public static event Action<bool> EndJournalState;
 
     public static UnityAction<string> startAction;
     [Header("Inventory")]
@@ -31,6 +34,7 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<string>("startAction", OnStartAction);
         dialogueRunner.AddCommandHandler<bool>("openJournal", OnJournalOpen);
         dialogueRunner.AddCommandHandler<bool>("end", EndGame);
+        dialogueRunner.AddCommandHandler<bool>("SetEndstate", Endstate);
 
 
     }
@@ -51,12 +55,27 @@ public class DialogueCommands : MonoBehaviour
         if (willend)
         {
             print("TRIGGER FINAL CUTSCENE");
+            ToggleJournal.instance.journal();
+            SceneManager.LoadScene("EndDemoScene");
         }
         else
         {
             //close journal and reset
             SchoolManager.hasPlayed = false;
-            
+        }
+    }
+
+    private void Endstate(bool inEndstate)
+    {
+        if (inEndstate)
+        {
+            //add x button functionality to trigger the end game dialogue
+            EndJournalState?.Invoke(true);
+        }
+        else
+        {
+            //disable x button functionality to what it was before
+            EndJournalState?.Invoke(false);
         }
     }
 

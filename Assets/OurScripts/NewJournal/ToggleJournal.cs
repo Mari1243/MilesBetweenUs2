@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 
 public class ToggleJournal : MonoBehaviour
 {
+    public static ToggleJournal instance;
     public static event Action OnJournalOpened;
     public static event Action OnJournalClosed;
 
@@ -31,7 +32,7 @@ public class ToggleJournal : MonoBehaviour
      
     private void Awake()
     {
-
+        instance = this;
         canvas = this.GetComponent<Canvas>();
         canvas.enabled = false;
         journalContents = this.transform.GetChild(0).gameObject;
@@ -143,8 +144,6 @@ public class ToggleJournal : MonoBehaviour
     {
         yield return new WaitUntil(() => !DialogueManager.tutorialInstance.dialogStarted);
     
-        jouralstatesystem.SetState(States.Car);
-        xbutton.gameObject.SetActive(false);
         journalopen = false;
         canOpen = true;
 

@@ -54,7 +54,6 @@ public class SchoolManager : MonoBehaviour
     {
         interactable.onEND += triggerEND;
         InventoryManager.OnInventoryChange += checkconditions;
-        BrotherInteractable.askedAbtAllLoreItems += triggerFinishedJournal;
         DialogueCommands.startAction += StartAction;
 
     }
@@ -62,7 +61,6 @@ public class SchoolManager : MonoBehaviour
     {
         interactable.onEND -= triggerEND;
         InventoryManager.OnInventoryChange -= checkconditions;
-        BrotherInteractable.askedAbtAllLoreItems -= triggerFinishedJournal;
         DialogueCommands.startAction -= StartAction;
     }
 
@@ -88,16 +86,9 @@ public class SchoolManager : MonoBehaviour
             StartCoroutine(endanimation());
             //finding and assigning journal
             journalToggle = Object.FindAnyObjectByType<ToggleJournal>();
+            
         }
     } 
-
-    private void triggerFinishedJournal()
-    {
-        print("triggering FINISHED JOURNAL");
-        //this triggeres when youve asked aout all the lore items
-        DialogueManager.tutorialInstance.LoadDialog("ShowBrotherPrompt");
-        DialogueManager.tutorialInstance.StartDialog();
-    }
 
     public void checkconditions(List<InventoryItem> list)
     {
