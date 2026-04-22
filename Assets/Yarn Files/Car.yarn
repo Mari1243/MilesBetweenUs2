@@ -13,7 +13,8 @@ Brother: And don’t touch my stuff.
 
 title: Car1Start
 ---
-Brother: Put on your seatbelt.
+Brother: Buckled?
+Brother: Alright let's hit the road.
 
 ===
 
@@ -94,15 +95,17 @@ title: Car2
 Brother: Look, we're almost here..
 Brother: Damn, it's been so long.
 -> Go to School
-	Brother: We're here.
 	<<changeScene School>>
 ===
 
 
 title: Car0Bark1
 ---
-Brother: don't make too much mess back there 
-Brother: with all your scraps or whatever.
+
+Brother: Mmmm?
+Brother: Are you bored already?
+Brother: Take a nap or something.
+Brother: I don't know.
 
 ===
 
@@ -110,6 +113,8 @@ Brother: with all your scraps or whatever.
 title: Car0Bark2
 ---
 Brother: We'll make a few stops, don't worry.
+Brother: If you start complaining,
+Brother: I'm leaving you on the side of the road.
 
 
 ===
@@ -123,21 +128,40 @@ Brother: Did you just fart, gross.
 
 title: Car1Bark1
 ---
-Brother: PLACEHOLD
+Brother: Dude.
+Brother: What... stinks back there?
+Brother: If you picked up a dead bird again,
+Brother: I'll show it to Mom.
 
 ===
 
 
 title: Car1Bark2
 ---
-Brother:  PLACEHOLD2
+Brother: Cows!
+Brother: You missed them.
+Brother: Haha
+Brother: Sorry.
+Brother: We'll probably see more on the way.
 
 ===
 
 
 title: Car1Bark3
 ---
-Brother:  PLACEHOLD3
+Brother: Hey, did anything fall back there?
+Brother: Be careful, ok?
+Brother: Precious stuff back there.
+	-> Like what
+		My casette.
+		Drumsticks.
+		My photo album.
+		Those things are not cheap.
+		Make sure nothing topples.
+	-> Yea, everything fell
+		Really?
+		...
+		I'll kill you.
 ===
 
 
@@ -155,7 +179,12 @@ Brother: It won't be an issue anymore.
 
 title: Car2Bark2
 ---
-Brother:  Whatever dude.
+Brother: I know it's too late to ask but,
+Brother: did you want anything else from Dragonland?
+Brother: I got some money from Mom.
+Brother: Was gonna keep it for myself but...
+Brother: Listen, I'll get you something else
+Brother: Promise.
 
 ===
 
@@ -164,6 +193,7 @@ title: Car2Bark3
 ---
 Brother: Look a red car! 
 Brother: We should play punch buggy.
+Brother: I won't hit you as hard as we did when we were younger.
 ===
 
 
