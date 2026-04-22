@@ -6,6 +6,7 @@ public class PickupUIVariants : MonoBehaviour
     public Sprite interactSprite;
     public Sprite stealSprite;
     public Sprite endSprite;
+    public Sprite Downstairs;
     private PickupUIVariants instance;
     private SpriteRenderer SpriteRenderer;
 
@@ -29,5 +30,10 @@ public class PickupUIVariants : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = endSprite;
         }
+        else if (str =="Downstairs")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Downstairs;
+        }
+        
     }
 }
