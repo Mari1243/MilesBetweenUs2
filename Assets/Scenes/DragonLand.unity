@@ -326,7 +326,7 @@ Transform:
   m_GameObject: {fileID: 42753648}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16081917, y: 0, z: 0, w: 0.9869839}
-  m_LocalPosition: {x: 10.75, y: 1.241, z: -73.75}
+  m_LocalPosition: {x: 9.42, y: 1.241, z: -71.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -886,6 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 8094b49033018914ba2364129b67d446, type: 2}
+  aquireable: 1
 --- !u!135 &66924291
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1564,6 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: d3d5ecf1955e346bfb9d0039b24d51db, type: 2}
+  aquireable: 1
 --- !u!1 &229692921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +1963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: d6f64b15e5fc9e54e9137458a58819ce, type: 2}
+  aquireable: 1
 --- !u!1 &286291306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,6 +2118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 85c374bdc01e7f046a8727011c581c5d, type: 2}
+  aquireable: 1
 --- !u!1 &378758958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,6 +2721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 2cdfbc9a992260945b6bfdb1926b1998, type: 2}
+  aquireable: 1
 --- !u!1 &458826011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,6 +2860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 900324eaaadc68f4b9265e8cde091abb, type: 2}
+  aquireable: 1
 --- !u!1001 &466416230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3117,6 +3123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 174c43f7852b0294a833ebce2815394a, type: 2}
+  aquireable: 1
 --- !u!1 &538916796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3627,7 +3634,7 @@ Transform:
   m_GameObject: {fileID: 555982950}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16081916, y: -8.559539e-12, z: 1.1456684e-12, w: 0.98698395}
-  m_LocalPosition: {x: 10.75, y: 1.241, z: -73.75}
+  m_LocalPosition: {x: 9.42, y: 1.241, z: -71.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4185,6 +4192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e7ef095913485244bbb207e5f07678aa, type: 2}
+  aquireable: 1
 --- !u!1 &687490368
 GameObject:
   m_ObjectHideFlags: 0
@@ -4595,6 +4603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: d6827c6f78099dc4ba6a623af9e66a84, type: 2}
+  aquireable: 1
 --- !u!1001 &752892212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4933,6 +4942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 62186a38ea0e15046b1f06272fc1ae29, type: 2}
+  aquireable: 1
 --- !u!1 &796483917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2700865263436146079, guid: 0f28d134727494bc595a780b0a78d84f, type: 3}
@@ -5148,6 +5158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 4d12d9a0350b55a43857598cc994da0e, type: 2}
+  aquireable: 1
 --- !u!1 &808057828
 GameObject:
   m_ObjectHideFlags: 0
@@ -5540,6 +5551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: ff14f0b6aeb65874581229a67f7ae855, type: 2}
+  aquireable: 1
 --- !u!212 &845155389
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6849,6 +6861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: dbb0f1c65494a5f4da3b6c887bdc89df, type: 2}
+  aquireable: 1
 --- !u!1 &1013245660
 GameObject:
   m_ObjectHideFlags: 0
@@ -7210,6 +7223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 2bc288c83f32dfc40a659b1ae2f6b794, type: 2}
+  aquireable: 1
 --- !u!1 &1036017084
 GameObject:
   m_ObjectHideFlags: 0
@@ -7408,6 +7422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 500b34da9d9f58c4fa719117b279dda8, type: 2}
+  aquireable: 1
 --- !u!1 &1052508636
 GameObject:
   m_ObjectHideFlags: 0
@@ -7531,6 +7546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 067fd3e209efadd49a138cf2cac36144, type: 2}
+  aquireable: 1
 --- !u!1001 &1070244930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8080,6 +8096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  aquireable: 1
 --- !u!1 &1139712998
 GameObject:
   m_ObjectHideFlags: 0
@@ -8962,6 +8979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 5dcab8c73a3aa9d40914085771794f74, type: 2}
+  aquireable: 1
 --- !u!1001 &1353401132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9427,6 +9445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 190272fdd3ae4e541ae0859f4027f67b, type: 2}
+  aquireable: 1
 --- !u!1 &1423123165
 GameObject:
   m_ObjectHideFlags: 0
@@ -9794,6 +9813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 68214c45c552dda4c88ea5801c973e04, type: 2}
+  aquireable: 1
 --- !u!1 &1453146086
 GameObject:
   m_ObjectHideFlags: 0
@@ -10004,6 +10024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 27bb01873bbb1be489874841cdad454e, type: 2}
+  aquireable: 1
 --- !u!1 &1481760028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8701868446679329815, guid: f596f254ccd1b6f498b631fc306eb241, type: 3}
@@ -10330,6 +10351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a0bb01ad1beff7748a9866f33b9e8ed5, type: 2}
+  aquireable: 1
 --- !u!65 &1669625293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10474,6 +10496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 2af9cf4f3507a8f439f1492f842f93f9, type: 2}
+  aquireable: 1
 --- !u!1 &1683465526
 GameObject:
   m_ObjectHideFlags: 0
@@ -10706,6 +10729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 594b909226db94a078ba7e2887f01880, type: 2}
+  aquireable: 1
 --- !u!65 &1767020686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11006,6 +11030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e26125c1890398e4ea4d9303bc53fabf, type: 2}
+  aquireable: 1
 --- !u!1 &1787847125
 GameObject:
   m_ObjectHideFlags: 0
@@ -11216,6 +11241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f63486404a3a98440897ae2adcc509b6, type: 2}
+  aquireable: 1
 --- !u!1001 &1813551381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12363,6 +12389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 68db19238e6b604499abe4330175e44e, type: 2}
+  aquireable: 1
 --- !u!65 &1948439763
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12507,6 +12534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 6798aa0a53010ef4695c52644492cd7d, type: 2}
+  aquireable: 1
 --- !u!1 &1955104705
 GameObject:
   m_ObjectHideFlags: 0
@@ -12553,6 +12581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e26125c1890398e4ea4d9303bc53fabf, type: 2}
+  aquireable: 1
 --- !u!212 &1955104708
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12654,6 +12683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e26125c1890398e4ea4d9303bc53fabf, type: 2}
+  aquireable: 1
 --- !u!212 &1956371964
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12972,7 +13002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.75
+      value: 9.42
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12980,7 +13010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -68.67
+      value: -66.21
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13367,6 +13397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 775c06074a027b8429021a4d30be2eed, type: 2}
+  aquireable: 1
 --- !u!1 &2080050159
 GameObject:
   m_ObjectHideFlags: 0
