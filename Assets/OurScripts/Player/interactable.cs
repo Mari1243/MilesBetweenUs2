@@ -22,10 +22,13 @@ public class interactable : MonoBehaviour, IInteractable
 
     public static event Action showJournal;
     public static event Action onInteract;
+    public static event Action EmptySteal;
 
     public static event Action onMap;
     public static event Action onEND;
     public static event Action onMisc;
+
+    public bool aquireable = true;
 
     public void Interact()
     {
@@ -69,9 +72,16 @@ public class interactable : MonoBehaviour, IInteractable
 
    
             case "canSteal":
-                print("destroying gameobject because its can steal??");
-                Destroy(gameObject);
-                onPickedUp?.Invoke(item); //called in InventoryManager
+                if (aquireable)
+                {
+                    print("destroying gameobject because its can steal??");
+                    Destroy(gameObject);
+                    onPickedUp?.Invoke(item); //called in InventoryManager
+                }
+                else
+                {
+                    EmptySteal?.Invoke();
+                }
                 break;
 
             case "canInteract":

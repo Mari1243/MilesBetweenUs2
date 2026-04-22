@@ -70,7 +70,7 @@ public class SoundManager : MonoBehaviour
             //musicAudioSource.AudioSource=backgroundMusic;
             musicAudioSource.clip=backgroundMusic;
             musicAudioSource.Play();
-            }
+        }
     }
 
 

@@ -166,8 +166,9 @@ public class UIManager : MonoBehaviour
 
     void ShowItemHUD(Item itemData)
     {
-        Debug.Log("Showing Item HUD");
-        //make noise
+        if(itemData != null)
+        {
+           //make noise
         SoundManager.Instance.PlayAudio(pickupsound);
         //setting the image and name
        
@@ -185,8 +186,8 @@ public class UIManager : MonoBehaviour
             itemImg.preserveAspect = true;
             itemText.text = itemData.itemName + "!";
             StartCoroutine(AnimateItemHUD());
+        } 
         }
-       
     }
 
     private IEnumerator AnimateItemHUD()
@@ -218,13 +219,14 @@ public class UIManager : MonoBehaviour
 
     public void rewardText(Item itemdata)
     {
-        if (itemdata.loreItem)
+        if(itemdata != null)
         {
-            InventoryManager.instance.loreItemAmt++;
-
-            RewardText.text = InventoryManager.instance.loreItemAmt.ToString() + "/3";
+            if (itemdata.loreItem)
+            {
+                InventoryManager.instance.loreItemAmt++;
+                RewardText.text = InventoryManager.instance.loreItemAmt.ToString() + "/3";
+            }
         }
-        
     }
 
     private void UpdateStealingUI(bool stealcheck)
