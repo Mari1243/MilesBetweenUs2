@@ -20,6 +20,9 @@ public class DialogueCommands : MonoBehaviour
     public static event Action<bool> EndJournalState;
 
     public static UnityAction<string> startAction;
+
+    public static UnityAction ENDGame;
+
     [Header("Inventory")]
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
 
@@ -55,8 +58,7 @@ public class DialogueCommands : MonoBehaviour
         if (willend)
         {
             print("TRIGGER FINAL CUTSCENE");
-            ToggleJournal.instance.journal();
-            SceneManager.LoadScene("EndDemoScene");
+            ENDGame?.Invoke();
         }
         else
         {

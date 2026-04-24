@@ -55,6 +55,7 @@ public class SchoolManager : MonoBehaviour
         interactable.onEND += triggerEND;
         InventoryManager.OnInventoryChange += checkconditions;
         DialogueCommands.startAction += StartAction;
+        DialogueCommands.ENDGame += ENDINGTHEGAME;
 
     }
     void OnDisable()
@@ -62,6 +63,7 @@ public class SchoolManager : MonoBehaviour
         interactable.onEND -= triggerEND;
         InventoryManager.OnInventoryChange -= checkconditions;
         DialogueCommands.startAction -= StartAction;
+        DialogueCommands.ENDGame -= ENDINGTHEGAME;
     }
 
     private void giftItem(Item itemData)
@@ -201,5 +203,18 @@ public class SchoolManager : MonoBehaviour
 
 
         }
+    }
+
+    private void ENDINGTHEGAME()
+    {
+
+        ToggleJournal.instance.journal();
+        SceneManager.LoadScene("EndDemoScene");
+    }
+
+    private IEnumerator endroutine()
+    {
+        ToggleJournal.instance.journal();
+        yield return new WaitForSeconds (1f);
     }
 }
