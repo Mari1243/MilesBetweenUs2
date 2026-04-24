@@ -48,12 +48,10 @@ public class DragonLandManager : MonoBehaviour
 
     public void checkconditions(List<InventoryItem> list)
     {
-        if (!completedAllObjectives)
-        {
             foreach (InventoryItem item in list)
             {
                 //specific quest
-                if (item.itemData.itemName == "Jacket Patch")
+                if (item.itemData.itemName == "Dragon Plushie")
                 {
                     if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
                    ToDoManager.instance.CompleteItem("SouvenirforMax");
@@ -71,7 +69,7 @@ public class DragonLandManager : MonoBehaviour
                     print("completed all level objectives yay");
                 }
             }
-        }
+
     }
     public void StartAction(string action)
     {
