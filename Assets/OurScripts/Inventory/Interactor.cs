@@ -211,15 +211,22 @@ private void HandleInteractCanceled()
     }
 
     private void SpawnPickupUI(string str)
-    {
-        DestroyPickupUI();
-        Vector3 spawnPosition = new Vector3(0, 1f, .5f);
-        instantiatedUI = Instantiate(pickupUi, this.transform);
-        instantiatedUI.transform.localPosition = spawnPosition;
+{
+    Debug.Log("SpawnPickupUI: " + str);
+    DestroyPickupUI();
+    Vector3 spawnPosition = new Vector3(0, 1f, .5f);
+    instantiatedUI = Instantiate(pickupUi, this.transform);
+    instantiatedUI.transform.localPosition = spawnPosition;
 
-        PickupUIVariants pickupUI = instantiatedUI.GetComponent<PickupUIVariants>();
-        pickupUI.ChangeUI(str);
+    PickupUIVariants pickupUI = instantiatedUI.GetComponent<PickupUIVariants>();
+    if (pickupUI == null)
+    {
+        Debug.LogError("PickupUIVariants component missing on instantiated prefab!");
+        return;
     }
+    if (pickupUI.stealSprite == null) Debug.LogWarning("stealSprite is null on prefab!");
+    pickupUI.ChangeUI(str);
+}
     public void DestroyPickupUI()
     {
         if (instantiatedUI != null)
