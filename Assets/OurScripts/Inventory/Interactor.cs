@@ -60,6 +60,9 @@ public class Interactor : MonoBehaviour
     public GameObject inventoryHUD;
     public ThirdPersonMovement movement;
 
+    //to prevent double fire
+    private int lastInteractFrame = -1;
+
     private void OnEnable()
 {
     StealingManager.OnStateChanged += CheckState;
@@ -82,6 +85,10 @@ public void alternativeInteract(GameObject obj)
 
 private void HandleInteractStarted()
 {
+    //check to prevent double firing in build
+    if (Time.frameCount == lastInteractFrame) return;
+    lastInteractFrame = Time.frameCount;
+
     // Add null checks at the start
         if (pickedUpObj == null || Interactable == null)
         {

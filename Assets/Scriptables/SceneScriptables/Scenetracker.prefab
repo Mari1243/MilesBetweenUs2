@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd49f335ddd5b144bbb77d74fc57f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carnum: 0
   scenes:
   - {fileID: 11400000, guid: 4536a696466e4409888950fae5788eda, type: 2}
   - {fileID: 11400000, guid: f59b2eececde94133a107a246e7060b3, type: 2}
   - {fileID: 11400000, guid: cdf83cd0dd7cfdb42a016d0a00a7f56b, type: 2}
+  - {fileID: 11400000, guid: 8cf72afa24bba458e801e71dd14e7ec4, type: 2}
