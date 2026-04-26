@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: 67d095a9ff68e4137bc21f09371f70f4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CutsceneIntro.unity
     guid: 35f91799ed9ba4a45908c4946a267b13
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/IntroScene.unity
     guid: 2fc93d4c40a4d8a4bbed56e06239f30b
   - enabled: 0
@@ -20,13 +20,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/OLD SCENES/StateMachineWork.unity
     guid: 16a2cba65da9bae4580547408f0e57d9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GasStation.unity
     guid: 5d8e8123fe36334409cddce14a774654
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Car.unity
     guid: e815dbf87782b5943a7675e4b118f4b8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/DragonLand.unity
     guid: 0c38690ab30e442819d4f3787390cd20
   - enabled: 1

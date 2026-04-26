@@ -15,6 +15,7 @@ public class ToggleJournal : MonoBehaviour
     public static ToggleJournal instance;
     public static event Action OnJournalOpened;
     public static event Action OnJournalClosed;
+    public bool isOpen;
 
 
     [SerializeField]public static bool journalopen = false;
@@ -114,6 +115,7 @@ public class ToggleJournal : MonoBehaviour
 
                 if (SceneManager.GetActiveScene().name != "Car")
                 disablePlayer();
+                isOpen = true;
             }
             else
             {
@@ -126,6 +128,7 @@ public class ToggleJournal : MonoBehaviour
 
                 if (SceneManager.GetActiveScene().name != "Car")
                 enablePlayer();
+                isOpen = false;
             }
         }
         else
