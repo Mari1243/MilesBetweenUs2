@@ -14,14 +14,12 @@ public class SchoolManager : MonoBehaviour
     public GameObject physicalJournal;
     public static bool hasPlayed=false;
     public DialogueRunner diaRun;
+    [SerializeField] GameObject endInteractable;
 
     //for todo logic
     [SerializeField]private bool completedAllObjectives;
     public int allobjectives = 1;
     private int completedobjectives = 0;
-
-    private ToggleJournal journalToggle;
-
 
     //for intro
     public Item startCutScene;
@@ -49,13 +47,14 @@ public class SchoolManager : MonoBehaviour
         DialogueManager.DialogOver -= startpatrol;
 
     }
-
+    //added checks
     void OnEnable()
     {
         interactable.onEND += triggerEND;
         InventoryManager.OnInventoryChange += checkconditions;
         DialogueCommands.startAction += StartAction;
         DialogueCommands.ENDGame += ENDINGTHEGAME;
+        Debug.LogError("SchoolManager Subscribed to ENDGame.");
 
     }
     void OnDisable()
@@ -64,6 +63,7 @@ public class SchoolManager : MonoBehaviour
         InventoryManager.OnInventoryChange -= checkconditions;
         DialogueCommands.startAction -= StartAction;
         DialogueCommands.ENDGame -= ENDINGTHEGAME;
+       Debug.LogError("schoolmanager *** UNSUBSCRIBED from ENDGame — if this fires before end, scene load is gone! ***");
     }
 
     private void giftItem(Item itemData)
@@ -79,18 +79,28 @@ public class SchoolManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    private void triggerEND()
+    //added checks
+   private void triggerEND()
+{
+    Debug.LogError($"[SM] triggerEND called. hasPlayed={hasPlayed}");
+    if (!hasPlayed)
     {
-        if (!hasPlayed)
+        hasPlayed = true;
+        
+        // Disable the END interactable so it can never fire again this session
+        if (endInteractable != null)
         {
-            hasPlayed = true;
-            //print("game over yayyyy");
-            StartCoroutine(endanimation());
-            //finding and assigning journal
-            journalToggle = Object.FindAnyObjectByType<ToggleJournal>();
-            
+            endInteractable.SetActive(false);
+            Debug.LogError("[SM] END interactable disabled.");
         }
-    } 
+        else
+        {
+            Debug.LogError("[SM] *** endInteractable reference is null — assign it in inspector! ***");
+        }
+        
+        StartCoroutine(endanimation());
+    }
+} 
 
     public void checkconditions(List<InventoryItem> list)
     {
@@ -126,21 +136,17 @@ public class SchoolManager : MonoBehaviour
         }
     }
 
-    private IEnumerator endanimation()
+   //added checks
+   private IEnumerator endanimation()
     {
-        physicalJournal.SetActive(true);
-        yield return wait;
-
-        //this presents the option to open the journal
-        DialogueManager.tutorialInstance.LoadDialog("EndDialogue1");
-        DialogueManager.tutorialInstance.StartDialog();
-        hasPlayed = true;
-        
-        //try doing this with dialogue instead
-        //journalToggle.animateOpen();
-
-        //open journal in car state (without x button)
-        //physicalJournal.SetActive(false);
+    Debug.LogError("[SM] endanimation: activating physicalJournal.");
+    physicalJournal.SetActive(true);
+    yield return wait;
+    Debug.LogError("[SM] endanimation: wait complete. Loading EndDialogue1.");
+    Debug.LogError($"[SM] DialogueManager.tutorialInstance null? {DialogueManager.tutorialInstance == null}");
+    DialogueManager.tutorialInstance.LoadDialog("EndDialogue1");
+    DialogueManager.tutorialInstance.StartDialog();
+    Debug.LogError("[SM] endanimation: StartDialog called.");
     }
 
    
@@ -204,17 +210,16 @@ public class SchoolManager : MonoBehaviour
 
         }
     }
-
+    //added checks
     private void ENDINGTHEGAME()
     {
-
-        ToggleJournal.instance.journal();
+        StartCoroutine(triggerendscene());
+    }   
+    private IEnumerator triggerendscene()
+    {
+        yield return new WaitForSeconds(2f); // let DOTween finish
+        Debug.LogError("[SM] Loading EndDemoScene now.");
         SceneManager.LoadScene("EndDemoScene");
     }
-
-    private IEnumerator endroutine()
-    {
-        ToggleJournal.instance.journal();
-        yield return new WaitForSeconds (1f);
-    }
+    
 }

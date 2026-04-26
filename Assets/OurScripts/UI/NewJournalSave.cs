@@ -63,12 +63,15 @@ public class NewJournalSave : MonoBehaviour
     {
         InventoryManager.AddedItem += CollectedLoreItem;
         DialogueCommands.EndJournalState +=EndJournal;
-        
+        //added check
+        Debug.LogError("[NJS] OnEnable: subscribed to EndJournalState.");
     }
     private void OnDisable()
     {
         InventoryManager.AddedItem -= CollectedLoreItem;
          DialogueCommands.EndJournalState -=EndJournal;
+         //added check
+          Debug.LogError("[NJS] OnDisable: UNSUBSCRIBED from EndJournalState. If this fires at wrong time, journal won't respond.");
     }
 
     public void newspawnlist(GameObject data)
@@ -124,45 +127,61 @@ public class NewJournalSave : MonoBehaviour
         sceneList++; // advance to next list in sequence
         
     }
-
-    private void EndJournalState()
+    //added checks
+    private void EndJournalState() 
     {
-        //set the xbutton click to activate end dialogue
-        print("triggering end journal state");
-        xbutton.gameObject.SetActive(true);
-        xbutton.onClick.RemoveAllListeners();
-        xbutton.onClick.AddListener(TriggerEndDialogue);
-         if (inventoryObject != null)
-            inventoryObject.SetActive(true);
-        if(currentList != null)
-        {
-            //may be causing errors???]
-            Destroy(currentList);
-        }
+    Debug.LogError("[NJS] EndJournalState() method entered.");
+    Debug.LogError($"[NJS] xbutton null? {xbutton == null}");
+    Debug.LogError($"[NJS] inventoryObject null? {inventoryObject == null}");
+    Debug.LogError($"[NJS] currentList null? {currentList == null}");
 
-        StartCoroutine(manage());
+    xbutton.gameObject.SetActive(true);
+    xbutton.onClick.RemoveAllListeners();
+    xbutton.onClick.AddListener(TriggerEndDialogue);
+    Debug.LogError("[NJS] xbutton listener set to TriggerEndDialogue.");
+
+    if (inventoryObject != null)
+        inventoryObject.SetActive(true);
+    if (currentList != null)
+    {
+        Debug.LogError("[NJS] Destroying currentList: " + currentList.name);
+        Destroy(currentList);
+    }
+
+    Debug.LogError("[NJS] Starting manage() coroutine.");
+    StartCoroutine(manage());
     }
     
-
+    //added checks
     private void TriggerEndDialogue()
     {
+    Debug.LogError("[NJS] TriggerEndDialogue called from xbutton click.");
+    Debug.LogError($"[NJS] DialogueManager.tutorialInstance null? {DialogueManager.tutorialInstance == null}");
+    if (DialogueManager.tutorialInstance != null)
+    {
+        Debug.LogError("[NJS] Loading ShowBrotherPrompt and starting dialog.");
         DialogueManager.tutorialInstance.LoadDialog("ShowBrotherPrompt");
         DialogueManager.tutorialInstance.StartDialog();
     }
-
+    else
+    {
+        Debug.LogError("[NJS] *** tutorialInstance is null — dialogue will never fire! ***");
+    }
+    }
+    //added checks
     private void EndJournal(bool isEndstate)
     {
-        if (isEndstate)
-        {
-            print("activating end journal state");
-            SetState(States.End);
-        }
-        else
-        {
-            print("activating normal journal state");
-            SetState(States.Gasstation);
-        }
-        
+    Debug.LogError($"[NJS] EndJournal received. isEndstate={isEndstate}");
+    if (isEndstate)
+    {
+        Debug.LogError("[NJS] Calling SetState(States.End)");
+        SetState(States.End);
+    }
+    else
+    {
+        Debug.LogError("[NJS] Calling SetState(States.Gasstation)");
+        SetState(States.Gasstation);
+    }
     }
 
     private void CarJournal()

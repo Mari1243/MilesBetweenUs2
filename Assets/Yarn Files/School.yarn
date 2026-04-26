@@ -43,7 +43,6 @@ Brother: hey you have something to show me?
 Brother: Is that your journal?
     -> I'm Done!
         <<cameraIndex 3>>
-        <<openJournal true>>
         <<end true>>
     -> Not Yet
         <<cameraIndex 0>>

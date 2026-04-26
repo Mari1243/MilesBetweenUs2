@@ -8631,6 +8631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicalJournal: {fileID: 5588307989754674318}
   diaRun: {fileID: 1845656388}
+  endInteractable: {fileID: 1931500262}
   completedAllObjectives: 0
   allobjectives: 1
   startCutScene: {fileID: 11400000, guid: 26d01d326b694416082f39e7843df554, type: 2}
@@ -9631,7 +9632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4428519955117952769, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 35.7
+      value: 35.69995
       objectReference: {fileID: 0}
     - target: {fileID: 4686825762191116206, guid: d91afcb31a2534806aec62a66c33842c, type: 3}
       propertyPath: m_LocalScale.x
