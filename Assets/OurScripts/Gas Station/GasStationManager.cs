@@ -61,6 +61,7 @@ private bool hasExecuted = false;
 
     private void StealTutorial(int stage)
     {
+        Debug.Log($"StealTutorial called: stage={stage}, firstTimeSteal={firstTimeSteal}, hasExecuted={hasExecuted}");
         //instructionss.SetActive(false);
         if (firstTimeSteal)
         {
@@ -93,7 +94,8 @@ private bool hasExecuted = false;
             }
              else if(stage == 6)
             {
-                StartCoroutine(endDialogue());
+                //StartCoroutine(endDialogue());
+                 diaRun.Stop();
             }
           
         }

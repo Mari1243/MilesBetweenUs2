@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Diagnostics;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
@@ -28,14 +29,14 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        print("enabled movement");
+        UnityEngine.Debug.LogError("enabled movement\n" + new StackTrace(true).ToString());
         DialogueManager.DialogStart += OnDialogStart;
         DialogueManager.DialogOver += OnDialogOver;
     }
 
     private void OnDisable()
     {   
-        print("disabled movement");
+        UnityEngine.Debug.LogError("disabled movement\n" + new StackTrace(true).ToString());
         DialogueManager.DialogStart -= OnDialogStart;
         DialogueManager.DialogOver -= OnDialogOver;
     }
@@ -111,7 +112,9 @@ public class ThirdPersonMovement : MonoBehaviour
     }
     IEnumerator delayMove()
     {
-        yield return new WaitForSeconds(2f);
+        UnityEngine.Debug.LogError("DELAYING MOVE IN FREE TP MOVEMENT");
+        yield return new WaitForSeconds(1f);
+        UnityEngine.Debug.LogError("finished delay");
         canMove = true;
     }
 }

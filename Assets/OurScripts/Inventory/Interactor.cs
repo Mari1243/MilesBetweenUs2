@@ -106,6 +106,7 @@ private void HandleInteractStarted()
 
                     if (StealingManager.Instance != null)
                     {
+                        Debug.LogError("STARTED stealing in interactor handle interact started");
                         StealingManager.Instance.StartStealin(StealableItemBehavior.instance.camIndex,StealableItemBehavior.instance.defaultCamIndex);
                         StealStep?.Invoke(1);
                     }
@@ -269,7 +270,7 @@ private void HandleInteractCanceled()
             if (isInStealingConfirmMode)
             {
                 StartCoroutine(FailedStealing());
-                print("on trigger exit stopped stealing??");
+                Debug.LogError("on trigger exit stopped stealing??");
             }
             
             canInteract = false;
@@ -278,17 +279,16 @@ private void HandleInteractCanceled()
 
     private IEnumerator FailedStealing()
     {
-        print("ENDING stealing");
-        yield return new WaitForSeconds(1f);
+        Debug.LogError("ENDING stealing in interactor");
 
         OnStopStealing?.Invoke();
         
         CleanupAfterInteraction();
         
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSecondsRealtime(.2f);
         //inputActions["Interacted"].Enable();
-        movement.moveSpeed = 6f;
-        print("Input re-enabled!");
+        //movement.moveSpeed = 6f;
+        Debug.LogError("INPUTE re-enabled from interactor!");
     }
 
 
@@ -307,7 +307,7 @@ private void HandleInteractCanceled()
             if (holdDirection == +1)
             {
                 holdProgress += fillspeed * Time.deltaTime;
-                movement.moveSpeed = 0f;
+                //movement.moveSpeed = 0f;
                 
                 if (isDanger)
                 {
@@ -330,7 +330,7 @@ private void HandleInteractCanceled()
             else if (holdDirection == -1)
             {
                 holdProgress -= drainSpeed * Time.deltaTime;
-                movement.moveSpeed = 6f;
+                //movement.moveSpeed = 6f;
             }
 
             holdProgress = Mathf.Clamp01(holdProgress);
@@ -338,11 +338,12 @@ private void HandleInteractCanceled()
 
             if (holdProgress >= 1f)
             {
-                movement.moveSpeed = 6f;
+                //movement.moveSpeed = 6f;
                 
                 // Call interact BEFORE cleanup
                 if (Interactable != null)
                 {
+                    Debug.LogError("finished filling up- calling interact from interactor");
                     Interactable.Interact();
                 }
                 
@@ -367,11 +368,15 @@ private void HandleInteractCanceled()
                 OnHoldCanceled?.Invoke();
                 StealStep?.Invoke(4);
                 CleanupAfterInteraction();
+                Debug.LogError("cleanup");
+
+
                 if (hasStartedStealing || isInStealingConfirmMode)
                 {
                     if (StealingManager.Instance != null)
                     {
                         StealingManager.Instance.StopStealin();
+                        Debug.LogError("RAN OUT - stopping stealing");
                     }
                     hasStartedStealing = false;
                     isInStealingConfirmMode = false;
