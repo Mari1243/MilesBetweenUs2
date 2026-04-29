@@ -123,27 +123,31 @@ Let me know if you ever need landscaping.
 <<cameraIndex 0>>
 ===
 
-
+title: admissions
+---
+<<cameraIndex 7>>
+<<moveBrother>>
+Hii!
+Welcome to Pawperdine College!!
+Are you lost?
+Here! 
+Take a pamphlet!
+Here you’ll find all our resources available!
+<<cameraIndex 0>>
+===
 
 title: Pamphlet
 ---
 <<cameraIndex 7>>
-<<if $EmployeetimesVisited == 0>>
-    Hii!
-    Welcome to Pawperdine College!!
-    Are you lost?
-    Here! 
-    Take a pamphlet!
-    Here you’ll find all our resources available!
-<<elseif $EmployeetimesVisited == 1>>
+<<if visited("admissions")>>
     Hi again!!
     Did you find everything ok?
     oh, you want another?
     Here ya go!
-<<elseif $EmployeetimesVisited == 2>>
+<<elseif $EmployeetimesVisited == 1>>
     Uh haha, you already have two pamphlets!
     What do you need all these for?
-<<elseif $EmployeetimesVisited == 3>>
+<<elseif $EmployeetimesVisited == 2>>
     Sure. Take another.
     I don’t care.
 <<elseif $EmployeetimesVisited > 3>>
