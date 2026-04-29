@@ -16,4 +16,4 @@ MonoBehaviour:
   itemName: Candy
   loreItem: 0
   node: ClerkTalk
-  diagPos: {x: 30.888, y: 6.333, z: -17.838}
+  diagPos: {x: -32, y: 7, z: -17.7}
