@@ -10,30 +10,34 @@ using System.Linq;
 
 public class SchoolManager : MonoBehaviour
 {
+    [Header("End")]
     private WaitForSeconds wait = new WaitForSeconds(1f);
     public GameObject physicalJournal;
     public static bool hasPlayed=false;
     public DialogueRunner diaRun;
     [SerializeField] GameObject endInteractable;
 
-    //for todo logic
+    [Header("Objectives")]
     [SerializeField]private bool completedAllObjectives;
     public int allobjectives = 1;
     private int completedobjectives = 0;
 
-    //for intro
+    [Header("Intro")]
     public Item startCutScene;
     public GameObject bro;
     public Animator car;
-    
-    //for this levels fetchquest
+    public Transform startPos, endPos;
+
+    [Header("Rewards")]
     [SerializeField]private bool completedGardenerQuest = false;
     public Item GardenerReward;
     public Item FratItem;
     public Item SchoolPamphlet;
+    
 
     private void Start()
     {
+        bro.transform.position = startPos.position;
         physicalJournal.SetActive(false);
          bro.SetActive(false);
         car.Play("DLCar");
@@ -205,7 +209,9 @@ public class SchoolManager : MonoBehaviour
                 InventoryManager.instance.Add(SchoolPamphlet);
                 ToDoManager.instance.CompleteItem("FlyerforMax");
                 break;
-
+            case "moveBro":
+                bro.transform.position = endPos.transform.position;
+                break;
 
 
         }
