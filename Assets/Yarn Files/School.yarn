@@ -128,6 +128,7 @@ Let me know if you ever need landscaping.
 title: Pamphlet
 ---
 <<cameraIndex 7>>
+<<startAction moveBro>>
 <<if $EmployeetimesVisited == 0>>
     Hii!
     Welcome to Pawperdine College!!
@@ -135,15 +136,16 @@ title: Pamphlet
     Here! 
     Take a pamphlet!
     Here you’ll find all our resources available!
+   
 <<elseif $EmployeetimesVisited == 1>>
     Hi again!!
     Did you find everything ok?
     oh, you want another?
     Here ya go!
-<<elseif $EmployeetimesVisited == 2>>
+<<elseif $EmployeetimesVisited == 1>>
     Uh haha, you already have two pamphlets!
     What do you need all these for?
-<<elseif $EmployeetimesVisited == 3>>
+<<elseif $EmployeetimesVisited == 2>>
     Sure. Take another.
     I don’t care.
 <<elseif $EmployeetimesVisited > 3>>
