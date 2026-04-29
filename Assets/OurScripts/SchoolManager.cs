@@ -41,16 +41,10 @@ public class SchoolManager : MonoBehaviour
         physicalJournal.SetActive(false);
          bro.SetActive(false);
         car.Play("DLCar");
-        DialogueManager.DialogOver += startpatrol;
         
     }
 
-    private void startpatrol()
-    {
-        Patrol.instance.StartPatrol();
-        DialogueManager.DialogOver -= startpatrol;
 
-    }
     //added checks
     void OnEnable()
     {
@@ -70,10 +64,6 @@ public class SchoolManager : MonoBehaviour
        Debug.LogError("schoolmanager *** UNSUBSCRIBED from ENDGame — if this fires before end, scene load is gone! ***");
     }
 
-    private void giftItem(Item itemData)
-    {
-        InventoryManager.instance.Add(itemData);
-    }
 
     public void triggerIntroCutscene()
     {
@@ -210,7 +200,9 @@ public class SchoolManager : MonoBehaviour
                 ToDoManager.instance.CompleteItem("FlyerforMax");
                 break;
             case "moveBro":
-                bro.transform.position = endPos.transform.position;
+                bro.transform.position = endPos.position;
+                Debug.Log("switching sides");
+                
                 break;
 
 

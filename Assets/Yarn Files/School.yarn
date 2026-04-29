@@ -123,23 +123,21 @@ Let me know if you ever need landscaping.
 <<cameraIndex 0>>
 ===
 
-title: admissions
----
-<<cameraIndex 7>>
-<<moveBrother>>
-Hii!
-Welcome to Pawperdine College!!
-Are you lost?
-Here! 
-Take a pamphlet!
-Here you’ll find all our resources available!
-<<cameraIndex 0>>
-===
+
 
 title: Pamphlet
 ---
 <<cameraIndex 7>>
-<<if visited("admissions")>>
+<<startAction moveBro>>
+<<if $EmployeetimesVisited == 0>>
+    Hii!
+    Welcome to Pawperdine College!!
+    Are you lost?
+    Here! 
+    Take a pamphlet!
+    Here you’ll find all our resources available!
+   
+<<elseif $EmployeetimesVisited == 1>>
     Hi again!!
     Did you find everything ok?
     oh, you want another?
