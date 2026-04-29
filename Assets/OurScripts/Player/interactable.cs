@@ -60,7 +60,7 @@ public class interactable : MonoBehaviour, IInteractable
                     GameObject SM = GameObject.Find("CarSceneManager");
                     CarSceneManager sceneManager = SM.GetComponent<CarSceneManager>();
                     onTalk?.Invoke(item); //called in DialogueManager
-                    
+                    print("THE NODE NAME IS "+item.name);
                 }
 
                 break;
