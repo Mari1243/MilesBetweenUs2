@@ -30,7 +30,7 @@ I should go through stuff before I give it to Max
 
 title: ShowBrotherPrompt
 ---
-<<cameraIndex 3>>
+<<cameraIndex 4>>
 Brother: hey you have something to show me?
 Brother: Is that your journal?
     -> I'm Done!

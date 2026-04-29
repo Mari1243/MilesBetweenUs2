@@ -329,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 42753648}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16076493, y: -2.7994378e-11, z: 4.559825e-12, w: 0.9869927}
-  m_LocalPosition: {x: 9.66, y: 1.151, z: -64.72}
+  m_LocalPosition: {x: 2.74, y: 1.241, z: -63.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7497,7 +7497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033fbc3c06d50cb43a3eb3233fa8d6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCutScene: {fileID: 11400000, guid: cf2e0ac06255141ed89a486894bbf8ec, type: 2}
+  startCutScene: {fileID: 11400000, guid: 455f974f9b75145439d1ab1604c5cac5, type: 2}
   bro: {fileID: 73181477}
   car: {fileID: 1767020684}
   MouseReward: {fileID: 11400000, guid: 6cb6ba141ef461b42a8fb995e10f1925, type: 2}
