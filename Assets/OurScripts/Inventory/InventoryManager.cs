@@ -14,6 +14,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static event Action<List<InventoryItem>> OnInventoryChange;
     public static event Action<Item> AddedItem;
+    public static event Action<Item> StoreItem;
     public static InventoryManager instance;
     //Inventory Lists
 
@@ -52,6 +53,8 @@ public class InventoryManager : MonoBehaviour
 
     public void Add(Item itemData) 
     {
+        StoreItem.Invoke(itemData);
+
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item)) //is item in dictionary
         {
             item.AddtoStack();
@@ -66,6 +69,7 @@ public class InventoryManager : MonoBehaviour
             OnInventoryChange?.Invoke(inventory);
         }
         AddedItem?.Invoke(itemData);
+
         print("item was just added " + itemData.name);
         print("contents of inventory is "+ inventory);
     }
