@@ -2798,6 +2798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87afd90fefead845a0337b18cc47c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endStealNoise: {fileID: 8300000, guid: 362eba81127bb413bb0b5fd0bc5d4f56, type: 3}
+  shortSteal: {fileID: 8300000, guid: cb19f5ee66eea419fb98f89e84f3909a, type: 3}
   stateDurationRange: {x: 1, y: 4}
   player: {fileID: 420828809}
 --- !u!114 &253008668
