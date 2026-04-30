@@ -1,11 +1,22 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
     public GameObject slotPrefab;
-    public int numberofSlots;
+    [SerializeField] private int numberofSlots;
+
+    public int MAXslots;
+    public GameObject[] parents;
+
     public List<ItemSlot> inventorySlots;
+
+
+    private GameObject currentparent; 
+    private int parentnum = 0;
+
+
     private void OnEnable()
     {
         // InventoryManager.OnInventoryChange += DrawInventory;
@@ -16,28 +27,40 @@ public class Inventory : MonoBehaviour
         // InventoryManager.OnInventoryChange -= DrawInventory;
         InventoryManager.StoreItem -= storeItem;        
     }
-    private void Start()
+private void Start()
+{
+    inventorySlots = new List<ItemSlot>();
+    currentparent = parents[parentnum];
+    numberofSlots = 0; // Tracks slots used in CURRENT parent
+}
+
+private void storeItem(Item item)
+{
+    print("calling store item");
+
+    if (numberofSlots >= MAXslots)
     {
-        inventorySlots = new List<ItemSlot>(numberofSlots);
-    }
-    
-    private void storeItem(Item item)
-    {
-        print("calling store item");
-        //add slot with new item image
-        if (inventorySlots.Count < numberofSlots)
+        if (parentnum < parents.Length - 1)
         {
-            print("creating inventory slot");
-            CreateInventorySlot(item);
+            parentnum++;
+            numberofSlots = 0;
+            inventorySlots = new List<ItemSlot>();
+            currentparent = parents[parentnum];
+            print("moving to next parent: " + currentparent.gameObject.name);
         }
         else
         {
-            print("inventory full, cant add to journal");
+            print("all parents full, cant add to journal");
+            return;
         }
     }
+
+    CreateInventorySlot(item);
+}   
+
     void ResetInventory()
     {
-        foreach (Transform childTransform in transform)
+        foreach (Transform childTransform in currentparent.transform)
         {
             Destroy(childTransform.gameObject);
         }
@@ -55,14 +78,13 @@ public class Inventory : MonoBehaviour
 
     void CreateInventorySlot(Item item)
     {
-        print("adding "+ item.name);
         numberofSlots++;
-        GameObject newSlot = Instantiate(slotPrefab, this.transform);
+        GameObject newSlot = Instantiate(slotPrefab, currentparent.transform);
         ItemSlot newSlotComponent = newSlot.GetComponent<ItemSlot>();
 
         newSlotComponent.DrawSlot(item);
         //newSlotComponent.ClearSlot();
         inventorySlots.Add(newSlotComponent);
-
+        print("INSTANTIATING child " + item + "under " + currentparent.name);
     }
 }
