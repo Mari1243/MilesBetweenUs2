@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 08c1cdf772fa426479273147f2b54bc8
   m_SerializeEntries:
+  - m_GUID: 751b7102840f7b94eb59c74470399b2d
+    m_Address: Assets/3D Assets/Car2.0/Tree4.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ed3864ac38d7e1e4ea2636b687370b1f
     m_Address: Assets/2DAssets/PawPrintCursor.png
     m_ReadOnly: 0
