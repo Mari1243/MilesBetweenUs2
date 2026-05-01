@@ -134,7 +134,7 @@ title: Pamphlet
     Did you find everything ok?
     oh, you want another?
     Here ya go!
-<<elseif $EmployeetimesVisited == 1>>
+<<elseif $EmployeetimesVisited == 2>>
     Uh haha, you already have two pamphlets!
     What do you need all these for?
 <<elseif $EmployeetimesVisited == 2>>
