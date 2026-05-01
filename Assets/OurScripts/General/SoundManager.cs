@@ -59,7 +59,7 @@ public class SoundManager : MonoBehaviour
         effectAudioSource.PlayOneShot(audioClips[randomIndex], volumn);
     }
 
-    private void playmusic()
+    public void playmusic()
     {
 
         //print("playing music");
@@ -71,6 +71,12 @@ public class SoundManager : MonoBehaviour
             musicAudioSource.clip=backgroundMusic;
             musicAudioSource.Play();
         }
+    }
+    public void playLoopingAudio(AudioClip clip)
+    {
+        musicAudioSource.clip = clip;
+        musicAudioSource.loop = true; // Set looping to true
+        musicAudioSource.Play();
     }
 
 

@@ -15,6 +15,8 @@ public class StealingManager : MonoBehaviour
         Caught
     }
     public static StealingManager Instance;
+    public AudioClip endStealNoise;
+    public AudioClip shortSteal;
 
     public static event Action<DangerState> OnStateChanged;
     public static event Action<bool> OnStealingActionChanged;
@@ -62,6 +64,11 @@ public class StealingManager : MonoBehaviour
     
     public void StartStealin(int camIndex, int defaultCamIndex = 0)
     {
+        //sound
+        SoundManager.Instance.musicAudioSource.Stop();
+        SoundManager.Instance.playLoopingAudio(shortSteal);
+
+
         if (stealingActive) return;
         stealingActive = true;
         activeCamIndex = camIndex;
@@ -82,6 +89,13 @@ public class StealingManager : MonoBehaviour
         StopCoroutine(cycleRoutine);
         ChangeCamera.instance.changeCamera(activeDefaultCamIndex); // uses whatever was passed in
         OnStealingActionChanged?.Invoke(false);
+
+        //sound
+        //sound
+        SoundManager.Instance.musicAudioSource.Stop();
+        SoundManager.Instance.effectAudioSource.Stop();
+        SoundManager.Instance.PlayAudio(endStealNoise);
+        SoundManager.Instance.playmusic();
     }
 
 

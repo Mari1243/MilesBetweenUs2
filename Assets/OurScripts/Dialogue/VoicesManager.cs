@@ -26,24 +26,34 @@ public class VoicesManager : ActionMarkupHandler
         // prevent the AudioSource from playing on awake or looping
         audioSource.playOnAwake = false;
         audioSource.loop = false;
+        print("VOICES MANAGER IS ACTIVE. ");
     }
 
     // Called at the start of each line, before any characters appear.
     // This is where we figure out who is speaking and load their voice.
     public override void OnPrepareForLine(MarkupParseResult line, TMP_Text text)
-    {
-        characterCount = 0;
-        currentVoice = defaultVoice;
+{
+    characterCount = 0;
+    currentVoice = defaultVoice; // fall back to default
 
-        foreach (var attribute in line.Attributes)
+    foreach (var attribute in line.Attributes)
+    {
+        if (attribute.Name == "character")
         {
-            Debug.Log("Attribute found: " + attribute.Name);
-            foreach (var prop in attribute.Properties)
+            if (attribute.Properties.TryGetValue("name", out var nameProp))
             {
-                Debug.Log($"  Property: {prop.Key} = {prop.Value.StringValue}");
+                string speakerName = nameProp.StringValue;
+                // find a matching VoiceData by character name
+                VoiceData found = characterVoices.Find(v => v.characterName == speakerName);
+                if (found != null)
+                {
+                    currentVoice = found;
+                }
+                break;
             }
         }
     }
+}
 
     // Called by BasicTypewriter every time a character is about to appear.
     // charIndex is the position in the string, line is the full markup result.
