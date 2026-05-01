@@ -10,15 +10,16 @@ public class ItemSlot : MonoBehaviour
         icon.enabled = false;
     }
 
-    public void DrawSlot(InventoryItem item)
+    public void DrawSlot(Item item)
     {
+        print("drawing "+ item.name);
         if (item == null)
         {
             ClearSlot();
             return;
         }
         icon.enabled = true;
-        icon.sprite = item.itemData.img;
+        icon.sprite = item.img;
         icon.preserveAspect = true;
     }
 }
