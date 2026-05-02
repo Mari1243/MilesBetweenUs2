@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System;
 using System.Runtime.InteropServices;
+using UnityEngine.Events;
 
 public class SceneTrackerSingleton : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class SceneTrackerSingleton : MonoBehaviour
     public List<SceneScriptables> scenes = new List<SceneScriptables>();
     private SceneScriptables currentscene;
     private GameObject ToDoListPrefab;
+
+   public static event Action<string, int> CurrentSceneEvent;
 
     private string currentscenename;
 
@@ -60,7 +63,8 @@ public class SceneTrackerSingleton : MonoBehaviour
 
             if(scenename == currentscenename)
             {
-                print("found current scene in list");
+                print("FOUND current scene in list");
+                
                 currentscene = scene;
                 //setting to car if true or false if not
                 bool iscar = scene.iscar;
@@ -75,12 +79,15 @@ public class SceneTrackerSingleton : MonoBehaviour
         if(iscar == true)
         {
             //this is to change the start node for which car scene ur in!
+            print("scene name is " + currentscene.name + " and the car num is " + carnum);
             carnum++;
             NewJournalSave.instance.SetState(States.Car);
+            CurrentSceneEvent?.Invoke(CurrentSceneName, carnum);
         }
         else
         {
             NewJournalSave.instance.SetState(States.Gasstation);
+            CurrentSceneEvent?.Invoke(CurrentSceneName, carnum);
             //spawn list
             //getting scenescriptable
             if (currentscene.ToDoList != null)
@@ -89,6 +96,10 @@ public class SceneTrackerSingleton : MonoBehaviour
                 carOver?.Invoke();
                 ToDoListPrefab = currentscene.ToDoList;
                 NewJournalSave.instance.newspawnlist(ToDoListPrefab);
+            }
+            else
+            {
+                Debug.LogError("THIS SCENE HAS NO TODOLIST ASSIGNED");
             }
         }
        
