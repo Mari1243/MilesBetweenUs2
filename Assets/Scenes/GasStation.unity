@@ -2635,6 +2635,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4937784618673470813, guid: e21f53a7befcdf1498063217e7493c06, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7679000413142360987, guid: e21f53a7befcdf1498063217e7493c06, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -23935,7 +23939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5097828215901238595, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: eventHandlers.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5097828215901238595, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: 'eventHandlers.Array.data[0]'
@@ -23944,7 +23948,7 @@ PrefabInstance:
     - target: {fileID: 5097828215901238595, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: 'eventHandlers.Array.data[1]'
       value: 
-      objectReference: {fileID: 1041691993}
+      objectReference: {fileID: 1989817974}
     - target: {fileID: 5097828215901238604, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -23973,12 +23977,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 96.892
       objectReference: {fileID: 0}
+    - target: {fileID: 9095034031885387067, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: characterVoices.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095034031885387067, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: 'characterVoices.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b81aaa70eb4d422593839e1c7b8def4, type: 2}
+    - target: {fileID: 9095034031885387067, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: 'characterVoices.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d5516d36de9cd41ce854ae7d220e08c5, type: 2}
+    - target: {fileID: 9095034031885387067, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: 'characterVoices.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a28b726f4d12e41ceb8e8bd2d0f5d5fd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 50494903721438103, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+--- !u!114 &1989817974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9095034031885387067, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+  m_PrefabInstance: {fileID: 1989817973}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835047531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e2cbf1d8a394e96b6e2ff1fdd450a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1999245196
 GameObject:
   m_ObjectHideFlags: 0

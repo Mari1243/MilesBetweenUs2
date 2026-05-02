@@ -2711,6 +2711,14 @@ PrefabInstance:
       propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5795734035540556257, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: defaultVoice
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b81aaa70eb4d422593839e1c7b8def4, type: 2}
+    - target: {fileID: 5795734035540556257, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
+      propertyPath: 'characterVoices.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b81aaa70eb4d422593839e1c7b8def4, type: 2}
     - target: {fileID: 7010897829061235662, guid: 80b46bad36c531f4b8cc9e6859ccee4b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.004
