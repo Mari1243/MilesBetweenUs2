@@ -160,8 +160,8 @@ public class NewJournalSave : MonoBehaviour
     if (DialogueManager.tutorialInstance != null)
     {
         Debug.LogError("[NJS] Loading ShowBrotherPrompt and starting dialog.");
-        DialogueManager.tutorialInstance.LoadDialog("ShowBrotherPrompt");
-        DialogueManager.tutorialInstance.StartDialog();
+        DialogueManager.instance.LoadDialog("ShowBrotherPrompt");
+        DialogueManager.instance.StartDialog();
     }
     else
     {

@@ -12,10 +12,11 @@ public class SchoolManager : MonoBehaviour
 {
     [Header("End")]
     private WaitForSeconds wait = new WaitForSeconds(1f);
-    public GameObject physicalJournal;
+    public GameObject physicalJournal, FX, Player;
     public static bool hasPlayed=false;
     public DialogueRunner diaRun;
     [SerializeField] GameObject endInteractable;
+    
 
     [Header("Objectives")]
     [SerializeField]private bool completedAllObjectives;
@@ -53,6 +54,7 @@ public class SchoolManager : MonoBehaviour
         DialogueCommands.startAction += StartAction;
         DialogueCommands.ENDGame += ENDINGTHEGAME;
         Debug.LogError("SchoolManager Subscribed to ENDGame.");
+        DialogueCommands.EndJournalState += ENDJOURNAL;
 
     }
     void OnDisable()
@@ -61,7 +63,9 @@ public class SchoolManager : MonoBehaviour
         InventoryManager.OnInventoryChange -= checkconditions;
         DialogueCommands.startAction -= StartAction;
         DialogueCommands.ENDGame -= ENDINGTHEGAME;
-       Debug.LogError("schoolmanager *** UNSUBSCRIBED from ENDGame — if this fires before end, scene load is gone! ***");
+        DialogueCommands.EndJournalState -= ENDJOURNAL;
+
+        Debug.LogError("schoolmanager *** UNSUBSCRIBED from ENDGame — if this fires before end, scene load is gone! ***");
     }
 
 
@@ -133,14 +137,14 @@ public class SchoolManager : MonoBehaviour
    //added checks
    private IEnumerator endanimation()
     {
-    Debug.LogError("[SM] endanimation: activating physicalJournal.");
-    physicalJournal.SetActive(true);
-    yield return wait;
-    Debug.LogError("[SM] endanimation: wait complete. Loading EndDialogue1.");
-    Debug.LogError($"[SM] DialogueManager.tutorialInstance null? {DialogueManager.tutorialInstance == null}");
-    DialogueManager.tutorialInstance.LoadDialog("EndDialogue1");
-    DialogueManager.tutorialInstance.StartDialog();
-    Debug.LogError("[SM] endanimation: StartDialog called.");
+        Debug.LogError("[SM] endanimation: activating physicalJournal.");
+        physicalJournal.SetActive(true);
+        yield return wait;
+        Debug.LogError("[SM] endanimation: wait complete. Loading EndDialogue1.");
+        Debug.LogError($"[SM] DialogueManager.tutorialInstance null? {DialogueManager.tutorialInstance == null}");
+        DialogueManager.tutorialInstance.LoadDialog("EndDialogue1");
+        DialogueManager.tutorialInstance.StartDialog();
+        Debug.LogError("[SM] endanimation: StartDialog called.");
     }
 
    
@@ -201,6 +205,8 @@ public class SchoolManager : MonoBehaviour
                 break;
             case "moveBro":
                 bro.transform.position = endPos.position;
+                bro.transform.rotation = endPos.rotation;
+                bro.GetComponent<Animator>().Play("Armature_BigBro_SIT");
                 Debug.Log("switching sides");
                 
                 break;
@@ -216,8 +222,15 @@ public class SchoolManager : MonoBehaviour
     private IEnumerator triggerendscene()
     {
         yield return new WaitForSeconds(2f); // let DOTween finish
-        Debug.LogError("[SM] Loading EndDemoScene now.");
-        SceneManager.LoadScene("EndDemoScene");
+        Debug.LogError("[SM] Loading EndCutscene now.");
+        TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
+
+        SceneManager.LoadScene("CutsceneEND");
     }
-    
+    private void ENDJOURNAL(bool end)
+    {
+        physicalJournal.SetActive(false);
+        FX.SetActive(false);
+        Player.SetActive(false);
+    }
 }

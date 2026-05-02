@@ -31,24 +31,73 @@ I should go through stuff before I give it to Max
 title: ShowBrotherPrompt
 ---
 <<cameraIndex 4>>
-Brother: hey you have something to show me?
-Brother: Is that your journal?
+Brother: Have you finished doing whatever you're doing there yet?
+Brother: Mom and dad are almost here.
     -> I'm Done!
-        <<cameraIndex 3>>
-        <<end true>>
+        <<jump EndDialogue>>
     -> Not Yet
         <<cameraIndex 0>>
+        No rush.
         <<SetEndstate false>>
         <<end false>>
 ===
 
-title: Lore1
+
+
+title: EndDialogue
 ---
-<<cameraIndex 4>>
-special item!
-<<openJournal true>>
-<<cameraIndex 3>>
+Brother: You filled it all up? Nice.
+Brother: Guess we just have to wait for Mom and Dad to come
+Brother: ...
+Brother: I can’t believe we traveled for so long 
+Brother: We don’t get to do that often.
+Looks like you had fun.
+Your bag is overflowing with junk.
+    ->Did you have fun?
+        ...
+        I did.
+            ->You don’t look like you had fun..
+            ...
+            Hey, 
+            Do you remember my 18th birthday party?
+            Probably not.
+            That was almost 3 years ago now.
+            I remember that summer,
+            With Connor and Isaiah outside, at the park
+            The stupid party hats we wore
+            It was the last time we were all gonna be together
+            At least for a while 
+            I remember sitting on the bench watching them leave
+            How awful it felt
+            Then you came up next to me
+            You didn’t say anything
+            Just gave me a card
+            That was stained and smelled slightly off
+            With a really bad sketch inside
+            Of me with all my friends
+            I really appreciated that.
+            ...
+            really.
+            ...
+            You’ll be alright, right?
+            Like at home 
+            By yourself.
+            I’m sorry.
+            I know we haven’t had the best relationship
+            And I haven’t been the best brother
+            But,
+            I’ll miss you.
+            I’m glad we had this time together. 
+                -> I have something for you!
+                    <<end true>>
+
 ===
+
+
+
+
+
+
 
 title: FratBros1
 ---
