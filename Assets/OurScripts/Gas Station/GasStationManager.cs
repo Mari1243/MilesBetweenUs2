@@ -35,9 +35,7 @@ public GameObject TutorialDialogueSystem;
 public GameObject DialogueSystem;
 public DialogueRunner diaRun;
 private bool hasExecuted = false;
- 
 
- [SerializeField] private GameObject kidObjective;
 
     public void triggerIntroCutscene()
     {
