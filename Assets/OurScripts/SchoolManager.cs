@@ -221,9 +221,10 @@ public class SchoolManager : MonoBehaviour
     }   
     private IEnumerator triggerendscene()
     {
+        TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
+
         yield return new WaitForSeconds(2f); // let DOTween finish
         Debug.LogError("[SM] Loading EndCutscene now.");
-        TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
 
         SceneManager.LoadScene("CutsceneEND");
     }
