@@ -7381,6 +7381,10 @@ PrefabInstance:
       value: FratBear
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e725d58260a90684489dd3a68fcaaaba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e725d58260a90684489dd3a68fcaaaba, type: 3}
       propertyPath: m_TagString
       value: canTalk
       objectReference: {fileID: 0}
@@ -14120,7 +14124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e956eaf6ba6059648b4b1eb6cb8f53d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instance: {fileID: 0}
   interactableData: {fileID: 1642032522}
   newItem: {fileID: 11400000, guid: 9eba4e465307ebd4b9b0fb1f38cfa457, type: 2}
   barks: []
