@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d95402c83a93419f8c5a721fe15213e, type: 3}
+  m_Name: Brother_voice
+  m_EditorClassIdentifier: 
+  characterName: Brother
+  frequency: 4
+  minPitch: 0.9
+  maxPitch: 1.1
+  audioClips:
+  - {fileID: 8300000, guid: a92a20ff36b224d11b0c9e21769da263, type: 3}
+  - {fileID: 8300000, guid: af054d230a6cc45699e9f60ae3ce00ce, type: 3}
+  - {fileID: 8300000, guid: 536a71b76b11744cba8564014f553c16, type: 3}
+  - {fileID: 8300000, guid: 5d467de5641b04f878120b677b45ca16, type: 3}
