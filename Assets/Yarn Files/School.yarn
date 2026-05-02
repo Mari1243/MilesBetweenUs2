@@ -13,14 +13,6 @@ Brother: Those frat dudes look like they know their way around.
 <<cameraIndex 0>>
 ===
 
-title: BroCutsceneSchool
----
-<<cameraIndex 1>>
-holy fuc we hereee
-<<cameraIndex 0>>
-===
-
-
 title: EndDialogue1
 ---
 <<cameraIndex 2>>
@@ -38,7 +30,7 @@ I should go through stuff before I give it to Max
 
 title: ShowBrotherPrompt
 ---
-<<cameraIndex 3>>
+<<cameraIndex 4>>
 Brother: hey you have something to show me?
 Brother: Is that your journal?
     -> I'm Done!
@@ -142,7 +134,7 @@ title: Pamphlet
     Did you find everything ok?
     oh, you want another?
     Here ya go!
-<<elseif $EmployeetimesVisited == 1>>
+<<elseif $EmployeetimesVisited == 2>>
     Uh haha, you already have two pamphlets!
     What do you need all these for?
 <<elseif $EmployeetimesVisited == 2>>
