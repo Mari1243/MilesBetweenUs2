@@ -10,7 +10,7 @@ using System;
 public class BrotherInteractable : MonoBehaviour
 {
 
-    public BrotherInteractable instance;
+    private BrotherInteractable instance;
     public static event Action askedAbtAllLoreItems;
     public interactable interactableData;
     public Item newItem;
