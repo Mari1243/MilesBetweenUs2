@@ -105,7 +105,7 @@ TextureImporter:
         width: 1471
         height: 1692
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -122,12 +122,12 @@ TextureImporter:
       name: SecurityStealingReactions_1
       rect:
         serializedVersion: 2
-        x: 1764
+        x: 1758
         y: 33
         width: 1448
         height: 1797
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -144,12 +144,12 @@ TextureImporter:
       name: SecurityStealingReactions_2
       rect:
         serializedVersion: 2
-        x: 3710
+        x: 3565
         y: 35
-        width: 1473
-        height: 1593
+        width: 1704
+        height: 1777
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -158,6 +158,28 @@ TextureImporter:
       bones: []
       spriteID: 274719dec20c73b46986c8ee236a5a1a
       internalID: 581349610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SecurityStealingReactions_3
+      rect:
+        serializedVersion: 2
+        x: 5161
+        y: 1658
+        width: 180
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f66d2aee3479f47a3079aaab3a9abd
+      internalID: -1724391864
       vertices: []
       indices: 
       edges: []
@@ -179,6 +201,7 @@ TextureImporter:
       SecurityStealingReactions_0: 759748361
       SecurityStealingReactions_1: 1520339610
       SecurityStealingReactions_2: 581349610
+      SecurityStealingReactions_3: -1724391864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
