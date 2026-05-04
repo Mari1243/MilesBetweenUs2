@@ -174,7 +174,14 @@ public class BrotherInteractable : MonoBehaviour
         {
             print("aaaa?? no node");
         }
-      
+
+        SceneTrackerSingleton sing = FindFirstObjectByType<SceneTrackerSingleton>();
+        SceneScriptables currentscene = sing.currentscene;
+        if (currentscene.locationOverride)
+        {
+            print("overriding location because locationOverride is true with " + currentscene.SceneName);
+            newItem.diagPos = currentscene.dialogueposition;
+        }
         DialogueManager.instance.TalkInteraction(newItem);
         Debug.Log(newItem.diagPos);
         

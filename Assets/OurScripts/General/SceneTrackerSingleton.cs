@@ -15,7 +15,7 @@ public class SceneTrackerSingleton : MonoBehaviour
     public string PreviousSceneName { get; private set; }
 
     public List<SceneScriptables> scenes = new List<SceneScriptables>();
-    private SceneScriptables currentscene;
+    public SceneScriptables currentscene;
     private GameObject ToDoListPrefab;
 
    public static event Action<string, int> CurrentSceneEvent;
@@ -29,7 +29,6 @@ public class SceneTrackerSingleton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-
         // Singleton pattern
         if (Instance == null)
         {

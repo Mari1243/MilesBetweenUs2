@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: School
   ToDoList: {fileID: 256653463901767287, guid: 639fab5c587424a4487c636b19ee28e1, type: 3}
+  locationOverride: 1
   iscar: 0
+  dialogueposition: {x: 112.51, y: 2.92, z: -32.28}
