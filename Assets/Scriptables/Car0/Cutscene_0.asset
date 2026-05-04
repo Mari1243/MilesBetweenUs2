@@ -15,5 +15,5 @@ MonoBehaviour:
   img: {fileID: 0}
   itemName: 
   loreItem: 0
-  node: Car0
-  diagPos: {x: 0.13, y: 6.32, z: -4.42}
+  node: Car0Start
+  diagPos: {x: 0.14, y: 6.64, z: -5.55}
