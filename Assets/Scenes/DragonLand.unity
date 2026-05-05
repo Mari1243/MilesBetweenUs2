@@ -1494,6 +1494,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 152052724090460843, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
   m_PrefabInstance: {fileID: 2034147779}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &189720459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8773686222194185309, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
+  m_PrefabInstance: {fileID: 2034147779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &197362615
 GameObject:
   m_ObjectHideFlags: 0
@@ -7517,6 +7522,7 @@ MonoBehaviour:
   bro: {fileID: 73181477}
   car: {fileID: 1767020684}
   MouseReward: {fileID: 11400000, guid: 6cb6ba141ef461b42a8fb995e10f1925, type: 2}
+  player: {fileID: 189720459}
   completedAllObjectives: 0
   allobjectives: 1
 --- !u!114 &1013245663
