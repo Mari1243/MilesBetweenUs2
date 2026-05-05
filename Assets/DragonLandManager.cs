@@ -13,7 +13,7 @@ public class DragonLandManager : MonoBehaviour
     public bool canleave = false;
 
     private bool completedMouseQuest = false;
-    public GameObject player;
+    //public GameObject player;
 
 
     //for to do list
@@ -27,7 +27,7 @@ public class DragonLandManager : MonoBehaviour
     private void Start()
     {
         bro.SetActive(false);
-        player.SetActive(false);
+        //player.SetActive(false);
         car.Play("DLCar");
     }
 
@@ -45,7 +45,7 @@ public class DragonLandManager : MonoBehaviour
     public void triggerIntroCutscene()
     {
         bro.SetActive(true);
-        player.SetActive(true);
+        //player.SetActive(true);
 
         DialogueManager.instance.TalkInteraction(startCutScene);
         Cursor.lockState = CursorLockMode.None;
