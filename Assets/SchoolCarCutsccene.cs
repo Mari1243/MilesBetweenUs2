@@ -21,7 +21,7 @@ public class SchoolCarCutsccene : MonoBehaviour
         TransitionManager.Instance.PlayStartHalfTransition(1f, .2f);
         yield return new WaitForSeconds(1f);
 
-        ChangeCamera.instance.changeCamera(2);
+        ChangeCamera.instance.changeCamera(1);
 
         TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
 
