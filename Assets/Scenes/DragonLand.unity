@@ -7478,7 +7478,7 @@ MonoBehaviour:
   car: {fileID: 1767020684}
   MouseReward: {fileID: 11400000, guid: 6cb6ba141ef461b42a8fb995e10f1925, type: 2}
   canleave: 0
-  player: {fileID: 2034147780}
+  player: {fileID: 181740535}
   completedAllObjectives: 0
   allobjectives: 1
 --- !u!114 &1013245663
@@ -7493,8 +7493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87afd90fefead845a0337b18cc47c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endStealNoise: {fileID: 0}
-  shortSteal: {fileID: 0}
+  endStealNoise: {fileID: 8300000, guid: 362eba81127bb413bb0b5fd0bc5d4f56, type: 3}
+  shortSteal: {fileID: 8300000, guid: cb19f5ee66eea419fb98f89e84f3909a, type: 3}
   stateDurationRange: {x: 1, y: 4}
   player: {fileID: 181740535}
 --- !u!1001 &1020819666
@@ -14125,11 +14125,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
---- !u!1 &2034147780 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8773686222194185309, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
-  m_PrefabInstance: {fileID: 2034147779}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2060995075
 GameObject:
   m_ObjectHideFlags: 0
