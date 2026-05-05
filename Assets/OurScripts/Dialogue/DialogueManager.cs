@@ -95,7 +95,7 @@ public class DialogueManager : MonoBehaviour
     public void TalkInteraction(Item itemdata) //enables cutscene 
     {
         //this is what is being used for hte journal
-        //Debug.Log("Talking rn" + itemdata.name);
+        Debug.Log("Talking rn" + itemdata.name + " with node " + itemdata.node);
         //print("position is " + itemdata.diagPos);
         //print("gonna play node "+ itemdata.node);
         
