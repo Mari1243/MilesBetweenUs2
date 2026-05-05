@@ -6844,6 +6844,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4792769920164054658, guid: c83a883728b8747799f88e95b0341676, type: 3}
     - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
+      propertyPath: line
+      value: 
+      objectReference: {fileID: 7559722874774835951}
+    - target: {fileID: 364758898841951314, guid: 5e28636aec0f14606aa89414e5106f4d, type: 3}
       propertyPath: lilBro
       value: 
       objectReference: {fileID: 2119846050}

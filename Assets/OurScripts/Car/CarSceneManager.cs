@@ -11,6 +11,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Yarn.Unity;
 using Cursor = UnityEngine.Cursor;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
@@ -41,7 +42,7 @@ public class CarSceneManager : MonoBehaviour
     [Header("Brother")]
     public Animator brother;
     public Animator lilBro;
-
+    
     [Header("Radio")]
     public List<AudioClip> radioClips = new List<AudioClip>();
     private bool isPlaying = false;
@@ -50,6 +51,9 @@ public class CarSceneManager : MonoBehaviour
     [Header("SceneChanges")]
     private int carScene;
     public GameObject treeSpawners;
+
+    [Header("SceneChanges")]
+    public LinePresenter line;
 
     private void OnEnable()
     {
@@ -184,7 +188,18 @@ public class CarSceneManager : MonoBehaviour
                 SoundManager.Instance.PauseAudio();
                 break;
 
-
+            case "ramble":
+                line.autoAdvance = true;
+                line.autoAdvanceDelay = 0;
+                line.typewriterEffectSpeed = 90;
+                break;
+            case "endRamble":
+                line.autoAdvance = false;
+                line.typewriterEffectSpeed = 40;
+                break;
+            case "shake":
+                playercam.GetComponent<Camera>().transform.DOShakeRotation(1f,new Vector3(3,4,0),10);
+                break;
 
 
         }

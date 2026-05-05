@@ -15,8 +15,7 @@ title: Car1Start
 ---
 Brother: Pass the chips up here.
 Brother: Ew, you grabbed these ones?
-Brother: You have no taste
-Brother: Thanks though.
+Brother: You have no taste.
 Brother: ...
 ->I’m bored..
 	Dude really.
@@ -55,11 +54,9 @@ So which one is the lie?
 	…
 	Wow you really believed you’re adopted? 
 	Hahaha.
-	My bad.
 	I’ll be honest bro
 	I’m messing with you
 	They’re all lies.
-	Don’t worry, 
 	You’re not adopted	
 	I woulda had more of a say on who they'd pick.
 	Kidding.
@@ -69,27 +66,41 @@ So which one is the lie?
 ->500,000 types of plants
 	You’re correct,
 	That’s a lie.
-	*Go on really long tangent, code blabbering*
+	<<startAction ramble>>
+	There are an estimated 391,000 species of plants
+	It's actually very important to understand the
+	extent of plant species
+	It helps predict the impacts of climate change
+	conservation, and sustainable practices.
+	But what's crazy
+	is that the research of the true number of 
+	species is still shakey.
+	Scientists are constantly refining 
+	estimates and as new tech evolves and more 
+	remote regions are discovered and explored 
+	we can have a greater undesrtanding of 
+	existing species, but several factors 
+	kinda complicate getting the number of species.
+	<<startAction endRamble>>
+	...
+	...
 	But yea, that’s the incorrect one.
-	…
 	Wait, you really believed you’re adopted? 
 	Hahaha.
-	My bad.
 	I’ll be honest bro
 	I’m messing with you
 	They’re all lies.
-	Don’t worry, 
 	You’re not adopted
 	I woulda had more of a say on who they'd pick.
 	Kidding.
-	->Again
+	->Again!
 		Nope,
 		Go to sleep or something.
 ->I'm adopted?
-	…
+	...
 	Hate to break it to you bro,
 	That’s a truth.
-	Just kidding… Haha
+	Just kidding... Haha
 	I'm gonna be honest,
 	They’re all lies.
 	You’d really believe I flunked all my classes?
@@ -107,7 +118,6 @@ title: Car2Start
 ---
 Brother: You had fun at dino-
 Brother: I mean dragon land?
-Brother: Haha,
 Brother: That place was such a sham.
 Brother: Those roadside attractions are weird.
 <<startAction playPhone>>
@@ -164,9 +174,10 @@ title: Car0
 
 title: Car1
 ---
-Brother: Oh hey,
-Brother: It's DragonLand.
-Brother: You wanna go?
+Brother: Oh what's that sign say?
+Brother: Dragon..land?
+Brother: Ahead in 3 miles.
+Brother: You wanna stop by? Seems kinda cool.
 -> Ya!
 	Brother: Awesome,
 	Brother: Well. Next Stop's DragonLand.
@@ -177,10 +188,16 @@ Brother: You wanna go?
 
 title: Car2
 ---
-Brother: Look, we're almost here..
-Brother: Damn, it's been so long.
--> Go to School
+Brother: Look, UC Fluffington up ahead.
+Brother: We've finally arrived.
+Brother: This place looks.. cool.
+Brother: Ready to end our long journey?
+
+-> Yes!
 	<<changeScene School>>
+-> Not yet.
+	Alright, we still have time before we arrive.
+
 ===
 
 
@@ -223,12 +240,16 @@ Brother: I'll show it to Mom.
 
 title: Car1Bark2
 ---
-Brother: Cows!
-Brother: You missed them.
-Brother: Haha
-Brother: Sorry.
-Brother: We'll probably see more on the way.
-
+Brother:...
+	-> Where are we?
+		Brother: Thats why I gave you the map.
+		Brother: Seems like we're somewhere in Oklahoma.
+		Brother: Pretty flat out here huh?
+	-> Are we there yet?
+		Brother: No. We are not.
+		Brother: Check your map,
+		Brother: We're still in Oklahoma.
+		Brother: See how far that is?	
 ===
 
 
@@ -278,7 +299,14 @@ title: Car2Bark3
 ---
 Brother: Look a red car! 
 Brother: We should play punch buggy.
-Brother: I won't hit you as hard as we did when we were younger.
+	-> No
+		Brother: What. Scared?
+		Brother: Promise I won't hit you as hard as we did when we were younger.
+	-> Hit him
+		<<startAction shake>>
+		Brother: OW- What the heck!!?
+		Brother: Dude.
+		Brother: You're so lucky I'm driving right now.
 ===
 
 
