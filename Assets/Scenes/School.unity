@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.9924528, g: 0.81580865, b: 0.46252042, a: 1}
   m_AmbientIntensity: 1.47
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.42830187, g: 0.59116936, b: 1, a: 1}
+  m_SubtractiveShadowColor: {r: 0.5943396, g: 0.71103656, b: 1, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 20f6d22d93779de4ea6f62f8ab305593, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -15271,6 +15271,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1814371170958222411, guid: a365f9c2c7d2d4849be4bb00658f7aca, type: 3}
   m_PrefabInstance: {fileID: 1286416237}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1736828077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736828078}
+  m_Layer: 0
+  m_Name: sky
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736828078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736828077}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 114.411476, y: 590.284, z: -124.65122}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1762705524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3500085222629808239, guid: fc1131b2855704a24b03b224161a5355, type: 3}
@@ -18156,8 +18187,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.89433956, g: 0.6477043, b: 0.5517906, a: 1}
-  m_Intensity: 1.41
+  m_Color: {r: 0.9924528, g: 0.7951567, b: 0.67224634, a: 1}
+  m_Intensity: 1.89
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18219,13 +18250,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142647707}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.61662775, y: -0.16813669, z: 0.18358131, w: 0.74685895}
-  m_LocalPosition: {x: 8.9, y: 30.7, z: -15.4}
+  m_LocalRotation: {x: 0.93791825, y: -0.02378545, z: 0.022576356, w: 0.34530255}
+  m_LocalPosition: {x: 14.1, y: 25.6, z: 35.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 79.358, y: -7.701, z: 21.228}
+  m_LocalEulerAnglesHint: {x: 40.452, y: 178.048, z: 182.186}
 --- !u!1001 &2144154273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19980,3 +20011,4 @@ SceneRoots:
   - {fileID: 1059756515}
   - {fileID: 137873121}
   - {fileID: 375825689}
+  - {fileID: 1736828078}
