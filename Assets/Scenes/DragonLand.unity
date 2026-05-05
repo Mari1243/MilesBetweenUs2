@@ -329,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 42753648}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16076493, y: -2.7994378e-11, z: 4.559825e-12, w: 0.9869927}
-  m_LocalPosition: {x: 9.66, y: 1.151, z: -64.72}
+  m_LocalPosition: {x: 2.74, y: 1.241, z: -63.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2643,22 +2643,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 887202080963443201, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -262
-      objectReference: {fileID: 0}
-    - target: {fileID: 887202080963443201, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1569
-      objectReference: {fileID: 0}
-    - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: endValueV3.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: endValueV3.y
-      value: 1110
-      objectReference: {fileID: 0}
     - target: {fileID: 1616451728402434421, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2755,33 +2739,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1775854182488427552, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: endValueV3.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3701012546927490882, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Name
       value: journalCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5444008440852152235, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362873717257106193, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7659891120781698861, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8798144423261181708, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7517,6 +7477,7 @@ MonoBehaviour:
   bro: {fileID: 73181477}
   car: {fileID: 1767020684}
   MouseReward: {fileID: 11400000, guid: 6cb6ba141ef461b42a8fb995e10f1925, type: 2}
+  canleave: 0
   completedAllObjectives: 0
   allobjectives: 1
 --- !u!114 &1013245663
@@ -7531,6 +7492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87afd90fefead845a0337b18cc47c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endStealNoise: {fileID: 0}
+  shortSteal: {fileID: 0}
   stateDurationRange: {x: 1, y: 4}
   player: {fileID: 181740535}
 --- !u!1001 &1020819666
@@ -12622,6 +12585,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9095034031885387067, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: defaultVoice
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b81aaa70eb4d422593839e1c7b8def4, type: 2}
+    - target: {fileID: 9095034031885387067, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: characterVoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095034031885387067, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: 'characterVoices.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b81aaa70eb4d422593839e1c7b8def4, type: 2}
+    - target: {fileID: 9095034031885387067, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: 'characterVoices.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e4d36a75280814d23a875c2df36b4836, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 50494903721438103, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}

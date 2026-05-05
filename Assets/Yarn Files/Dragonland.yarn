@@ -2,6 +2,7 @@
 ---
 <<cameraIndex 1>>
 <<declare $GrannyVisited = 0>>
+<<declare $canLeave = false>>
 
 Brother: Cool, we're like halfway
 Brother: I'm beat so make yourself busy for a bit
@@ -211,15 +212,20 @@ Brother: I'll have to pot it up when we get to Uni.
 title: EndDragonLand
 ---
 <<cameraIndex 1>>
-
-Brother: Ya done stomping around?
--> Yea lets go!
-	Aight
-	Also
-	You're really dusty 
-	<<changeScene Car>>
--> No not yet
-	Oook, take your sweet time.
+<<if $canLeave == true>>
+	Brother: Ya done stomping around?
+		-> Yea lets go!
+			Aight
+			Also
+			You're really dusty 
+			<<changeScene Car>>
+			-> No not yet
+			Oook, take your sweet time.
+<<elseif $canLeave == false>>
+	Brother: We just got here
+	Brother: How about you checkout the gift shop or something
+	Brother: Mom would probably like something cute
+<<endif>>
 <<cameraIndex 0>>
 
 ===
