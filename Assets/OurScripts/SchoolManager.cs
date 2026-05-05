@@ -230,8 +230,21 @@ public class SchoolManager : MonoBehaviour
     }
     private void ENDJOURNAL(bool end)
     {
-        physicalJournal.SetActive(false);
-        FX.SetActive(false);
-        Player.SetActive(false);
+        if (end)
+        {
+            Debug.Log("entering journal ! turning shit off");
+            physicalJournal.SetActive(false);
+            FX.SetActive(false);
+            Player.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("exiting journal ! turning shit on");
+            endInteractable.SetActive(true);
+            physicalJournal.SetActive(true);
+            FX.SetActive(true);
+            Player.SetActive(true);
+        }
+       
     }
 }

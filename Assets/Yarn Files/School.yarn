@@ -22,9 +22,10 @@ I should go through stuff before I give it to Max
         <<openJournal true>>
         <<SetEndstate true>>
     -> Not Yet
-        <<cameraIndex 0>
+        <<cameraIndex 0>>
         <<end false>>
         <<SetEndstate false>>
+        <<openJournal false>>
 
 ===
 
