@@ -13,8 +13,93 @@ Brother: And don’t touch my stuff.
 
 title: Car1Start
 ---
-Brother: Buckled?
-Brother: Alright let's hit the road.
+Brother: Pass the chips up here.
+Brother: Ew, you grabbed these ones?
+Brother: You have no taste
+Brother: Thanks though.
+Brother: ...
+->I’m bored..
+	Dude really.
+	You can’t just sleep or something?
+	...
+	Fine
+	We can play this short game 
+	I used to play it w/ Connor and Isaiah;
+	2 truths, 1 lie
+		->What’s the game?
+			The game is simple.
+			I tell you three things
+			You pick which one is the lie.
+		->Who?
+			My friends.
+			Anyways,
+			The game is simple.
+			I tell you three things
+			You pick which one is the lie.
+Ready? 
+Pay attention.
+First,
+I flunked 3 classes last year and barely graduated,
+Second,
+There are over 500,000 types of plants in the whole world,
+Third,
+You’re adopted.
+Ok.
+So which one is the lie?
+->You flunked a class
+	You’re correct.
+	That is the lie.
+	Haha.
+	I actually graduated with perfect grades.
+	Glad you think more of me.
+	…
+	Wow you really believed you’re adopted? 
+	Hahaha.
+	My bad.
+	I’ll be honest bro
+	I’m messing with you
+	They’re all lies.
+	Don’t worry, 
+	You’re not adopted	
+	I woulda had more of a say on who they'd pick.
+	Kidding.
+	->Again!
+		Nope,
+		Go to sleep or something.
+->500,000 types of plants
+	You’re correct,
+	That’s a lie.
+	*Go on really long tangent, code blabbering*
+	But yea, that’s the incorrect one.
+	…
+	Wait, you really believed you’re adopted? 
+	Hahaha.
+	My bad.
+	I’ll be honest bro
+	I’m messing with you
+	They’re all lies.
+	Don’t worry, 
+	You’re not adopted
+	I woulda had more of a say on who they'd pick.
+	Kidding.
+	->Again
+		Nope,
+		Go to sleep or something.
+->I'm adopted?
+	…
+	Hate to break it to you bro,
+	That’s a truth.
+	Just kidding… Haha
+	I'm gonna be honest,
+	They’re all lies.
+	You’d really believe I flunked all my classes?
+	Give me more credit dude.
+	I know my stuff.
+	->Again!
+		Nope,
+		Go to sleep or something.
+
+
 
 ===
 

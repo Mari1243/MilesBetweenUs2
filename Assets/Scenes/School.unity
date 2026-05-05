@@ -14513,7 +14513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7efc750d8e0fe54ea35c2193ea2c85b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: ae93536bf01b10b41ae95acf0f7f649f, type: 2}
   aquireable: 1
 --- !u!1 &1648215512
 GameObject:
