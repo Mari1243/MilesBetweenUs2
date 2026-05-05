@@ -54,6 +54,7 @@ public class ToggleJournal : MonoBehaviour
         DialogueManager.DialogStart += disableJournal; //makes it so you cant open journal while in dialogue
         DialogueManager.DialogOver += enableJournal;
         DialogueCommands.diaopenJournal += animateOpen;
+        DialogueCommands.diacloseJournal += journal;
 
 
     }
@@ -68,6 +69,7 @@ public class ToggleJournal : MonoBehaviour
         DialogueManager.DialogStart -= disableJournal;
         DialogueManager.DialogOver -= enableJournal;
         DialogueCommands.diaopenJournal -= animateOpen;
+        DialogueCommands.diacloseJournal -= journal;
     }
 
     private void Start()
@@ -112,7 +114,8 @@ public class ToggleJournal : MonoBehaviour
                 DOTween.Play("animateIn");
                 journalopen = true;
                 Cursor.lockState = CursorLockMode.None;
-                OnJournalOpened?.Invoke(); // add this
+                //controls player input
+                OnJournalOpened?.Invoke();
 
                 if (SceneManager.GetActiveScene().name != "Car")
                 disablePlayer();
@@ -125,7 +128,7 @@ public class ToggleJournal : MonoBehaviour
                 DOTween.Restart("animateOut"); 
                 DOTween.Play("animateOut");
                 journalopen = false;
-                OnJournalClosed?.Invoke(); // add this
+                OnJournalClosed?.Invoke(); 
 
                 if (SceneManager.GetActiveScene().name != "Car")
                 enablePlayer();
