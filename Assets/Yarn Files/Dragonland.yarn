@@ -212,7 +212,7 @@ Brother: I'll have to pot it up when we get to Uni.
 title: EndDragonLand
 ---
 <<cameraIndex 1>>
-<<if $canLeave = true>>
+<<if $canLeave == true>>
     Brother: You done stomping around?
 	-> Yea lets go!
 		Aight
