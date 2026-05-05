@@ -21,7 +21,6 @@ public class ToggleJournal : MonoBehaviour
     [SerializeField]public static bool journalopen = false;
     [SerializeField]public bool canOpen = true;
     private Canvas canvas;
-    public UnityEngine.UI.Button xbutton;
     private UnityEngine.Vector3 oldPos;
     private GameObject journalContents;
    
