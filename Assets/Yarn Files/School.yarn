@@ -22,7 +22,7 @@ I should go through stuff before I give it to Max
         <<openJournal true>>
         <<SetEndstate true>>
     -> Not Yet
-        <<cameraIndex 0>>
+        <<cameraIndex 0>
         <<end false>>
         <<SetEndstate false>>
 
@@ -37,8 +37,8 @@ Brother: Mom and dad are almost here.
     -> I'm Done!
         <<jump EndDialogue>>
     -> Not Yet
-        <<cameraIndex 0>>
         No rush.
+        <<cameraIndex 3>>
         <<SetEndstate false>>
         <<end false>>
 ===
