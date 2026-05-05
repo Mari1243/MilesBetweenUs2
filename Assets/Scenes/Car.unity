@@ -1091,11 +1091,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bbe66be7e4e7ab646b1a83487893a3e5, type: 3}
   m_PrefabInstance: {fileID: 1514364177}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &302440623 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7210491241035415894, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-  m_PrefabInstance: {fileID: 1338271284}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &336375658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,14 +2917,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: useTargetAsV3
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1184095313079300315, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: endValueTransform
-      value: 
-      objectReference: {fileID: 302440623}
     - target: {fileID: 1616451728402434421, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3010,45 +2997,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1709589170897005460, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3701012546927490882, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4998780628255394469, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
       propertyPath: m_Name
       value: journalCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5444008440852152235, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362873717257106193, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7659891120781698861, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8798144423261181708, guid: 6c016b0d8cf744de39d9e4973fea7e7c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
