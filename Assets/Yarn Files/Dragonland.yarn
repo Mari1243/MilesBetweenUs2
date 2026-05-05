@@ -219,7 +219,7 @@ title: EndDragonLand
 			Also
 			You're really dusty 
 			<<changeScene Car>>
-			-> No not yet
+		-> No not yet
 			Oook, take your sweet time.
 <<elseif $canLeave == false>>
 	Brother: We just got here
