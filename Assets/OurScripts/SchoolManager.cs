@@ -71,6 +71,7 @@ public class SchoolManager : MonoBehaviour
 
     public void triggerIntroCutscene()
     {
+        
         bro.SetActive(true);
         DialogueManager.instance.TalkInteraction(startCutScene);
         Cursor.lockState = CursorLockMode.None;
