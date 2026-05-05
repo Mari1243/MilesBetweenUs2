@@ -31,6 +31,7 @@ I should go through stuff before I give it to Max
 title: ShowBrotherPrompt
 ---
 <<cameraIndex 4>>
+<<openJournal false>>
 Brother: Have you finished doing whatever you're doing there yet?
 Brother: Mom and dad are almost here.
     -> I'm Done!

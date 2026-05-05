@@ -132,7 +132,7 @@ public class Scale : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
             canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
             out parentLocalPoint
         );
-        print("scaling");
+        //print("scaling");
         // Calculate distance
         return Vector2.Distance(localPoint, parentLocalPoint);
     }

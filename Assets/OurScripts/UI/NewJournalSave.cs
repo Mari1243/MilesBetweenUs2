@@ -130,15 +130,15 @@ public class NewJournalSave : MonoBehaviour
     //added checks
     private void EndJournalState() 
     {
-    Debug.LogError("[NJS] EndJournalState() method entered.");
-    Debug.LogError($"[NJS] xbutton null? {xbutton == null}");
-    Debug.LogError($"[NJS] inventoryObject null? {inventoryObject == null}");
-    Debug.LogError($"[NJS] currentList null? {currentList == null}");
+        Debug.LogError("[NJS] EndJournalState() method entered.");
+        Debug.LogError($"[NJS] xbutton null? {xbutton == null}");
+        Debug.LogError($"[NJS] inventoryObject null? {inventoryObject == null}");
+        Debug.LogError($"[NJS] currentList null? {currentList == null}");
 
-    xbutton.gameObject.SetActive(true);
-    xbutton.onClick.RemoveAllListeners();
-    xbutton.onClick.AddListener(TriggerEndDialogue);
-    Debug.LogError("[NJS] xbutton listener set to TriggerEndDialogue.");
+        xbutton.gameObject.SetActive(true);
+        xbutton.onClick.RemoveAllListeners();
+        xbutton.onClick.AddListener(TriggerEndDialogue);
+        Debug.LogError("[NJS] xbutton listener set to TriggerEndDialogue.");
 
     if (inventoryObject != null)
         inventoryObject.SetActive(true);
@@ -159,9 +159,12 @@ public class NewJournalSave : MonoBehaviour
     Debug.LogError($"[NJS] DialogueManager.tutorialInstance null? {DialogueManager.tutorialInstance == null}");
     if (DialogueManager.tutorialInstance != null)
     {
-        Debug.LogError("[NJS] Loading ShowBrotherPrompt and starting dialog.");
-        DialogueManager.instance.LoadDialog("ShowBrotherPrompt");
-        DialogueManager.instance.StartDialog();
+        //try to get the end dialogue object and activate it on me
+        Item item = xbutton.GetComponent<interactable>().item;
+        DialogueManager.instance.TalkInteraction(item);
+        // Debug.LogError("[NJS] Loading ShowBrotherPrompt and starting dialog.");
+        // DialogueManager.instance.LoadDialog("ShowBrotherPrompt");
+        // DialogueManager.instance.StartDialog();
     }
     else
     {

@@ -17,6 +17,7 @@ public class DialogueCommands : MonoBehaviour
     public static UnityAction<string> scenename;
 
     public static UnityAction diaopenJournal;
+    public static UnityAction diacloseJournal;
     public static event Action<bool> EndJournalState;
 
     public static UnityAction<string> startAction;
@@ -97,7 +98,8 @@ public class DialogueCommands : MonoBehaviour
         }
         else
         {
-            print("uhh no true??");
+            print("closing journal in dialogue comamnds");
+            diacloseJournal?.Invoke();
         }
     }
     void OnChangeScene(string scene)
