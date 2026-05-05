@@ -12,7 +12,7 @@ public class MapManager : MonoBehaviour
         SceneTrackerSingleton.CurrentSceneEvent += thing;
        
         transform.DOScale(1.1f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.OutQuad).SetUpdate(UpdateType.Normal, true);
-        //GetComponent<DOTweenAnimation>().tween?.SetUpdate(UpdateType.Normal, true);
+        GetComponent<DOTweenAnimation>().tween?.SetUpdate(UpdateType.Normal, true);
     }
 
     private void OnDisable()
