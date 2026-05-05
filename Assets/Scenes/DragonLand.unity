@@ -7478,6 +7478,7 @@ MonoBehaviour:
   car: {fileID: 1767020684}
   MouseReward: {fileID: 11400000, guid: 6cb6ba141ef461b42a8fb995e10f1925, type: 2}
   canleave: 0
+  player: {fileID: 2034147780}
   completedAllObjectives: 0
   allobjectives: 1
 --- !u!114 &1013245663
@@ -14124,6 +14125,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
+--- !u!1 &2034147780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8773686222194185309, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
+  m_PrefabInstance: {fileID: 2034147779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2060995075
 GameObject:
   m_ObjectHideFlags: 0
