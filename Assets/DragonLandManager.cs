@@ -9,6 +9,9 @@ public class DragonLandManager : MonoBehaviour
     public GameObject bro;
     public Animator car;
     public Item MouseReward;
+
+    public bool canleave = false;
+
     private bool completedMouseQuest = false;
 
 
@@ -55,6 +58,8 @@ public class DragonLandManager : MonoBehaviour
                 {
                     if (ToDoManager.instance == null) { Debug.LogError("ToDoManager instance is null!"); return; }
                    ToDoManager.instance.CompleteItem("SouvenirforMax");
+                   canleave = true;
+                   //allow option to leave here
                     completedobjectives++;
                 }
                 if (item.itemData.itemName == "An ID!")

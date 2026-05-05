@@ -156,6 +156,10 @@ public class DialogueCommands : MonoBehaviour
                 {
                     yarnVariables.SetValue("$hasNumber", true);
                 }
+                 else if(item.itemData.itemName=="Dragon Plushie")
+                {
+                    yarnVariables.SetValue("$canLeave", true);
+                }
             }
         }
         else
