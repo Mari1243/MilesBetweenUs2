@@ -207,8 +207,7 @@ public class SchoolManager : MonoBehaviour
             case "moveBro":
                 bro.transform.position = endPos.position;
                 bro.transform.rotation = endPos.rotation;
-                bro.GetComponent<Animator>().Play("Armature_BigBro_SIT");
-                Debug.Log("switching sides");
+                bro.GetComponent<Animator>().Play("Armature|BigBro_SIT");
                 
                 break;
 
@@ -231,8 +230,21 @@ public class SchoolManager : MonoBehaviour
     }
     private void ENDJOURNAL(bool end)
     {
-        physicalJournal.SetActive(false);
-        FX.SetActive(false);
-        Player.SetActive(false);
+        if (end)
+        {
+            Debug.Log("entering journal ! turning shit off");
+            physicalJournal.SetActive(false);
+            FX.SetActive(false);
+            Player.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("exiting journal ! turning shit on");
+            endInteractable.SetActive(true);
+            physicalJournal.SetActive(true);
+            FX.SetActive(true);
+            Player.SetActive(true);
+        }
+       
     }
 }

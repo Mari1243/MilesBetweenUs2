@@ -65,10 +65,10 @@ AnimatorStateMachine:
     m_Position: {x: 100, y: 330, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -763577754693086296}
-    m_Position: {x: 110, y: 220, z: 0}
+    m_Position: {x: 240, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 474015863877332249}
-    m_Position: {x: 490, y: 150, z: 0}
+    m_Position: {x: 610, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6198520093060476170}
     m_Position: {x: 450, y: 270, z: 0}
@@ -76,8 +76,8 @@ AnimatorStateMachine:
     m_State: {fileID: -6980277940611311058}
     m_Position: {x: 500, y: 430, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 6807733831755440945}
-    m_Position: {x: 290, y: 100, z: 0}
+    m_State: {fileID: 5144579585995239995}
+    m_Position: {x: 320, y: 80, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -6940601882222257829}
@@ -222,6 +222,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: e943562b0e887c4499ac2b6a0e941da6, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &5144579585995239995
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Armature|BigBro_SIT
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7533005276511361491, guid: 69be7a66ff8bc6d4695f2c72f530556f, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
