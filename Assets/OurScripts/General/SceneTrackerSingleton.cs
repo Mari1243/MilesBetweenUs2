@@ -85,6 +85,7 @@ public class SceneTrackerSingleton : MonoBehaviour
         }
         else
         {
+            print("changing state to not car");
             NewJournalSave.instance.SetState(States.Gasstation);
             CurrentSceneEvent?.Invoke(CurrentSceneName, carnum);
             //spawn list
