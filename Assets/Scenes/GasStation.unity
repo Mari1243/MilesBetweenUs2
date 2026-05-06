@@ -325,6 +325,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
+      propertyPath: inventory.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6236510795344048440, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: m_Name
       value: InventoryManager
@@ -32287,7 +32291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.65186274
+      value: 0.98218757
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalRotation.x
@@ -32295,7 +32299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.75833696
+      value: -0.18790345
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalRotation.z
@@ -32307,7 +32311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 98.636
+      value: -21.661
       objectReference: {fileID: 0}
     - target: {fileID: 2772941568440982861, guid: 8df1a53fbd0694b2684c49d60d502d35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

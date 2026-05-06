@@ -1331,6 +1331,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
+      propertyPath: inventory.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6236510795344048440, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: m_Name
       value: InventoryManager
