@@ -101,8 +101,8 @@ public class ToggleJournal : MonoBehaviour
 
     public void journal()
     {
-        print("journalOpen is "+ journalopen + " and canOpen is "+canOpen);
-        Debug.LogError("[TJ] journal() called from:\n" + System.Environment.StackTrace);
+        //print("journalOpen is "+ journalopen + " and canOpen is "+canOpen);
+        //Debug.LogError("[TJ] journal() called from:\n" + System.Environment.StackTrace);
 
        if(this.GetComponent<Canvas>() != null)
         {

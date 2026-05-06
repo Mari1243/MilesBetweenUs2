@@ -38,9 +38,8 @@ Brother: Mom and dad are almost here.
         <<jump EndDialogue>>
     -> Not Yet
         No rush.
-        <<cameraIndex 3>>
+        <<cameraIndex 0>>
         <<SetEndstate false>>
-        <<openJournal true>>
         <<end false>>
 ===
 

@@ -224,7 +224,7 @@ public class SchoolManager : MonoBehaviour
         TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
 
         yield return new WaitForSeconds(2f); // let DOTween finish
-        Debug.LogError("[SM] Loading EndCutscene now.");
+        //Debug.LogError("[SM] Loading EndCutscene now.");
 
         SceneManager.LoadScene("CutsceneEND");
     }
@@ -239,12 +239,14 @@ public class SchoolManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("exiting journal ! turning shit on");
-            endInteractable.SetActive(true);
-            physicalJournal.SetActive(true);
+            Debug.Log("not yet — closing journal, restoring player, resetting hasPlayed");
+            physicalJournal.SetActive(false);  // was true, journal should close
             FX.SetActive(true);
             Player.SetActive(true);
+            hasPlayed = false;
+            endInteractable.SetActive(true);
+
         }
-       
+
     }
 }

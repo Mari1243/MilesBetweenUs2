@@ -56,21 +56,21 @@ public class DialogueCommands : MonoBehaviour
     //added print checks
     private void EndGame(bool willend)
     {
-    Debug.LogError($"[DC] EndGame called. willend={willend}. ENDGame has subscribers: {ENDGame != null}");
-    if (willend)
-    {
-        Debug.LogError("[DC] Invoking ENDGame event now.");
-        if (ENDGame == null)
+        Debug.LogError($"[DC] EndGame called. willend={willend}. ENDGame has subscribers: {ENDGame != null}");
+        if (willend)
+        {
+            Debug.LogError("[DC] Invoking ENDGame event now.");
+            if (ENDGame == null)
             Debug.LogError("[DC] *** ENDGame IS NULL — nobody is subscribed! Scene will never load. ***");
-        else
+            else
             Debug.LogError($"[DC] ENDGame invocation list count: {ENDGame.GetInvocationList().Length}");
-        ENDGame?.Invoke();
-    }
-    else
-    {
-        Debug.LogError("[DC] end=false branch: resetting SchoolManager.hasPlayed");
-        SchoolManager.hasPlayed = false;
-    }
+            ENDGame?.Invoke();
+        }
+        else
+        {
+            Debug.LogError("[DC] end=false branch: resetting SchoolManager.hasPlayed");
+            SchoolManager.hasPlayed = false;
+        }
     }
     //added more checks
     private void Endstate(bool inEndstate)
