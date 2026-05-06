@@ -61,12 +61,14 @@ public class NewJournalSave : MonoBehaviour
 
     private void OnEnable()
     {
+        InventoryManager.AddedItem += CollectedLoreItem;
         DialogueCommands.EndJournalState +=EndJournal;
         //added check
         Debug.LogError("[NJS] OnEnable: subscribed to EndJournalState.");
     }
     private void OnDisable()
     {
+        InventoryManager.AddedItem -= CollectedLoreItem;
          DialogueCommands.EndJournalState -=EndJournal;
          //added check
           Debug.LogError("[NJS] OnDisable: UNSUBSCRIBED from EndJournalState. If this fires at wrong time, journal won't respond.");
@@ -74,7 +76,6 @@ public class NewJournalSave : MonoBehaviour
 
     public void newspawnlist(GameObject data)
     {
-        print("calling newspawnlist with " +  data.name);
         if (data != null)
         {
             currentList = Instantiate(data, journal.transform);
@@ -87,6 +88,10 @@ public class NewJournalSave : MonoBehaviour
          Debug.LogError($"Prefab at index {sceneList} is null or out of range!", this);
         }
     }
+    private void CollectedLoreItem(Item item)
+    {
+        
+    }
 
     public void SetState(States newstate)
     {
@@ -95,17 +100,14 @@ public class NewJournalSave : MonoBehaviour
         if (newstate == States.Gasstation)
         {
             GasStationJournal();
-            manageItems();
         }
         else if (newstate == States.Car)
         {
             CarJournal();
-            manageItems();
         }
         else if (newstate == States.End)
         {
             EndJournalState();
-            manageItems();
         }
     }
     private void GasStationJournal()
@@ -121,13 +123,8 @@ public class NewJournalSave : MonoBehaviour
         if (currentList != null)
         {
             currentList.SetActive(true);
-            Debug.LogError("current list is " + currentList.name);
         }
-        else
-        {
-            Debug.LogError("current list is null");
-        }
-            sceneList++; // advance to next list in sequence
+        sceneList++; // advance to next list in sequence
         
     }
     //added checks
@@ -143,13 +140,16 @@ public class NewJournalSave : MonoBehaviour
         xbutton.onClick.AddListener(TriggerEndDialogue);
         Debug.LogError("[NJS] xbutton listener set to TriggerEndDialogue.");
 
-        if (inventoryObject != null)
+    if (inventoryObject != null)
         inventoryObject.SetActive(true);
-        if (currentList != null)
-        {
-            Debug.LogError("[NJS] Destroying currentList: " + currentList.name);
-            Destroy(currentList);
-        }
+    if (currentList != null)
+    {
+        Debug.LogError("[NJS] Destroying currentList: " + currentList.name);
+        Destroy(currentList);
+    }
+
+    Debug.LogError("[NJS] Starting manage() coroutine.");
+    StartCoroutine(manage());
     }
     
     //added checks
@@ -200,14 +200,25 @@ public class NewJournalSave : MonoBehaviour
             //may be causing errors???]
             Destroy(currentList);
         }
+
+        StartCoroutine(manage());
+    }
+
+    private IEnumerator manage()
+    {
+        yield return new WaitForSeconds (1f);
+        manageItems();
     }
 
     public void manageItems()
     {
         //Inventory
-        if (currentInventory.Count != 0)
+        if (currentInventory.Count == 0)
         {
-            print("instantiating " + currentInventory.Count + " items");
+            print("Empty");
+        }
+        else
+        {
             //print("instantiating inventory");
             foreach (InventoryItem items in currentInventory)
             {
@@ -220,12 +231,10 @@ public class NewJournalSave : MonoBehaviour
 
                 //this  assigns data
                 DraggableItemPrefab.GetComponent<DragItem>().itemdata=items.itemData;
-                print("instantiating " + journalItem.name);
-
-                currentInventory.Remove(items);
+                //print("instantiating " + journalItem.name);
             }
-
-            print("inventory is now " + currentInventory.Count + " and empty!");
+            //added bc reinstantiation
+            currentInventory.Clear();
         }
     }
 }
