@@ -43,16 +43,14 @@ public class CarSceneManager : MonoBehaviour
     public Animator brother;
     public Animator lilBro;
     
-    [Header("Radio")]
+    [Header("Audio")]
     public List<AudioClip> radioClips = new List<AudioClip>();
     private bool isPlaying = false;
     public AudioClip phoneBuzz, talking;
 
     [Header("SceneChanges")]
     private int carScene;
-    public GameObject treeSpawners;
-
-    [Header("SceneChanges")]
+    public GameObject treeSpawners, dragonPlushie;
     public LinePresenter line;
 
     private void OnEnable()
@@ -150,6 +148,7 @@ public class CarSceneManager : MonoBehaviour
                 treeSpawners.SetActive(false);
                 break;
             case 3: //pre college
+                dragonPlushie.SetActive(true);
                 break;
         }
     }
