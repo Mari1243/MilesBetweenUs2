@@ -198,7 +198,7 @@ title: Pamphlet
 <<elseif $EmployeetimesVisited == 2>>
     Uh haha, you already have two pamphlets!
     What do you need all these for?
-<<elseif $EmployeetimesVisited == 2>>
+<<elseif $EmployeetimesVisited == 3>>
     Sure. Take another.
     I don’t care.
 <<elseif $EmployeetimesVisited > 3>>
