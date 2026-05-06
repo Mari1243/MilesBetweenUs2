@@ -168,21 +168,21 @@ public class NewJournalSave : MonoBehaviour
     }
     else
     {
-        Debug.LogError("[NJS] *** tutorialInstance is null — dialogue will never fire! ***");
+        //Debug.LogError("[NJS] *** tutorialInstance is null — dialogue will never fire! ***");
     }
     }
     //added checks
     private void EndJournal(bool isEndstate)
     {
-    Debug.LogError($"[NJS] EndJournal received. isEndstate={isEndstate}");
+    //Debug.LogError($"[NJS] EndJournal received. isEndstate={isEndstate}");
     if (isEndstate)
     {
-        Debug.LogError("[NJS] Calling SetState(States.End)");
+        //Debug.LogError("[NJS] Calling SetState(States.End)");
         SetState(States.End);
     }
     else
     {
-        Debug.LogError("[NJS] Calling SetState(States.Gasstation)");
+        //Debug.LogError("[NJS] Calling SetState(States.Gasstation)");
         SetState(States.Gasstation);
     }
     }
@@ -190,7 +190,9 @@ public class NewJournalSave : MonoBehaviour
     private void CarJournal()
     {
        print("setting journal state to CAR");
-        
+       xbutton.onClick.RemoveAllListeners();
+       xbutton.onClick.AddListener(ToggleJournal.instance.journal);
+
         if (inventoryObject != null)
             inventoryObject.SetActive(true);
         if(currentList != null)
