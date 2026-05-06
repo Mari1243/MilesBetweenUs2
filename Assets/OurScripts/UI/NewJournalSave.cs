@@ -44,14 +44,27 @@ public class NewJournalSave : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null && instance != this) { Destroy(gameObject); return; }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+            Debug.LogError("[NJS] Awake fired | instance ID: " + gameObject.GetInstanceID());
 
-        journal = this.transform.GetChild(0).gameObject;
-        print("journal object name is "+journal.name);
+            if (instance != null && instance != this)
+            {
+                Debug.LogError("[NJS] DUPLICATE FOUND, destroying: " + gameObject.GetInstanceID()
+                    + " keeping: " + instance.gameObject.GetInstanceID());
+                Destroy(gameObject);
+                return;
+            }
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            journal = this.transform.GetChild(0).gameObject;
+        //print("journal object name is "+journal.name);
 
         Tab1 = tabholder.transform.GetChild(0).gameObject;
+
+        // Add this in Awake() after getting the journal reference
+        xbutton.onClick.AddListener(() =>
+     Debug.LogError("[NJS] XBUTTON PHYSICALLY CLICKED | instance ID: "
+         + xbutton.gameObject.GetInstanceID())); ;
     }
 
     private void Start()
@@ -64,14 +77,14 @@ public class NewJournalSave : MonoBehaviour
         InventoryManager.AddedItem += CollectedLoreItem;
         DialogueCommands.EndJournalState +=EndJournal;
         //added check
-        Debug.LogError("[NJS] OnEnable: subscribed to EndJournalState.");
+        //Debug.LogError("[NJS] OnEnable: subscribed to EndJournalState.");
     }
     private void OnDisable()
     {
         InventoryManager.AddedItem -= CollectedLoreItem;
          DialogueCommands.EndJournalState -=EndJournal;
          //added check
-          Debug.LogError("[NJS] OnDisable: UNSUBSCRIBED from EndJournalState. If this fires at wrong time, journal won't respond.");
+         // Debug.LogError("[NJS] OnDisable: UNSUBSCRIBED from EndJournalState. If this fires at wrong time, journal won't respond.");
     }
 
     public void newspawnlist(GameObject data)
@@ -85,7 +98,7 @@ public class NewJournalSave : MonoBehaviour
         }
         else
         {
-         Debug.LogError($"Prefab at index {sceneList} is null or out of range!", this);
+         //Debug.LogError($"Prefab at index {sceneList} is null or out of range!", this);
         }
     }
     private void CollectedLoreItem(Item item)
@@ -95,8 +108,8 @@ public class NewJournalSave : MonoBehaviour
 
     public void SetState(States newstate)
     {
-        print("setting state");
-        print("new state is " + newstate);
+        Debug.LogError("[NJS] SetState called with: " + newstate + " | StackTrace: " + System.Environment.StackTrace);
+        // ... rest of method
         if (newstate == States.Gasstation)
         {
             GasStationJournal();
@@ -113,63 +126,47 @@ public class NewJournalSave : MonoBehaviour
     private void GasStationJournal()
     {
         print("setting journal state to GAS STATION");
-        
-        //set the xbutton click to activate end dialogue
-        xbutton.onClick.RemoveAllListeners();
-        xbutton.onClick.AddListener(ToggleJournal.instance.journal);
+        SetXButtonListener(ToggleJournalSafe); // match CarJournal
+        Debug.LogError("XBUTTON NOW CLOSES JOURNAL");
 
         if (inventoryObject != null)
             inventoryObject.SetActive(false);
         if (currentList != null)
-        {
             currentList.SetActive(true);
-        }
-        sceneList++; // advance to next list in sequence
-        
+        sceneList++;
     }
     //added checks
     private void EndJournalState() 
     {
-        Debug.LogError("[NJS] EndJournalState() method entered.");
-        Debug.LogError($"[NJS] xbutton null? {xbutton == null}");
-        Debug.LogError($"[NJS] inventoryObject null? {inventoryObject == null}");
-        Debug.LogError($"[NJS] currentList null? {currentList == null}");
-
         xbutton.gameObject.SetActive(true);
-        xbutton.onClick.RemoveAllListeners();
-        xbutton.onClick.AddListener(TriggerEndDialogue);
-        Debug.LogError("[NJS] xbutton listener set to TriggerEndDialogue.");
+        UnityAction action = () => TriggerEndDialogue();
+        SetXButtonListener(action);
+        Debug.LogError("[NJS] XBUTTON NOW listens set to TriggerEndDialogue.");
 
-    if (inventoryObject != null)
+
+        if (inventoryObject != null)
         inventoryObject.SetActive(true);
     if (currentList != null)
     {
-        Debug.LogError("[NJS] Destroying currentList: " + currentList.name);
+        //Debug.LogError("[NJS] Destroying currentList: " + currentList.name);
         Destroy(currentList);
     }
 
-    Debug.LogError("[NJS] Starting manage() coroutine.");
+    //Debug.LogError("[NJS] Starting manage() coroutine.");
     StartCoroutine(manage());
     }
-    
+
     //added checks
     private void TriggerEndDialogue()
     {
-    Debug.LogError("[NJS] TriggerEndDialogue called from xbutton click.");
-    Debug.LogError($"[NJS] DialogueManager.tutorialInstance null? {DialogueManager.tutorialInstance == null}");
-    if (DialogueManager.tutorialInstance != null)
-    {
-        //try to get the end dialogue object and activate it on me
-        Item item = xbutton.GetComponent<interactable>().item;
+        Debug.LogError("[NJS] TriggerEndDialogue FIRED.");
+        if (xbutton == null) Debug.LogError("[NJS] xbutton null at fire time!");
+        if (DialogueManager.instance == null) Debug.LogError("[NJS] DialogueManager.instance NULL!");
+
+        Item item = xbutton.GetComponent<interactable>()?.item;
+        if (item == null) Debug.LogError("[NJS] item on xbutton interactable is NULL!");
+
         DialogueManager.instance.TalkInteraction(item);
-        // Debug.LogError("[NJS] Loading ShowBrotherPrompt and starting dialog.");
-        // DialogueManager.instance.LoadDialog("ShowBrotherPrompt");
-        // DialogueManager.instance.StartDialog();
-    }
-    else
-    {
-        //Debug.LogError("[NJS] *** tutorialInstance is null — dialogue will never fire! ***");
-    }
     }
     //added checks
     private void EndJournal(bool isEndstate)
@@ -189,17 +186,14 @@ public class NewJournalSave : MonoBehaviour
 
     private void CarJournal()
     {
-       print("setting journal state to CAR");
-       xbutton.onClick.RemoveAllListeners();
-       xbutton.onClick.AddListener(ToggleJournal.instance.journal);
+        print("setting journal state to CAR"); // fix this
+        SetXButtonListener(ToggleJournalSafe);
+        Debug.LogError("[NJS] XBUTTON NOW listens set to CARRRR."); // fix this
 
         if (inventoryObject != null)
             inventoryObject.SetActive(true);
-        if(currentList != null)
-        {
-            //may be causing errors???]
+        if (currentList != null)
             Destroy(currentList);
-        }
 
         StartCoroutine(manage());
     }
@@ -236,5 +230,29 @@ public class NewJournalSave : MonoBehaviour
             //added bc reinstantiation
             currentInventory.Clear();
         }
+    }
+
+    private void SetXButtonListener(UnityAction action)
+    {
+        if (xbutton == null) { Debug.LogError("[NJS] xbutton NULL!"); return; }
+
+        xbutton.onClick.RemoveAllListeners();
+        xbutton.onClick.AddListener(action);
+        xbutton.interactable = true;
+        Debug.LogError("[NJS] xbutton listener set to: " + action.Method.Name
+            + " | interactable: " + xbutton.interactable
+            + " | gameObject active: " + xbutton.gameObject.activeInHierarchy
+            + "\n" + System.Environment.StackTrace);  // ADD STACK TRACE
+    }
+
+    private void ToggleJournalSafe()
+    {
+        ToggleJournal tj = GetComponent<ToggleJournal>();
+        if (tj == null)
+        {
+            Debug.LogError("[NJS] ToggleJournal component not found on this GameObject!");
+            return;
+        }
+        tj.journal();
     }
 }

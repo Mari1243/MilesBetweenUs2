@@ -101,13 +101,22 @@ public class ToggleJournal : MonoBehaviour
 
     public void journal()
     {
-        //print("journalOpen is "+ journalopen + " and canOpen is "+canOpen);
-        //Debug.LogError("[TJ] journal() called from:\n" + System.Environment.StackTrace);
+        // Inside ToggleJournal.instance.journal (whatever that method is)
+       // Debug.LogError("[ToggleJournal] journal() FIRED.");
+       // if (this == null) Debug.LogError("[ToggleJournal] instance is NULL at fire time!");
+       // Debug.LogError("[ToggleJournal] journal() FIRED. canOpen: " + canOpen
+       //+ " journalopen: " + journalopen);
 
-       if(this.GetComponent<Canvas>() != null)
+        if (this.GetComponent<Canvas>() != null)
         {
             if(!journalopen && canOpen)
             {
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = false;
+
+                //Debug.LogError("[ToggleJournal] Cursor state: " + Cursor.lockState
+                //+ " | visible: " + Cursor.visible);
                 print("animating in");
                 canvas.enabled = true;
                 DOTween.Restart("animateIn"); 
@@ -120,6 +129,7 @@ public class ToggleJournal : MonoBehaviour
                 if (SceneManager.GetActiveScene().name != "Car")
                 disablePlayer();
                 isOpen = true;
+                Debug.LogError("[ToggleJournal] Open complete. journalopen: " + journalopen);
             }
             else
             {
@@ -133,6 +143,7 @@ public class ToggleJournal : MonoBehaviour
                 if (SceneManager.GetActiveScene().name != "Car")
                 enablePlayer();
                 isOpen = false;
+                Debug.LogError("[ToggleJournal] Close complete. journalopen: " + journalopen);
             }
         }
         else
