@@ -207,7 +207,7 @@ public class SchoolManager : MonoBehaviour
             case "moveBro":
                 bro.transform.position = endPos.position;
                 bro.transform.rotation = endPos.rotation;
-                bro.GetComponent<Animator>().Play("Armature_BigBro_SIT");
+                bro.GetComponent<Animator>().Play("Armature|BigBro_SIT");
                 
                 break;
 
