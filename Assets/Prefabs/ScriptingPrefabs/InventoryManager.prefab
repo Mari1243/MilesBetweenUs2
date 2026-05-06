@@ -44,12 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2797835ed113c4f8a56ec3fae2c231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-  - itemData: {fileID: 11400000, guid: b256c1ca3885d6e4f9210d595e57bbdd, type: 2}
-    stackSize: 1
-  - itemData: {fileID: 11400000, guid: 9eba4e465307ebd4b9b0fb1f38cfa457, type: 2}
-    stackSize: 1
-  - itemData: {fileID: 11400000, guid: 917d28dc491f3d54ab1b5dcb461dc4ad, type: 2}
-    stackSize: 1
-  loreItemAmt: 3
+  inventory: []
+  loreItemAmt: 0
   moneyAmount: 0
