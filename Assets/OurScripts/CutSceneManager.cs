@@ -39,6 +39,6 @@ public class CutSceneManager : MonoBehaviour
 
     void LoadScene()
     {
-        SceneSwitch.Instance.SwitchScene("IntroScene");
+        SceneSwitch.Instance.SwitchScene(sceneToLoad);
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kids_Voice
   m_EditorClassIdentifier: 
   characterName: Kids
-  frequency: 1
+  frequency: 4
   minPitch: 0.9
   maxPitch: 1.1
   audioClips:

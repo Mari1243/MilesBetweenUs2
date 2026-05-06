@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ben_voice
   m_EditorClassIdentifier: 
   characterName: Clerk
-  frequency: 5
+  frequency: 9
   minPitch: 0.9
   maxPitch: 1.1
   audioClips:

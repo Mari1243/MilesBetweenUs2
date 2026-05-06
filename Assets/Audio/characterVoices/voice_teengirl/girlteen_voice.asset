@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: girlteen_voice
   m_EditorClassIdentifier: 
   characterName: mousegirl
-  frequency: 1
+  frequency: 6
   minPitch: 0.9
   maxPitch: 1.1
   audioClips:
