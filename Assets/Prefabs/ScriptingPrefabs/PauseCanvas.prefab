@@ -2473,7 +2473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &834504211154277957
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2638,7 +2638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6744602858474503316
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2746,7 +2746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: -37}
+  m_AnchoredPosition: {x: 67, y: 317}
   m_SizeDelta: {x: 956.599, y: 802.939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &971435936461297968
@@ -2777,8 +2777,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- E or Click to interact\n- Arrows + E  to choose dialogue \n- Space to
-    open journal outside\n- Backspace to restart scene"
+  m_text: "E or Click to interact\nArrows + E  to choose dialogue \nSpace to open
+    journal outside\nBackspace to restart scene"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
   m_sharedMaterial: {fileID: -6955914548417487326, guid: e8a895b0af5fbf54393aa5e7a3c0a1e0, type: 2}
@@ -2883,7 +2883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 335.99985, y: 78}
+  m_AnchoredPosition: {x: 335.99985, y: 472}
   m_SizeDelta: {x: 200, y: 80.913}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3761053242355471937
