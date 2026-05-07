@@ -1,11 +1,12 @@
+using MaskTransitions;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Cinemachine;
 using UnityEngine;
-using Yarn.Unity;
-using MaskTransitions;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using System.Linq;
+using Yarn.Unity;
 
 
 public class SchoolManager : MonoBehaviour
@@ -213,6 +214,7 @@ public class SchoolManager : MonoBehaviour
                 break;
             case "destroyCollider":
                 GameObject.Find("CutSceneCollider").SetActive(false);
+                GameObject.Find("ThirdPersonCamera").GetComponent<CinemachineBasicMultiChannelPerlin>().enabled = false;
                 break;
 
 

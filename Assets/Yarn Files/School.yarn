@@ -6,7 +6,10 @@ This is an example of a Yarn Spinner script. Write your dialogue here!
 title: IntroCutSceneSchool
 ---
 <<cameraIndex 1>>
-Brother: Wow we finally made it
+Brother: Wow we finally made it..
+Brother: I'm gonna sit at the benches,
+Brother: Wait for Mom and Dad.
+Brother: And also take it all in.
 Brother: Would you mind grabbing me a map or something?
 Brother: Those frat dudes look like they know their way around.
 <<declare $EmployeetimesVisited = 0>>
@@ -157,10 +160,45 @@ Need something?
 
 ===
 
+
+title: Gardener2
+---
+<<cameraIndex 5>>
+Oh
+Hey, whats up little man.
+Need something?
+	-> Are you a student 
+    Haha, no are you? 
+    Nope, just a landscaper.
+    It’s my business I started out of highschool
+		-> Do you have a girlfriend?
+		    Wow, very personal
+            No I do not.
+            It’s hard to get someone’s number
+            Takes a lot of courage.
+            But I mean if you find one laying around, 
+            Let me know little man
+                -> I have one!
+                    Oh, do you?
+                    Wow, whose is this?
+                    It looks like someones...
+                    Nevermind.
+                    Thanks a bunch. I appreciate it.
+                    Here, in exchange for this mystery number
+                    Have my business card.
+                    Let me know if you ever need landscaping.
+                    <<startAction gardenerQuest>>
+                    <<cameraIndex 0>>
+
+
+===
+
+
+
 title: GardenerQuest
 ---
 <<cameraIndex 5>>
-<<if $hasNumber==true>>
+<<if $hasNumber==true and visited("Gardener1")>>
 Hey you’re back,
 You got something for me?
 What whose number is this??
@@ -170,6 +208,8 @@ Here, in exchange for this mystery number
 Have my business card.
 Let me know if you ever need landscaping.
 <<startAction gardenerQuest>>
+<<elseif $hasNumber==true>>
+    <<jump Gardener2>>
 <<else>>
 	<<jump Gardener1>>
 <<endif>>
@@ -183,14 +223,13 @@ title: Pamphlet
 <<cameraIndex 7>>
 <<startAction moveBro>>
 <<if $EmployeetimesVisited == 0>>
-    <<startAction destroyCollider>>
     Hii!
     Welcome to UC Fluffington College!!
     Are you lost?
     Here! 
     Take a pamphlet!
     Here you’ll find all our resources available!
-   
+   <<startAction destroyCollider>>
 <<elseif $EmployeetimesVisited == 1>>
     Hi again!!
     Did you find everything ok?
