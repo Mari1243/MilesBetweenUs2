@@ -184,7 +184,7 @@ title: Pamphlet
 <<startAction moveBro>>
 <<if $EmployeetimesVisited == 0>>
     Hii!
-    Welcome to Pawperdine College!!
+    Welcome to UC Fluffington College!!
     Are you lost?
     Here! 
     Take a pamphlet!
