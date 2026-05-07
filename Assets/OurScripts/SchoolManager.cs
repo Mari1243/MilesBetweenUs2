@@ -233,7 +233,8 @@ public class SchoolManager : MonoBehaviour
     {
         TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
 
-        yield return new WaitForSeconds(2f); // let DOTween finish
+
+        yield return new WaitForSeconds(1f); // let DOTween finish
         //Debug.LogError("[SM] Loading EndCutscene now.");
 
         SceneManager.LoadScene("CutsceneEND");
