@@ -72,6 +72,18 @@ public class SoundManager : MonoBehaviour
             musicAudioSource.Play();
         }
     }
+    public void changeMusic(AudioClip newClip)
+    {
+
+        //print("playing music");
+        if (playBackgroundMusic)    
+        {
+            musicAudioSource.loop = true;
+
+            musicAudioSource.clip = newClip;
+            musicAudioSource.Play();
+        }
+    }
     public void playLoopingAudio(AudioClip clip)
     {
         musicAudioSource.clip = clip;

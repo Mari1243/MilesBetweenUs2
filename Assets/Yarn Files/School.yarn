@@ -50,6 +50,7 @@ Brother: Mom and dad are almost here.
 
 title: EndDialogue
 ---
+<<startAction sadMusic>>
 Brother: You filled it all up? Nice.
 Brother: Guess we just have to wait for Mom and Dad to come
 Brother: ...

@@ -17,6 +17,7 @@ public class SchoolManager : MonoBehaviour
     public static bool hasPlayed=false;
     public DialogueRunner diaRun;
     [SerializeField] GameObject endInteractable;
+    public AudioClip endMusic;
     
 
     [Header("Objectives")]
@@ -215,6 +216,9 @@ public class SchoolManager : MonoBehaviour
             case "destroyCollider":
                 GameObject.Find("CutSceneCollider").SetActive(false);
                 GameObject.Find("ThirdPersonCamera").GetComponent<CinemachineBasicMultiChannelPerlin>().enabled = false;
+                break;
+            case "sadMusic":
+                SoundManager.Instance.changeMusic(endMusic);
                 break;
 
 
