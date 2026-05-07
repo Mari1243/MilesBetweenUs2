@@ -183,6 +183,7 @@ title: Pamphlet
 <<cameraIndex 7>>
 <<startAction moveBro>>
 <<if $EmployeetimesVisited == 0>>
+    <<startAction destroyCollider>>
     Hii!
     Welcome to UC Fluffington College!!
     Are you lost?

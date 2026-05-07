@@ -28,6 +28,7 @@ public class SchoolManager : MonoBehaviour
     public GameObject bro;
     public Animator car;
     public Transform startPos, endPos;
+    public GameObject cutsceneCollider;
 
     [Header("Rewards")]
     [SerializeField]private bool completedGardenerQuest = false;
@@ -209,6 +210,9 @@ public class SchoolManager : MonoBehaviour
                 bro.transform.rotation = endPos.rotation;
                 bro.GetComponent<Animator>().Play("Armature|BigBro_SIT");
                 
+                break;
+            case "destroyCollider":
+                GameObject.Find("CutSceneCollider").SetActive(false);
                 break;
 
 

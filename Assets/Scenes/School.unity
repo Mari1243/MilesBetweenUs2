@@ -18518,6 +18518,7 @@ MonoBehaviour:
   car: {fileID: 1767020684}
   startPos: {fileID: 1395750876}
   endPos: {fileID: 1294930599}
+  cutsceneCollider: {fileID: 1648215512}
   completedGardenerQuest: 0
   GardenerReward: {fileID: 11400000, guid: 9eba4e465307ebd4b9b0fb1f38cfa457, type: 2}
   FratItem: {fileID: 11400000, guid: 917d28dc491f3d54ab1b5dcb461dc4ad, type: 2}
