@@ -231,7 +231,7 @@ public class SchoolManager : MonoBehaviour
     }   
     private IEnumerator triggerendscene()
     {
-        TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
+        TransitionManager.Instance.PlayStartHalfTransition(1f, .2f);
 
 
         yield return new WaitForSeconds(1f); // let DOTween finish
