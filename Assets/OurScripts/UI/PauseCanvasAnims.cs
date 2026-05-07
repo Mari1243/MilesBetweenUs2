@@ -105,6 +105,7 @@ public class PauseCanvasAnims : MonoBehaviour
 
         Time.timeScale = 1f; // So new scene isn't frozen
         SceneManager.LoadScene("TitleScreen"); 
+        SceneTrackerSingleton.Instance.carnum = 0;
     }
 
     public void controls()
