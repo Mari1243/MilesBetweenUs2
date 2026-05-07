@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ca27fd2861bf640ad653064e610ac7, type: 3}
   m_Name: DragonPlush
   m_EditorClassIdentifier: 
-  img: {fileID: 0}
+  img: {fileID: -535508240, guid: 9d178336949f08744a751dfced8ea43b, type: 3}
   itemName: Dragon Plushie
   loreItem: 0
   node: 

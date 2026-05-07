@@ -50,11 +50,9 @@ public class CarSceneManager : MonoBehaviour
 
     [Header("SceneChanges")]
     private int carScene;
-    public GameObject treeSpawners;
-
-    [Header("SceneChanges")]
+    public GameObject treeSpawners,dragonPlush;
     public LinePresenter line;
-
+    
     private void OnEnable()
     {
         interactable.showJournal += JournalScene;
@@ -150,6 +148,7 @@ public class CarSceneManager : MonoBehaviour
                 treeSpawners.SetActive(false);
                 break;
             case 3: //pre college
+                dragonPlush.SetActive(true);
                 break;
         }
     }

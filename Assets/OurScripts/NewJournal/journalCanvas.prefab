@@ -2889,7 +2889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dragon Land!!
+  m_text: College
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba71af194e3815e4e964c75b36b9ea7e, type: 2}
   m_sharedMaterial: {fileID: 6489060690613563011, guid: ba71af194e3815e4e964c75b36b9ea7e, type: 2}
