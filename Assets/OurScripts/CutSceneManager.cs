@@ -15,6 +15,10 @@ public class CutSceneManager : MonoBehaviour
 
         // When the video ends, load the scene
         videoPlayer.loopPointReached += OnVideoFinished;
+        if (SceneManager.GetActiveScene().name == "CutsceneEND")
+        {
+            TransitionManager.Instance.PlayEndHalfTransition(1f, .2f);
+        }
     }
 
     void Update()
