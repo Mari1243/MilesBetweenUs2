@@ -17,12 +17,14 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private bool isDragging;
     private Vector3 dragStartPos;
     private Vector3 dragOffset;
+
+    public float desiredWidth = 1000;
+    public float iconsize = 2500;
     
     private Shadow dropShadow;
     private Canvas canvas;
     private GameObject rotationIcon;
     private GameObject scaleIcon;
-    private Camera mainCamera;
 
     private bool lorePlaced=false;
     private bool loreDone = false;
@@ -39,11 +41,6 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             loreIcon.enabled = false;
         }
 
-        mainCamera = Camera.main;
-        if (mainCamera == null)
-        {
-            mainCamera = FindObjectOfType<Camera>();
-        }
         canvas = GetComponentInParent<Canvas>();
         ValidateSetup();
 
@@ -102,7 +99,6 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         //scaling is required so that the proportions of the image stay the same
         if (itemdata.name != "Map")
         {
-            float desiredWidth = 100; // Your target size
             float aspectRatio = itemdata.img.rect.height / itemdata.img.rect.width;
             this.GetComponent<RectTransform>().sizeDelta = new Vector2(desiredWidth, desiredWidth * aspectRatio);
 
@@ -110,9 +106,9 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             this.transform.localScale = Vector3.one;
             //then you have to resize the rotation icon which got scaled with the parent
             var rotationIcon = this.transform.GetChild(0);
-            rotationIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+            rotationIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(iconsize, iconsize);
             var scaleIcon = this.transform.GetChild(1);
-            scaleIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+            scaleIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(iconsize, iconsize);
         }
 
     }

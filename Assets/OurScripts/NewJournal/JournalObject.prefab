@@ -231,6 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragThreshold: 5
+  desiredWidth: 400
+  iconsize: 100
   itemdata: {fileID: 11400000, guid: d2dcb10b6d232e44e87f9ab23ae1e1af, type: 2}
   loreIcon: {fileID: 3228970947438371229}
 --- !u!114 &4999891360551661480

@@ -31,15 +31,13 @@ public class NewJournalSave : MonoBehaviour
     private GameObject journal;
     private int sceneList = 0;
 
-    public GameObject inventoryObject;
+    public GameObject Holder;
     public Button xbutton;
 
 
 
     //for spawning stuff in journal
     public GameObject DraggableItemPrefab;
-    public GameObject tabholder;
-    private GameObject Tab1;
     public List<InventoryItem> currentInventory = new List<InventoryItem>();
 
     void Awake()
@@ -58,8 +56,6 @@ public class NewJournalSave : MonoBehaviour
 
             journal = this.transform.GetChild(0).gameObject;
         //print("journal object name is "+journal.name);
-
-        Tab1 = tabholder.transform.GetChild(0).gameObject;
 
         // Add this in Awake() after getting the journal reference
         xbutton.onClick.AddListener(() =>
@@ -129,8 +125,8 @@ public class NewJournalSave : MonoBehaviour
         SetXButtonListener(ToggleJournalSafe); // match CarJournal
         Debug.LogError("XBUTTON NOW CLOSES JOURNAL");
 
-        if (inventoryObject != null)
-            inventoryObject.SetActive(false);
+        if (Holder != null)
+            Holder.SetActive(false);
         if (currentList != null)
             currentList.SetActive(true);
         sceneList++;
@@ -144,8 +140,8 @@ public class NewJournalSave : MonoBehaviour
         Debug.LogError("[NJS] XBUTTON NOW listens set to TriggerEndDialogue.");
 
 
-        if (inventoryObject != null)
-        inventoryObject.SetActive(true);
+        if (Holder != null)
+        Holder.SetActive(true);
     if (currentList != null)
     {
         //Debug.LogError("[NJS] Destroying currentList: " + currentList.name);
@@ -190,8 +186,8 @@ public class NewJournalSave : MonoBehaviour
         SetXButtonListener(ToggleJournalSafe);
         Debug.LogError("[NJS] XBUTTON NOW listens set to CARRRR."); // fix this
 
-        if (inventoryObject != null)
-            inventoryObject.SetActive(true);
+        if (Holder != null)
+            Holder.SetActive(true);
         if (currentList != null)
             Destroy(currentList);
 
@@ -220,7 +216,7 @@ public class NewJournalSave : MonoBehaviour
 
                 //getting tab 1
                 
-                journalItem.transform.SetParent(Tab1.transform);
+                journalItem.transform.SetParent(Holder.transform);
                 journalItem.transform.localPosition = Vector2.zero;
 
                 //this  assigns data
