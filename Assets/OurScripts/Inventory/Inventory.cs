@@ -40,6 +40,7 @@ private void storeItem(Item item)
 
     if (numberofSlots >= MAXslots)
     {
+        print("maxed out slots here!");
         if (parentnum < parents.Length - 1)
         {
             parentnum++;
@@ -47,6 +48,7 @@ private void storeItem(Item item)
             inventorySlots = new List<ItemSlot>();
             currentparent = parents[parentnum];
             print("moving to next parent: " + currentparent.gameObject.name);
+            CreateInventorySlot(item);
         }
         else
         {
@@ -54,8 +56,12 @@ private void storeItem(Item item)
             return;
         }
     }
+    else
+    {
+        CreateInventorySlot(item);
+    }
 
-    CreateInventorySlot(item);
+    
 }   
 
     void ResetInventory()
