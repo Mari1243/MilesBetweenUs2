@@ -62,8 +62,8 @@ public class UIManager : MonoBehaviour
         interactable.onPickedUp += rewardText;
         Interactor.StealWarning += dangerState;
 
-        GasStationManager.journalNotif += INjournalNotif;
-        InputManager.OpenJournal += OUTjournalNotif;
+       //GasStationManager.journalNotif += INjournalNotif;
+        //InputManager.OpenJournal += OUTjournalNotif;
 
 
     }
@@ -82,8 +82,8 @@ public class UIManager : MonoBehaviour
         interactable.onPickedUp -= rewardText;
         InventoryManager.AddedItem -= ShowItemHUD;
 
-        GasStationManager.journalNotif -= INjournalNotif;
-        InputManager.OpenJournal -= OUTjournalNotif;
+        //GasStationManager.journalNotif -= INjournalNotif;
+        //InputManager.OpenJournal -= OUTjournalNotif;
     }
 
     private void Awake()
@@ -138,15 +138,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void INjournalNotif()
-    {
-        NotifPopup.transform.DOScale(new Vector3(.4f, .4f, .4f), .5f).SetEase(Ease.InBounce) ;
-    }
-    void OUTjournalNotif()
-    {
-        NotifPopup.transform.DOScale(new Vector3(0,0,0), 1f);
-
-    }
 
     private void SetSprites()
     {

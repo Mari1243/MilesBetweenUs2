@@ -22,7 +22,7 @@ public class DragonLandManager : MonoBehaviour
     private int completedobjectives = 0;
 
     //to trigger popup
-    public static event Action journalNotif;
+    public static event Action<string> journalNotif;
 
     private void Start()
     {
@@ -100,7 +100,7 @@ public class DragonLandManager : MonoBehaviour
 
             case "StartmouseQuest":
 
-                journalNotif?.Invoke();
+                journalNotif?.Invoke("Find ID");
                 ToDoManager.instance.spawnnewToDoTask("MouseQuest", "Find Mouse girl's ID!");
                 break;
 

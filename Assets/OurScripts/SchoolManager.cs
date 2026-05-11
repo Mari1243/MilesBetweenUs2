@@ -1,4 +1,5 @@
 using MaskTransitions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,8 @@ public class SchoolManager : MonoBehaviour
     public Item GardenerReward;
     public Item FratItem;
     public Item SchoolPamphlet;
+
+   public static event Action<string> journalNotif;
     
 
     private void Start()
@@ -192,11 +195,13 @@ public class SchoolManager : MonoBehaviour
                     InventoryManager.instance.Add(GardenerReward);
                     ToDoManager.instance.CompleteItem("GardenerQuest");
                     completedGardenerQuest = true;
+                    
                 }
            
                 break;
             case "StartgardenerQuest":
                 ToDoManager.instance.spawnnewToDoTask("GardenerQuest", "Get a girls number");
+                journalNotif?.Invoke("Get a girls number");
 
                 break;
             case "Frat":

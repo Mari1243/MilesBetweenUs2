@@ -104,7 +104,7 @@ public class NewJournalSave : MonoBehaviour
 
     public void SetState(States newstate)
     {
-        Debug.LogError("[NJS] SetState called with: " + newstate + " | StackTrace: " + System.Environment.StackTrace);
+        //Debug.LogError("[NJS] SetState called with: " + newstate + " | StackTrace: " + System.Environment.StackTrace);
         // ... rest of method
         if (newstate == States.Gasstation)
         {
@@ -123,7 +123,7 @@ public class NewJournalSave : MonoBehaviour
     {
         print("setting journal state to GAS STATION");
         SetXButtonListener(ToggleJournalSafe); // match CarJournal
-        Debug.LogError("XBUTTON NOW CLOSES JOURNAL");
+        //Debug.LogError("XBUTTON NOW CLOSES JOURNAL");
 
         if (Holder != null)
             Holder.SetActive(false);

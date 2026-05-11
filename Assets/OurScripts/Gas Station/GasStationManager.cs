@@ -25,7 +25,7 @@ public class GasStationManager : MonoBehaviour
  private int allobjectives = 2;
  private int completedobjectives = 0;
  //public GameObject toDoList1;
- public static event Action journalNotif;
+ public static event Action<string> journalNotif;
     private bool completedKidQuest = false;
  private bool firstTimeSteal = true;
  private HashSet<string> completedItems = new HashSet<string>();
@@ -128,14 +128,6 @@ private bool hasExecuted = false;
     private void Start()
     {
         car.Play("GSCar");
-
-        //GameObject mainPage = toDoList1.transform.GetChild(1).gameObject;
-        //kidObjective = mainPage.transform.GetChild(2).gameObject;
-        //kidObjective.SetActive(false);
-        //if (kidObjective.activeInHierarchy)
-        //    Debug.Log("Yasss");
-        //else
-        //    Debug.Log("noooo..");       
     }
 
     public void checkconditions(List<InventoryItem> list)
@@ -182,19 +174,18 @@ private bool hasExecuted = false;
                 if (!completedKidQuest)
                 {
                     InventoryManager.instance.Add(knife);
-                    journalNotif?.Invoke();
                     completedKidQuest = true;
               
                 }
                 break;
             case "StartkidQuest":
-                journalNotif?.Invoke();
+                journalNotif?.Invoke("Grab candy");
                 Debug.Log("Giving kid quest");
                 ToDoManager.instance.spawnnewToDoTask("KidCandy", "Grab candy for kids");
                 break;
 
             case "StartbroQuest":
-                journalNotif?.Invoke();
+                journalNotif?.Invoke("Get Snacks");
 
                 break;
 
