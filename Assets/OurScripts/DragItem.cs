@@ -141,7 +141,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             img.maskable = true;
         }
         
-        if (FindObjectOfType<EventSystem>() == null)
+        if (Object.FindFirstObjectByType<EventSystem>() == null)
         {
             Debug.LogError("No EventSystem found in scene!");
         }

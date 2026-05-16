@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
@@ -26,12 +27,10 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject); // Prevent duplicates
         }
         
-        playmusic();
     }
 
     public void PlayAudio(AudioClip clip)
     {
-        
         if(effectAudioSource!=null && isPaused)
         {
             effectAudioSource.UnPause();
@@ -54,14 +53,14 @@ public class SoundManager : MonoBehaviour
     //this will play a random noise out of a list, .6f is a good volume generally
     public void playRandomOneshot(AudioClip[] audioClips, float volumn)
     {
-        int randomIndex = Random.Range(0, audioClips.Length);
+        int randomIndex = UnityEngine.Random.Range(0, audioClips.Length);
         print("playing: " + audioClips[randomIndex].name);
         effectAudioSource.PlayOneShot(audioClips[randomIndex], volumn);
     }
 
     public void playmusic()
     {
-
+        Console.WriteLine("playmusic called from "+Environment.StackTrace);
         //print("playing music");
         if (playBackgroundMusic)
         {
@@ -74,7 +73,7 @@ public class SoundManager : MonoBehaviour
     }
     public void changeMusic(AudioClip newClip)
     {
-
+        Console.WriteLine("changeMusic called from "+Environment.StackTrace);
         //print("playing music");
         if (playBackgroundMusic)    
         {
@@ -86,6 +85,7 @@ public class SoundManager : MonoBehaviour
     }
     public void playLoopingAudio(AudioClip clip)
     {
+        print("playing looping audio " + Environment.StackTrace);
         musicAudioSource.clip = clip;
         musicAudioSource.loop = true; // Set looping to true
         musicAudioSource.Play();

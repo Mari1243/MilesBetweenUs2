@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Runtime.InteropServices;
 using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class SceneTrackerSingleton : MonoBehaviour
 {
@@ -68,23 +69,37 @@ public class SceneTrackerSingleton : MonoBehaviour
                 //setting to car if true or false if not
                 bool iscar = scene.iscar;
                 changestate(iscar);
+                changemusic(currentscene);
             }
+        }
+    }
+
+    public void changemusic(SceneScriptables scene)
+    {
+        print("changing music to " + scene.sceneMusic.name.ToString());
+        if(scene.sceneMusic!=null){
+        SoundManager.Instance.playLoopingAudio(scene.sceneMusic);
+        }
+        else
+        {
+            print("this scene has no music assigned");
         }
     }
 
     public void changestate(bool iscar)
     {
-        print("tring to change state bc is car is "+ iscar);
-        if(iscar == true)
+        if(NewJournalSave.instance!= null)
         {
+             if(iscar == true)
+            {
             //this is to change the start node for which car scene ur in!
             print("scene name is " + currentscene.name + " and the car num is " + carnum);
             carnum++;
             NewJournalSave.instance.SetState(States.Car);
             CurrentSceneEvent?.Invoke(CurrentSceneName, carnum);
-        }
-        else
-        {
+            }
+            else
+            {
             NewJournalSave.instance.SetState(States.Gasstation);
             CurrentSceneEvent?.Invoke(CurrentSceneName, carnum);
             //spawn list
@@ -100,8 +115,8 @@ public class SceneTrackerSingleton : MonoBehaviour
             {
                 Debug.LogError("THIS SCENE HAS NO TODOLIST ASSIGNED");
             }
+            }
         }
-       
     }
 
    
