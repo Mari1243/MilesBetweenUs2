@@ -1,6 +1,8 @@
 using DG.Tweening;
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -33,6 +35,9 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public Image loreIcon;
     // Static reference to currently selected item
     public static DragItem currentlySelected;
+
+    public Material loreMat;
+    private Image sprRen;
 
     private void Start()
     {
@@ -90,6 +95,9 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
             GetComponent<Image>().DOKill();
             GetComponent<Image>().DOColor(Color.white, 0f);
+            //turn the material back
+
+            
         }
         
     }
@@ -171,6 +179,8 @@ public void SetSelected(bool selected)
                 
             transform.SetAsLastSibling();
             Debug.Log($"Selected: {name}");
+
+            sprRen = gameObject.GetComponent<Image>();
         }
         else
         {
@@ -271,7 +281,8 @@ void EndDrag()
                 if (result.gameObject.CompareTag("Page"))
                 {
 
-                    checkLoreItem(this.gameObject); //Detects if lore item is on the page, if so, call function 
+                    Debug.LogError(this.name +"is the object with sprite "+ this.itemdata.img.name);
+                    checkLoreItem(this.gameObject, this.itemdata.img); //Detects if lore item is on the page, if so, call function 
 
                 }
                 else
@@ -295,23 +306,32 @@ void EndDrag()
         }
     }
 
-    public void checkLoreItem(GameObject item)
+   public void checkLoreItem(GameObject item, Sprite newspr)
     {
-        if (itemdata.loreItem &&!loreDone)
-        {
-            lorePlaced = true;
+    if (itemdata.loreItem && !loreDone)
+    {
+        lorePlaced = true;
+        sprRen = item.GetComponent<Image>();
 
-           
-                //item.gameObject.AddComponent<OutlineUI>();
-                //item.gameObject.GetComponent<OutlineUI>().effectColor = Color.yellow;
-                //item.gameObject.GetComponent<OutlineUI>().effectDistance = new Vector2(3, -3);
-                item.gameObject.GetComponent<Image>().DOColor(Color.yellow, .7f).SetLoops(-1, LoopType.Yoyo);
-                loreIcon.enabled = true;
-                loreIcon.gameObject.GetComponent<Image>().DOFade(1, .7f).SetLoops(-1, LoopType.Yoyo);
+        Material instanceMat = Instantiate(loreMat);
+        
+        Texture2D tex = newspr.texture;
+        Rect rect = newspr.textureRect;
+        
+        Vector2 scale = new Vector2(rect.width / tex.width, rect.height / tex.height);
+        Vector2 offset = new Vector2(rect.x / tex.width, rect.y / tex.height);
 
-        }
+        instanceMat.SetTexture("MainText", tex);
+        instanceMat.SetVector("Tiling", scale);
+        instanceMat.SetVector("Offset", offset);
 
+        sprRen.material = instanceMat;
+        sprRen.DOColor(Color.yellow, .7f).SetLoops(-1, LoopType.Yoyo);
+        loreIcon.enabled = true;
+        loreIcon.GetComponent<Image>().DOFade(1, .7f).SetLoops(-1, LoopType.Yoyo);
     }
+    }
+
 
 
     private void notinjournal()

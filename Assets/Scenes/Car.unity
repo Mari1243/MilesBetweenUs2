@@ -1333,7 +1333,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: loreItemAmt
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: inventory.Array.size
@@ -1342,7 +1342,7 @@ PrefabInstance:
     - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: inventory.Array.data[0].itemData
       value: 
-      objectReference: {fileID: 11400000, guid: 030c2d7b9fdf52f4e822ba2a000185bf, type: 2}
+      objectReference: {fileID: 11400000, guid: 46603623567ed83459d157a7205b4a71, type: 2}
     - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: inventory.Array.data[1].itemData
       value: 

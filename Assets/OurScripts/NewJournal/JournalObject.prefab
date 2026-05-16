@@ -230,12 +230,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9fe6b22ccaa48d785b754b24e9474c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMaterial: {fileID: 2100000, guid: 336d7caa559af4c14951397e2a16e072, type: 2}
   dragThreshold: 5
   desiredWidth: 400
   iconsize: 100
   itemdata: {fileID: 11400000, guid: d2dcb10b6d232e44e87f9ab23ae1e1af, type: 2}
   loreIcon: {fileID: 3228970947438371229}
+  loreMat: {fileID: 2100000, guid: 336d7caa559af4c14951397e2a16e072, type: 2}
 --- !u!114 &4999891360551661480
 MonoBehaviour:
   m_ObjectHideFlags: 0
