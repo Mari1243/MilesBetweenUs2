@@ -1062,6 +1062,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragThreshold: 5
+  desiredWidth: 1000
+  iconsize: 2500
   itemdata: {fileID: 11400000, guid: 7ef025da6f9c742af95e435982182225, type: 2}
   loreIcon: {fileID: 0}
 --- !u!114 &236304081
@@ -3848,6 +3850,10 @@ PrefabInstance:
     - target: {fileID: 2080794050152235293, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: autoStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483373605266933036, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: Priority
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 5097828214870073080, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: m_AnchorMax.y

@@ -14311,11 +14311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782646957642650870, guid: ce861a7afb74a4af9a850e68c64391bf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 274.11
+      value: 240.29
       objectReference: {fileID: 0}
     - target: {fileID: 3782646957642650870, guid: ce861a7afb74a4af9a850e68c64391bf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 339.63
+      value: 334.25
       objectReference: {fileID: 0}
     - target: {fileID: 3782646957642650870, guid: ce861a7afb74a4af9a850e68c64391bf, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -14415,11 +14415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8065575808668898003, guid: ce861a7afb74a4af9a850e68c64391bf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 117.76
+      value: 107
       objectReference: {fileID: 0}
     - target: {fileID: 8065575808668898003, guid: ce861a7afb74a4af9a850e68c64391bf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 135.99501
+      value: 152.905
       objectReference: {fileID: 0}
     - target: {fileID: 8065575808668898003, guid: ce861a7afb74a4af9a850e68c64391bf, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -22900,7 +22900,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

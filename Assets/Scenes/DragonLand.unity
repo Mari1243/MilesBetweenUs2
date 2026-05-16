@@ -12848,6 +12848,10 @@ PrefabInstance:
       propertyPath: onNodeComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3483373605266933036, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
+      propertyPath: Priority
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5097828214870073080, guid: e6eeb755de4d2854ea3020d18e21a3a0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -1332,6 +1332,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
+      propertyPath: loreItemAmt
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: inventory.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1342,11 +1346,11 @@ PrefabInstance:
     - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: inventory.Array.data[1].itemData
       value: 
-      objectReference: {fileID: 11400000, guid: 500b34da9d9f58c4fa719117b279dda8, type: 2}
+      objectReference: {fileID: 11400000, guid: 9eba4e465307ebd4b9b0fb1f38cfa457, type: 2}
     - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: inventory.Array.data[2].itemData
       value: 
-      objectReference: {fileID: 11400000, guid: 637105c5ed2c81f468294606a570d06c, type: 2}
+      objectReference: {fileID: 11400000, guid: 428669f288279234aacbf0e8c15c1f17, type: 2}
     - target: {fileID: 1905264985101183279, guid: dbd1dd3b497b546b284d36d10e160a26, type: 3}
       propertyPath: inventory.Array.data[0].stackSize
       value: 1
@@ -4991,7 +4995,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

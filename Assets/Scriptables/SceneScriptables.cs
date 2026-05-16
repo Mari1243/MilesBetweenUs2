@@ -8,4 +8,5 @@ public class SceneScriptables: ScriptableObject
     public bool locationOverride;
     public bool iscar;
     public Vector3 dialogueposition;
+    public AudioClip sceneMusic;
 }
