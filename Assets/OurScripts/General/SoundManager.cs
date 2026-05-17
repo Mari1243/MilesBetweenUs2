@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip backgroundMusic;
     private bool isPaused;
 
+    private AudioClip lastPlayedMusic;
+
     private void Awake()
     {
         if (Instance == null)
@@ -62,18 +64,15 @@ public class SoundManager : MonoBehaviour
     {
         Console.WriteLine("playmusic called from "+Environment.StackTrace);
         //print("playing music");
-        if (playBackgroundMusic)
-        {
-            musicAudioSource.loop = true;
-            //musicAudioSource.Play();
-            //musicAudioSource.AudioSource=backgroundMusic;
-            musicAudioSource.clip=backgroundMusic;
-            musicAudioSource.Play();
-        }
+    
+        musicAudioSource.loop = true;
+        musicAudioSource.clip=lastPlayedMusic;
+        musicAudioSource.Play();
     }
     public void changeMusic(AudioClip newClip)
     {
         Console.WriteLine("changeMusic called from "+Environment.StackTrace);
+        
         //print("playing music");
         if (playBackgroundMusic)    
         {
@@ -81,6 +80,8 @@ public class SoundManager : MonoBehaviour
 
             musicAudioSource.clip = newClip;
             musicAudioSource.Play();
+
+            lastPlayedMusic = newClip;
         }
     }
     public void playLoopingAudio(AudioClip clip)

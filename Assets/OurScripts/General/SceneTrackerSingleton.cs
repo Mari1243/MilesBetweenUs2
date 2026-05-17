@@ -78,7 +78,7 @@ public class SceneTrackerSingleton : MonoBehaviour
     {
         print("changing music to " + scene.sceneMusic.name.ToString());
         if(scene.sceneMusic!=null){
-        SoundManager.Instance.playLoopingAudio(scene.sceneMusic);
+        SoundManager.Instance.changeMusic(scene.sceneMusic);
         }
         else
         {
