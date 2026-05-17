@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: DragonLand
   ToDoList: {fileID: 3858602058654858274, guid: 509602112ea6343a1a91cee0c5233cb3, type: 3}
+  locationOverride: 0
   iscar: 0
+  dialogueposition: {x: 0, y: 0, z: 0}
+  sceneMusic: {fileID: 8300000, guid: 806eb8599e6b64d6ca9b280dca7d0c60, type: 3}

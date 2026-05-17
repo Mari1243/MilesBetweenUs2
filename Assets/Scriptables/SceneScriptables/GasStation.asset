@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: GasStation
   ToDoList: {fileID: 3858602058654858274, guid: e768d9c545bfa43babbf9a2671f8cb91, type: 3}
+  locationOverride: 0
   iscar: 0
+  dialogueposition: {x: 0, y: 0, z: 0}
+  sceneMusic: {fileID: 8300000, guid: 9385df60ce8814f83b8759ded5bdc021, type: 3}

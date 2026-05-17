@@ -17,3 +17,4 @@ MonoBehaviour:
   locationOverride: 1
   iscar: 0
   dialogueposition: {x: 112.51, y: 2.92, z: -32.28}
+  sceneMusic: {fileID: 8300000, guid: 294bf30b3a1824e439dee5b01fd2fb84, type: 3}
