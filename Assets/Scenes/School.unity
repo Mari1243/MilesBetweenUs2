@@ -5453,6 +5453,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1644676732340751944, guid: f596f254ccd1b6f498b631fc306eb241, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2002132658445872595, guid: f596f254ccd1b6f498b631fc306eb241, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -8120,8 +8124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
-  loreItemAmt: 3
-  moneyAmount: 0
 --- !u!4 &538916798
 Transform:
   m_ObjectHideFlags: 0
