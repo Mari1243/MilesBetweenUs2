@@ -20,8 +20,6 @@ public class InventoryManager : MonoBehaviour
 
     public List<InventoryItem> inventory = new List<InventoryItem>();
     public Dictionary<Item, InventoryItem> itemDictionary = new Dictionary<Item, InventoryItem>();
-    public int loreItemAmt;
-    public float moneyAmount;
 
     private void OnEnable()
     {

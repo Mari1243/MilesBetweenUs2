@@ -307,7 +307,7 @@ void EndDrag()
     }
 
    public void checkLoreItem(GameObject item, Sprite newspr)
-    {
+{
     if (itemdata.loreItem && !loreDone)
     {
         lorePlaced = true;
@@ -321,16 +321,38 @@ void EndDrag()
         Vector2 scale = new Vector2(rect.width / tex.width, rect.height / tex.height);
         Vector2 offset = new Vector2(rect.x / tex.width, rect.y / tex.height);
 
+        // Debug everything
+        Debug.LogError("Sprite name: " + newspr.name);
+        Debug.LogError("Texture name: " + tex.name);
+        Debug.LogError("Texture size: " + tex.width + "x" + tex.height);
+        Debug.LogError("Rect: " + rect);
+        Debug.LogError("Scale: " + scale);
+        Debug.LogError("Offset: " + offset);
+        Debug.LogError("Has Tiling property: " + instanceMat.HasProperty("Tiling"));
+        Debug.LogError("Has Offset property: " + instanceMat.HasProperty("Offset"));
+        Debug.LogError("Has MainText property: " + instanceMat.HasProperty("MainText"));
+
         instanceMat.SetTexture("MainText", tex);
         instanceMat.SetVector("Tiling", scale);
         instanceMat.SetVector("Offset", offset);
 
+        // Verify after setting
+        Debug.LogError("Tiling after set: " + instanceMat.GetVector("Tiling"));
+        Debug.LogError("Offset after set: " + instanceMat.GetVector("Offset"));
+        Debug.LogError("Texture after set: " + instanceMat.GetTexture("MainText"));
+
         sprRen.material = instanceMat;
+
+        // Verify material on the image
+        Debug.LogError("sprRen material: " + sprRen.material.name);
+        Debug.LogError("sprRen material Tiling: " + sprRen.material.GetVector("Tiling"));
+        Debug.LogError("sprRen material texture: " + sprRen.material.GetTexture("MainText"));
+
         sprRen.DOColor(Color.yellow, .7f).SetLoops(-1, LoopType.Yoyo);
         loreIcon.enabled = true;
         loreIcon.GetComponent<Image>().DOFade(1, .7f).SetLoops(-1, LoopType.Yoyo);
     }
-    }
+}
 
 
 

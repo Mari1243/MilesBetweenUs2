@@ -136,9 +136,9 @@ public class IntroUIManager : MonoBehaviour
         
         if (itemdata.loreItem)
         {
-            InventoryManager.instance.loreItemAmt++;
+            // InventoryManager.instance.loreItemAmt++;
 
-            RewardText.text = InventoryManager.instance.loreItemAmt.ToString() + "/3";
+            // RewardText.text = InventoryManager.instance.loreItemAmt.ToString() + "/3";
         }
         
     }
@@ -252,8 +252,8 @@ public class IntroUIManager : MonoBehaviour
     private void collectCoin(Item itemdata)
     {
         Debug.Log("coin picked up!");
-        InventoryManager.instance.moneyAmount += .50f;
-        moneyText.text = "$" + InventoryManager.instance.moneyAmount.ToString("f2");
+        // InventoryManager.instance.moneyAmount += .50f;
+        // moneyText.text = "$" + InventoryManager.instance.moneyAmount.ToString("f2");
     }
 
 

@@ -113,6 +113,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         SetSprites();
+        print("START IN UI MANAGER");
     }
 
 
@@ -141,6 +142,7 @@ public class UIManager : MonoBehaviour
 
     private void SetSprites()
     {
+        print("setting sprites and turning stealing canvas off");
         if(textures != null && textures.Count >= 3)
         {
             BackgroundRen = stealingUI.transform.GetChild(0).GetComponent<Image>();
@@ -210,14 +212,14 @@ public class UIManager : MonoBehaviour
 
     public void rewardText(Item itemdata)
     {
-        if(itemdata != null)
-        {
-            if (itemdata.loreItem)
-            {
-                InventoryManager.instance.loreItemAmt++;
-                RewardText.text = InventoryManager.instance.loreItemAmt.ToString() + "/3";
-            }
-        }
+        // if(itemdata != null)
+        // {
+        //     if (itemdata.loreItem)
+        //     {
+        //         InventoryManager.instance.loreItemAmt++;
+        //         RewardText.text = InventoryManager.instance.loreItemAmt.ToString() + "/3";
+        //     }
+        // }
     }
 
     private void UpdateStealingUI(bool stealcheck)
