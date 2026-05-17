@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LOREcard
   m_EditorClassIdentifier: 
   img: {fileID: 1619299450, guid: 5719862bfbde3cd4aacb2d6228dc3b7c, type: 3}
-  itemName: His card!
+  itemName: Business Card
   loreItem: 1
   node: card
   diagPos: {x: 112.51, y: 2.92, z: -32.28}

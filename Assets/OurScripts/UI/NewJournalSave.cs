@@ -104,6 +104,7 @@ public class NewJournalSave : MonoBehaviour
 
     public void SetState(States newstate)
     {
+        currentstate = newstate; //CHANGEDSOS
         //Debug.LogError("[NJS] SetState called with: " + newstate + " | StackTrace: " + System.Environment.StackTrace);
         // ... rest of method
         if (newstate == States.Gasstation)
@@ -210,21 +211,15 @@ public class NewJournalSave : MonoBehaviour
         else
         {
             //print("instantiating inventory");
-            foreach (InventoryItem items in currentInventory)
+           //CHANGEDSOS
+           List<InventoryItem> snapshot = new List<InventoryItem>(currentInventory);
+            foreach (InventoryItem items in snapshot)
             {
-                var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity); //the connecting data
-
-                //getting tab 1
-                
-                journalItem.transform.SetParent(Holder.transform);
-                journalItem.transform.localPosition = Vector2.zero;
-
-                //this  assigns data
-                DraggableItemPrefab.GetComponent<DragItem>().itemdata=items.itemData;
-                //print("instantiating " + journalItem.name);
+            var journalItem = Instantiate(DraggableItemPrefab, Vector3.one, Quaternion.identity);
+            journalItem.transform.SetParent(Holder.transform);
+            journalItem.transform.localPosition = Vector2.zero;
+            journalItem.GetComponent<DragItem>().itemdata = items.itemData;  // also fixes bug 1 here
             }
-            //added bc reinstantiation
-            currentInventory.Clear();
         }
     }
 
